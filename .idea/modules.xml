@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeBaseIntegration.iml" filepath="$PROJECT_DIR$/CodeBaseIntegration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HeaderListView/HeaderListView.iml" filepath="$PROJECT_DIR$/HeaderListView/HeaderListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidviewertemplates/androidviewertemplates.iml" filepath="$PROJECT_DIR$/androidviewertemplates/androidviewertemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidviewertools/androidviewertools.iml" filepath="$PROJECT_DIR$/androidviewertools/androidviewertools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>

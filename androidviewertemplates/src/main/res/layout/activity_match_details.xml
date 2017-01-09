@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".match_details.MatchDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/matchDetailsMatchNumberLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:orientation="vertical"
+            android:layout_alignBottom="@+id/matchDetailsMatchTitleTextView"
+            android:layout_alignTop="@+id/matchDetailsMatchTitleTextView"
+            android:layout_toLeftOf="@+id/matchDetailsMatchTitleTextView">
+            <!--todo-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@id/matchDetailsMatchTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="75sp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="Q7"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:orientation="vertical"
+            android:layout_alignBottom="@+id/matchDetailsMatchTitleTextView"
+            android:layout_alignTop="@+id/matchDetailsMatchTitleTextView"
+            android:layout_toRightOf="@+id/matchDetailsMatchTitleTextView">
+            <!--todo-->
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/matchDetailsTeamCellsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/matchDetailsMatchNumberLinearLayout"
+        android:layout_above="@+id/matchDetailsRedTeamsDefensesLinearLayout"
+        android:paddingTop="30dp">
+
+        <LinearLayout
+            android:id="@+id/matchDetailsRedTeamsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/redTeamCell1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/redTeamCell2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/redTeamCell3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/matchDetailsBlueTeamsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/blueTeamCell1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/blueTeamCell2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <com.example.evan.androidviewertemplates.match_details.MatchDetailsTeamCell
+                android:id="@+id/blueTeamCell3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

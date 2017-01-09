@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/rankingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#595959"
+        android:textSize="10sp"
+        android:minWidth="20dp"
+        android:paddingRight="2dp"
+        android:text="17"/>
+
+    <TextView
+        android:id="@+id/teamNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/rankingTextView"
+        android:layout_toLeftOf="@+id/valueTextView"
+        android:paddingRight="3dp"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:text="1678"/>
+
+    <TextView
+        android:id="@+id/valueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="#999999"
+        android:textSize="10sp"
+        android:text="311.67"/>
+
+
+</RelativeLayout>

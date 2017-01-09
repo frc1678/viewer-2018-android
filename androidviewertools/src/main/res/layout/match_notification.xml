@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingTop="5dp" android:paddingBottom="5dp"
+    android:paddingLeft="25dp" android:paddingRight="25dp">
+
+    <TextView
+        android:id="@+id/matchNotificationTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't miss this match!"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/matchNotificationTitleTextView">
+    <TextView
+        android:id="@+id/matchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_centerVertical="true"
+        android:text="Match"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/matchNumber"
+        android:layout_toStartOf="@+id/redScore"
+        android:layout_centerVertical="true">
+        <LinearLayout
+            android:id="@+id/redTeamsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+            <TextView
+                android:id="@+id/teamOne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:layout_toEndOf="@+id/matchNumber"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/teamTwo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:layout_toEndOf="@+id/matchNumber"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/teamThree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:layout_toEndOf="@+id/matchNumber"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/blueTeamsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:id="@+id/teamFour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#0000ff"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/teamFive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#0000ff"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/teamSix"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#0000ff"
+                android:text="1678"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/redScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/matchNumber"
+        android:layout_toStartOf="@+id/scoreSeparator"
+        android:layout_centerVertical="true"
+        android:textColor="#FF0000"
+        android:text="160"/>
+
+    <TextView
+        android:id="@+id/scoreSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/matchNumber"
+        android:layout_toStartOf="@+id/blueScore"
+        android:textColor="#000000"
+        android:layout_centerVertical="true"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/blueScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/matchNumber"
+        android:layout_alignParentEnd="true"
+        android:textColor="#0000ff"
+        android:layout_centerVertical="true"
+        android:text="160"/>
+    </RelativeLayout>
+
+</RelativeLayout>
