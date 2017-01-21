@@ -20,34 +20,38 @@ public class SpecificConstants extends Constants {
     static {
         Map<String, String> initialKeysToTitlesMap = new HashMap<String, String>() {
             {
-                //MATCHES
+                //MATCH DETAILS ACTIVITY
+                put("calculatedData.actualSeed", "Seed");
+                put("calculated.disfunctionalPercentage", "Disfunctional");
+                //TEAM DETAILS SECTION ADAPTER
+                    //MATCHES
                 put("matches", "Matches");
                 put("VIEWER.matchesUntilNextMatchForTeam", "Matches Until Next Match");
-                //STATUS
+                    //STATUS
                 put("calculatedData.disabledPercentage", "Disabled");
                 put("calculatedData.incapacitatedPercentage", "Incapacitated");
-                //AUTO
+                    //AUTO
                 put("calculatedData.avgGearsPlacedAuto", "Avg Gears Placed");
                 put("calculatedData.avgHighShotsAuto", "Avg High Shots");
                 put("calculatedData.avgLowShotsAuto", "Avg Low Shots");
                 put("calculatedData.baselineReachedPercentage", "Baseline Reached Percentage");
-                //TELEOP
+                    //TELEOP
                 put("calculatedData.avgGearsPlacedTele", "Avg Gears Placed");
                 put("calculatedData.avgHighShotsTele", "Avg High Shots");
                 put("calculatedData.avgLowShotsTele", "Avg Low Shots");
                 put("calculatedData.avgKeyShotTime", "Avg Key Shot Time(Sec.)");
-                //LIFTOFF
+                    //LIFTOFF
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");
-                //HIGH LEVEL
+                    //HIGH LEVEL
                 put("calculatedData.firstPickAbility", "First Pick Ability");
                 put("calculatedData.overallSecondPickAbility", "Overall Second Pick Ability");
-                //SUPER DATA
+                    //SUPER DATA
                 put("calculatedData.avgAgility", "Agility");
                 put("calculatedData.avgSpeed", "Speed");
                 put("calculatedData.avgBallControl", "Ball Control");
                 put("calculatedData.avgGearControl", "Gear Control");
                 put("calculatedData.avgDefense", "Defense");
-                //PIT DATA
+                    //PIT DATA
                 put("pitSelectedImageURL", "Selected Image Url");
                 put("pitNotes", "Notes");
                 put("pitProgrammingLanguage", "Programming Language");

@@ -26,8 +26,8 @@ import java.util.List;
 public class MatchDetailsTeamCellAdapter extends BaseAdapter {
     //todo
     private String[] fields = {"calculatedData.actualSeed", "calculatedData.firstPickAbility",
-            "calculatedData.secondPickAbility", "calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"};
-    private String[] fieldsToDisplayAsPercentages = {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"};
+            "calculatedData.secondPickAbility", "calculatedData.disfunctionalPercentage"};
+    private String[] fieldsToDisplayAsPercentages = {"calculatedData.disfunctionalPercentage"};
     private String[] reverseRankFields = {"calculatedData.actualSeed"};
     private Integer teamNumber;
 
