@@ -18,6 +18,8 @@ import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.instabug.library.Instabug;
+import com.instabug.library.invocation.InstabugInvocationEvent;
 
 public class ViewerApplication extends ViewerApplicationTemplate {
 
@@ -28,11 +30,9 @@ public class ViewerApplication extends ViewerApplicationTemplate {
         //todo
         //instabug is life, hopefully by the time ur reading this u guys have
         // the ultra gold-plated diamonds-studded platinum version, and don't have to use fake emails like me
-        /*new Instabug.Builder(this, "206563e36570f89397cc3f9c99af5110")
-                .setInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake)
-                .build();*/
-
-
+        new Instabug.Builder(this, "23a9b398eb56dcbf83935c0370994f6a")
+                .setInvocationEvent(InstabugInvocationEvent.SHAKE)
+                .build();
         startListListeners(getApplicationContext(), com.example.evan.androidviewertemplates.firebase_classes.Match.class, com.example.evan.androidviewertemplates.firebase_classes.Team.class, com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData.class);
         setupFirebaseAuth(this);
 
