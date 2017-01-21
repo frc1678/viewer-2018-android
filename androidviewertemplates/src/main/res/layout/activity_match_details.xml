@@ -21,7 +21,33 @@
             android:layout_alignBottom="@+id/matchDetailsMatchTitleTextView"
             android:layout_alignTop="@+id/matchDetailsMatchTitleTextView"
             android:layout_toLeftOf="@+id/matchDetailsMatchTitleTextView">
-            <!--todo-->
+            <TextView
+                android:id="@+id/matchDetailsRedAllianceScore"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="1678"
+                android:textColor="#FF0000"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/matchDetailsRedAlliancePredictedScore"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textColor="#FF0000"
+                android:layout_weight="1"
+                android:text="1678"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/matchDetailsRedAllianceWinChance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#FF0000"
+                android:text="16%"
+                android:gravity="center"/>
         </LinearLayout>
 
         <TextView
@@ -41,7 +67,33 @@
             android:layout_alignBottom="@+id/matchDetailsMatchTitleTextView"
             android:layout_alignTop="@+id/matchDetailsMatchTitleTextView"
             android:layout_toRightOf="@+id/matchDetailsMatchTitleTextView">
-            <!--todo-->
+            <TextView
+                android:id="@+id/matchDetailsBlueAllianceScore"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="1678"
+                android:textColor="#0000ff"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/matchDetailsBlueAlliancePredictedScore"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textColor="#0000ff"
+                android:layout_weight="1"
+                android:text="1678"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/matchDetailsBlueAllianceWinChance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="#0000ff"
+                android:text="16%"
+                android:gravity="center"/>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout
@@ -50,7 +102,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_below="@id/matchDetailsMatchNumberLinearLayout"
-        android:layout_above="@+id/matchDetailsRedTeamsDefensesLinearLayout"
         android:paddingTop="30dp">
 
         <LinearLayout

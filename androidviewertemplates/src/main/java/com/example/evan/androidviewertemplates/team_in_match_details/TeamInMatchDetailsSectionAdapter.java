@@ -24,17 +24,27 @@ import java.util.Map;
  */
 public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
-    private String[][] fieldsToDisplay = {{}};
+    private String[][] fieldsToDisplay = {
+            {"teamNumber", "matchNumber"},
+            {"calculatedData.numGearsPlacedAuto", "numHoppersOpenedAuto", "didReachBaselineAuto", "didPotentiallyConflictingAuto",
+                    "numGearsFumbledTele", "numGearsEjectedTele"},
+            {"calculatedData.numGearsPlacedTele", "numHoppersOpenedTele", "numGearGroundIntakesTele",
+                    "numGearLoaderIntakesTele", "numGearsFumbledTele", "numGearsEjectedTele"},
+            {"didLiftoff"},
+            {"rankSpeed", "rankAgility", "rankGearControl", "rankBallControl", "rankDefense"}
+    };
 
-    private String[] sectionTitles = {};
+    private String[] sectionTitles = {"Information", "Auto", "Tele", "Liftoff", "Super"};
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {};
+    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftOff"};
 
     private String[] shouldDisplayAsLongText = {};
 
     private String[] rankInsteadOfGraph = {};
+
+    private String[] shouldDisplayAsFurtherInformation = {};
 
     private Integer teamNumber;
     private Integer matchNumber;
@@ -82,9 +92,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     }
 
     @Override
-    public String[] getFurtherInformationFields() {
-        return new String[0];
-    }
+    public String[] getFurtherInformationFields() { return shouldDisplayAsFurtherInformation; }
 
     @Override
     public String[] getNotClickableFields() {
@@ -103,6 +111,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
+        String key = (String)getRowItem(section, row);
 
     }
 

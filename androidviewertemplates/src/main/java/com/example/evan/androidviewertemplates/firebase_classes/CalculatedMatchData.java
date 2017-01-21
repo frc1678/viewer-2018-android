@@ -10,5 +10,16 @@ import java.util.Map;
 public class CalculatedMatchData extends Object {
     public Float predictedRedScore;
     public Float predictedBlueScore;
-    //todo
+    public Float sdPredictedRedScore;
+    public Float sdPredictedBlueScore;
+    public Float redWinChance;
+    public Float blueWinChance;
+    public Float predictedBlueRPs;
+    public Integer actualBlueRPs;
+    public Float predictedRedRPs;
+    public Integer actualRedRPs;
+    public Float fortyKilopascalChanceRed;
+    public Float fortyKilopascalChanceBlue;
+    public Boolean allRotorsTurningChanceRed;
+    public Boolean allRotorsTurningChanceBlue;
 }

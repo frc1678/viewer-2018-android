@@ -25,23 +25,77 @@ import java.util.Map;
  */
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
-    private String[][] fieldsToDisplay = {{}};
+    private String[][] fieldsToDisplay = {
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
+            {"calculatedData.disabledPercentage", "calculatedData.incapacitatedPercentage"},
+            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
+                    "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
+            {"calculatedData.avgGearsPlacedTele", "calculatedData.avgHighShotsTele",
+                    "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime"},
+            {"calculatedData.liftoffPercentage"},
+            {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility"},
+            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
+            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidTankTread", "pitDidDemonstrateCheesecakePotential"}
+    };
 
-    private String[] sectionTitles = {};
+    private String[] sectionTitles = {
+            "Matches",
+            "Status",
+            "Auto",
+            "Teleop",
+            "Liftoff",
+            "High Level",
+            "Super Data",
+            "Pit Data"
+    };
 
-    private String[] shouldDisplayAsPercentage = {};
+    private String[] shouldDisplayAsPercentage = {
+            "calculatedData.disabledPercentage",
+            "calculatedData.incapacitatedPercentage",
+            "calculatedData.baselineReachedPercentage",
+            "calculatedData.liftoffPercentage"};
 
-    private String[] displayAsUnranked = {};
+    private String[] displayAsUnranked = {
+            "matches",
+            "VIEWER.matchesUntilNextMatchForTeam",
+            "pitSelectedImageUrl",
+            "pitNotes",
+            "pitProgrammingLanguage",
+            "pitAvailableWeight",
+            "pitOrganization",
+            "pitDidTankTread",
+            "pitCanCheesecake"
+    };
 
-    private String[] shouldDisplayAsLongText = {};
+    private String[] shouldDisplayAsLongText = {
+            "pitNotes"
+    };
 
     private String[] shouldDisplayAsFurtherInformation = {};
 
-    private String[] notClickableFields = {};
+    private String[] notClickableFields = {
+            "VIEWER.matchesUntilNextMatchForTeam",
+            "pitDetails",
+            "pitSelectedImageUrl",
+            "pitNotes",
+            "pitProgrammingLanguage",
+            "pitAvailableWeight",
+            "pitOrganization",
+            "pitDidTankTread",
+            "pitCanCheesecake"
+    };
 
-    private String[] createListOnClick = {};
+    private String[] createListOnClick = {
+            "matches",
+            "calculatedData.firstPickAbility",
+            "calculatedData.overallSecondPickAbility",
 
-    private String[] rankInsteadOfGraph = {};
+    };
+
+    private String[] rankInsteadOfGraph = {
+            "calculatedData.firstPickAbility",
+            "calculatedData.overallSecondPickAbility"
+    };
 
 
     Integer teamNumber;
@@ -102,6 +156,12 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     @Override
     public void handleNonDefaultClick(int section, int row) {
         String key = (String)getRowItem(section, row);
+        if (key == "matches") {
+            Intent teamMatchesIntent = new Intent(context, MatchesActivity.class);
+            teamMatchesIntent.putExtra("teamNumber", teamNumber).putExtra("field", "matches");
+            context.startActivity(teamMatchesIntent);
+        }
+
     }
 
     @Override

@@ -11,6 +11,15 @@ public class ViewerDataPoints {
     //if u can understand it, follow this example:
 
     //for data point matchesUntilNextMatchForTeam
+    public static Integer getMatchesUntilNextMatchForTeam(Team team, Intent args) {
+        Integer currentMatch = Utils.getLastMatchPlayed();
+        for (Integer matchNumber : Utils.getMatchNumbersForTeamNumber(team.number)) {
+            if (matchNumber > currentMatch) {
+                return matchNumber - currentMatch;
+            }
+        }
+        return null;
+    }
     //btw args is whatever u want it to be
     public static String getDefenseCrossingTeamDetailsTitle(Team team, Intent args) {
         //this method combines 2 data points into one title for the user

@@ -2,6 +2,7 @@ package com.example.evan.androidviewertools.firebase_classes;
 
 
 import java.util.List;
+import java.util.Map;
 
 
 public class Team {
@@ -10,5 +11,4 @@ public class Team {
 	public List<Match> matches;
 	public List<TeamInMatchData> teamInMatchDatas;
 	public String selectedImageUrl;
-
 }
