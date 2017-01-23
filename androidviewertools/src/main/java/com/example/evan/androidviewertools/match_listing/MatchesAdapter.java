@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.services.StarManager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match> {
@@ -60,6 +62,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
 
         Match match = (Match)getItem(position);
+        Log.e("match position", Integer.toString(position));
 
 
 
@@ -118,9 +121,44 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
     @Override
     public boolean filter(Match value, String scope) {
+        //Log.e("scope", scope);
+        //Log.e("value", value.toString());
         List<Integer> teamsInMatch = new ArrayList<>();
-        teamsInMatch.addAll(value.redAllianceTeamNumbers);
+        //Log.e("Test", (Utils.getObjectField(value,"foulPointsGainedRed")).toString());
+        //Log.e("redAllianceTeams", (Utils.getObjectField(value,"redAllianceTeamNumbers")).toString());
+        try {
+            Log.e("redscore", Integer.toString(value.redScore));
+        }catch (NullPointerException NPE){
+            Log.e("redscore", "NULL");
+        }
+        try {
+            Log.e("bluescore", Integer.toString(value.blueScore));
+        }catch (NullPointerException NPE){
+            Log.e("bluescore", "NULL");
+        }
+        try {
+            Log.e("number", Integer.toString(value.number));
+        }catch (NullPointerException NPE){
+            Log.e("number", "NULL");
+        }
+        try {
+            Log.e("redAllianceTeamNumbers", value.redAllianceTeamNumbers.toString());
+        }catch (NullPointerException NPE){
+            Log.e("redAllianceTeamNumbers", "NULL");
+        }
+        try {
+            Log.e("blueAllianceTeamNumbers", value.blueAllianceTeamNumbers.toString());
+        }catch (NullPointerException NPE){
+            Log.e("blueAllianceTeamNumbers", "NULL");
+        }
+        List<Object> redTeams = Arrays.asList(Utils.getObjectField(value,"redAllianceTeamNumbers"));
+        List<Integer> newRed = (List<Integer>)(Object)redTeams;
+        Log.e("newRed", newRed.toString());
+        Log.e("redTeams", redTeams.toString());
+        teamsInMatch.addAll(newRed);
+        Log.e("Please Reach", "Here");
         teamsInMatch.addAll(value.blueAllianceTeamNumbers);
+        Log.e("Test", "Here");
 
         boolean found = false;
         if (secondaryFilter(value)) {

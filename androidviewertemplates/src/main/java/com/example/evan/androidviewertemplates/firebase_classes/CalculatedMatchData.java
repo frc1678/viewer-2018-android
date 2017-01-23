@@ -20,6 +20,6 @@ public class CalculatedMatchData extends Object {
     public Integer actualRedRPs;
     public Float fortyKilopascalChanceRed;
     public Float fortyKilopascalChanceBlue;
-    public Boolean allRotorsTurningChanceRed;
-    public Boolean allRotorsTurningChanceBlue;
+    public Float allRotorsTurningChanceRed;
+    public Float allRotorsTurningChanceBlue;
 }

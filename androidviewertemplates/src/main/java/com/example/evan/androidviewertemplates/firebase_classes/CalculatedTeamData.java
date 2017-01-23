@@ -24,7 +24,7 @@ public class CalculatedTeamData extends Object {
 	public Float sdHighShotsTele;
 	public Float sdLowShotsAuto;
 	public Float sdLowShotsTele;
-	public Float sdBaselinePercentage;
+	public Float sdBaselineReachedPercentage;
 	public Float avgKeyShotTime;
 	public Float avgAgility;
 	public Float avgSpeed;
@@ -36,6 +36,19 @@ public class CalculatedTeamData extends Object {
 	public Float liftoffPercentage;
 	public Float disfunctionalPercentage;
 	public Float predictedNumRPs;
+	public Float avgGearsFumbledTele;
+	public Float avgGearsEjectedTele;
+	public Float avgGearGroundIntakesTele;
+	public Float avgLoaderIntakesTele;
+	public Float RScoreBallControl;
+	public Float RScoreGearControl;
+	public Float RScoreAgility;
+	public Float RScoreDefense;
+	public Float RScoreSpeed;
+	public Float avgHoppersOpenedAuto;
+	public Float avgHoppersOpenedTele;
+	public Map<String, Float> hoppersOpenedPercentagesAuto;
+	public Map<String, Float> hoppersOpenedPercentagesTele;
 	public Integer predictedSeed;
 	public Integer actualSeed;
 	public Integer baselineReachedPercentage;

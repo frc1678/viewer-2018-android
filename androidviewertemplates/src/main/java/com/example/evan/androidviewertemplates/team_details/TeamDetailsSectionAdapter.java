@@ -35,7 +35,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.liftoffPercentage"},
             {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility"},
             {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
-            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidTankTread", "pitDidDemonstrateCheesecakePotential"}
+            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidUseStandardTankDrive", "pitDidDemonstrateCheesecakePotential"}
     };
 
     private String[] sectionTitles = {

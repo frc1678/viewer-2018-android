@@ -25,21 +25,23 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
 
     //AUTO
     public Map<String, Integer> gearsPlacedByLiftAuto;
-    public Integer numHoppersOpenedAuto;
+    public Map<String, Boolean> hoppersOpenedAuto;
     public Integer numGearsFumbledAuto;
     public Integer numGearsEjectedAuto;
+    public Integer numHoppersOpenedAuto;
     public Boolean didReachBaselineAuto;
-    public Boolean didPotentiallyConflictingAuto;
+    //public Boolean didPotentiallyConflictingAuto;
     public ArrayList<Map<String, Object>> highShotTimesForBoilerAuto;
     public ArrayList<Map<String, Object>> lowShotTimesForBoilerAuto;
 
     //TELE
     public Map<String, Integer> gearsPlacedByLiftTele;
-    public Integer numHoppersOpenedTele;
+    public Map<String, Boolean> hoppersOpenedTele;
     public Integer numGearGroundIntakesTele;
     public Integer numGearLoaderIntakesTele;
     public Integer numGearsFumbledTele;
     public Integer numGearsEjectedTele;
+    public Integer numHoppersOpenedTele;
     public ArrayList<Map<String, Object>> highShotTimesForBoilerTele;
     public ArrayList<Map<String, Object>> lowShotTimesForBoilerTele;
 }

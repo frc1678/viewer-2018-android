@@ -34,7 +34,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
                 .setInvocationEvent(InstabugInvocationEvent.SHAKE)
                 .build();
         startListListeners(getApplicationContext(), com.example.evan.androidviewertemplates.firebase_classes.Match.class, com.example.evan.androidviewertemplates.firebase_classes.Team.class, com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData.class);
-        setupFirebaseAuth(this);
+        //setupFirebaseAuth(this);
 
 
         restoreFromSharedPreferences();
@@ -79,7 +79,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
     }
 
 
-    public static void setupFirebaseAuth(final Context context) {
+    /*public static void setupFirebaseAuth(final Context context) {
         Firebase firebaseRef = new Firebase(SpecificConstants.ROOT_FIREBASE_PATH);
 
         Firebase.AuthResultHandler authResultHandler = new Firebase.AuthResultHandler() {
@@ -99,5 +99,5 @@ public class ViewerApplication extends ViewerApplicationTemplate {
         };
 
         firebaseRef.authWithCustomToken(SpecificConstants.FIREBASE_KEYS.get(SpecificConstants.ROOT_FIREBASE_PATH), authResultHandler);
-    }
+    }*/
 }

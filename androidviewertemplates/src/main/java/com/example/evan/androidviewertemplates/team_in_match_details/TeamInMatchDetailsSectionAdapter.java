@@ -26,9 +26,9 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     //todo
     private String[][] fieldsToDisplay = {
             {"teamNumber", "matchNumber"},
-            {"calculatedData.numGearsPlacedAuto", "numHoppersOpenedAuto", "didReachBaselineAuto", "didPotentiallyConflictingAuto",
+            {"calculatedData.numGearsPlacedAuto", "calculatedData.numHoppersOpenedAuto", "didReachBaselineAuto",
                     "numGearsFumbledTele", "numGearsEjectedTele"},
-            {"calculatedData.numGearsPlacedTele", "numHoppersOpenedTele", "numGearGroundIntakesTele",
+            {"calculatedData.numGearsPlacedTele", "calculatedData.numHoppersOpenedTele", "numGearGroundIntakesTele",
                     "numGearLoaderIntakesTele", "numGearsFumbledTele", "numGearsEjectedTele"},
             {"didLiftoff"},
             {"rankSpeed", "rankAgility", "rankGearControl", "rankBallControl", "rankDefense"}

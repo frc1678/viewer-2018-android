@@ -11,7 +11,7 @@ public class SpecificConstants extends Constants {
     public static Map<String, String> DATA_TO_GRAPH;
     //todo
     public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Super Data"};
-    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://1678-scouting-2016.firebaseio.com/";
+    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2017-5f51c.firebaseio.com/";
     public static String ROOT_FIREBASE_PATH = ORIGINAL_ROOT_FIREBASE_PATH;
     public static String MATCHES_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Matches";
     public static String TEAMS_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Teams";
@@ -57,7 +57,7 @@ public class SpecificConstants extends Constants {
                 put("pitProgrammingLanguage", "Programming Language");
                 put("pitAvailableWeight", "Available Weight");
                 put("pitOrganization", "Pit Organization");
-                put("pitDidTankTread", "Tank Tread");
+                put("pitDidUseStandardTankDrive", "Tank Tread");
                 put("pitDidDemonstrateCheesecakePotential", "Cheesecake");
                 //TEAM IN MATCH DETAILS SECTION ADAPTER
                     //Information
@@ -65,14 +65,13 @@ public class SpecificConstants extends Constants {
                 put("matchNumber", "Match Number");
                     //Auto
                 put("calculatedData.numGearsPlacedAuto", "Gears Placed");
-                put("numHoppersOpenedAuto", "Num. Hoppers Opened");
+                put("calculatedData.numHoppersOpenedAuto", "Num. Hoppers Opened");
                 put("numGearsFumbledAuto", "Gears Fumbled");
                 put("numGearsEjectedAuto", "Gears Ejected");
                 put("didReachBaselineAuto", "Reach Baseline?");
-                put("didPotentiallyConflictingAuto", "Conflicting Auto");
                     //Tele
                 put("calculatedData.numGearsPlacedTele", "Gears Placed");
-                put("numHoppersOpenedTele", "Num. Hoppers Opened");
+                put("calculatedData.numHoppersOpenedTele", "Num. Hoppers Opened");
                 put("numGearGroundIntakesTele", "Gear Ground Intakes");
                 put("numGearLoaderIntakesTele", "Gear Loader Intakes");
                 put("numGearsFumbledTele", "Gears Fumbled");
