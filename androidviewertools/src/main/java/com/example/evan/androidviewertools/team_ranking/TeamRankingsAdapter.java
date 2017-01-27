@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.example.evan.androidviewertools.utils.Constants;
+import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.services.StarManager;
@@ -18,7 +19,8 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public boolean filter(Team value, String scope) {
-        String teamNumberString = value.number.toString();
+        Integer teamNumber = Integer.valueOf((Integer) Utils.getObjectField(value, "number"));
+        String teamNumberString = Integer.toString(teamNumber);
         return teamNumberString.indexOf(searchString) == 0;
     }
 
@@ -34,7 +36,8 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public String getRankCellText(Team value) {
-        return value.number.toString();
+        Integer teamNumber = Integer.valueOf((Integer) Utils.getObjectField(value,"number"));
+        return Integer.toString(teamNumber);
     }
 
     @Override
