@@ -104,7 +104,8 @@ public class Utils {
         Integer lastMatch = 0;
         for (Match match : FirebaseLists.matchesList.getValues()) {
             if((match.redScore != null) || (match.blueScore != null)) {
-                lastMatch = match.number;
+                Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
+                lastMatch = matchNumber;
             }
         }
 
@@ -123,7 +124,8 @@ public class Utils {
     public static List<TeamInMatchData> getTeamInMatchDatasForTeamNumber(Integer teamNumber) {
         List<TeamInMatchData> teamInMatchDatas = new ArrayList<>();
         for (TeamInMatchData teamInMatchData : FirebaseLists.teamInMatchDataList.getValues()) {
-            if (teamInMatchData.teamNumber.equals(teamNumber)) {
+            teamNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"teamNumber"));
+            if (teamNumber.equals(teamNumber)) {
                 teamInMatchDatas.add(teamInMatchData);
             }
         }
@@ -135,7 +137,8 @@ public class Utils {
     public static List<Integer> getMatchNumbersForTeamNumber(Integer teamNumber) {
         List<Integer> matchNumbers = new ArrayList<>();
         for (TeamInMatchData teamInMatchData : getTeamInMatchDatasForTeamNumber(teamNumber)) {
-            matchNumbers.add(teamInMatchData.matchNumber);
+            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"matchNumber"));
+            matchNumbers.add(matchNumber);
         }
 
         return matchNumbers;

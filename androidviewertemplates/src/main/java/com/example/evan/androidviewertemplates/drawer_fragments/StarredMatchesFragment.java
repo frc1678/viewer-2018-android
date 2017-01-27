@@ -10,6 +10,7 @@ import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
 import com.example.evan.androidviewertools.services.StarManager;
+import com.example.evan.androidviewertools.utils.Utils;
 
 
 /**
@@ -33,7 +34,8 @@ public class StarredMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            return StarManager.isImportantMatch(value.number);
+            Integer number = Integer.valueOf((Integer) Utils.getObjectField(value, "number"));
+            return StarManager.isImportantMatch(number);
         }
 
         @Override

@@ -38,7 +38,7 @@ public abstract class StarManager extends Service {
     public abstract Class<? extends Match> getMatchClass();
 
     private NotificationManager mNM;
-    private static Integer currentMatchNumber;
+    private static Integer currentMatchNumber = Utils.getLastMatchPlayed();
     private static Integer nextImportantMatch = -1;
     public static List<Integer> importantMatches = new ArrayList<>();
     public static List<Integer> starredTeams = new ArrayList<>();
@@ -55,7 +55,6 @@ public abstract class StarManager extends Service {
         Log.e("test", "Starting matches listener service");
 
         mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-
         currentMatchNumber = Utils.getLastMatchPlayed();
 
         LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(new BroadcastReceiver() {
@@ -256,6 +255,11 @@ public abstract class StarManager extends Service {
     }
 
     public static Integer getCurrentMatchNumber() {
+        try {
+            Log.e("currentMatchNumber", Integer.toString(currentMatchNumber));
+        }catch (NullPointerException NPE){
+            Log.e("currentMatchNumber", "IS NULL");
+        }
         return currentMatchNumber;
     }
 

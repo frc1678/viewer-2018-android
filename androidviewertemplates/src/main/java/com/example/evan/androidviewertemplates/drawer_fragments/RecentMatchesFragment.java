@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.evan.androidviewertemplates.match_details.MatchDetailsActivity;
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
 import com.example.evan.androidviewertools.services.StarManager;
+import com.example.evan.androidviewertools.utils.Utils;
 
 
 /**
@@ -35,7 +37,9 @@ public class RecentMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            return value.number <= StarManager.getCurrentMatchNumber();
+            Integer number = Integer.valueOf((Integer) Utils.getObjectField(value, "number"));
+
+            return number <= StarManager.getCurrentMatchNumber();
         }
 
         @Override

@@ -19,6 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.evan.androidviewertemplates.match_details.MatchDetailsActivity">
+        </activity>
+        <activity android:name="com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity">
+        </activity>
+        <activity android:name="com.example.evan.androidviewertemplates.graphing.RankingsActivity">
+        </activity>
     </application>
 
 </manifest>

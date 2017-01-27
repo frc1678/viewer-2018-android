@@ -74,14 +74,23 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
         TextView matchTextView = (TextView)rowView.findViewById(R.id.matchNumber);
         if (selectedScope.equals("Match")) {
-            matchTextView.setText(Utils.highlightTextInString(match.number.toString(), searchString));
+            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
+            matchTextView.setText(Utils.highlightTextInString(matchNumber.toString(), searchString));
         } else {
-            matchTextView.setText(match.number.toString());
+            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
+            matchTextView.setText(matchNumber.toString());
         }
-
+        List<Object> redTeams = Arrays.asList(Utils.getObjectField(match,"redAllianceTeamNumbers"));
+        List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
+        List<Integer> tempRedAllianceTeams = (List<Integer>)(Object)redTeams.get(0);
+        List<Integer> tempBlueAllianceTeams = (List<Integer>)(Object)blueTeams.get(0);
         List<Integer> teamsInMatch = new ArrayList<>();
-        teamsInMatch.addAll(match.redAllianceTeamNumbers);
-        teamsInMatch.addAll(match.blueAllianceTeamNumbers);
+        for(int i = 0; i < tempRedAllianceTeams.size(); i++){
+            teamsInMatch.add(tempRedAllianceTeams.get(i));
+        }
+        for(int i = 0; i < tempBlueAllianceTeams.size(); i++){
+            teamsInMatch.add(tempBlueAllianceTeams.get(i));
+        }
 
         int[] teamTextViewIDs = {R.id.teamOne, R.id.teamTwo, R.id.teamThree, R.id.teamFour, R.id.teamFive, R.id.teamSix};
         for (int i = 0; i < 6; i++) {
@@ -121,46 +130,25 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
     @Override
     public boolean filter(Match value, String scope) {
-        //Log.e("scope", scope);
-        //Log.e("value", value.toString());
         List<Integer> teamsInMatch = new ArrayList<>();
-        //Log.e("Test", (Utils.getObjectField(value,"foulPointsGainedRed")).toString());
-        //Log.e("redAllianceTeams", (Utils.getObjectField(value,"redAllianceTeamNumbers")).toString());
-        try {
-            Log.e("redscore", Integer.toString(value.redScore));
-        }catch (NullPointerException NPE){
-            Log.e("redscore", "NULL");
-        }
-        try {
-            Log.e("bluescore", Integer.toString(value.blueScore));
-        }catch (NullPointerException NPE){
-            Log.e("bluescore", "NULL");
-        }
-        try {
-            Log.e("number", Integer.toString(value.number));
-        }catch (NullPointerException NPE){
-            Log.e("number", "NULL");
-        }
-        try {
-            Log.e("redAllianceTeamNumbers", value.redAllianceTeamNumbers.toString());
-        }catch (NullPointerException NPE){
-            Log.e("redAllianceTeamNumbers", "NULL");
-        }
-        try {
-            Log.e("blueAllianceTeamNumbers", value.blueAllianceTeamNumbers.toString());
-        }catch (NullPointerException NPE){
-            Log.e("blueAllianceTeamNumbers", "NULL");
-        }
         List<Object> redTeams = Arrays.asList(Utils.getObjectField(value,"redAllianceTeamNumbers"));
-        List<Integer> newRed = (List<Integer>)(Object)redTeams;
-        Log.e("newRed", newRed.toString());
-        Log.e("redTeams", redTeams.toString());
-        teamsInMatch.addAll(newRed);
+        List<Object> blueTeams = Arrays.asList(Utils.getObjectField(value, "blueAllianceTeamNumbers"));
+        List<Integer> tempRedAllianceTeams = (List<Integer>)(Object)redTeams.get(0);
+        List<Integer> tempBlueAllianceTeams = (List<Integer>)(Object)blueTeams.get(0);
+        for(int i = 0; i < tempRedAllianceTeams.size(); i++){
+            teamsInMatch.add(tempRedAllianceTeams.get(i));
+        }
+        for(int i = 0; i < tempBlueAllianceTeams.size(); i++){
+            teamsInMatch.add(tempBlueAllianceTeams.get(i));
+        }
         Log.e("Please Reach", "Here");
-        teamsInMatch.addAll(value.blueAllianceTeamNumbers);
-        Log.e("Test", "Here");
 
         boolean found = false;
+        try{
+            Log.e("Value", value.toString());
+        }catch (NullPointerException NPE){
+            Log.e("secondaryFilter", "NULL");
+        }
         if (secondaryFilter(value)) {
             if (searchString.length() == 0) {
                 found = true;

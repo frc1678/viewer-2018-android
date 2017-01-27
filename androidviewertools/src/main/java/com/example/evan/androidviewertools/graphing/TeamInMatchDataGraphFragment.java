@@ -38,7 +38,8 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
     public List<String> getLabels() {
         List<String> matchNumbersStrings = new ArrayList<>();
         for (TeamInMatchData teamInMatchData : Utils.getTeamInMatchDatasForTeamNumber(teamNumber)) {
-            matchNumbersStrings.add(teamInMatchData.matchNumber.toString());
+            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"matchNumber"));
+            matchNumbersStrings.add(Integer.toString(matchNumber));
         }
         return matchNumbersStrings;
     }

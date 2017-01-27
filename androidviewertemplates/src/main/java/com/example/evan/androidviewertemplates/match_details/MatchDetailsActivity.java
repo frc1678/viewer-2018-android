@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Vibrator;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -62,6 +63,7 @@ public class MatchDetailsActivity extends ViewerActivity {
         Match match = (Match)FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
         int[] teamCellIDs = {R.id.redTeamCell1, R.id.redTeamCell2, R.id.redTeamCell3, R.id.blueTeamCell1, R.id.blueTeamCell2, R.id.blueTeamCell3};
         List<Integer> allTeamNumbers = new ArrayList<>();
+        Log.e("matchDetailsRedTeams", match.redAllianceTeamNumbers.toString());
         allTeamNumbers.addAll(match.redAllianceTeamNumbers);
         allTeamNumbers.addAll(match.blueAllianceTeamNumbers);
         for (int i = 0; i < teamCellIDs.length; i++) {
@@ -83,6 +85,7 @@ public class MatchDetailsActivity extends ViewerActivity {
         TextView redAllianceWinChanceTextView = (TextView)findViewById(R.id.matchDetailsRedAllianceWinChance);
 
         redAllianceScoreTextView.setText(Utils.getMatchDisplayValue(match, "redScore"));
+        Log.e("matchDetailsRedScore", Utils.getMatchDisplayValue(match, "redScore").toString());
         redAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedRedScore"));
         redAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float)Utils.getObjectField(match, "calculatedData.redWinChance"), 0));
 

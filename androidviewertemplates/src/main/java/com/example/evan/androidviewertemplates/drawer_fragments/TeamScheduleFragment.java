@@ -9,6 +9,10 @@ import com.example.evan.androidviewertemplates.match_details.MatchDetailsActivit
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
+import com.example.evan.androidviewertools.utils.Utils;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -38,7 +42,11 @@ public class TeamScheduleFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            return (value.redAllianceTeamNumbers.contains(teamNumber) || value.blueAllianceTeamNumbers.contains(teamNumber));
+            List<Object> redTeams = Arrays.asList(Utils.getObjectField(value, "redAllianceTeamNumbers"));
+            List<Object> blueTeams = Arrays.asList(Utils.getObjectField(value, "blueAllianceTeamNumbers"));
+            List<Integer> redAllianceTeams = (List<Integer>)(Object)redTeams.get(0);
+            List<Integer> blueAllianceTeams = (List<Integer>)(Object)blueTeams.get(0);
+            return (redAllianceTeams.contains(teamNumber) || blueAllianceTeams.contains(teamNumber));
         }
 
         @Override

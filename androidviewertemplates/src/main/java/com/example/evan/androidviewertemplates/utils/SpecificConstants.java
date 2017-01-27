@@ -22,7 +22,7 @@ public class SpecificConstants extends Constants {
             {
                 //MATCH DETAILS ACTIVITY
                 put("calculatedData.actualSeed", "Seed");
-                put("calculated.disfunctionalPercentage", "Disfunctional");
+                put("calculatedData.disfunctionalPercentage", "Disfunctional");
                 //TEAM DETAILS SECTION ADAPTER
                     //MATCHES
                 put("matches", "Matches");
@@ -44,6 +44,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");
                     //HIGH LEVEL
                 put("calculatedData.firstPickAbility", "First Pick Ability");
+                put("calculatedData.secondPickAbility", "Second Pick Ability");
                 put("calculatedData.overallSecondPickAbility", "Overall Second Pick Ability");
                     //SUPER DATA
                 put("calculatedData.avgAgility", "Agility");
