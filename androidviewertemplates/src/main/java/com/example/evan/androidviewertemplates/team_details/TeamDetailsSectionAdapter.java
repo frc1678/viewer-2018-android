@@ -81,8 +81,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitProgrammingLanguage",
             "pitAvailableWeight",
             "pitOrganization",
-            "pitDidTankTread",
-            "pitCanCheesecake"
+            "pitDidUseStandardTankDrive",
+            "pitDidDemonstrateCheesecakePotential"
     };
 
     private String[] createListOnClick = {

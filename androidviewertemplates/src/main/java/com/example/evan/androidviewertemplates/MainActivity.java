@@ -12,8 +12,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.ScheduleFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
@@ -89,6 +93,18 @@ public class MainActivity extends ViewerActivity
                 fragment = new ScheduleFragment();
                 break;
             case 5:
+                fragment = new SeedingFragment();
+                break;
+            case 6:
+                fragment = new PredictedSeedingFragment();
+                break;
+            case 7:
+                fragment = new FirstPickAbilityFragment();
+                break;
+            case 8:
+                fragment = new OverallSecondPickFragment();
+                break;
+            case 9:
                 fragment = new SuperAbilityFragment();
                 break;
         }

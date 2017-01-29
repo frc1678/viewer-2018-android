@@ -9,11 +9,9 @@ import java.util.Map;
  * Created by evan on 6/18/16.
  */
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
-    public Integer teamNumber;
-    public Integer matchNumber;
     public CalculatedTeamInMatchData calculatedData;
 
-    public String scoutName;
+    public ArrayList<String> scoutName;
     public Boolean didLiftoff;
     public Boolean didStartDisabled;
     public Boolean didBecomeIncapacitated;

@@ -9,11 +9,6 @@ import java.util.List;
  */
 public class Match extends com.example.evan.androidviewertools.firebase_classes.Match {
     public CalculatedMatchData calculatedData;
-    public Integer number;
-    public Integer redScore;
-    public Integer blueScore;
-    public List<Integer> redAllianceTeamNumbers;
-    public List<Integer> blueAllianceTeamNumbers;
     public Boolean redDidStartAllRotors;
     public Boolean blueDidStartAllRotors;
     public Boolean redDidReachFortyKilopascals;

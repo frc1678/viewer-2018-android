@@ -7,11 +7,9 @@ import java.util.Map;
  */
 public class Team extends com.example.evan.androidviewertools.firebase_classes.Team {
     public CalculatedTeamData calculatedData;
-    public String name;
     public String pitSelectedImageURL;
     public String pitNotes;
     public String pitProgrammingLanguage;
-    public Integer number;
     public Integer pitAvailableWeight;
     public String pitOrganization;
     public Integer photoIndex;

@@ -256,7 +256,7 @@ public abstract class StarManager extends Service {
 
     public static Integer getCurrentMatchNumber() {
         try {
-            Log.e("currentMatchNumber", Integer.toString(currentMatchNumber));
+            //Log.e("currentMatchNumber", Integer.toString(currentMatchNumber));
         }catch (NullPointerException NPE){
             Log.e("currentMatchNumber", "IS NULL");
         }

@@ -62,7 +62,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
 
         Match match = (Match)getItem(position);
-        Log.e("match position", Integer.toString(position));
+        //Log.e("match position", Integer.toString(position));
 
 
 
@@ -141,11 +141,11 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         for(int i = 0; i < tempBlueAllianceTeams.size(); i++){
             teamsInMatch.add(tempBlueAllianceTeams.get(i));
         }
-        Log.e("Please Reach", "Here");
+        //Log.e("Please Reach", "Here");
 
         boolean found = false;
         try{
-            Log.e("Value", value.toString());
+            //Log.e("Value", value.toString());
         }catch (NullPointerException NPE){
             Log.e("secondaryFilter", "NULL");
         }
