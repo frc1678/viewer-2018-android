@@ -34,7 +34,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
                     "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime"},
             {"calculatedData.liftoffPercentage"},
             {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility"},
-            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
+            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense", "calculatedData.avgDrivingAbility"},
             {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidUseStandardTankDrive", "pitDidDemonstrateCheesecakePotential"}
     };
 
@@ -63,8 +63,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitProgrammingLanguage",
             "pitAvailableWeight",
             "pitOrganization",
-            "pitDidTankTread",
-            "pitCanCheesecake"
+            "pitDidUseStandardTankDrive",
+            "pitDidDemonstrateCheesecakePotential"
     };
 
     private String[] shouldDisplayAsLongText = {

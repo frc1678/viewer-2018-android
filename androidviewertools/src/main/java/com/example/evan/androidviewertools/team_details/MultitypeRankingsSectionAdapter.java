@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -99,6 +100,8 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
             }
         }
         if (new ArrayList<>(Arrays.asList(getPercentageFields())).contains(fieldKey)) {
+            //Log.e(fieldKey, Utils.getObjectField(getObject(), fieldKey).toString());
+            Log.e("fieldKey", fieldKey);
             return Utils.dataPointToPercentage((Float)Utils.getObjectField(getObject(), fieldKey), 1);
         }
         return Utils.getDisplayValue(object, fieldKey);

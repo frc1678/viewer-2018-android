@@ -28,6 +28,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numGearsEjectedAuto;
     public Integer numHoppersOpenedAuto;
     public Boolean didReachBaselineAuto;
+    public Boolean didReachBaseLineAuto;
     public Boolean didPotentiallyConflictingAuto;
     public ArrayList<Map<String, Object>> highShotTimesForBoilerAuto;
     public ArrayList<Map<String, Object>> lowShotTimesForBoilerAuto;

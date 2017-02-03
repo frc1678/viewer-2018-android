@@ -31,6 +31,7 @@ public class CalculatedTeamData extends Object {
 	public Float avgBallControl;
 	public Float avgGearControl;
 	public Float avgDefense;
+	public Float avgDrivingAbility;
 	public Float liftoffAbility;
 	public Float sdLiftoffAbility;
 	public Float liftoffPercentage;
@@ -51,7 +52,7 @@ public class CalculatedTeamData extends Object {
 	public Map<String, Float> hoppersOpenedPercentagesTele;
 	public Integer predictedSeed;
 	public Integer actualSeed;
-	public Integer baselineReachedPercentage;
+	public Float baselineReachedPercentage;
 	public Integer actualNumRPs;
 	public Map <String, Integer> avgGearsPlacedByLiftAuto;
 	public Map <String, Integer> avgGearsPlacedByLiftTele;

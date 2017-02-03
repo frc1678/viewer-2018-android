@@ -23,6 +23,7 @@ public class RankingsActivity extends ViewerActivity {
     public void onCreate() {
         setContentView(R.layout.activity_rankings);
         String field = getIntent().getStringExtra("field");
+        Log.e("graphing field", field);
         setTitle(SpecificConstants.KEYS_TO_TITLES.get(field));
         context = this;
 

@@ -52,6 +52,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgBallControl", "Ball Control");
                 put("calculatedData.avgGearControl", "Gear Control");
                 put("calculatedData.avgDefense", "Defense");
+                put("calculatedData.avgDrivingAbility", "Driving");
                     //PIT DATA
                 put("pitSelectedImageURL", "Selected Image Url");
                 put("pitNotes", "Notes");
@@ -85,6 +86,13 @@ public class SpecificConstants extends Constants {
                 put("rankGearControl", "Gear Control");
                 put("rankBallControl", "Ball Control");
                 put("rankDefense", "Defense");
+                //Super data rank list
+                put("CalculatedData.avgAgility", "Agility");
+                put("CalculatedData.avgSpeed", "Speed");
+                put("CalculatedData.avgBallControl", "Ball Control");
+                put("CalculatedData.avgGearControl", "Gear Control");
+                put("CalculatedData.avgDefense", "Defense");
+                put("CalculatedData.avgDrivingAbility", "Driving");
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
@@ -100,6 +108,12 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.disabledPercentage", "calculatedData.disabledPercentage");
                 put("calculatedData.incapacitatedPercentage", "calculatedData.incapacitatedPercentage");
                 put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");
+                /*put("calculatedData.avgAgility", "calculatedData.avgAgility");
+                put("calculatedData.avgSpeed", "calculatedData.avgSpeed");
+                put("calculatedData.avgBallControl", "calculatedData.avgBallControl");
+                put("calculatedData.avgGearControl", "calculatedData.avgGearControl");
+                put("calculatedData.avgDefense", "calculatedData.avgDefense");
+                put("calculatedData.avgDrivingAbility", "calculatedData.avgDrivingAbility");*/
 
             }
         };
