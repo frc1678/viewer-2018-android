@@ -25,6 +25,10 @@
         </activity>
         <activity android:name="com.example.evan.androidviewertemplates.graphing.RankingsActivity">
         </activity>
+        <activity android:name="com.example.evan.androidviewertemplates.team_details.MatchesActivity">
+        </activity>
+        <activity android:name="com.example.evan.androidviewertemplates.team_in_match_details.TeamInMatchDetailsActivity">
+        </activity>
     </application>
 
 </manifest>

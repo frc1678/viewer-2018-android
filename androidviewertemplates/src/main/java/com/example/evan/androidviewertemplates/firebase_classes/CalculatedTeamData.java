@@ -1,5 +1,6 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -48,6 +49,7 @@ public class CalculatedTeamData extends Object {
 	public Float RScoreSpeed;
 	public Float avgHoppersOpenedAuto;
 	public Float avgHoppersOpenedTele;
+	public ArrayList<Map<String,Map<Integer,ArrayList<CalculatedTeamData>>>> firstPickAllRotorsTurningChance;
 	public Map<String, Float> hoppersOpenedPercentagesAuto;
 	public Map<String, Float> hoppersOpenedPercentagesTele;
 	public Integer predictedSeed;

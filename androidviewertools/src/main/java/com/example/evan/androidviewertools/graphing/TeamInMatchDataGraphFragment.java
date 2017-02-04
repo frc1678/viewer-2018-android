@@ -2,6 +2,7 @@ package com.example.evan.androidviewertools.graphing;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.evan.androidviewertools.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertools.utils.Utils;
@@ -20,10 +21,23 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //Log.e("REACHED", "HERE");
         teamNumber = getArguments().getInt("team", 0);
+        //Log.e("teamNumber", Integer.toString(teamNumber));
         field = getArguments().getString("field");
+        //Log.e("field", field);
         displayAsPercentage = getArguments().getBoolean("displayAsPercentage");
+        //Log.e("displayAsPercentage", String.valueOf(displayAsPercentage));
+    }
+    @Override
+    public void onDestroy(){
+        Log.e("on Destroy", "true");
+        super.onDestroy();
+    }
+    @Override
+    public void onPause(){
+        Log.e("on Pause", "true");
+        super.onPause();
     }
 
     @Override
@@ -40,6 +54,7 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
         for (TeamInMatchData teamInMatchData : Utils.getTeamInMatchDatasForTeamNumber(teamNumber)) {
             Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"matchNumber"));
             matchNumbersStrings.add(Integer.toString(matchNumber));
+            Log.e("getLabels", Integer.toString(matchNumber));
         }
         return matchNumbersStrings;
     }
@@ -47,17 +62,29 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
     @Override
     public List<Float> getValues() {
         List<Float> dataValues = new ArrayList<>();
+        //Log.e("object", Utils.getTeamInMatchDatasForTeamNumber(teamNumber).toString());
+        //Log.e("teamNumber", Integer.toString(teamNumber));
         for (TeamInMatchData teamInMatchData : Utils.getTeamInMatchDatasForTeamNumber(teamNumber)) {
+            Log.e("object", teamInMatchData.toString());
             Object value =  Utils.getObjectField(teamInMatchData, field);
+            //Integer value1 = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData, "rankAgility"));
+            Log.e("teamNumber", Integer.toString(teamNumber));
+            Log.e("field", field);
+            Log.e("value", String.valueOf(value));
             if (value instanceof Integer) {
+                Log.e("value", "is integer");
                 dataValues.add(((Integer) value).floatValue());
             } else if (value instanceof Boolean) {
-                dataValues.add((Boolean)value ? 1f : 0f);
+                Log.e("value", "is boolean");
+                dataValues.add((Boolean) value ? 1f : 0f);
             } else {
                 if (displayAsPercentage && value != null) {
+                    Log.e("percentage", "true");
                     dataValues.add((Float) value * 100);
                     continue;
+
                 }
+                Log.e("test","end");
                 dataValues.add((Float) value);
             }
         }

@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.team_details;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -206,11 +207,13 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
 
     @Override
     public Intent getRankActivityIntent() {
+        Log.e("ranking intent", "called");
         return new Intent(context, TeamRankingsActivity.class);
     }
 
     @Override
     public Intent getGraphActivityIntent() {
+        Log.e("graph intent", "called");
         return new Intent(context, RankingsActivity.class);
     }
 

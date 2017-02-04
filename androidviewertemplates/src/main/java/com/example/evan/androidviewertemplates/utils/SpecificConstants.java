@@ -97,23 +97,23 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
-                put("calculatedData.avgGearsPlacedAuto", "calculatedData.avgGearsPlacedAuto");
-                put("calculatedData.avgHighShotsAuto", "calculatedData.avgHighShotsAuto");
-                put("calculatedData.avgLowShotsAuto", "calculatedData.avgLowShotsAuto");
-                put("calculatedData.avgGearsPlacedTele", "calculatedData.avgGearsPlacedTele");
-                put("calculatedData.avgHighShotsTele", "calculatedData.avgHighShotsTele");
-                put("calculatedData.avgLowShotsTele", "calculatedData.avgLowShotsTele");
-                put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
+                put("calculatedData.avgGearsPlacedAuto", "numGearsPlacedAuto");
+                put("calculatedData.avgHighShotsAuto", "numHighShotsAuto");
+                put("calculatedData.avgLowShotsAuto", "numLowShotsAuto");
+                put("calculatedData.avgGearsPlacedTele", "numGearsPlacedTele");
+                put("calculatedData.avgHighShotsTele", "numHighShotsTele");
+                put("calculatedData.avgLowShotsTele", "numLowShotsTele");
+                /*put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
                 put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
                 put("calculatedData.disabledPercentage", "calculatedData.disabledPercentage");
                 put("calculatedData.incapacitatedPercentage", "calculatedData.incapacitatedPercentage");
-                put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");
-                /*put("calculatedData.avgAgility", "calculatedData.avgAgility");
-                put("calculatedData.avgSpeed", "calculatedData.avgSpeed");
-                put("calculatedData.avgBallControl", "calculatedData.avgBallControl");
-                put("calculatedData.avgGearControl", "calculatedData.avgGearControl");
-                put("calculatedData.avgDefense", "calculatedData.avgDefense");
-                put("calculatedData.avgDrivingAbility", "calculatedData.avgDrivingAbility");*/
+                put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");*/
+                put("calculatedData.avgAgility", "rankAgility");
+                put("calculatedData.avgSpeed", "rankSpeed");
+                put("calculatedData.avgBallControl", "rankBallControl");
+                put("calculatedData.avgGearControl", "rankGearControl");
+                put("calculatedData.avgDefense", "rankDefense");
+                put("calculatedData.avgDrivingAbility", "rankDrivingAbility");
 
             }
         };

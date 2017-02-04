@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.team_in_match_details;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.util.Log;
 
 import com.applidium.headerlistview.HeaderListView;
 import com.example.evan.androidviewertemplates.MainActivity;
@@ -22,6 +23,7 @@ public class TeamInMatchDetailsActivity extends ViewerActivity {
     public void onCreate() {
         setContentView(R.layout.activity_section_listview);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Log.e("intent", "success");
         teamNumber = getIntent().getIntExtra("team", 1678);
         matchNumber = getIntent().getIntExtra("match", 1);
         setTitle("Team " + teamNumber + " In Match " + matchNumber + " Details");

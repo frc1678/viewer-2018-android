@@ -124,15 +124,18 @@ public class Utils {
     public static List<TeamInMatchData> getTeamInMatchDatasForTeamNumber(Integer teamNumber) {
         List<TeamInMatchData> teamInMatchDatas = new ArrayList<>();
         for (TeamInMatchData teamInMatchData : FirebaseLists.teamInMatchDataList.getValues()) {
-            teamNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"teamNumber"));
-            if (teamNumber.equals(teamNumber)) {
+            Log.e("teamNumber", Integer.toString(teamNumber));
+            Integer number = (Integer) Utils.getObjectField(teamInMatchData,"teamNumber");
+            Log.e("number", Integer.toString(number));
+            //DRINK BLEACH
+            if (number.equals(teamNumber)) {
                 teamInMatchDatas.add(teamInMatchData);
             }
         }
 
         Collections.sort(teamInMatchDatas, new ObjectFieldComparator("matchNumber", true));
         return teamInMatchDatas;
-    }
+    }//DRINK BLEACH//DRINK BLEACH
 
     public static List<Integer> getMatchNumbersForTeamNumber(Integer teamNumber) {
         List<Integer> matchNumbers = new ArrayList<>();
