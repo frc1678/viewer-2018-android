@@ -1,5 +1,6 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -10,10 +11,12 @@ public class Team extends com.example.evan.androidviewertools.firebase_classes.T
     public String pitSelectedImageURL;
     public String pitNotes;
     public String pitProgrammingLanguage;
-    public Integer pitAvailableWeight;
+    public String pitSelectedImageName;
     public String pitOrganization;
     public Integer photoIndex;
+    public Integer pitAvailableWeight;
     public Map<String, String> pitAllImageURLs;
+    public Map<String, String> imageKeys;
     public Boolean pitDidUseStandardTankDrive;
     public Boolean pitDidDemonstrateCheesecakePotential;
 }

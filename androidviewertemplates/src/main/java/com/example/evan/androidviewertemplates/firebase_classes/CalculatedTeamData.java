@@ -47,15 +47,19 @@ public class CalculatedTeamData extends Object {
 	public Float RScoreAgility;
 	public Float RScoreDefense;
 	public Float RScoreSpeed;
+	public Float RScoreDrivingAbility;
 	public Float avgHoppersOpenedAuto;
 	public Float avgHoppersOpenedTele;
-	public ArrayList<Map<String,Map<Integer,ArrayList<CalculatedTeamData>>>> firstPickAllRotorsTurningChance;
-	public Map<String, Float> hoppersOpenedPercentagesAuto;
-	public Map<String, Float> hoppersOpenedPercentagesTele;
+	public Float baselineReachedPercentage;
+	public Float firstPickRotorBonusChance;
 	public Integer predictedSeed;
 	public Integer actualSeed;
-	public Float baselineReachedPercentage;
 	public Integer actualNumRPs;
 	public Map <String, Integer> avgGearsPlacedByLiftAuto;
 	public Map <String, Integer> avgGearsPlacedByLiftTele;
+	public Map<String, Float> hoppersOpenedPercentagesAuto;
+	public Map<String, Float> hoppersOpenedPercentagesTele;
+	public ArrayList<String> autoShootingPositions;
+	public ArrayList<Map<String,Map<Integer,ArrayList<CalculatedTeamData>>>> firstPickAllRotorsTurningChance;
+
 }
