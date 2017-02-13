@@ -97,14 +97,14 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
-                put("calculatedData.avgGearsPlacedAuto", "numGearsPlacedAuto");
-                put("calculatedData.avgHighShotsAuto", "numHighShotsAuto");
-                put("calculatedData.avgLowShotsAuto", "numLowShotsAuto");
-                put("calculatedData.avgGearsPlacedTele", "numGearsPlacedTele");
-                put("calculatedData.avgHighShotsTele", "numHighShotsTele");
-                put("calculatedData.avgLowShotsTele", "numLowShotsTele");
-                /*put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
-                put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
+                put("calculatedData.avgGearsPlacedAuto", "calculatedData.numGearsPlacedAuto");
+                put("calculatedData.avgHighShotsAuto", "calculatedData.numHighShotsAuto");
+                put("calculatedData.avgLowShotsAuto", "calculatedData.numLowShotsAuto");
+                put("calculatedData.avgGearsPlacedTele", "calculatedData.numGearsPlacedTele");
+                put("calculatedData.avgHighShotsTele", "calculatedData.numHighShotsTele");
+                put("calculatedData.avgLowShotsTele", "calculatedData.numLowShotsTele");
+                put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
+                /*put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
                 put("calculatedData.disabledPercentage", "calculatedData.disabledPercentage");
                 put("calculatedData.incapacitatedPercentage", "calculatedData.incapacitatedPercentage");
                 put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");*/

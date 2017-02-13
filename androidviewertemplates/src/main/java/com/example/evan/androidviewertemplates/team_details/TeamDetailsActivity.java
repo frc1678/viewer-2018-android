@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -114,6 +115,7 @@ public class TeamDetailsActivity extends ViewerActivity {
     }
 
     public void reloadTeamImage() {
+        Log.e("reload", "team image");
         try {
             File file = new File(getApplicationContext().getFilesDir(), "image_" + teamNumber.toString());
 
@@ -125,7 +127,7 @@ public class TeamDetailsActivity extends ViewerActivity {
             DisplayMetrics metrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metrics);
             Float scale =  (float) metrics.widthPixels / (float)tmpBitmap.getWidth();
-            Log.i("Team Image Scale", scale.toString());
+            Log.e("Team Image Scale", scale.toString());
             Matrix matrix = new Matrix();
             matrix.postScale(scale, scale);
             bitmap = Bitmap.createBitmap(tmpBitmap, 0, 0,tmpBitmap.getWidth(), tmpBitmap.getHeight(), matrix, true);
@@ -141,6 +143,39 @@ public class TeamDetailsActivity extends ViewerActivity {
             Log.e("test", "ERROR: " + e.getMessage());
         }
     }
+    /*public void getImage(final ImageView view){
+        final StorageRe imageRef = storageRef.child(userId).child(title).child("image1");
+        imageRef.getBytes(Constants.ONE_MEGABYTE).addOnCompleteListener(new OnCompleteListener<byte[]>() {
+            @Override
+            public void onComplete(@NonNull Task<byte[]> task) {
+                Log.e("completion", "SUCCCESS!");
+
+                imageRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Log.e("bytes", "SUCCESS");
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inScaled = false;
+                        options.inJustDecodeBounds = false;
+                        options.inDither = false;
+                        options.inSampleSize = 0;
+                        options.inScaled = false;
+                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                        displayBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+                        Log.e("bitmap", displayBitmap.toString());
+                        view.setImageBitmap(displayBitmap);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                        Log.e("getting image", "failed");
+                    }
+                });
+            }
+        });
+    }*/
+
 
     @Override
     protected void onDestroy() {

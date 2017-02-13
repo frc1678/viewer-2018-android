@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.team_in_match_details;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -128,6 +129,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     @Override
     public List<Object> getObjectList() {
         List<Object> objects = new ArrayList<>();
+        Log.e("team NUMBER", String.valueOf(teamNumber));
         objects.addAll(Utils.getTeamInMatchDatasForTeamNumber(teamNumber));
         return objects;
     }

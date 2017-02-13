@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keyalias'
+            keyPassword 'Sam1007'
+            storeFile file('/Users/sam/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "24.0.0"
 
@@ -30,4 +38,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile project(':androidviewertemplates')
     compile project(':androidviewertools')
+    /*compile 'com.google.firebase:firebase-database:9.0.2'
+    compile 'com.google.firebase:firebase-database:9.0.2'
+    compile 'com.google.firebase:firebase-storage:9.0.2'
+    compile 'com.google.firebase:firebase-auth:9.0.1'*/
 }
+//apply plugin: 'com.google.gms.google-services'

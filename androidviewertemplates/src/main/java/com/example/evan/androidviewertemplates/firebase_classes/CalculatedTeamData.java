@@ -60,6 +60,7 @@ public class CalculatedTeamData extends Object {
 	public Map<String, Float> hoppersOpenedPercentagesAuto;
 	public Map<String, Float> hoppersOpenedPercentagesTele;
 	public ArrayList<String> autoShootingPositions;
+	public ArrayList<String> gearScoringPositionsAuto;
 	public ArrayList<Map<String,Map<Integer,ArrayList<CalculatedTeamData>>>> firstPickAllRotorsTurningChance;
 
 }

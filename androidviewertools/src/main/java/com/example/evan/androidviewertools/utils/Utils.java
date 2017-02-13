@@ -126,10 +126,14 @@ public class Utils {
         for (TeamInMatchData teamInMatchData : FirebaseLists.teamInMatchDataList.getValues()) {
             Log.e("teamNumber", Integer.toString(teamNumber));
             Integer number = (Integer) Utils.getObjectField(teamInMatchData,"teamNumber");
-            Log.e("number", Integer.toString(number));
+            //Log.e("number", Integer.toString(number));
             //DRINK BLEACH
-            if (number.equals(teamNumber)) {
-                teamInMatchDatas.add(teamInMatchData);
+            try {
+                if (number.equals(teamNumber)) {
+                    teamInMatchDatas.add(teamInMatchData);
+                }
+            }catch (NullPointerException NPE){
+
             }
         }
 
