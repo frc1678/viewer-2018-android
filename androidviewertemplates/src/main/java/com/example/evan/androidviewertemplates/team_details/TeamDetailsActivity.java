@@ -144,7 +144,7 @@ public class TeamDetailsActivity extends ViewerActivity {
         }
     }
     /*public void getImage(final ImageView view){
-        final StorageRe imageRef = storageRef.child(userId).child(title).child("image1");
+        final StorageRef imageRef = storageRef.child(userId).child(title).child("image1");
         imageRef.getBytes(Constants.ONE_MEGABYTE).addOnCompleteListener(new OnCompleteListener<byte[]>() {
             @Override
             public void onComplete(@NonNull Task<byte[]> task) {

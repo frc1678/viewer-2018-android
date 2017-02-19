@@ -44,8 +44,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");
                     //HIGH LEVEL
                 put("calculatedData.firstPickAbility", "First Pick Ability");
-                put("calculatedData.secondPickAbility", "Second Pick Ability");
-                put("calculatedData.overallSecondPickAbility", "Overall Second Pick Ability");
+                put("calculatedData.overallSecondPickAbility", "Second Pick Ability");
                     //SUPER DATA
                 put("calculatedData.avgAgility", "Agility");
                 put("calculatedData.avgSpeed", "Speed");
@@ -104,10 +103,10 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgHighShotsTele", "calculatedData.numHighShotsTele");
                 put("calculatedData.avgLowShotsTele", "calculatedData.numLowShotsTele");
                 put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
-                /*put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
+                put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
                 put("calculatedData.disabledPercentage", "calculatedData.disabledPercentage");
                 put("calculatedData.incapacitatedPercentage", "calculatedData.incapacitatedPercentage");
-                put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");*/
+                put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");
                 put("calculatedData.avgAgility", "rankAgility");
                 put("calculatedData.avgSpeed", "rankSpeed");
                 put("calculatedData.avgBallControl", "rankBallControl");
