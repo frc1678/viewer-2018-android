@@ -2,6 +2,7 @@ package com.example.evan.androidviewertools.team_ranking;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
@@ -19,7 +20,10 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public boolean filter(Team value, String scope) {
-        Integer teamNumber = (Integer) Utils.getObjectField(value, "number");
+        String teamName = (String)Utils.getObjectField(value, "name");
+        Integer teamNumber = (Integer)Utils.getObjectField(value, "number");
+        Log.e("teamNumber", teamNumber + "");
+        Log.e("teamName", teamName);
         String teamNumberString = Integer.toString(teamNumber);
         return teamNumberString.indexOf(searchString) == 0;
     }

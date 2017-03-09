@@ -8,9 +8,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.ActionBar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +49,7 @@ public class TeamDetailsActivity extends ViewerActivity {
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_section_listview);
+        setActionBarColor();
         teamNumber = getIntent().getIntExtra("teamNumber", 1678);
         setTitle("Team " + teamNumber + " Details");
 
@@ -87,6 +90,13 @@ public class TeamDetailsActivity extends ViewerActivity {
 
         reload();
         reloadTeamImage();
+    }
+    public void setActionBarColor(){
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
+        if(actionBar!=null) {
+            actionBar.setBackgroundDrawable(colorDrawable);
+        }
     }
 
     public void reload() {

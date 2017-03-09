@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -57,6 +59,14 @@ public class MatchDetailsActivity extends ViewerActivity {
         TextView matchNumberTextView = (TextView)findViewById(R.id.matchDetailsMatchTitleTextView);
         matchNumberTextView.setOnLongClickListener(new StarLongClickListener());
         updateUI();
+        setActionBarColor();
+    }
+    public void setActionBarColor(){
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
+        if(actionBar!=null) {
+            actionBar.setBackgroundDrawable(colorDrawable);
+        }
     }
 
     private void updateUI() {

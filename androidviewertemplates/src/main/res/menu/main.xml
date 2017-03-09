@@ -4,7 +4,23 @@
 <!--
     <item android:id="@+id/action_example" android:title="@string/action_example"
         android:showAsAction="withText|ifRoom" />-->
-    <item android:id="@+id/action_settings" android:title="Settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        app:showAsAction="always"
+        android:title=""
+        android:icon="@drawable/elipse">
+        <menu>
+           <!--
+            <item
+                android:id="@+id/homePage"
+                android:orderInCategory="101"
+                android:title="Home Page"
+                app:showAsAction = "always"/>
+                -->
 
+            <item android:id="@+id/refresh" android:title="Refresh"
+                android:orderInCategory="100" app:showAsAction="always"/>
+        </menu>
+
+    </item>
 </menu>

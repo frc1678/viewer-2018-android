@@ -11,7 +11,7 @@ import java.util.Map;
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
 
-    public ArrayList<String> scoutName;
+    public ArrayList<String> scoutName; //<---So sketchy on firebase
     public Boolean didLiftoff;
     public Boolean didStartDisabled;
     public Boolean didBecomeIncapacitated;

@@ -29,9 +29,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     private String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
             {"calculatedData.disabledPercentage", "calculatedData.incapacitatedPercentage"},
-            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
+            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgGearLoaderIntakesAuto", "calculatedData.avgHighShotsAuto",
                     "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
-            {"calculatedData.avgGearsPlacedTele", "calculatedData.avgHighShotsTele",
+            {"calculatedData.avgGearsPlacedTele", "calculatedData.avgGearLoaderIntakesTele","calculatedData.avgHighShotsTele",
                     "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime"},
             {"calculatedData.liftoffPercentage"},
             {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility"},

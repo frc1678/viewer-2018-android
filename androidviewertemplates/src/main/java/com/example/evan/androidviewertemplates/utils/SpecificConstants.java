@@ -35,11 +35,14 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgHighShotsAuto", "Avg High Shots");
                 put("calculatedData.avgLowShotsAuto", "Avg Low Shots");
                 put("calculatedData.baselineReachedPercentage", "Baseline Reached Percentage");
+                put("calculatedData.avgGearLoaderIntakesAuto", "Avg Gear Loader Intakes");
+
                     //TELEOP
                 put("calculatedData.avgGearsPlacedTele", "Avg Gears Placed");
                 put("calculatedData.avgHighShotsTele", "Avg High Shots");
                 put("calculatedData.avgLowShotsTele", "Avg Low Shots");
                 put("calculatedData.avgKeyShotTime", "Avg Key Shot Time(Sec.)");
+                put("calculatedData.avgGearLoaderIntakesTele", "Avg Gear Loader Intakes");
                     //LIFTOFF
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");
                     //HIGH LEVEL
@@ -66,13 +69,13 @@ public class SpecificConstants extends Constants {
                 put("matchNumber", "Match Number");
                     //Auto
                 put("calculatedData.numGearsPlacedAuto", "Gears Placed");
-                put("calculatedData.numHoppersOpenedAuto", "Num. Hoppers Opened");
+                put("numHoppersOpenedAuto", "Num. Hoppers Opened");
                 put("numGearsFumbledAuto", "Gears Fumbled");
                 put("numGearsEjectedAuto", "Gears Ejected");
                 put("didReachBaselineAuto", "Reach Baseline?");
                     //Tele
                 put("calculatedData.numGearsPlacedTele", "Gears Placed");
-                put("calculatedData.numHoppersOpenedTele", "Num. Hoppers Opened");
+                put("numHoppersOpenedTele", "Num. Hoppers Opened");
                 put("numGearGroundIntakesTele", "Gear Ground Intakes");
                 put("numGearLoaderIntakesTele", "Gear Loader Intakes");
                 put("numGearsFumbledTele", "Gears Fumbled");

@@ -2,9 +2,12 @@ package com.example.evan.androidviewertemplates.graphing;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 
 import com.example.evan.androidviewertemplates.MainActivity;
@@ -27,6 +30,7 @@ public class RankingsActivity extends ViewerActivity {
         setTitle(SpecificConstants.KEYS_TO_TITLES.get(field));
         Log.e("setTitle", SpecificConstants.KEYS_TO_TITLES.get(field));
         context = this;
+        setActionBarColor();
 
         Fragment fragment = new graphingFrag();
         Bundle argumentsBundle = new Bundle();
@@ -42,6 +46,13 @@ public class RankingsActivity extends ViewerActivity {
         fragmentManager.beginTransaction().replace(R.id.rankingsLinearLayout, fragment, "").commit();
         Log.e("after transaction", "true");
 
+    }
+    public void setActionBarColor(){
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
+        if(actionBar!=null) {
+            actionBar.setBackgroundDrawable(colorDrawable);
+        }
     }
 
 

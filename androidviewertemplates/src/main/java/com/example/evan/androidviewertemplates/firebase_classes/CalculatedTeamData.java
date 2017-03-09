@@ -52,6 +52,8 @@ public class CalculatedTeamData extends Object {
 	public Float avgHoppersOpenedTele;
 	public Float baselineReachedPercentage;
 	public Float firstPickRotorBonusChance;
+	public Float avgGearLoaderIntakesTele;
+	public Float avgGearLoaderIntakesAuto;
 	public Integer predictedSeed;
 	public Integer actualSeed;
 	public Integer actualNumRPs;
