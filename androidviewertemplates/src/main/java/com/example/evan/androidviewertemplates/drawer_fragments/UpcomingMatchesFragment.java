@@ -35,8 +35,7 @@ public class UpcomingMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            Integer number = Integer.valueOf((Integer) Utils.getObjectField(value, "number"));
-            return number > StarManager.getCurrentMatchNumber();
+            return (Integer)Utils.getObjectField(value, "blueScore") == null;
         }
 
         @Override

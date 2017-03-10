@@ -38,7 +38,7 @@ public abstract class StarManager extends Service {
     public abstract Class<? extends Match> getMatchClass();
 
     private NotificationManager mNM;
-    private static Integer currentMatchNumber = Utils.getLastMatchPlayed();
+    private static Integer currentMatchNumber;
     private static Integer nextImportantMatch = -1;
     public static List<Integer> importantMatches = new ArrayList<>();
     public static List<Integer> starredTeams = new ArrayList<>();
@@ -255,11 +255,6 @@ public abstract class StarManager extends Service {
     }
 
     public static Integer getCurrentMatchNumber() {
-        try {
-            //Log.e("currentMatchNumber", Integer.toString(currentMatchNumber));
-        }catch (NullPointerException NPE){
-            Log.e("currentMatchNumber", "IS NULL");
-        }
         return currentMatchNumber;
     }
 
@@ -268,11 +263,11 @@ public abstract class StarManager extends Service {
         RemoteViews notificationRemoteViews = new RemoteViews(getApplicationContext().getPackageName(), R.layout.match_notification);
 
         if (matchesFromNow.equals(0)) {
-            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + match.number + ", starting now!");
+            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + Integer.toString((Integer) (Utils.getObjectField(match, "number"))) + ", starting now!");
         } else if (matchesFromNow.equals(1)) {
-            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + match.number + ", starting in " + matchesFromNow.toString() + " match!");
+            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + Integer.toString((Integer)(Utils.getObjectField(match,"number"))) + ", starting in " + matchesFromNow.toString() + " match!");
         } else {
-            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + match.number + ", starting in " + matchesFromNow.toString() + " matches!");
+            notificationRemoteViews.setTextViewText(R.id.matchNotificationTitleTextView, "Don't miss Q" + Integer.toString((Integer) (Utils.getObjectField(match, "number"))) + ", starting in " + matchesFromNow.toString() + " matches!");
         }
         notificationRemoteViews.setTextViewText(R.id.matchNumber, match.number.toString());
 

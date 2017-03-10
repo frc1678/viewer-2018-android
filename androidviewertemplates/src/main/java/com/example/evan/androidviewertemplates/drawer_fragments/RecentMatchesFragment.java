@@ -21,7 +21,7 @@ public class RecentMatchesFragment extends MatchesFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.e("Recent", "started");
         setListAdapter(new RecentMatchesAdapter(getActivity().getApplicationContext()));
     }
 
@@ -37,9 +37,22 @@ public class RecentMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            Integer number = Integer.valueOf((Integer) Utils.getObjectField(value, "number"));
 
-            return number <= StarManager.getCurrentMatchNumber();
+           /*try {
+               if((Integer)Utils.getObjectField(value, "blueScore") != null) {
+                   Integer number = ((Integer) Utils.getObjectField(value, "number"));
+                   Log.e("number", number + "");
+                   return number <= StarManager.getCurrentMatchNumber();
+               }else{
+                   return false;
+               }
+            }catch (NullPointerException NPE){
+                Log.e("number", "IS NULL");
+            }
+            finally {
+                return true;
+            }*/
+            return (Integer)Utils.getObjectField(value, "blueScore") != null;
         }
 
         @Override

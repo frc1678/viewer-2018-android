@@ -103,9 +103,10 @@ public class Utils {
     public static Integer getLastMatchPlayed() {
         Integer lastMatch = 0;
         for (Match match : FirebaseLists.matchesList.getValues()) {
-            if((match.redScore != null) || (match.blueScore != null)) {
-                Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
-                lastMatch = matchNumber;
+            Integer redScore = (Integer)(Utils.getObjectField(match,"redScore"));
+            Integer blueScore = (Integer)(Utils.getObjectField(match,"blueScore"));
+            if(redScore != null || blueScore != null) {
+                lastMatch = ((Integer)(Utils.getObjectField(match,"number")));;
             }
         }
 
@@ -144,7 +145,7 @@ public class Utils {
     public static List<Integer> getMatchNumbersForTeamNumber(Integer teamNumber) {
         List<Integer> matchNumbers = new ArrayList<>();
         for (TeamInMatchData teamInMatchData : getTeamInMatchDatasForTeamNumber(teamNumber)) {
-            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData,"matchNumber"));
+            Integer matchNumber = (Integer) Utils.getObjectField(teamInMatchData,"matchNumber");
             matchNumbers.add(matchNumber);
         }
 
