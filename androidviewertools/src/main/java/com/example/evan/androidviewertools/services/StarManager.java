@@ -69,7 +69,9 @@ public abstract class StarManager extends Service {
                     //this means child added event, we don't care
                     return;
                 }
-                if (previousValue.number == currentMatchNumber) {
+                Log.e("previousValue", previousValue.toString());
+                Log.e("previousValue.number", previousValue.number + "");
+                if (previousValue.number.equals(currentMatchNumber)) {
                     notifyOfNewMatchIfNeeded(previousValue);
                 }
             }
@@ -130,6 +132,7 @@ public abstract class StarManager extends Service {
     }
     public static void addImportantMatchWithoutPreferences(Integer matchNumber) {
         if (!importantMatches.contains(matchNumber)) {
+            Log.e("new important match", "added");
             importantMatches.add(matchNumber);
             Collections.sort(importantMatches);
         }
@@ -319,5 +322,6 @@ public abstract class StarManager extends Service {
         NotificationManager mNotificationManager =
                 (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(mId, mBuilder.build());
+        Log.e("notification", "built");
     }
 }

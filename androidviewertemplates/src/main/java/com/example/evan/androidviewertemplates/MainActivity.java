@@ -1,7 +1,9 @@
 package com.example.evan.androidviewertemplates;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +12,7 @@ import android.os.Looper;
 import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
@@ -34,9 +37,11 @@ import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.services.StarManager;
+import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
+import com.firebase.client.Firebase;
 
-import org.jcodec.common.DictionaryCompressor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,6 +66,7 @@ public class MainActivity extends ViewerActivity
     private Fragment fragment;
     private FragmentManager fragmentManager;
     private Integer latestFragmentId;
+    private BroadcastReceiver starReceiver;
 
     @Override
     public void onCreate() {
@@ -79,6 +85,7 @@ public class MainActivity extends ViewerActivity
         initializeDrawer();
         setActionBarColor();
         Log.e("test", "Logcat is up!");
+        broadcastListener();
 
     }
     public void initializeDrawer(){
@@ -264,5 +271,16 @@ public class MainActivity extends ViewerActivity
         Log.e("refreshed", "true");
 
     }
+    public void broadcastListener(){
+        starReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                //Log.e("important matches", StarManager.importantMatches.toString());
+                Log.e("recent match", Utils.getLastMatchPlayed() + " ");
+            }
+        };
+        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(starReceiver, new IntentFilter(SpecificConstants.NEW_MATCH_PLAYED_ACTION));
+    }
+
 }
 

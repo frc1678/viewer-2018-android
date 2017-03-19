@@ -29,14 +29,14 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     private String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
             {"calculatedData.disabledPercentage", "calculatedData.incapacitatedPercentage"},
-            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgGearLoaderIntakesAuto", "calculatedData.avgHighShotsAuto",
+            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
                     "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
             {"calculatedData.avgGearsPlacedTele", "calculatedData.avgGearLoaderIntakesTele","calculatedData.avgHighShotsTele",
                     "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime"},
             {"calculatedData.liftoffPercentage"},
-            {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility"},
-            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense", "calculatedData.avgDrivingAbility"},
-            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidUseStandardTankDrive", "pitDidDemonstrateCheesecakePotential"}
+            {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility", "calculatedData.avgDrivingAbility"},
+            {"superNotes", "calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
+            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidUseStandardTankDrive", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
     };
 
     private String[] sectionTitles = {
@@ -65,11 +65,14 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDidUseStandardTankDrive",
-            "pitDidDemonstrateCheesecakePotential"
+            "pitDidDemonstrateCheesecakePotential",
+            "pitDriveTrain",
+            "superNotes"
     };
 
     private String[] shouldDisplayAsLongText = {
-            "pitNotes"
+            "pitNotes",
+            "superNotes"
     };
 
     private String[] shouldDisplayAsFurtherInformation = {};
@@ -83,19 +86,25 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDidUseStandardTankDrive",
-            "pitDidDemonstrateCheesecakePotential"
+            "pitDidDemonstrateCheesecakePotential",
+            "superNotes"
     };
 
     private String[] createListOnClick = {
             "matches",
-            "calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility",
+            /*"calculatedData.firstPickAbility",
+            "calculatedData.overallSecondPickAbility",*/
 
     };
 
     private String[] rankInsteadOfGraph = {
+            /*"calculatedData.disabledPercentage",
+            "calculatedData.incapacitatedPercentage",
+            "calculatedData.baselineReachedPercentage",
+            "calculatedData.liftoffPercentage",*/
             "calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility"
+            "calculatedData.overallSecondPickAbility",
+            "calculatedData.avgDrivingAbility"
     };
 
 
@@ -157,7 +166,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     @Override
     public void handleNonDefaultClick(int section, int row) {
         String key = (String)getRowItem(section, row);
-        if (key == "matches") {
+        if (key.equals("matches")) {
             Intent teamMatchesIntent = new Intent(context, MatchesActivity.class);
             teamMatchesIntent.putExtra("teamNumber", teamNumber).putExtra("field", "matches");
             context.startActivity(teamMatchesIntent);

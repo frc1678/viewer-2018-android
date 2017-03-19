@@ -22,8 +22,6 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
     public boolean filter(Team value, String scope) {
         String teamName = (String)Utils.getObjectField(value, "name");
         Integer teamNumber = (Integer)Utils.getObjectField(value, "number");
-        Log.e("teamNumber", teamNumber + "");
-        Log.e("teamName", teamName);
         String teamNumberString = Integer.toString(teamNumber);
         return teamNumberString.indexOf(searchString) == 0;
     }
@@ -40,7 +38,7 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public String getRankCellText(Team value) {
-        Integer teamNumber = Integer.valueOf((Integer) Utils.getObjectField(value,"number"));
+        Integer teamNumber = ((Integer) Utils.getObjectField(value,"number"));
         return Integer.toString(teamNumber);
     }
 

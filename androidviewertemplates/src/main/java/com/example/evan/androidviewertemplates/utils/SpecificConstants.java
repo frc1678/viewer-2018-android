@@ -48,13 +48,14 @@ public class SpecificConstants extends Constants {
                     //HIGH LEVEL
                 put("calculatedData.firstPickAbility", "First Pick Ability");
                 put("calculatedData.overallSecondPickAbility", "Second Pick Ability");
+                put("calculatedData.avgDrivingAbility", "Driving Ability");
                     //SUPER DATA
+                put("superNotes", "Super Notes");
                 put("calculatedData.avgAgility", "Agility");
                 put("calculatedData.avgSpeed", "Speed");
                 put("calculatedData.avgBallControl", "Ball Control");
                 put("calculatedData.avgGearControl", "Gear Control");
                 put("calculatedData.avgDefense", "Defense");
-                put("calculatedData.avgDrivingAbility", "Driving");
                     //PIT DATA
                 put("pitSelectedImageURL", "Selected Image Url");
                 put("pitNotes", "Notes");
@@ -63,6 +64,7 @@ public class SpecificConstants extends Constants {
                 put("pitOrganization", "Pit Organization");
                 put("pitDidUseStandardTankDrive", "Tank Tread");
                 put("pitDidDemonstrateCheesecakePotential", "Cheesecake");
+                put("pitDriveTrain", "Drive Train");
                 //TEAM IN MATCH DETAILS SECTION ADAPTER
                     //Information
                 put("teamNumber", "Team Number");
@@ -103,13 +105,14 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgHighShotsAuto", "calculatedData.numHighShotsAuto");
                 put("calculatedData.avgLowShotsAuto", "calculatedData.numLowShotsAuto");
                 put("calculatedData.avgGearsPlacedTele", "calculatedData.numGearsPlacedTele");
+                put("calculatedData.avgGearLoaderIntakesTele", "numGearLoaderIntakesTele");
                 put("calculatedData.avgHighShotsTele", "calculatedData.numHighShotsTele");
                 put("calculatedData.avgLowShotsTele", "calculatedData.numLowShotsTele");
                 put("calculatedData.avgKeyShotTime", "calculatedData.avgKeyShotTime");
-                put("calculatedData.liftoffPercentage", "calculatedData.liftoffPercentage");
-                put("calculatedData.disabledPercentage", "calculatedData.disabledPercentage");
-                put("calculatedData.incapacitatedPercentage", "calculatedData.incapacitatedPercentage");
-                put("calculatedData.baselineReachedPercentage", "calculatedData.baselineReachedPercentage");
+                put("calculatedData.liftoffPercentage", "didLiftoff");
+                put("calculatedData.disabledPercentage", "didStartDisabled");
+                put("calculatedData.incapacitatedPercentage", "didBecomeIncapacitated");
+                put("calculatedData.baselineReachedPercentage", "didReachBaselineAuto");
                 put("calculatedData.avgAgility", "rankAgility");
                 put("calculatedData.avgSpeed", "rankSpeed");
                 put("calculatedData.avgBallControl", "rankBallControl");

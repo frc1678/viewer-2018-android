@@ -1,6 +1,7 @@
 package com.example.evan.androidviewertemplates.utils;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Utils;
@@ -13,8 +14,10 @@ public class ViewerDataPoints {
     //for data point matchesUntilNextMatchForTeam
     public static Integer getMatchesUntilNextMatchForTeam(Team team, Intent args) {
         Integer currentMatch = Utils.getLastMatchPlayed();
-        for (Integer matchNumber : Utils.getMatchNumbersForTeamNumber(team.number)) {
+        for (Integer matchNumber : Utils.getMatchNumbersForTeamNumber((Integer) Utils.getObjectField(team,"number"))) {
             if (matchNumber > currentMatch) {
+                Integer num = matchNumber - currentMatch;
+                Log.e("matchesUntilNextMatch", num + "" );
                 return matchNumber - currentMatch;
             }
         }

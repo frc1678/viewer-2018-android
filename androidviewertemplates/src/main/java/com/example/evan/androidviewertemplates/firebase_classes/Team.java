@@ -13,6 +13,7 @@ public class Team extends com.example.evan.androidviewertools.firebase_classes.T
     public String pitProgrammingLanguage;
     public String pitSelectedImageName;
     public String pitOrganization;
+    public String pitDriveTrain;
     public Integer photoIndex;
     public Integer pitAvailableWeight;
     public Integer pitNumberOfWheels;

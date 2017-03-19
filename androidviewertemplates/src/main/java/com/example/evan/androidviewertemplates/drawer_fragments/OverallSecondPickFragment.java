@@ -8,7 +8,6 @@ import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsAdapter;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
 
-import org.jcodec.common.DictionaryCompressor;
 
 /**
  * Created by sam on 1/29/17.

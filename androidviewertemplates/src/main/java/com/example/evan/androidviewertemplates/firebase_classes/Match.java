@@ -13,6 +13,10 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Boolean blueDidStartAllRotors;
     public Boolean redDidReachFortyKilopascals;
     public Boolean blueDidReachFortyKilopascals;
+    public Boolean didReach40KiloPascalsRed;
+    public Boolean blueDidReach40KiloPascals;
+    public Boolean redDidReach40KiloPascals;
+    public Boolean didReach40KiloPascalsBlue;
     public Integer foulPointsGainedRed;
     public Integer foulPointsGainedBlue;
     public Integer numRotorsSpinningRedAuto;

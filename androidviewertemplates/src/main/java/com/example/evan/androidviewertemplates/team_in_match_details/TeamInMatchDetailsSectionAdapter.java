@@ -39,7 +39,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftOff"};
+    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftoff"};
 
     private String[] shouldDisplayAsLongText = {};
 

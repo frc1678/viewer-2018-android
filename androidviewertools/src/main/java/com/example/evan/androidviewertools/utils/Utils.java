@@ -106,7 +106,7 @@ public class Utils {
             Integer redScore = (Integer)(Utils.getObjectField(match,"redScore"));
             Integer blueScore = (Integer)(Utils.getObjectField(match,"blueScore"));
             if(redScore != null || blueScore != null) {
-                lastMatch = ((Integer)(Utils.getObjectField(match,"number")));;
+                lastMatch = ((Integer)(Utils.getObjectField(match,"number")));
             }
         }
 
@@ -134,7 +134,7 @@ public class Utils {
                     teamInMatchDatas.add(teamInMatchData);
                 }
             }catch (NullPointerException NPE){
-
+                Log.e("team Number", "NULL");
             }
         }
 
