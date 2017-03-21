@@ -94,7 +94,8 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         if (fieldKey.contains("VIEWER.")) {
             Intent intent = new Intent();
             try {
-                return Utils.getViewerObjectField(object, fieldKey.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass()).toString();
+
+                return (Utils.getViewerObjectField(object, fieldKey.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
             } catch (NullPointerException npe) {
                 return "???";
             }

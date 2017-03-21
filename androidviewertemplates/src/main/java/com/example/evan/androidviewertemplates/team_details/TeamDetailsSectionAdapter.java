@@ -75,7 +75,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "superNotes"
     };
 
-    private String[] shouldDisplayAsFurtherInformation = {};
+    private String[] shouldDisplayAsFurtherInformation = {
+            "matches"
+    };
 
     private String[] notClickableFields = {
             "VIEWER.matchesUntilNextMatchForTeam",
@@ -205,6 +207,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             if (fieldName.startsWith("VIEWER.")) {
                 Intent rankDataArgs = new Intent();
                 fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), rankDataArgs, getViewerDataPointsClass());
+                Log.e("fieldName", fieldName);
             }
             intent.putExtra("teamNumber", teamNumber).putExtra("field", fieldName)
                     .putExtra("displayValueAsPercentage", Arrays.asList(getPercentageFields()).contains(getRowItem(section,row)));

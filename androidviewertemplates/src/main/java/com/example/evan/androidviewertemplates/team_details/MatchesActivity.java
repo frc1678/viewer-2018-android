@@ -1,8 +1,11 @@
 package com.example.evan.androidviewertemplates.team_details;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
 
 import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
@@ -26,7 +29,16 @@ public class MatchesActivity extends ViewerActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.rankingsLinearLayout, fragment, "").commit();
+        setActionBarColor();
     }
+    public void setActionBarColor(){
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
+        if(actionBar!=null) {
+            actionBar.setBackgroundDrawable(colorDrawable);
+        }
+    }
+
 
 
 }

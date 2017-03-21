@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -163,10 +164,23 @@ public class Utils {
     //anyway this method is used to display data points that aren't on firebase.  Basically it calls a getter method for the field on the utils class
     public static Object getViewerObjectField(Object object, String fieldName, Intent args, Class<?> viewerDataPointsClass) {
         try {
-            Method method = viewerDataPointsClass.getMethod("get" + Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1), object.getClass(), Intent.class);
+            Log.e("object", object.getClass().toString());
+            Log.e("methodName", "get" + Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1));
+            Log.e("className", viewerDataPointsClass.getName());
+            Method method = viewerDataPointsClass.getMethod("getMatchesUntilNextMatchForTeam", object.getClass(), Intent.class);
+            Log.e("testing", "here");
             return method.invoke(viewerDataPointsClass.newInstance(), object, args);
-        } catch (Exception e) {
-            Log.e("Method error", "Requested viewer object that doesn't exist!");
+        } catch (NoSuchMethodException NSME) {
+            Log.e("Method", "ERROR");
+            return null;
+        }catch (InstantiationException ISE){
+            Log.e("Instantiation", "ERROR");
+            return null;
+        }catch (IllegalAccessException IAE){
+            Log.e("Illegal Access", "EXCEPTION");
+            return null;
+        }catch (InvocationTargetException ITE){
+            Log.e("Invocation", "TARGET EXCEPTION");
             return null;
         }
     }
@@ -175,7 +189,7 @@ public class Utils {
             Method method = viewerDataPointsClass.getMethod("get" + Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1) + "RankingsValue", Intent.class);
             return (String)method.invoke(viewerDataPointsClass.newInstance(), args);
         } catch (Exception e) {
-            Log.e("Method error", "Requested viewer object that doesn't exist!");
+            Log.e("Method error", "Requested viewer object that doesn't exist!2");
             return null;
         }
     }
