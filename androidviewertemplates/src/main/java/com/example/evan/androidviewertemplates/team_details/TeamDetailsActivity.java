@@ -51,7 +51,7 @@ public class TeamDetailsActivity extends ViewerActivity {
         setContentView(R.layout.activity_section_listview);
         setActionBarColor();
         teamNumber = getIntent().getIntExtra("teamNumber", 1678);
-        setTitle("Team " + teamNumber + " Details");
+        setTitle("TeamTemplate " + teamNumber + " Details");
 
         HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
         teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
@@ -137,7 +137,6 @@ public class TeamDetailsActivity extends ViewerActivity {
             DisplayMetrics metrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metrics);
             Float scale =  (float) metrics.widthPixels / (float)tmpBitmap.getWidth();
-            Log.e("Team Image Scale", scale.toString());
             Matrix matrix = new Matrix();
             matrix.postScale(scale, scale);
             bitmap = Bitmap.createBitmap(tmpBitmap, 0, 0,tmpBitmap.getWidth(), tmpBitmap.getHeight(), matrix, true);

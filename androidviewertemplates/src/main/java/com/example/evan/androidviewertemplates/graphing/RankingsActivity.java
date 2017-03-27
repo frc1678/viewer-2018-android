@@ -25,10 +25,11 @@ public class RankingsActivity extends ViewerActivity {
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_rankings);
+        Log.e("In rankings Activity", "true");
         String field = getIntent().getStringExtra("field");
-        Log.e("graphing field", field);
+        //Log.e("graphing field", field);
         setTitle(SpecificConstants.KEYS_TO_TITLES.get(field));
-        Log.e("setTitle", SpecificConstants.KEYS_TO_TITLES.get(field));
+        //Log.e("setTitle", SpecificConstants.KEYS_TO_TITLES.get(field));
         context = this;
         setActionBarColor();
 
@@ -44,7 +45,7 @@ public class RankingsActivity extends ViewerActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.rankingsLinearLayout, fragment, "").commit();
-        Log.e("after transaction", "true");
+        //Log.e("after transaction", "true");
 
     }
     public void setActionBarColor(){

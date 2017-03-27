@@ -21,7 +21,9 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
     @Override
     public boolean filter(Team value, String scope) {
         String teamName = (String)Utils.getObjectField(value, "name");
+        Log.e("team name", teamName);
         Integer teamNumber = (Integer)Utils.getObjectField(value, "number");
+        Log.e("team number", teamNumber + "");
         String teamNumberString = Integer.toString(teamNumber);
         return teamNumberString.indexOf(searchString) == 0;
     }

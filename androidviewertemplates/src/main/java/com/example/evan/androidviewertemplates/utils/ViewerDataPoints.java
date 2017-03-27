@@ -3,6 +3,7 @@ package com.example.evan.androidviewertemplates.utils;
 import android.content.Intent;
 import android.util.Log;
 
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Utils;
 
@@ -13,7 +14,7 @@ public class ViewerDataPoints {
     //add methods here for data points local to viewer
     //if u can understand it, follow this example:
     //for data point matchesUntilNextMatchForTeam
-    public static Integer getMatchesUntilNextMatchForTeam(Team team, Intent args) {
+    public static Integer getMatchesUntilNextMatchForTeam(TeamTemplate team, Intent args) {
         Integer currentMatch = Utils.getLastMatchPlayed();
         Integer teamNumber = (Integer) Utils.getObjectField(team,"number");
         Log.e("teamNumber", teamNumber + " ");
@@ -22,6 +23,8 @@ public class ViewerDataPoints {
                 Log.e("REACHED", "HERE");
                 Integer num = matchNumber - currentMatch;
                 return num;
+            }else if(matchNumber < currentMatch){
+                return 0;
             }
         }
         return null;

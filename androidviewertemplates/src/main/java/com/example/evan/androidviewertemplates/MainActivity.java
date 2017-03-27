@@ -32,20 +32,16 @@ import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.Su
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesFragment;
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
-import com.example.evan.androidviewertemplates.firebase_classes.Team;
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
-import com.example.evan.androidviewertools.services.StarManager;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
-import com.firebase.client.Firebase;
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -237,24 +233,7 @@ public class MainActivity extends ViewerActivity
             thread.start();
             return true;
         }
-        /*if (id == R.id.homePage) {
-            Log.e("homepage", "clicked");
-            if(latestFragmentId!=null) {
-                if(prefs.contains("id")){
-                    editor.remove("id").commit();
-                    editor.putInt("id", latestFragmentId).commit();
-                    editor.putString("key", "asdf").commit();
-                    Log.e("latest ID", latestFragmentId + "");
 
-                }else{
-                    editor.putInt("id", latestFragmentId).commit();
-                    editor.putString("key", "asdf").commit();
-                    Log.e("latest ID", latestFragmentId + "");
-                }
-
-            }
-
-        }*/
             return super.onOptionsItemSelected(item);
     }
 
@@ -266,7 +245,7 @@ public class MainActivity extends ViewerActivity
         FirebaseLists.matchesList.cancelListen();
         FirebaseLists.teamInMatchDataList.cancelListen();
         FirebaseLists.teamsList.cancelListen();
-        ViewerApplication.startListListeners(context, Match.class, Team.class, TeamInMatchData.class);
+        ViewerApplication.startListListeners(context, Match.class, TeamTemplate.class, TeamInMatchData.class);
         Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show();
         Log.e("refreshed", "true");
 

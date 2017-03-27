@@ -105,6 +105,7 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
             Log.e("fieldKey", fieldKey);
             return Utils.dataPointToPercentage((Float)Utils.getObjectField(getObject(), fieldKey), 1);
         }
+        Log.e("fieldKey", fieldKey);
         return Utils.getDisplayValue(object, fieldKey);
     }
 

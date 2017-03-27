@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 public abstract class ViewerActivity extends ActionBarActivity {
     //ALL UR ACTIVITIES SHOULD IMPLEMENT THIS!!
     //this prevents headerlistview from crashing with rotations, and enables long presses
+    public boolean test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

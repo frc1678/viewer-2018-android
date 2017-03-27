@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 import com.example.evan.androidviewertemplates.R;
-import com.example.evan.androidviewertemplates.firebase_classes.Team;
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.utils.Utils;
@@ -69,7 +69,7 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
         teamNumberTextView.setText(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)));
 
         TextView valueTextView = (TextView)rowView.findViewById(R.id.valueTextView);
-        Team team = (Team)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+        TeamTemplate team = (TeamTemplate)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
         if (Arrays.asList(fieldsToDisplayAsPercentages).contains(getItem(position))) {
             valueTextView.setText(Utils.dataPointToPercentage((Float) Utils.getObjectField(team, (String) getItem(position)), 0));
         } else {
@@ -89,7 +89,7 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
 
     public String getRankTextOfRow(int position) {
         String fieldName = (String)getItem(position);
-        Team team = (Team)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+        TeamTemplate team = (TeamTemplate)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
         List<Object> teams = new ArrayList<>();
         teams.addAll(FirebaseLists.teamsList.getValues());
         Integer rank = Utils.getRankOfObject(team, teams, fieldName, Arrays.asList(reverseRankFields).contains(fieldName));

@@ -67,7 +67,7 @@ public class SpecificConstants extends Constants {
                 put("pitDriveTrain", "Drive Train");
                 //TEAM IN MATCH DETAILS SECTION ADAPTER
                     //Information
-                put("teamNumber", "Team Number");
+                put("teamNumber", "TeamTemplate Number");
                 put("matchNumber", "Match Number");
                     //Auto
                 put("calculatedData.numGearsPlacedAuto", "Gears Placed");
@@ -91,12 +91,6 @@ public class SpecificConstants extends Constants {
                 put("rankBallControl", "Ball Control");
                 put("rankDefense", "Defense");
                 //Super data rank list
-                put("CalculatedData.avgAgility", "Agility");
-                put("CalculatedData.avgSpeed", "Speed");
-                put("CalculatedData.avgBallControl", "Ball Control");
-                put("CalculatedData.avgGearControl", "Gear Control");
-                put("CalculatedData.avgDefense", "Defense");
-                put("CalculatedData.avgDrivingAbility", "Driving");
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {

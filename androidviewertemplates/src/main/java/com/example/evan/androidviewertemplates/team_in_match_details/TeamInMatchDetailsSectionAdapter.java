@@ -32,14 +32,14 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
             {"calculatedData.numGearsPlacedTele", "numHoppersOpenedTele", "numGearGroundIntakesTele",
                     "numGearLoaderIntakesTele", "numGearsFumbledTele", "numGearsEjectedTele"},
             {"didLiftoff"},
-            {"rankSpeed", "rankAgility", "rankGearControl", "rankBallControl", "rankDefense"}
+            {"superNotes", "rankSpeed", "rankAgility", "rankGearControl", "rankBallControl", "rankDefense"}
     };
 
     private String[] sectionTitles = {"Information", "Auto", "Tele", "Liftoff", "Super"};
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftoff"};
+    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftoff", "superNotes"};
 
     private String[] shouldDisplayAsLongText = {};
 

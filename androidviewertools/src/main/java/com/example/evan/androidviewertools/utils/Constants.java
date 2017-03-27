@@ -17,6 +17,10 @@ public class Constants {
     public static final String[] TEAM_SCOPES = {"Team"};
     public static final int STAR_COLOR = Color.argb(255, 255, 255, 204);
     public static final int TEAM_NUMBER = 1678;
+    public static boolean sortByTeamNumber = false;
+    public static boolean sortByRank = false;
+    public static boolean sortByFirstPick = false;
+    public static boolean sortBySecondPick = false;
     public static final Map<String, String> FIREBASE_KEYS = new HashMap<String, String>() {{
         put("https://1678-dev2-2016.firebaseio.com/", "hL8fStivTbHUXM8A0KXBYPg2cMsl80EcD7vgwJ1u");
         put("https://1678-dev-2016.firebaseio.com/","j1r2wo3RUPMeUZosxwvVSFEFVcrXuuMAGjk6uPOc");
