@@ -10,6 +10,7 @@ import java.util.Map;
 public class CalculatedTeamData extends Object {
 	// 1/16/17
 	public Float firstPickAbility;
+	public Float thirdPickAbility;
 	public Float overallSecondPickAbility;
 	public Float disabledPercentage;
 	public Float incapacitatedPercentage;
@@ -55,6 +56,8 @@ public class CalculatedTeamData extends Object {
 	public Float avgGearLoaderIntakesTele;
 	public Float avgGearLoaderIntakesAuto;
 	public Float avgHopperShotTime;
+	public Float avgLiftoffTime;
+	public Float gearAbility;
 	public Integer predictedSeed;
 	public Integer actualSeed;
 	public Float actualNumRPs;

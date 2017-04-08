@@ -43,12 +43,14 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgLowShotsTele", "Avg Low Shots");
                 put("calculatedData.avgKeyShotTime", "Avg Key Shot Time(Sec.)");
                 put("calculatedData.avgGearLoaderIntakesTele", "Avg Gear Loader Intakes");
+                put("calculatedData.gearAbility", "Gear Ability");
                     //LIFTOFF
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");
                     //HIGH LEVEL
                 put("calculatedData.firstPickAbility", "First Pick Ability");
                 put("calculatedData.overallSecondPickAbility", "Second Pick Ability");
-                put("calculatedData.avgDrivingAbility", "Driving Ability");
+                put("calculatedData.avgLiftoffTime", "Avg. Liftoff Time");
+                put("calculatedData.thirdPickAbility", "Third Pick Ability");
                     //SUPER DATA
                 put("superNotes", "Super Notes");
                 put("calculatedData.avgAgility", "Agility");
@@ -62,7 +64,6 @@ public class SpecificConstants extends Constants {
                 put("pitProgrammingLanguage", "Programming Language");
                 put("pitAvailableWeight", "Available Weight");
                 put("pitOrganization", "Pit Organization");
-                put("pitDidUseStandardTankDrive", "Tank Tread");
                 put("pitDidDemonstrateCheesecakePotential", "Cheesecake");
                 put("pitDriveTrain", "Drive Train");
                 //TEAM IN MATCH DETAILS SECTION ADAPTER
@@ -112,8 +113,8 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgBallControl", "rankBallControl");
                 put("calculatedData.avgGearControl", "rankGearControl");
                 put("calculatedData.avgDefense", "rankDefense");
-                put("calculatedData.avgDrivingAbility", "rankDrivingAbility");
-
+                put("calculatedData.gearAbility", "calculatedData.gearAbility");
+                put("calculatedData.avgLiftoffTime", "liftoffTime");
             }
         };
         //replace all 'DEFENSE's with the correct defenses

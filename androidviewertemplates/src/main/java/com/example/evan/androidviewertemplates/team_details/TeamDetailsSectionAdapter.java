@@ -32,11 +32,11 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
                     "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
             {"calculatedData.avgGearsPlacedTele", "calculatedData.avgGearLoaderIntakesTele","calculatedData.avgHighShotsTele",
-                    "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime"},
+                    "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime", "calculatedData.avgLiftoffTime"},
             {"calculatedData.liftoffPercentage"},
-            {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility", "calculatedData.avgDrivingAbility"},
+            {"calculatedData.firstPickAbility", "calculatedData.overallSecondPickAbility", "calculatedData.thirdPickAbility", "calculatedData.gearAbility"},
             {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
-            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidUseStandardTankDrive", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
+            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
     };
 
     private String[] sectionTitles = {
@@ -62,10 +62,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitSelectedImageUrl",
             "pitNotes",
             "pitProgrammingLanguage",
+            "pitDidDemonstrateCheesecakePotential",
             "pitAvailableWeight",
             "pitOrganization",
-            "pitDidUseStandardTankDrive",
-            "pitDidDemonstrateCheesecakePotential",
             "pitDriveTrain",
             "superNotes"
     };
@@ -86,7 +85,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitProgrammingLanguage",
             "pitAvailableWeight",
             "pitOrganization",
-            "pitDidUseStandardTankDrive",
+            "pitDriveTrain",
             "pitDidDemonstrateCheesecakePotential",
             "superNotes"
     };
@@ -105,7 +104,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.liftoffPercentage",*/
             "calculatedData.firstPickAbility",
             "calculatedData.overallSecondPickAbility",
-            "calculatedData.avgDrivingAbility"
+            "calculatedData.gearAbility",
+            "calculatedData.thirdPickAbility"
+
     };
 
 

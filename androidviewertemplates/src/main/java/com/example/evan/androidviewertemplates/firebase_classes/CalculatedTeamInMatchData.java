@@ -16,7 +16,6 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numHoppersOpenedAuto;
     public Integer numHoppersOpenedTele;
     public Float avgHopperShotTime;
-    public Float drivingAbility;
     public Boolean wasDisfunctional;
     public Float liftoffAbility;
     public Float avgKeyShotTime;
