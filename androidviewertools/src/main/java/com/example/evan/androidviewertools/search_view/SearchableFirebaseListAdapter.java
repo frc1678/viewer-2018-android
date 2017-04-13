@@ -73,6 +73,7 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
 
         if(Constants.sortByTeamNumber) {
             sortByTeamNumber();
+
         }else if(Constants.sortByRank){
             sortByTeamRank();
 
@@ -102,8 +103,8 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
         });
     }
     public void sortByTeamRank(){
-        Log.e("sorting by", "rank");
         Collections.sort(filteredValues, filterComparator);
+        Constants.sortByRank = false;
     }
     public void sortByFirstPick(){
         Collections.sort(filteredValues, new Comparator<T>() {

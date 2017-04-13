@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.LastFourMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -166,6 +167,10 @@ public class MainActivity extends ViewerActivity
                 break;
             case 9:
                 fragment = new SuperAbilityFragment();
+                latestFragmentId = position;
+                break;
+            case 10:
+                fragment = new LastFourMatchesFragment();
                 latestFragmentId = position;
                 break;
         }

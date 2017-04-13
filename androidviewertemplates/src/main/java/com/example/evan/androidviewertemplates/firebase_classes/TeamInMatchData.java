@@ -20,7 +20,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer rankGearControl;
     public Integer rankBallControl;
     public Integer rankDefense;
-    public Map<String, String> superNotes;
+    public Object superNotes;
 
     //AUTO
     public Map<String, Integer> gearsPlacedByLiftAuto;

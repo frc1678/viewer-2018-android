@@ -3,7 +3,6 @@ package com.example.evan.androidviewertemplates.drawer_fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsAdapter;
@@ -13,11 +12,11 @@ import com.example.evan.androidviewertools.utils.Constants;
 /**
  * Created by sam on 1/29/17.
  */
-public class SeedingFragment extends TeamRankingsFragment {
+public class LastFourMatchesFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Constants.sortByTeamNumber = false;
+
         setListAdapter(new SeedingAdapter(getActivity().getApplicationContext()));
     }
 
@@ -28,10 +27,11 @@ public class SeedingFragment extends TeamRankingsFragment {
 
         public SeedingAdapter(Context context) {
             super(context, "calculatedData.actualSeed", "calculatedData.actualNumRPs", true);
-            Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
+            Constants.lastFourMatches = true;
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){
+            Constants.sortByTeamNumber = false;
             return new Intent(context, TeamDetailsActivity.class);
         }
     }

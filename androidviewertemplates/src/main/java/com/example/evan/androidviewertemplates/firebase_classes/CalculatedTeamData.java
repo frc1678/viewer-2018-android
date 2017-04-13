@@ -70,4 +70,30 @@ public class CalculatedTeamData extends Object {
 	public ArrayList<String> gearScoringPositionsAuto;
 	public ArrayList<Map<String,Map<Integer,ArrayList<CalculatedTeamData>>>> firstPickAllRotorsTurningChance;
 
+	//lastFourMatchData
+
+	public Float lfmDisabledPercentage;
+	public Float lfmIncapacitatedPercentage;
+	public Float lmfAvgGearsPlacedAuto;
+	public Float lfmAvgHighShotsAuto;
+	public Float lfmAvgLowShotsAuto;
+	public Float lfmBaselineReachedPercentage;
+
+	public Float lfmAvgGearsPlacedTele;
+	public Float lfmAvgGearLoaderIntakesTele;
+	public Float lfmAvgHighShotsTele;
+	public Float lfmAvgLowShotsTele;
+	public Float lfmAvgKeyShotTime;
+	public Float lfmAvgLiftoffTime;
+
+	public Float lfmLiftoffPercentage;
+	public Float lfmFirstPickAbility;
+	public Float lfmSecondPickAbility;
+	public Float lfmThirdPickAbility;
+	public Float lfmGearAbility;
+	public Float lfmAvgAgility;
+	public Float lfmAvgSpeed;
+	public Float lfmAvgBallControl;
+	public Float lfmAvgGearControl;
+	public Float lfmAvgDefense;
 }

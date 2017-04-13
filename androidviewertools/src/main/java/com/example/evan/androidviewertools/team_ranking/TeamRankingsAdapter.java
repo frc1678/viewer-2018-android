@@ -20,6 +20,10 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public boolean filter(Team value, String scope) {
+        if(Constants.lastFourMatches) {
+            Constants.sortByTeamNumber = true;
+            Constants.lastFourMatches = false;
+        }
         String teamName = (String)Utils.getObjectField(value, "name");
         Log.e("team name", teamName);
         Integer teamNumber = (Integer)Utils.getObjectField(value, "number");
