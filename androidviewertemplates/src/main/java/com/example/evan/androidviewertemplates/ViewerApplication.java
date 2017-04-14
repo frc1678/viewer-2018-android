@@ -45,6 +45,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             }
         }.getClass()));
         startService(new Intent(this, PhotoSync.class));
+        lifeSaver();
     }
 
 
@@ -72,6 +73,13 @@ public class ViewerApplication extends ViewerApplicationTemplate {
                 LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(SpecificConstants.TEAM_IN_MATCH_DATAS_UPDATED_ACTION).putExtra("key", key));
             }
         }, teamInMatchClass);
+    }
+    private void lifeSaver(){
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            public void uncaughtException(Thread paramThread, Throwable paramThrowable) {
+                Log.e("Error"+Thread.currentThread().getStackTrace()[2],paramThrowable.getLocalizedMessage());
+            }
+        });
     }
 
 

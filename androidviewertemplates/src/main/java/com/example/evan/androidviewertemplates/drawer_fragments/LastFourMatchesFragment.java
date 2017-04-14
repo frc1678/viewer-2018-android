@@ -17,9 +17,9 @@ public class LastFourMatchesFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Constants.lastFourMatches = true;
         setAllSortConstantsFalse();
-        //Log.e("sort by Second Pick1", String.valueOf(Constants.sortBySecondPick));
+        Constants.lastFourMatches = true;
+        Constants.sortByTeamNumber = true;
         setListAdapter(new SeedingAdapter(getActivity().getApplicationContext()));
     }
 
@@ -33,16 +33,8 @@ public class LastFourMatchesFragment extends TeamRankingsFragment {
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){
-            setAllSortConstantsFalse();
-            //Log.e("sort by Second Pick2", String.valueOf(Constants.sortBySecondPick));
             return new Intent(context, TeamDetailsActivity.class);
 
-        }
-        public void setAllSortConstantsFalse(){
-            Constants.sortByTeamNumber = false;
-            Constants.sortByRank = false;
-            Constants.sortByFirstPick = false;
-            Constants.sortBySecondPick = false;
         }
     }
     @Override

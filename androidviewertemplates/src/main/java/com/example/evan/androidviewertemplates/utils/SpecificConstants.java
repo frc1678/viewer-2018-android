@@ -136,6 +136,25 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgDefense", "rankDefense");
                 put("calculatedData.gearAbility", "calculatedData.gearAbility");
                 put("calculatedData.avgLiftoffTime", "liftoffTime");
+
+                //Last Four Matches
+                put("calculatedData.lfmDisabledPercentage", "didStartDisabled");
+                put("calculatedData.lfmIncapacitatedPercentage", "didBecomeIncapacitated");
+                put("calculatedData.lfmAvgGearsPlacedAuto", "calculatedData.numGearsPlacedAuto");
+                put("calculatedData.lfmAvgHighShotsAuto", "calculatedData.numHighShotsAuto");
+                put("calculatedData.lfmAvgLowShotsAuto", "calculatedData.numLowShotsAuto");
+                put("calculatedData.lfmAvgGearsPlacedTele", "calculatedData.numGearsPlacedTele");
+                put("calculatedData.lfmAvgGearLoaderIntakesTele", "numGearLoaderIntakesTele");
+                put("calculatedData.lfmAvgHighShotsTele", "calculatedData.numHighShotsTele");
+                put("calculatedData.lfmAvgLowShotsTele", "calculatedData.numLowShotsTele");
+                put("calculatedData.lfmAvgKeyShotTime", "calculatedData.avgKeyShotTime");
+                put("calculatedData.lfmAvgLiftoffTime", "liftoffTime");
+                put("calculatedData.lfmLiftoffPercentage", "didLiftoff");
+                put("calculatedData.lfmAvgAgility", "rankAgility");
+                put("calculatedData.lfmAvgSpeed", "rankSpeed");
+                put("calculatedData.lfmAvgBallControl", "rankBallControl");
+                put("calculatedData.lfmAvgGearControl", "rankGearControl");
+                put("calculatedData.lfmAvgDefense", "rankDefense");
             }
         };
         //replace all 'DEFENSE's with the correct defenses

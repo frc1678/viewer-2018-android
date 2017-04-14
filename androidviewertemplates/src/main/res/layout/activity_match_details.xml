@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:text="1678"
                 android:gravity="center"/>
-
+<!--
             <TextView
                 android:id="@+id/matchDetailsRedAllianceWinChance"
                 android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                 android:textColor="#FF0000"
                 android:text="16%"
                 android:gravity="center"/>
+                -->
         </LinearLayout>
 
         <TextView
@@ -85,7 +86,7 @@
                 android:layout_weight="1"
                 android:text="1678"
                 android:gravity="center"/>
-
+<!--
             <TextView
                 android:id="@+id/matchDetailsBlueAllianceWinChance"
                 android:layout_width="match_parent"
@@ -94,6 +95,7 @@
                 android:textColor="#0000ff"
                 android:text="16%"
                 android:gravity="center"/>
+                -->
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

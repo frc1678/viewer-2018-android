@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.BaseAdapter;
 
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 
@@ -80,11 +81,12 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
             Log.e("Sorted", "by rank");
 
         }else if(Constants.sortByFirstPick){
-            Log.e("Sorted", "by first pick");
             sortByFirstPick();
+            Log.e("Sorted", "by first pick");
         }else if(Constants.sortBySecondPick){
-            Log.e("Sorted", "by second pick");
             sortBySecondPick();
+            Log.e("Sorted", "by second pick");
+
         }
         else{
             sortByTeamRank();

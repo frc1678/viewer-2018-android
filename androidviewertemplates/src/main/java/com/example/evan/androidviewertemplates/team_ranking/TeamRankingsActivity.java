@@ -78,6 +78,7 @@ public class TeamRankingsActivity extends ViewerActivity {
             return true;
         }
         if (id == R.id.byRank){
+            Log.e("sort by number", String.valueOf(Constants.sortByTeamNumber));
             Log.e("Rank", "clicked");
             setColorOfItem(item);
             lastMenuItem = item;
