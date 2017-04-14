@@ -54,7 +54,13 @@ public class TeamDetailsActivity extends ViewerActivity {
         setTitle("TeamTemplate " + teamNumber + " Details");
 
         HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
-        teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
+        Log.e("lfm", String.valueOf(Constants.lastFourMatches));
+        Log.e("rank by number", String.valueOf(Constants.sortByTeamNumber));
+        if(Constants.lastFourMatches) {
+            teamDetailsHeaderListView.setAdapter(new LastFourMatchesTeamDetailsSectionAdapter(this, teamNumber));
+        }else{
+            teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
+        }
         View teamDetailsHeaderView = getLayoutInflater().inflate(R.layout.team_details_header, null);
         teamDetailsHeaderListView.getListView().addHeaderView(teamDetailsHeaderView, null, false);
 

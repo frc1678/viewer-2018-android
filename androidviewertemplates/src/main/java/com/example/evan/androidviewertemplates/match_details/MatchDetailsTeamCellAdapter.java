@@ -25,10 +25,10 @@ import java.util.List;
  */
 public class MatchDetailsTeamCellAdapter extends BaseAdapter {
     //todo
-    private String[] fields = {"calculatedData.actualSeed", "calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility", "calculatedData.disfunctionalPercentage"};
-    private String[] fieldsToDisplayAsPercentages = {"calculatedData.disfunctionalPercentage"};
-    private String[] reverseRankFields = {"calculatedData.actualSeed"};
+    private String[] fields = {"calculatedData.firstPickAbility",
+            "calculatedData.avgGearsPlacedAuto", "calculatedData.avgGearsPlacedTele", "calculatedData.avgGearGroundIntakesTele", "calculatedData.liftoffPercentage"};
+    private String[] fieldsToDisplayAsPercentages = {"calculatedData.liftoffPercentage"};
+    private String[] reverseRankFields = {};
     private Integer teamNumber;
 
     private Context context;

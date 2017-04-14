@@ -96,4 +96,7 @@ public class CalculatedTeamData extends Object {
 	public Float lfmAvgBallControl;
 	public Float lfmAvgGearControl;
 	public Float lfmAvgDefense;
+	public Float lfmAvgDrivingAbility;
+
+	public Float allRotorsAbility;
 }

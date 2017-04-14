@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
-
 import com.example.evan.androidviewertemplates.graphing.RankingsActivity;
 import com.example.evan.androidviewertemplates.team_ranking.TeamRankingsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
@@ -24,18 +23,18 @@ import java.util.Map;
 /**
  * Created by citruscircuits on 1/23/16.
  */
-public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
+public class LastFourMatchesTeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
-            {"calculatedData.disabledPercentage", "calculatedData.incapacitatedPercentage"},
-            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
-                    "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
-            {"calculatedData.avgGearsPlacedTele", "calculatedData.avgGearLoaderIntakesTele","calculatedData.avgHighShotsTele",
-                    "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime", "calculatedData.avgLiftoffTime"},
-            {"calculatedData.liftoffPercentage"},
-            {"calculatedData.firstPickAbility", "calculatedData.allRotorsAbility", "calculatedData.avgDrivingAbility"},
-            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
+            {"matches"},
+            {"calculatedData.lfmDisabledPercentage", "calculatedData.lfmIncapacitatedPercentage"},
+            {"calculatedData.lfmAvgGearsPlacedAuto", "calculatedData.lfmAvgHighShotsAuto",
+                    "calculatedData.lfmAvgLowShotsAuto"},
+            {"calculatedData.lfmAvgGearsPlacedTele", "calculatedData.lfmAvgGearLoaderIntakesTele","calculatedData.lfmAvgHighShotsTele",
+                    "calculatedData.lfmAvgLowShotsTele", "calculatedData.lfmAvgKeyShotTime", "calculatedData.lfmAvgLiftoffTime"},
+            {"calculatedData.lfmLiftoffPercentage"},
+            {"calculatedData.firstPickAbility"},
+            {"calculatedData.lfmAvgAgility", "calculatedData.lfmAvgSpeed", "calculatedData.lfmAvgBallControl", "calculatedData.lfmAvgGearControl", "calculatedData.lfmAvgDefense"},
             {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
     };
 
@@ -51,14 +50,12 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     };
 
     private String[] shouldDisplayAsPercentage = {
-            "calculatedData.disabledPercentage",
-            "calculatedData.incapacitatedPercentage",
-            "calculatedData.baselineReachedPercentage",
-            "calculatedData.liftoffPercentage"};
+            "calculatedData.lfmDisabledPercentage",
+            "calculatedData.lfmIncapacitatedPercentage",
+            "calculatedData.lfmLiftoffPercentage"};
 
     private String[] displayAsUnranked = {
             "matches",
-            "VIEWER.matchesUntilNextMatchForTeam",
             "pitSelectedImageUrl",
             "pitNotes",
             "pitProgrammingLanguage",
@@ -78,7 +75,6 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     };
 
     private String[] notClickableFields = {
-            "VIEWER.matchesUntilNextMatchForTeam",
             "pitDetails",
             "pitSelectedImageUrl",
             "pitNotes",
@@ -102,10 +98,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.incapacitatedPercentage",
             "calculatedData.baselineReachedPercentage",
             "calculatedData.liftoffPercentage",*/
-            "calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility",
-            "calculatedData.gearAbility",
-            "calculatedData.thirdPickAbility"
+            "calculatedData.firstPickAbility"
 
     };
 
@@ -113,7 +106,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     Integer teamNumber;
     private Context context;
 
-    public TeamDetailsSectionAdapter(Context context, Integer teamNumber) {
+    public LastFourMatchesTeamDetailsSectionAdapter(Context context, Integer teamNumber) {
         super(context);
         this.teamNumber = teamNumber;
         this.context = context;

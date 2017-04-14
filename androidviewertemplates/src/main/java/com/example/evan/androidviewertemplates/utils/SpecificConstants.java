@@ -11,7 +11,7 @@ public class SpecificConstants extends Constants {
     public static Map<String, String> DATA_TO_GRAPH;
     //todo
     public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Overall Second Pick", "Super Data", "Last Four Matches"};
-    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2017-5f51c.firebaseio.com/";
+    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://1678-scouting-2016.firebaseio.com/";
     public static String ROOT_FIREBASE_PATH = ORIGINAL_ROOT_FIREBASE_PATH;
     public static String MATCHES_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Matches";
     public static String TEAMS_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Teams";
@@ -23,6 +23,7 @@ public class SpecificConstants extends Constants {
                 //MATCH DETAILS ACTIVITY
                 put("calculatedData.actualSeed", "Seed");
                 put("calculatedData.disfunctionalPercentage", "Disfunctional");
+                put("calculatedData.avgGearGroundIntakesTele", "Avg. Gear Ground Intakes");
                 //TEAM DETAILS SECTION ADAPTER
                     //MATCHES
                 put("matches", "Matches");
@@ -51,6 +52,8 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.overallSecondPickAbility", "Second Pick Ability");
                 put("calculatedData.avgLiftoffTime", "Avg. Liftoff Time");
                 put("calculatedData.thirdPickAbility", "Third Pick Ability");
+                put("calculatedData.allRotorsAbility", "4 Rotors Ability");
+                put("calculatedData.avgDrivingAbility", "Driving Ability");
                     //SUPER DATA
                 put("superNotes", "Super Notes");
                 put("calculatedData.avgAgility", "Agility");
@@ -91,7 +94,25 @@ public class SpecificConstants extends Constants {
                 put("rankGearControl", "Gear Control");
                 put("rankBallControl", "Ball Control");
                 put("rankDefense", "Defense");
-                //Super data rank list
+                //Last Four Matches
+                put("calculatedData.lfmDisabledPercentage", "Disabled");
+                put("calculatedData.lfmIncapacitatedPercentage", "Incapacitated");
+                put("calculatedData.lfmAvgGearsPlacedAuto", "Avg. Gears Placed");
+                put("calculatedData.lfmAvgHighShotsAuto", "Avg. High Shots");
+                put("calculatedData.lfmAvgLowShotsAuto", "Avg. Low Shots");
+                put("calculatedData.lfmAvgGearsPlacedTele", "Avg. Gears Placed");
+                put("calculatedData.lfmAvgGearLoaderIntakesTele", "Avg. Gear Loader Intakes");
+                put("calculatedData.lfmAvgHighShotsTele", "Avg. High Shots");
+                put("calculatedData.lfmAvgLowShotsTele", "Avg. Low Shots");
+                put("calculatedData.lfmAvgKeyShotTime", "Avg. Key Shot Time");
+                put("calculatedData.lfmAvgLiftoffTime", "Avg. Liftoff Time");
+                put("calculatedData.lfmLiftoffPercentage", "Avg. Liftoff Percentage");
+                put("calculatedData.firstPickAbility", "First Pick");
+                put("calculatedData.lfmAvgAgility", "Agility");
+                put("calculatedData.lfmAvgSpeed", "Speed");
+                put("calculatedData.lfmAvgBallControl", "Ball Control");
+                put("calculatedData.lfmAvgGearControl", "Gear Control");
+                put("calculatedData.lfmAvgDefense", "Defense");
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {

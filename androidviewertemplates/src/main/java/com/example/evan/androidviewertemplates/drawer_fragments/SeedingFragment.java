@@ -17,6 +17,8 @@ public class SeedingFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("seeding", "true");
+        Constants.lastFourMatches = false;
         Constants.sortByTeamNumber = false;
         setListAdapter(new SeedingAdapter(getActivity().getApplicationContext()));
     }
@@ -29,6 +31,7 @@ public class SeedingFragment extends TeamRankingsFragment {
         public SeedingAdapter(Context context) {
             super(context, "calculatedData.actualSeed", "calculatedData.actualNumRPs", true);
             Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
+            Constants.lastFourMatches = false;
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){
