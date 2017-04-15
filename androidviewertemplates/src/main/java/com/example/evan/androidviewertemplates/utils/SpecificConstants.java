@@ -10,7 +10,7 @@ public class SpecificConstants extends Constants {
     public static Map<String, String> KEYS_TO_TITLES;
     public static Map<String, String> DATA_TO_GRAPH;
     //todo
-    public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Overall Second Pick", "Super Data", "Last Four Matches"};
+    public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "All Rotors Rank", "Super Data", "Last Four Matches"};
     public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://1678-scouting-2016.firebaseio.com/";
     public static String ROOT_FIREBASE_PATH = ORIGINAL_ROOT_FIREBASE_PATH;
     public static String MATCHES_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Matches";
@@ -23,7 +23,7 @@ public class SpecificConstants extends Constants {
                 //MATCH DETAILS ACTIVITY
                 put("calculatedData.actualSeed", "Seed");
                 put("calculatedData.disfunctionalPercentage", "Disfunctional");
-                put("calculatedData.avgGearGroundIntakesTele", "Avg. Gear Ground Intakes");
+                put("calculatedData.avgGearGroundIntakesTele", "Avg. Gears G.P.");
                 //TEAM DETAILS SECTION ADAPTER
                     //MATCHES
                 put("matches", "Matches");
@@ -32,18 +32,18 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.disabledPercentage", "Disabled");
                 put("calculatedData.incapacitatedPercentage", "Incapacitated");
                     //AUTO
-                put("calculatedData.avgGearsPlacedAuto", "Avg Gears Placed");
+                put("calculatedData.avgGearsPlacedAuto", "Avg Gears Auto");
                 put("calculatedData.avgHighShotsAuto", "Avg High Shots");
                 put("calculatedData.avgLowShotsAuto", "Avg Low Shots");
                 put("calculatedData.baselineReachedPercentage", "Baseline Reached Percentage");
-                put("calculatedData.avgGearLoaderIntakesAuto", "Avg Gear Loader Intakes");
+                put("calculatedData.avgGearLoaderIntakesAuto", "Avg Gears Loader Intakes");
 
                     //TELEOP
-                put("calculatedData.avgGearsPlacedTele", "Avg Gears Placed");
+                put("calculatedData.avgGearsPlacedTele", "Avg Gears Tele");
                 put("calculatedData.avgHighShotsTele", "Avg High Shots");
                 put("calculatedData.avgLowShotsTele", "Avg Low Shots");
                 put("calculatedData.avgKeyShotTime", "Avg Key Shot Time(Sec.)");
-                put("calculatedData.avgGearLoaderIntakesTele", "Avg Gear Loader Intakes");
+                put("calculatedData.avgGearLoaderIntakesTele", "Avg Gears Loader Intakes");
                 put("calculatedData.gearAbility", "Gear Ability");
                     //LIFTOFF
                 put("calculatedData.liftoffPercentage", "Liftoff Percentage");

@@ -173,6 +173,7 @@ public class MainActivity extends ViewerActivity
                 fragment = new LastFourMatchesFragment();
                 latestFragmentId = position;
                 break;
+
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)

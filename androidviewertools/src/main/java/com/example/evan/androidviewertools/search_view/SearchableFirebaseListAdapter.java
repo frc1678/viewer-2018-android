@@ -118,6 +118,8 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
                 Float teamNumberOne = (Float) Utils.getObjectField(obj1, "calculatedData.firstPickAbility");
                 Log.e("firstPickTeamOne", teamNumberOne + "");
                 Float teamNumberTwo = (Float) Utils.getObjectField(obj2, "calculatedData.firstPickAbility");
+                Log.e("teamOne", teamNumberOne + "");
+                Log.e("teamTwo", teamNumberTwo + "");
                 return (teamNumberTwo).compareTo(teamNumberOne);// To compare string values
                 // ## Descending order
                 // return obj2.firstName.compareToIgnoreCase(obj1.firstName); // To compare string values

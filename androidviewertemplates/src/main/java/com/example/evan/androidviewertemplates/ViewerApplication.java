@@ -2,8 +2,10 @@ package com.example.evan.androidviewertemplates;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
@@ -18,16 +20,19 @@ import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.instabug.library.Instabug;
 import com.instabug.library.invocation.InstabugInvocationEvent;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
+
 
 public class ViewerApplication extends ViewerApplicationTemplate {
 
+    final Thread.UncaughtExceptionHandler originalUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
 
     @Override
     public void onCreate() {
         super.onCreate();
         //todo
-        //instabug is life, hopefully by the time ur reading this u guys have
-        // the ultra gold-plated diamonds-studded platinum version, and don't have to use fake emails like me
         startListListeners(getApplicationContext(), com.example.evan.androidviewertemplates.firebase_classes.Match.class, TeamTemplate.class, com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData.class);
         //setupFirebaseAuth(this);
         new Instabug.Builder(this, "f56c6f16e2c9965920019f8eb52e7b6e")
@@ -39,13 +44,20 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             public Class<? extends Match> getMatchClass() {
                 return com.example.evan.androidviewertemplates.firebase_classes.Match.class;
             }
+
             @Override
             public Class<?> getMainActivityClass() {
                 return MainActivity.class;
             }
         }.getClass()));
         startService(new Intent(this, PhotoSync.class));
-        lifeSaver();
+
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread thread, Throwable e) {
+                handleUncaughtException(thread, e);
+            }
+        });
     }
 
 
@@ -74,12 +86,25 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             }
         }, teamInMatchClass);
     }
-    private void lifeSaver(){
-        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-            public void uncaughtException(Thread paramThread, Throwable paramThrowable) {
-                Log.e("Error"+Thread.currentThread().getStackTrace()[2],paramThrowable.getLocalizedMessage());
-            }
-        });
+    private void handleUncaughtException(Thread thread, Throwable e) {
+        // The following shows what I'd like, though it won't work like this.
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            Writer result = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(result);
+            e.printStackTrace(printWriter);
+            String stacktrace = result.toString();
+            printWriter.close();
+            Log.e("UI thread", "CRASHED!");
+            originalUncaughtExceptionHandler.uncaughtException(thread, e);
+        } else {
+            Writer result = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(result);
+            e.printStackTrace(printWriter);
+            String stacktrace = result.toString();
+            Log.e("Background thread", "CRASHED");
+            Toast.makeText(this, "Background Thread ERROR", Toast.LENGTH_LONG).show();
+        }
+
     }
 
 
