@@ -26,7 +26,7 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
     public static class OverallSecondPickAdapter extends TeamRankingsAdapter {
 
         public OverallSecondPickAdapter(Context context) {
-            super(context, "calculatedData.overallSecondPickAbility", "calculatedData.overallSecondPickAbility", false);
+            super(context, "calculatedData.allRotorsAbility", "calculatedData.allRotorsAbility", false);
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){

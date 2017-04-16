@@ -96,7 +96,7 @@ public class TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-        if (id == R.id.bySecondPick){
+        if (id == R.id.byAllRotorAbility){
             Log.e("second pick", "cliked");
             setColorOfItem(item);
             lastMenuItem = item;
