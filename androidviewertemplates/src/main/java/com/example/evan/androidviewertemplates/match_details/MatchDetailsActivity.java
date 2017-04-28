@@ -91,20 +91,19 @@ public class MatchDetailsActivity extends ViewerActivity {
         matchDetailsMatchTitleTextView.setText("Q" + match.number.toString());
 
         TextView redAllianceScoreTextView = (TextView)findViewById(R.id.matchDetailsRedAllianceScore);
-        TextView redAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsRedAlliancePredictedScore);
+        //TextView redAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsRedAlliancePredictedScore);
         //TextView redAllianceWinChanceTextView = (TextView)findViewById(R.id.matchDetailsRedAllianceWinChance);
 
         redAllianceScoreTextView.setText(Utils.getMatchDisplayValue(match, "redScore"));
-        Log.e("matchDetailsRedScore", Utils.getMatchDisplayValue(match, "redScore").toString());
-        redAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedRedScore"));
+        //redAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedRedScore"));
         //redAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float)Utils.getObjectField(match, "calculatedData.redWinChance"), 0));
 
         TextView blueAllianceScoreTextView = (TextView)findViewById(R.id.matchDetailsBlueAllianceScore);
-        TextView blueAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsBlueAlliancePredictedScore);
+        //TextView blueAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsBlueAlliancePredictedScore);
         //TextView blueAllianceWinChanceTextView = (TextView)findViewById(R.id.matchDetailsBlueAllianceWinChance);
 
         blueAllianceScoreTextView.setText(Utils.getMatchDisplayValue(match, "blueScore"));
-        blueAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedBlueScore"));
+        //blueAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedBlueScore"));
         //blueAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float) Utils.getObjectField(match, "calculatedData.blueWinChance"), 0));
         //todo
     }

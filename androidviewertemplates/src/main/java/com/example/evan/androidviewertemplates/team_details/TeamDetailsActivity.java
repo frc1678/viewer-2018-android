@@ -51,16 +51,11 @@ public class TeamDetailsActivity extends ViewerActivity {
         setContentView(R.layout.activity_section_listview);
         setActionBarColor();
         teamNumber = getIntent().getIntExtra("teamNumber", 1678);
-        setTitle("TeamTemplate " + teamNumber + " Details");
+        setTitle("Team " + teamNumber + " Details");
 
         HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
-        Log.e("lfm", String.valueOf(Constants.lastFourMatches));
-        Log.e("rank by number", String.valueOf(Constants.sortByTeamNumber));
-        if(Constants.lastFourMatches) {
-            teamDetailsHeaderListView.setAdapter(new LastFourMatchesTeamDetailsSectionAdapter(this, teamNumber));
-        }else{
-            teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
-        }
+
+        teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
         View teamDetailsHeaderView = getLayoutInflater().inflate(R.layout.team_details_header, null);
         teamDetailsHeaderListView.getListView().addHeaderView(teamDetailsHeaderView, null, false);
 
@@ -158,38 +153,6 @@ public class TeamDetailsActivity extends ViewerActivity {
             Log.e("test", "ERROR: " + e.getMessage());
         }
     }
-    /*public void getImage(final ImageView view){
-        final StorageRef imageRef = storageRef.child(userId).child(title).child("image1");
-        imageRef.getBytes(Constants.ONE_MEGABYTE).addOnCompleteListener(new OnCompleteListener<byte[]>() {
-            @Override
-            public void onComplete(@NonNull Task<byte[]> task) {
-                Log.e("completion", "SUCCCESS!");
-
-                imageRef.getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                    @Override
-                    public void onSuccess(byte[] bytes) {
-                        Log.e("bytes", "SUCCESS");
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inScaled = false;
-                        options.inJustDecodeBounds = false;
-                        options.inDither = false;
-                        options.inSampleSize = 0;
-                        options.inScaled = false;
-                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                        displayBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-                        Log.e("bitmap", displayBitmap.toString());
-                        view.setImageBitmap(displayBitmap);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle any errors
-                        Log.e("getting image", "failed");
-                    }
-                });
-            }
-        });
-    }*/
 
 
     @Override

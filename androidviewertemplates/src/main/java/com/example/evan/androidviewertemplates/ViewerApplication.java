@@ -86,6 +86,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             }
         }, teamInMatchClass);
     }
+
     private void handleUncaughtException(Thread thread, Throwable e) {
         // The following shows what I'd like, though it won't work like this.
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -107,26 +108,4 @@ public class ViewerApplication extends ViewerApplicationTemplate {
 
     }
 
-
-    /*public static void setupFirebaseAuth(final Context context) {
-        Firebase firebaseRef = new Firebase(SpecificConstants.ROOT_FIREBASE_PATH);
-
-        Firebase.AuthResultHandler authResultHandler = new Firebase.AuthResultHandler() {
-            @Override
-            public void onAuthenticated(AuthData authData) {
-                CharSequence text = "Authenticated!";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-
-            @Override
-            public void onAuthenticationError(FirebaseError firebaseError) {
-                Log.e("FireBase error", "Failed to auth");
-            }
-        };
-
-        firebaseRef.authWithCustomToken(SpecificConstants.FIREBASE_KEYS.get(SpecificConstants.ROOT_FIREBASE_PATH), authResultHandler);
-    }*/
 }
