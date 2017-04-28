@@ -33,7 +33,7 @@ public class LastFourMatchesTeamDetailsSectionAdapter extends MultitypeRankingsS
             {"calculatedData.lfmAvgGearsPlacedTele", "calculatedData.lfmAvgGearLoaderIntakesTele","calculatedData.lfmAvgHighShotsTele",
                     "calculatedData.lfmAvgLowShotsTele", "calculatedData.lfmAvgKeyShotTime", "calculatedData.lfmAvgLiftoffTime"},
             {"calculatedData.lfmLiftoffPercentage"},
-            {"calculatedData.firstPickAbility"},
+            {"calculatedData.firstPickAbility", "calculatedData.allRotorsAbility"},
             {"calculatedData.lfmAvgAgility", "calculatedData.lfmAvgSpeed", "calculatedData.lfmAvgBallControl", "calculatedData.lfmAvgGearControl", "calculatedData.lfmAvgDefense"},
             {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
     };
@@ -98,7 +98,8 @@ public class LastFourMatchesTeamDetailsSectionAdapter extends MultitypeRankingsS
             "calculatedData.incapacitatedPercentage",
             "calculatedData.baselineReachedPercentage",
             "calculatedData.liftoffPercentage",*/
-            "calculatedData.firstPickAbility"
+            "calculatedData.firstPickAbility",
+            "calculatedData.allRotorsAbility"
 
     };
 

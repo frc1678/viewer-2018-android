@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsAdapter;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
+import com.example.evan.androidviewertools.utils.Constants;
 
 
 /**
@@ -16,7 +17,7 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setAllSortConstantsFalse();
         setListAdapter(new OverallSecondPickAdapter(getActivity().getApplicationContext()));
     }
 
@@ -36,5 +37,11 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
     @Override
     public Intent getTeamDetailsActivityIntent(){
         return new Intent(getActivity(), TeamDetailsActivity.class);
+    }
+    public void setAllSortConstantsFalse(){
+        Constants.sortByTeamNumber = false;
+        Constants.sortByRank = false;
+        Constants.sortByFirstPick = false;
+        Constants.sortBySecondPick = false;
     }
 }

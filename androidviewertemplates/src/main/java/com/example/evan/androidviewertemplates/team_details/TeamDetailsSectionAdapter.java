@@ -105,7 +105,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.firstPickAbility",
             "calculatedData.overallSecondPickAbility",
             "calculatedData.gearAbility",
-            "calculatedData.thirdPickAbility"
+            "calculatedData.thirdPickAbility",
+            "calculatedData.allRotorsAbility"
 
     };
 
