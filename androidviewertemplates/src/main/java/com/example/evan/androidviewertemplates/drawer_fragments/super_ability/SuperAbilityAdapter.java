@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 public class SuperAbilityAdapter extends FragmentStatePagerAdapter {
     Context context;
     //todo
-    String[] fields = {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl"};
+    String[] fields = {};
 
     public SuperAbilityAdapter(Context context, FragmentManager mgr) {
         super(mgr);
