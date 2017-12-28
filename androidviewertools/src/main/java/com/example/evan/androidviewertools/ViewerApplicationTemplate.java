@@ -32,11 +32,6 @@ public abstract class ViewerApplicationTemplate extends Application {
         Firebase.getDefaultConfig().setPersistenceEnabled(true);
     }
 
-
-
-
-
-
     public void restoreFromSharedPreferences() {
         sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String jsonImportantMatchesAsString = sharedPreferences.getString("importantMatches", "[]");

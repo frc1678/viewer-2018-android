@@ -22,7 +22,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
-import com.example.evan.androidviewertemplates.drawer_fragments.LastFourMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -119,11 +118,6 @@ public class MainActivity extends ViewerActivity
         //todo
         fragmentManager = getSupportFragmentManager();
         prefs = getSharedPreferences("prefFile1", Context.MODE_PRIVATE);
-        /*editor = prefs.edit();
-        if(prefs.contains("key")){
-            Log.e("contains", "key");
-            position = prefs.getInt("id", 0);
-        }*/
         switch (position) {
             default:
             case 0:
@@ -165,14 +159,6 @@ public class MainActivity extends ViewerActivity
                 fragment = new OverallSecondPickFragment();
                 latestFragmentId = position;
                 break;
-            case 9:
-                fragment = new SuperAbilityFragment();
-                latestFragmentId = position;
-                break;
-            case 10:
-                fragment = new LastFourMatchesFragment();
-                latestFragmentId = position;
-                break;
 
         }
         fragmentManager.beginTransaction()
@@ -181,7 +167,6 @@ public class MainActivity extends ViewerActivity
         onSectionAttached(position);
         Log.e("title position", position + "");
         restoreActionBar(position);
-//        editor.remove("key").commit();
 
     }
 

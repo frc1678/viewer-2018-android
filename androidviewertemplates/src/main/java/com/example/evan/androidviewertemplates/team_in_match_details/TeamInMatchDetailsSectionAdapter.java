@@ -26,20 +26,19 @@ import java.util.Map;
 public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"teamNumber", "matchNumber"},
-            {"calculatedData.numGearsPlacedAuto", "numHoppersOpenedAuto", "didReachBaselineAuto",
-                    "numGearsFumbledTele", "numGearsEjectedTele"},
-            {"calculatedData.numGearsPlacedTele", "numHoppersOpenedTele", "numGearGroundIntakesTele",
-                    "numGearLoaderIntakesTele", "numGearsFumbledTele", "numGearsEjectedTele"},
-            {"didLiftoff"},
-            {"superNotes", "rankSpeed", "rankAgility", "rankGearControl", "rankBallControl", "rankDefense"}
+            //Examples
+            //H1
+            {},
+            //H2
+            {}
+            //..etc
     };
 
-    private String[] sectionTitles = {"Information", "Auto", "Tele", "Liftoff", "Super"};
+    private String[] sectionTitles = {"H1", "H2"};
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {"teamNumber", "matchNumber","didLiftoff", "superNotes"};
+    private String[] displayAsUnranked = {};
 
     private String[] shouldDisplayAsLongText = {};
 

@@ -62,9 +62,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
 
         Match match = (Match)getItem(position);
-        //Log.e("match position", Integer.toString(position));
-
-
 
         if (StarManager.isImportantMatch(match.number)) {
             rowView.setBackgroundColor(Constants.STAR_COLOR);

@@ -62,15 +62,8 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
     @Override
     public List<Float> getValues() {
         List<Float> dataValues = new ArrayList<>();
-        //Log.e("object", Utils.getTeamInMatchDatasForTeamNumber(teamNumber).toString());
-        //Log.e("teamNumber", Integer.toString(teamNumber));
         for (TeamInMatchData teamInMatchData : Utils.getTeamInMatchDatasForTeamNumber(teamNumber)) {
-            //Log.e("object", teamInMatchData.toString());
             Object value =  Utils.getObjectField(teamInMatchData, field);
-            //Integer value1 = Integer.valueOf((Integer) Utils.getObjectField(teamInMatchData, "rankAgility"));
-            //Log.e("teamNumber", Integer.toString(teamNumber));
-            //Log.e("field", field);
-           // Log.e("value", String.valueOf(value));
             if (value instanceof Integer) {
                 Log.e("value", "is integer");
                 dataValues.add(((Integer) value).floatValue());
