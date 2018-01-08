@@ -41,26 +41,34 @@ Here's how to get your code into the main project repository:
   	+ Click the "Fork" button in the upper right corner of the screen.
 2. Clone your forked repo.
  	 + `git clone https://github.com/<your_name>/<repo_name>.git`, where `<your_name>` is your github username and `<repo_name>` is the project repository name (eg. scout-2017, server-2017).
+3. Add a remote for the upstream main repository you forked.
+	* `git remote add upstream https://github.com/frc1678/<repo_name>`
 
 
 ### Keeping your fork up to date:
 
 You should **always** update your forked remote before you start working.
 
-1. Add a remote for the upstream main repository you forked.
-	* `git remote add upstream https://github.com/frc1678/<repo_name>`, where `<repo_name>` is the name of the app you are trying to update.
-2. Whenever you want to update your fork with the latest updates on the main repository, fetch the upstream branches and merge the upstream remote's master into your local master branch.
+1. First, make sure you are on your local **master** branch. 
+	* `git checkout master`
+   If you are currently working on changes in another branch, * `add`, * `commit`, and * `push` those changes to your **forked repo** before checking out to the master branch.
+
+2. Next, fetch the branches of your upstream remote
 	* `git fetch upstream` to fetch all the branches
 	* `git branch -a` to see all the branches, both local and remote
-	* `git checkout master` to checkout to your local branch master
-	* `git merge remotes/upstream/master` to update your local branch master with the main repository's master branch
+
+3. Now, merge your local master branch with the master branch of the upstream remote
+	* `git pull upstream master` to update your local branch master with the upstream/main repository master branch
+
+4. Finally, push to your forked repo to update your forked repository on Github
+	* `git push <your-forked-remote’s name>  master`
 See [here](https://gist.github.com/Chaser324/ce0505fbed06b947d962) for more information.
 
 
 ### Anytime you want to make a change:
 
 1. Update your fork's master branch.
-2. Create and checkout a new branch.
+2. Create and checkout a **new branch**.
  	 * `git checkout -b <your-branch-name>`, where `<your-branch-name>` is a descriptive name for your branch. Use dashes in the branch name, not underscores.
 3. Make whatever code changes you want/need/ to make. Be sure to test your changes!
 4. Commit your work locally.
