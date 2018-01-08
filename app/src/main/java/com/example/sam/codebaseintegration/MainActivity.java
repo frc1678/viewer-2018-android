@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.instabug.library.Instabug;
 import com.instabug.library.invocation.InstabugInvocationEvent;
 
+//THIS IS THE MASTER BRANCH
 public class MainActivity extends AppCompatActivity {
     public boolean test;
     @Override
