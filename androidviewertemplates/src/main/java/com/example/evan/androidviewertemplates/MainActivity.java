@@ -31,6 +31,8 @@ import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFr
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesFragment;
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
+import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
@@ -105,7 +107,7 @@ public class MainActivity extends ViewerActivity
     public Integer getSavedPosition() {
         Integer position;
         position = prefs.getInt("id", 0);
-        Log.e("intial saved position", position + "");
+        Log.e("initial saved position", position + "");
         return position;
     }
 
