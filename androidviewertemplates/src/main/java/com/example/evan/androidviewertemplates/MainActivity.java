@@ -32,6 +32,7 @@ import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.Su
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesFragment;
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
