@@ -28,6 +28,7 @@ import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFra
 import com.example.evan.androidviewertemplates.drawer_fragments.ScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesFragment;
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
