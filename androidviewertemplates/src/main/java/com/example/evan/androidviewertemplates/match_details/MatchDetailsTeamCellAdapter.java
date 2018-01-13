@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 
 import com.example.evan.androidviewertemplates.R;
-import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.utils.Utils;

@@ -16,4 +16,7 @@ public class Competition extends Object {
     public List<Match> matches;
     public List<TeamInMatchData> TIMDs;
     public Integer currentMatchNum;
+
+   //is this it???
+
 }
