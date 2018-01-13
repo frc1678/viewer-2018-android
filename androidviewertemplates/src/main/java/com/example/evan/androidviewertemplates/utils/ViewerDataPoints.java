@@ -7,6 +7,8 @@ import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Utils;
 
+import org.jcodec.common.DictionaryCompressor;
+
 public class ViewerDataPoints {
     //todo
     //add methods here for data points local to viewer

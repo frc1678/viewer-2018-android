@@ -1,5 +1,8 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import com.example.evan.androidviewertools.firebase_classes.*;
+
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
