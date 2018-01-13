@@ -1,10 +1,6 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
-import com.example.evan.androidviewertools.firebase_classes.*;
-import com.example.evan.androidviewertemplates.firebase_classes.CalculatedTeamData;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,7 +9,7 @@ import java.util.Map;
 public class Match extends com.example.evan.androidviewertools.firebase_classes.Match {
     public CalculatedMatchData calculatedData;
     //Make sure all variables are public
-    public int number;
+    public Integer number;
     public ArrayList<String> redAllianceTeamNumbers;
     public ArrayList<String> blueAllianceTeamNumbers;
     public Map<String, String> blueCubesForPowerup;
@@ -28,10 +24,10 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Boolean redDidFaceBoss;
     public Map<String, String> redSwitch;
     public Map<String, String> scale;
-    public int redScore;
+    public Integer redScore;
 
-    public int blueScore;
-    public int foulPointsGainedRed;
-    public int foulPointsGainedBlue;
+    public Integer blueScore;
+    public Integer foulPointsGainedRed;
+    public Integer foulPointsGainedBlue;
 
 }

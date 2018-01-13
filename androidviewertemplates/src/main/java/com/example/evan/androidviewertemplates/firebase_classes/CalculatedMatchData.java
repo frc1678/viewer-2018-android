@@ -9,9 +9,9 @@ public class CalculatedMatchData extends Object {
     public Float predictedBlueScore;
     public Float predictedRedScore;
     public Float predictedBlueRPs;
-    public int actualBlueRPs;
+    public Integer actualBlueRPs;
     public Float predictedRedRPs;
-    public int actualRedRPs;
+    public Integer actualRedRPs;
     public Boolean predictedBlueAutoQuest;
     public Boolean predictedRedAutoQuest;
     public Float redWinChance;
