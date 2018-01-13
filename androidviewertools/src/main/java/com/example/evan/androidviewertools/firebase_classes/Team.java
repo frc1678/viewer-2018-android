@@ -6,9 +6,11 @@ import java.util.Map;
 
 
 public class Team {
+
 	public String name;
-	public Integer number;
-	public List<Match> matches;
-	public List<TeamInMatchData> teamInMatchDatas;
-	public String selectedImageUrl;
+ 	public Integer number;
+ 	public List<Match> matches;
+ 	public List<TeamInMatchData> teamInMatchDatas;
+ 	public String selectedImageUrl;
+
 }
