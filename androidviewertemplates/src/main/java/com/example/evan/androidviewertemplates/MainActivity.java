@@ -107,7 +107,7 @@ public class MainActivity extends ViewerActivity
     public Integer getSavedPosition() {
         Integer position;
         position = prefs.getInt("id", 0);
-        Log.e("intial saved position", position + "");
+        Log.e("initial saved position", position + "");
         return position;
     }
 
