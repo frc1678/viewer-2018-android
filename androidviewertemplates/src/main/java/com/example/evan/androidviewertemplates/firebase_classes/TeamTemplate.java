@@ -14,14 +14,14 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public CalculatedTeamData calculatedData;
     public int numMatchesPlayed;
     public String pitSelectedImageName;
-    public ArrayList<Map<String,String>> pitAllImageURLs;
+    public Map<String, String> pitAllImageURLs;
     public int pitAvailableWeight;
     public String pitDriveTrain;
-    public ArrayList<Map<String, String>> pitImageKeys; //Could be String?
+    public Map<String, String> pitImageKeys; //Could be String?
     public boolean pitDidDemonstrateCheesecakePotential;
     public String pitSEALSnote;
     public String pitProgrammingLanguage;
-    public Map<String, String> pitClimberType;
+    public Map<String, Boolean> pitClimberType;
     public Float pitMaxHeight;
 }
 
