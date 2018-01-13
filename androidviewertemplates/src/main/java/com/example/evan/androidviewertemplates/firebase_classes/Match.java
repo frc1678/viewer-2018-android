@@ -15,14 +15,14 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Integer number;
     public ArrayList<String> redAllianceTeamNumbers;
     public ArrayList<String> blueAllianceTeamNumbers;
-    public Map<String, String> blueCubesForPowerup;
-    public Map<String, String> blueCubesInVaultFinal;
+    public Map<String, Integer> blueCubesForPowerup;
+    public Map<String, Integer> blueCubesInVaultFinal;
     public Boolean blueDidAutoQuest;
     public Boolean blueDidFaceBoss;
 
 
-    public Map<String, String> redCubesForPowerup;
-    public Map<String, String> redCubesInVaultFinal;
+    public Map<String, Integer> redCubesForPowerup;
+    public Map<String, Integer> redCubesInVaultFinal;
     public Boolean redDidAutoQuest;
     public Boolean redDidFaceBoss;
     public Map<String, String> redSwitch;
