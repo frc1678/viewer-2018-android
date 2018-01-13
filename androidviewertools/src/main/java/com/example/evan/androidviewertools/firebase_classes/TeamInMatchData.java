@@ -7,4 +7,6 @@ import java.util.Map;
 public class TeamInMatchData {
 	public Integer teamNumber;
 	public Integer matchNumber;
+
+
 }
