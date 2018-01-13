@@ -3,6 +3,8 @@ package com.example.evan.androidviewertemplates.utils;
 import android.content.Intent;
 import android.util.Log;
 
+import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
+import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Utils;
 
 public class ViewerDataPoints {
