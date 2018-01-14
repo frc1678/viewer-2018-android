@@ -15,8 +15,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public String scoutName;
     public String superNotes;
 
-    public ArrayList<Map<String,Object>> blueSwitchAttemptAuto;
-    public ArrayList<Map<String,Object>> blueSwitchAttemptTele;
+    public ArrayList<Map<String,Object>> allianceSwitchAttemptAuto;
+    public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
 
     public Map<String, Map<String, Object>> climb;
 
@@ -26,8 +26,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Boolean didPark;
     public Integer numBadDecisions;
 
-    public ArrayList <Integer> numBluePlatformIntakeAuto;
-    public ArrayList <Integer> numBluePlatformIntakeTele;
+    public ArrayList <Integer> numAlliancePlatformIntakeAuto;
+    public ArrayList <Integer> numAlliancePlatformIntakeTele;
 
     public Integer numCubesFumbledAuto;
     public Integer numCubesFumbledTele;
@@ -42,8 +42,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numElevatedPyramidIntakeAuto;
     public Integer numElevatedPyramidIntakeTele;
 
-    public ArrayList <Integer> numRedPlatformIntakeAuto;
-    public ArrayList <Integer> numRedPlatformIntakeTele;
+    public ArrayList <Integer> numOpponentPlatformIntakeAuto;
+    public ArrayList <Integer> numOpponentPlatformIntakeTele;
 
     public Integer numReturnIntake;
     public Integer numSpilledCubesAuto;

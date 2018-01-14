@@ -15,6 +15,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numOpponentSwitchSuccessTele;
     public Integer numOpponentSwitchFailedAuto;
     public Integer numOpponentSwitchFailedTele;
+
     public Integer numScaleSuccessAuto;
     public Integer numScaleFailedAuto;
     public Integer numScaleSuccessTele;
