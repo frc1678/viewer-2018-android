@@ -28,17 +28,18 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
             {"matches, VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
-            {"avgCubesPlacedInScaleAuto","avgCubesPlacedInSwitchAuto","canScoreBothSwitchSidesAuto",
-            "didMakeAutoRun","switchFailPercentageAuto","scaleFailPercentageAuto"},
-            {"avgNumCubesFumbledTele","avgCubesPlacedInScaleTele","avgOpponentSwitchCubesTele",
-            "avgAllianceSwitchCubesTele","avgNumExchangeInputTele","avgNumGroundIntakeTele",
-            "avgNumPortalIntakeTele","switchFailPercentageTele","scaleFailPercentageTele"},
-            {"climbPercentage"},
-            {"incapacitatedPercentage","disabledPercentage"},
-            {"rank","avgDrivingAbility"},
-            {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
+            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgCubesPlacedInSwitchAuto","calculatedData.canScoreBothSwitchSidesAuto",
+            "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleFailPercentageAuto"},
+            {"calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
+            "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundIntakeTele",
+            "calculatedData.avgNumPortalIntakeTele","calculatedData.switchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
+            {"calculatedData.climbPercentage"},
+            {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
+            {"calculatedData.avgDrivingAbility"},
+            {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
+                    "superNotes","calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions"},
             {"pitDriveTrain","pitDidDemonstrateCheesecakePotential","pitClimberType","pitSEALsNotes",
-            "pitAvailableWeight","pitProgrammingLanguage","picture"}
+            "pitAvailableWeight","pitProgrammingLanguage"}
 
 
     };

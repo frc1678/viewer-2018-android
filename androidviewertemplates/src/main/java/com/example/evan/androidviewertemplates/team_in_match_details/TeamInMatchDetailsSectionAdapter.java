@@ -27,10 +27,10 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     //todo
     private String[][] fieldsToDisplay = {
             {"number","matchNumber"},
-            {"didCrossAutoLine","didCrossAutoZone","numCubesFumbled","numCubesPlacedSwitch",
-            "numCubesPlacedScale"},
-            {"numCubesFumbled","numCubesAllianceSwitch","numCubesOpponentSwitch","numCubesScale",
-            "numCubesInExchange","numGroundIntake","numHumanIntake"},
+            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchCubeSuccessAuto",
+            "calculatedData.numScaleSuccessAuto"},
+            {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
+                    "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
             {"climb","didPark"},
             {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
     };
