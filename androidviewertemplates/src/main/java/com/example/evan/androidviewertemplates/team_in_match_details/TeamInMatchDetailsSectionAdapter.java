@@ -26,21 +26,29 @@ import java.util.Map;
 public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            //Examples
-            //H1
-            {},
-            //H2
-            {}
-            //..etc
+            {"number","matchNumber"},
+            {"didCrossAutoLine","didCrossAutoZone","numCubesFumbled","numCubesPlacedSwitch",
+            "numCubesPlacedScale"},
+            {"numCubesFumbled","numCubesAllianceSwitch","numCubesOpponentSwitch","numCubesScale",
+            "numCubesInExchange","numGroundIntake","numHumanIntake"},
+            {"climb","didPark"},
+            {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
     };
 
-    private String[] sectionTitles = {"H1", "H2"};
+    private String[] sectionTitles = {
+            "Information",
+            "Auto",
+            "Tele",
+            "Face The Boss",
+            "Super Data",
+
+    };
 
     private String[] shouldDisplayAsPercentage = {};
 
     private String[] displayAsUnranked = {};
 
-    private String[] shouldDisplayAsLongText = {};
+    private String[] shouldDisplayAsLongText = {"superNotes"};
 
     private String[] rankInsteadOfGraph = {};
 
