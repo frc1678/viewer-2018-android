@@ -31,9 +31,9 @@ public class CalculatedTeamData extends Object {
     public Integer avgCubesSpilledAuto;
     public Integer avgCubesSpilledTele;
     public Float avgCubesPlacedInScaleAuto;
-    public Float avgCubesPlacedInSwitchAuto;
+    public Float avgOpponentSwitchCubesAuto;
     public Float avgCubesPlacedInScaleTele;
-    public Float avgCubesPlacedInSwitchTele;
+    public Float avgOpponentSwitchCubesTele;
     public Float avgNumGoodDecisions;
     public Float avgNumBadDecisions;
     public Float avgClimbTime;
