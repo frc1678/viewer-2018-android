@@ -27,24 +27,28 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
-            {"calculatedData.disabledPercentage", "calculatedData.incapacitatedPercentage"},
-            {"calculatedData.avgGearsPlacedAuto", "calculatedData.avgHighShotsAuto",
-                    "calculatedData.avgLowShotsAuto", "calculatedData.baselineReachedPercentage"},
-            {"calculatedData.avgGearsPlacedTele", "calculatedData.avgGearLoaderIntakesTele","calculatedData.avgHighShotsTele",
-                    "calculatedData.avgLowShotsTele", "calculatedData.avgKeyShotTime", "calculatedData.avgLiftoffTime"},
-            {"calculatedData.liftoffPercentage"},
-            {"calculatedData.firstPickAbility", "calculatedData.allRotorsAbility", "calculatedData.avgDrivingAbility"},
-            {"calculatedData.avgAgility", "calculatedData.avgSpeed", "calculatedData.avgBallControl", "calculatedData.avgGearControl", "calculatedData.avgDefense"},
-            {"pitNotes", "pitProgrammingLanguage", "pitAvailableWeight", "pitOrganization", "pitDidDemonstrateCheesecakePotential", "pitDriveTrain"}
+            {"matches, VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
+            {"avgCubesPlacedInScaleAuto","avgCubesPlacedInSwitchAuto","canScoreBothSwitchSidesAuto",
+            "didMakeAutoRun","switchFailPercentageAuto","scaleFailPercentageAuto"},
+            {"avgNumCubesFumbledTele","avgCubesPlacedInScaleTele","avgOpponentSwitchCubesTele",
+            "avgAllianceSwitchCubesTele","avgNumExchangeInputTele","avgNumGroundIntakeTele",
+            "avgNumPortalIntakeTele","switchFailPercentageTele","scaleFailPercentageTele"},
+            {"climbPercentage"},
+            {"incapacitatedPercentage","disabledPercentage"},
+            {"rank","avgDrivingAbility"},
+            {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
+            {"pitDriveTrain","pitDidDemonstrateCheesecakePotential","pitClimberType","pitSEALsNotes",
+            "pitAvailableWeight","pitProgrammingLanguage","picture"}
+
+
     };
 
     private String[] sectionTitles = {
             "Matches",
-            "Status",
             "Auto",
             "Teleop",
-            "Liftoff",
+            "Face The Boss",
+            "Status",
             "High Level",
             "Super Data",
             "Pit Data"
@@ -74,7 +78,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     };
 
     private String[] shouldDisplayAsFurtherInformation = {
-            "matches"
+            "matches",
+            "superNotes"
     };
 
     private String[] notClickableFields = {
@@ -87,7 +92,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitOrganization",
             "pitDriveTrain",
             "pitDidDemonstrateCheesecakePotential",
-            "superNotes"
+            //"superNotes"
     };
 
     private String[] createListOnClick = {
