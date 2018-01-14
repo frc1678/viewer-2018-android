@@ -10,6 +10,8 @@ import java.util.Map;
  */
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
+    public Integer teamNumber;
+    public Integer matchNumber;
     public String scoutName;
     public String superNotes;
 
@@ -32,29 +34,25 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numExchangeInput;
     public Integer numGoodDecisisions;
     public Integer numGroundIntakeTele;
+    public Integer numGroundPortalIntakeTele;
+    public Integer HumanPortalIntakeTele;
 
-
-    public Map <String,Integer> numPortalIntakeTele;
-    public Map <String,Integer> numPyramidIntakeAuto;
-    public Map <String,Integer> numPyramidIntakeTele;
+    public Integer numGroundPyramidIntakeAuto;
+    public Integer numGroundPyramidIntakeTele;
+    public Integer numElevatedPyramidIntakeAuto;
+    public Integer numElevatedPyramidIntakeTele;
 
     public ArrayList <Integer> numRedPlatformIntakeAuto;
     public ArrayList <Integer> numRedPlatformIntakeTele;
 
-    public Integer numReturnintake;
+    public Integer numReturnIntake;
     public Integer numSpilledCubesAuto;
     public Integer numSpilledCubesTele;
     public Integer rankAgility;
     public Integer rankDefense;
     public Integer rankSpeed;
-    public Integer rankStacking;
-
-    /*check*/
     public String startingPosition;
-    /*finish check*/
-
-    public Map <String,Object> redSwitchAttempAuto;
-    public Map <String, Object> redSwitchAttemptTele;
+    public Map <String,Object> opponentSwitchAttemptTele;
     public Map <String, Object> scaleAttemptAuto;
     public Map <String, Object> scaleAttemptTele;
 

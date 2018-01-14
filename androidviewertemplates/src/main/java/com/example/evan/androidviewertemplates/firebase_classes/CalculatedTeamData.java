@@ -13,49 +13,74 @@ public class CalculatedTeamData extends Object {
     public Float incapacitatedPercentage;
     public Integer avgNumRedPlatformIntakeAuto;
     public Integer avgNumBluePlatformIntakeAuto;
-    public Integer avgNumPyramidIntakeAuto;
+    public Integer avgNumGroundPyramidIntakeAuto;
+    public Integer ElevatedPyramidIntakeAuto;
     public Integer avgNumCubesFumbledAuto;
     public Integer avgNumCubesFumbledTele;
-    public Integer avgNumPyramidIntakeTele;
+    public Integer avgNumGroundPyramidIntakeTele;
+    public Integer avgNumElevatedPyramidIntakeTele;
     public Integer avgNumRedPlatformIntakeTele;
     public Integer avgNumBluePlatformIntakeTele;
     public Integer avgNumGroundIntakeTele;
-    public Map<String,Float> avgNumPortalIntakeTele;
+
+
+    public Float avgNumGroundPortalIntakeTele;
+    public Float avgNumHumanPortalIntakeTele;
 
     public Integer avgNumExchangeInputTele;
     public Integer avgNumRetrunIntakeTele;
     public Integer avgCubesSpilledAuto;
     public Integer avgCubesSpilledTele;
+    public Float avgCubesPlacedInScaleAuto;
+    public Float avgCubesPlacedInSwitchAuto;
+    public Float avgCubesPlacedInScaleTele;
+    public Float avgCubesPlacedInSwitchTele;
+    public Float avgNumGoodDecisions;
+    public Float avgNumBadDecisions;
+    public Float avgClimbTime;
     public Float avgAgility;
     public Float avgSpeed;
     public Float avgDefense;
-    public Float avgStacking;
+
     public Float avgDrivingAbility;
     public Float lfmAvgNumRedPlatformIntakeAuto;
     public Float lfmAvgNumBluePlatformIntakeAuto;
     public Float lfmAvgNumPyramidIntakeAuto;
-    public Float lfmAvgNumPyramidIntakeTele;
+    public Float lfmAvgNumGroundPyramidIntakeAuto;
+    public Float lfmAvgNumGroundPyramidIntakeTele;
+    public Float lfmAvgNumElevatedPyramidIntakeAuto;
+    public Float lfmAvgNumElevatedPyramidIntakeTele;
+
     public Float lfmAvgNumCubesFumbledAuto;
     public Float lfmAvgNumBubesFumbledTele;
     public Float lfmAvgNumRedPlatformIntakeTele;
     public Float lfmAvgNumBluePlatformIntakeTele;
     public Float lfmAvgGroundIntakeTele;
-    public Map <String,Float> lfmAvgPortalIntakeTele;
-
-
+    public Float lfmAvgNumGroundPortalIntakeTele;
+    public Float lfmAvgNumHumanPortalIntakeTele;
     public Float lfmAvgNumExchangeInputTele;
     public Float lfmAvgNumReturnIntakeTele;
+    public Float lfmAvgNumGoodDecisions;
+    public Float lfmAvgNumBadDecisions;
+
+
     public Float lfmAvgCubesSpilledAuto;
     public Float lfmAvgCubesSpilledTele;
     public Float lfmAvgSpeed;
     public Float lfmAvgDefense;
     public Float lfmAvgAgility;
     public Float lfmAvgDrivingAbility;
-    public Float lfmAvgStacking;
     public Float predictedClimb;
-    public Integer predictedNumBlueSwitchCubesAuto;
-    public Integer predictedNumRedSwitchCubesAuto;
+
+    public Float climbPercentage;
+    public Integer predictedNumAllianceSwitchCubesAuto;
     public Integer predictedNumScaleCubesAuto;
-    public Float actualNumRPs;
+    public Float actualNumRps;
     public Float predictedNumRPs;
+
+    public Float switchFailPercentageAuto;
+    public Float scaleFailPercentageAuto;
+    public Float switchFailPercentageTele;
+    public Float scaleFailPercentageTele;
+    public Boolean canScoreBothSwitchSidesAuto;
 }
