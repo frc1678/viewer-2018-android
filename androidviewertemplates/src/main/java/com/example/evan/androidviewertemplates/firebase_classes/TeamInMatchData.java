@@ -10,11 +10,13 @@ import java.util.Map;
  */
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
+    public Integer teamNumber;
+    public Integer matchNumber;
     public String scoutName;
     public String superNotes;
 
-    public ArrayList<Map<String,Object>> blueSwitchAttemptAuto;
-    public ArrayList<Map<String,Object>> blueSwitchAttemptTele;
+    public ArrayList<Map<String,Object>> allianceSwitchAttemptAuto;
+    public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
 
     public Map<String, Map<String, Object>> climb;
 
@@ -24,37 +26,33 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Boolean didPark;
     public Integer numBadDecisions;
 
-    public ArrayList <Integer> numBluePlatformIntakeAuto;
-    public ArrayList <Integer> numBluePlatformIntakeTele;
+    public ArrayList <Integer> numAlliancePlatformIntakeAuto;
+    public ArrayList <Integer> numAlliancePlatformIntakeTele;
 
     public Integer numCubesFumbledAuto;
     public Integer numCubesFumbledTele;
     public Integer numExchangeInput;
     public Integer numGoodDecisisions;
     public Integer numGroundIntakeTele;
+    public Integer numGroundPortalIntakeTele;
+    public Integer HumanPortalIntakeTele;
 
+    public Integer numGroundPyramidIntakeAuto;
+    public Integer numGroundPyramidIntakeTele;
+    public Integer numElevatedPyramidIntakeAuto;
+    public Integer numElevatedPyramidIntakeTele;
 
-    public Map <String,Integer> numPortalIntakeTele;
-    public Map <String,Integer> numPyramidIntakeAuto;
-    public Map <String,Integer> numPyramidIntakeTele;
+    public ArrayList <Integer> numOpponentPlatformIntakeAuto;
+    public ArrayList <Integer> numOpponentPlatformIntakeTele;
 
-    public ArrayList <Integer> numRedPlatformIntakeAuto;
-    public ArrayList <Integer> numRedPlatformIntakeTele;
-
-    public Integer numReturnintake;
+    public Integer numReturnIntake;
     public Integer numSpilledCubesAuto;
     public Integer numSpilledCubesTele;
     public Integer rankAgility;
     public Integer rankDefense;
     public Integer rankSpeed;
-    public Integer rankStacking;
-
-    /*check*/
     public String startingPosition;
-    /*finish check*/
-
-    public Map <String,Object> redSwitchAttempAuto;
-    public Map <String, Object> redSwitchAttemptTele;
+    public Map <String,Object> opponentSwitchAttemptTele;
     public Map <String, Object> scaleAttemptAuto;
     public Map <String, Object> scaleAttemptTele;
 
