@@ -69,6 +69,8 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgDefense;
     public Float lfmAvgAgility;
     public Float lfmAvgDrivingAbility;
+    public Integer totalNumGoodDecisions;
+    public Integer totalNumBadDecisions;
     public Float predictedClimb;
 
     public Float climbPercentage;
