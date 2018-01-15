@@ -1,5 +1,6 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -11,29 +12,30 @@ public class CalculatedTeamData extends Object {
     public Float secondPickAbility;
     public Float disabledPercentage;
     public Float incapacitatedPercentage;
-    public Integer avgNumOpponentPlatformIntakeAuto;
-    public Integer avgNumAlliancePlatformIntakeAuto;
-    public Integer avgNumGroundPyramidIntakeAuto;
-    public Integer avgNumElevatedPyramidIntakeAuto;
-    public Integer avgNumCubesFumbledAuto;
-    public Integer avgNumCubesFumbledTele;
-    public Integer avgNumGroundPyramidIntakeTele;
-    public Integer avgNumElevatedPyramidIntakeTele;
-    public Integer avgNumOpponentPlatformIntakeTele;
-    public Integer avgNumAlliancePlatformIntakeTele;
-    public Integer avgNumGroundIntakeTele;
+    public Float avgNumOpponentPlatformIntakeAuto;
+    public Float avgNumAlliancePlatformIntakeAuto;
+    public Float avgNumGroundPyramidIntakeAuto;
+    public Float avgNumElevatedPyramidIntakeAuto;
+    public Float avgNumCubesFumbledAuto;
+    public Float avgNumCubesFumbledTele;
+    public Float avgNumGroundPyramidIntakeTele;
+    public Float avgNumElevatedPyramidIntakeTele;
+    public Float avgNumOpponentPlatformIntakeTele;
+    public Float avgNumAlliancePlatformIntakeTele;
+    public Float avgNumGroundIntakeTele;
 
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
 
-    public Integer avgNumExchangeInputTele;
-    public Integer avgNumRetrunIntakeTele;
-    public Integer avgCubesSpilledAuto;
-    public Integer avgCubesSpilledTele;
+    public Float avgNumExchangeInputTele;
+    public Float avgNumRetrunIntakeTele;
+    public Float avgCubesSpilledAuto;
+    public Float avgCubesSpilledTele;
     public Float avgCubesPlacedInScaleAuto;
     public Float avgOpponentSwitchCubesAuto;
     public Float avgCubesPlacedInScaleTele;
     public Float avgOpponentSwitchCubesTele;
+    public Float avgAllianceSwitchCubesTele;
     public Float avgNumGoodDecisions;
     public Float avgNumBadDecisions;
     public Float avgClimbTime;
@@ -49,6 +51,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgNumGroundPyramidIntakeTele;
     public Float lfmAvgNumElevatedPyramidIntakeAuto;
     public Float lfmAvgNumElevatedPyramidIntakeTele;
+    public Float lfmAvgNumBluePlatformintakeTele; //todo Delete later
 
     public Float lfmAvgNumCubesFumbledAuto;
     public Float lfmAvgNumBubesFumbledTele;
@@ -57,21 +60,37 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgGroundIntakeTele;
     public Float lfmAvgNumGroundPortalIntakeTele;
     public Float lfmAvgNumHumanPortalIntakeTele;
+    public Float lfmAvgNumGroundIntakeTele;
+    public Float lfmAvgCubesPlacedInScaleAuto;
+    public Float avgNumReturnIntakeTele;
     public Float lfmAvgNumExchangeInputTele;
     public Float lfmAvgNumReturnIntakeTele;
     public Float lfmAvgNumGoodDecisions;
     public Float lfmAvgNumBadDecisions;
+    public Float lfmAvgNumGoodDecicions;
+    public Float lfmAvgAllianceSwitchCubesAuto;
+    public Float lfmAvgAllianceSwitchCubesTele;
+    public Float numSuccessfulClimbs;
+    public Float firstPickAbility;
+    public Float lfmAvgOpponentSwitchCubesTele;
+    public Float avgAllianceSwitchCubesAuto;
 
 
+    public Float lfmAvgNumCubesFumbledTele;
+    /*public Float lfmAvgNumCubesFumbledAuto;*/
     public Float lfmAvgCubesSpilledAuto;
     public Float lfmAvgCubesSpilledTele;
     public Float lfmAvgSpeed;
     public Float lfmAvgDefense;
+    public Float totalNumRobotLiftAttempts;
     public Float lfmAvgAgility;
     public Float lfmAvgDrivingAbility;
+    public Float lfmAvgOpponentSwitchCubesAuto;
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
     public Float predictedClimb;
+    public Float lfmAvgCubesPlacedInScaleTele;
+
 
     public Float climbPercentage;
     public Integer predictedNumAllianceSwitchCubesAuto;
@@ -80,6 +99,12 @@ public class CalculatedTeamData extends Object {
     public Float predictedNumRPs;
 
     public Float autoRunPercentage;
+    public Float lfmAvgNumPyramidintakeTele;
+    public Integer totalNumRobotsLifted;
+    public Integer totalNumParks;
+    public Integer totalNumRobotsLiftAttempts;
+    public Integer totalNumRobotsGroundLifted;
+    public Integer totalNumRobotGroundLiftAttempts;
 
     public Float switchFailPercentageAuto;
     public Float scaleFailPercentageAuto;
