@@ -20,11 +20,6 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Boolean blueDidAutoQuest;
     public Boolean blueDidFaceBoss;
 
-    public Integer Levitate;
-    public Integer Force;
-    public Integer Boost;
-
-
     public Map<String, Integer> redCubesForPowerup;
     public Map<String, Integer> redCubesInVaultFinal;
     public Boolean redDidAutoQuest;
