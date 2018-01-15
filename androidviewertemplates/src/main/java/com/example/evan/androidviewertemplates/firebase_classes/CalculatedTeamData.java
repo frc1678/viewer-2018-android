@@ -22,6 +22,7 @@ public class CalculatedTeamData extends Object {
     public Float avgNumElevatedPyramidIntakeTele;
     public Float avgNumOpponentPlatformIntakeTele;
     public Float avgNumAlliancePlatformIntakeTele;
+    //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
 
     public Float avgNumGroundPortalIntakeTele;
@@ -88,15 +89,19 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgOpponentSwitchCubesAuto;
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
+
     public Float predictedClimb;
     public Float lfmAvgCubesPlacedInScaleTele;
+    public Float dysfunctionalPercentage;
 
 
+    public Float number;
     public Float climbPercentage;
     public Integer predictedNumAllianceSwitchCubesAuto;
     public Integer predictedNumScaleCubesAuto;
     public Float actualNumRPs;
     public Float predictedNumRPs;
+    public Float lfmAvgAllaicneSwitchCubesTele; //todo Delete later
 
     public Float autoRunPercentage;
     public Float lfmAvgNumPyramidintakeTele;
