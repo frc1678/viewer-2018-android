@@ -27,7 +27,9 @@ public class FirebaseList<T> {
         listener = firebase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+           //     Log.e("datapointError", dataSnapshot.getValue().toString());
                 T model = dataSnapshot.getValue(firebaseClass);
+
                 String key = dataSnapshot.getKey();
 
                 // Insert into the correct location, based on s
