@@ -86,4 +86,6 @@ public class CalculatedTeamData extends Object {
     public Float switchFailPercentageTele;
     public Float scaleFailPercentageTele;
     public Boolean canScoreBothSwitchSidesAuto;
+    public Integer actualSeed;
+    public Integer predictedSeed;
 }
