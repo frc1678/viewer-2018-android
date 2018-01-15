@@ -26,7 +26,7 @@ public class SpecificConstants extends Constants {
                     //Auto
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale");
                     put ("calculatedData.avgCubesPlacedInSwitchAuto","Avg Cubes in Switch");
-                    put ("canScoreBothSwitchSidesAuto","Can Score Both Switches");
+                    put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches");
                     put ("didMakeAutoRun","Auto Run");
                     put ("calculatedData.switchFailPercentageAuto","Switch Fail Percentage");
                     put("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage");
@@ -47,7 +47,7 @@ public class SpecificConstants extends Constants {
                     put ("climbPercentage","Percentage of Climbing");
 
                     //Matches
-                    put ("matches","Matches");
+                    put ("currentMatchNum","Matches");
                     put ("VIEWER.matchesUntilNextMatchForTeam","Matches Until Next Match");
                     put ("numMatchesPlayed","Num. Matches Played");
 

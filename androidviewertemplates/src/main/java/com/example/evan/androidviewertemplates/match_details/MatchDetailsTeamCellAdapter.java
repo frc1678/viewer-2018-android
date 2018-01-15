@@ -29,8 +29,8 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
             "calculatedData.autoRunPercentage",
             "calculatedData.climbPercentage",
             "calculatedData.avgCubesSpilledTele",
-            "calculatedData.avgNumExchangeInputTele",
-            "calculatedData.avgCubesPlacedInScaleTele",
+            "calculatedData.avgNumExchangeInputTele",//
+            "calculatedData.avgCubesPlacedInScaleTele",//
             "calculatedData.avgAllianceSwitchCubesAuto",
     };
 
