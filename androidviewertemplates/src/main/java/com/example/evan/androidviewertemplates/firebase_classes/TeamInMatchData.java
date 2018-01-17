@@ -57,8 +57,13 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer rankDefense;
     public Integer rankSpeed;
     public String startingPosition;
-    public Map <String,Object> opponentSwitchAttemptTele;
+    public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
     public ArrayList<Map <String, Object>> scaleAttemptAuto;
     public ArrayList<Map <String, Object>> scaleAttemptTele;
+    public Integer numGoodDecision;
+    public Integer numBadDecision;
+    public Integer numSpeed;
+    public Integer numAgility;
+    public Integer numDefense;
 
 }
