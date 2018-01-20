@@ -27,6 +27,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numScaleSuccessTele;
     public Integer numScaleFailedTele;
     public Float climbTime;
+    public Boolean didClimb;
     public Float avgAllianceSwitchTimeTele;
     public Float avgOpponentSwitchTimeTele;
     public Float avgScaleTimeAuto;
