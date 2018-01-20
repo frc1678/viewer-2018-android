@@ -25,6 +25,12 @@ public class CalculatedTeamData extends Object {
     //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
 
+    public Float avgAllianceTimeTele;
+    public Float avgAllianceTimeAuto;
+    public Float avgOpponentTimeTele;
+    public Float avgOpponentTimeAuto;
+
+
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
 
