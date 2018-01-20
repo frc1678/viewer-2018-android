@@ -102,7 +102,7 @@ public class CalculatedTeamData extends Object {
     public Float actualNumRPs;
     public Float predictedNumRPs;
     public Float lfmAvgAllaicneSwitchCubesTele; //todo Delete later
-
+    public Float lfmActualNumRPs;
     public Float autoRunPercentage;
     public Float lfmAvgNumPyramidintakeTele;
     public Integer totalNumRobotsLifted;
@@ -110,6 +110,24 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumRobotsLiftAttempts;
     public Integer totalNumRobotsGroundLifted;
     public Integer totalNumRobotGroundLiftAttempts;
+
+    public Float avgScaleTimeAuto;
+    public Float avgScaleTimeTele;
+    public Float avgAllianceSwitchTimeAuto;
+    public Float avgOpponentSwitchTimeTele;
+    public Float avgAllianceSwitchTimeTele;
+
+
+    public Float lfmAvgScaleTimeAuto;
+    public Float lfmAvgScaleTimeTele;
+    public Float lfmAvgAllianceSwitchTimeAuto;
+    public Float lfmAvgAllianceSwitchTimeTele;
+    public Float lfmAvgOpponentSwitchTimeTele;
+
+    public Float RScoreDefense;
+    public Float RScoreSpeed;
+    public Float RScoreAgility;
+    Float RScoreDrivingAbility;
 
     public Float switchFailPercentageAuto;
     public Float scaleFailPercentageAuto;

@@ -16,12 +16,16 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numOpponentSwitchFailedAuto;
     public Integer numOpponentSwitchFailedTele;
     public Integer cubeAblility;
-
+    public Integer numOpponentPlatformIntakeTele;
+    public Integer numOpponentPlatformIntakeAuto;
+    public Integer numAlliancePlatformIntakeTele;
+    public Integer numAlliancePlatformIntakeAuto;
     public Integer numScaleSuccessAuto;
     public Integer numScaleFailedAuto;
     public Integer numScaleSuccessTele;
     public Integer numScaleFailedTele;
     public Float climbTime;
+    public Boolean didClimb;
     public Float avgAllianceSwitchTimeTele;
     public Float avgOpponentSwitchTimeTele;
     public Float avgScaleTimeAuto;

@@ -20,7 +20,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Map<String,String> pitImageKeys;
     public Map<String,String> imageKeys; //todo Delete later.
 
-    public Boolean pitDidDemonstrateCheesecakePotential;
+    public Boolean pitCanCheesecake;
     public String pitSEALsNotes;
     public String SEALSNotes;
     public String pitProgrammingLanguage;
