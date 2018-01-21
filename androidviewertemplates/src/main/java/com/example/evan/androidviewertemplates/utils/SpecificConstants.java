@@ -62,7 +62,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgDrivingAbility","Avg Driving Ability");
 
                     //SuperData
-                    put ("alculatedData.avgSpeed","Speed");
+                    put ("calculatedData.avgSpeed","Speed");
                     put ("calculatedData.avgAgility","Agility");
                     put ("calculatedData.avgDefense","Defense");
                     put ("calculatedData.totalNumGoodDecisions","Total Num of Good Decisions");
@@ -105,7 +105,7 @@ public class SpecificConstants extends Constants {
 
                     //SuperData
                     put ("rankSpeed","Ranked Speed");
-                    put ("rankAgility","Ranked Agility");
+                    put ("rankagility","Ranked Agility");
                     put ("rankDefense","Ranked Defense");
                     put ("superNotes","Super Notes");
                     put ("numGoodDecisions","Num of Good Decisions");
@@ -117,7 +117,6 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
-                put ("calculatedData.avgNumAlliancePlatformIntakeAuto", "numAlliancePlatformIntakeAuto");
                 put ("calculatedData.avgCubesPlacedInScaleAuto","calculatedData.numScaleSuccessAuto");
                 put ("calculatedData.avgAllianceSwitchCubesAuto","calculatedData.numAllianceSwitchSuccessAuto");
                 put ("calculatedData.avgNumCubesFumbledTele","numCubesFumbledTele");
