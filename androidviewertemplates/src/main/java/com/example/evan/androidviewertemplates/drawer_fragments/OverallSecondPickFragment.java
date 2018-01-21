@@ -24,6 +24,7 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
     /**
      * Created by colinunger on 1/28/16.
      */
+    //some change
     public static class OverallSecondPickAdapter extends TeamRankingsAdapter {
 
         public OverallSecondPickAdapter(Context context) {
