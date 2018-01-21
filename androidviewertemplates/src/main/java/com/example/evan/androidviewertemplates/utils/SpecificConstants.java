@@ -24,27 +24,30 @@ public class SpecificConstants extends Constants {
             {
                 //TeamDetailsSectionAdapter
                     //Auto
+                    put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale");
-                    put ("calculatedData.avgCubesPlacedInSwitchAuto","Avg Cubes in Switch");
+                    put ("calculatedData.numAllianceSwitchSuccessAuto","Avg Cubes in Switch");
                     put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches");
                     put ("didMakeAutoRun","Auto Run");
                     put ("calculatedData.switchFailPercentageAuto","Switch Fail Percentage");
                     put("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage");
+                    put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Switch");
 
                     //Teleop
+                    put ("calculatedData.avgCubesSpilledTele","Avg Cubes Spilled");
                     put ("calculatedData.avgNumCubesFumbledTele","Avg Cubes Fumbled");
                     put ("calculatedData.avgCubesPlacedInScaleTele","Avg Cubes put in Scale");
                     put ("calculatedData.avgOpponentSwitchCubesTele","Avg Cubes in Blue Switch");
                     put ("calculatedData.avgAllianceSwitchCubesTele","Avg Cubes in Red Switch");
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes put in Exchange");
-                    put ("calculatedData.avgNumGroundIntakeTele","Avg Ground Intake");
-                    put ("calculatedData.avgNumPortalIntakeTele","Avg Portal Intake");
+                    put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Intake");
+                    put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Portal Intake");
                     put ("calculatedData.switchFailPercentageTele","Percentage Switch Fails");
                     put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fails");
 
                     //FaceTheBoss
                     put ("calculatedData.climb","Avg Climb Time");
-                    put ("climbPercentage","Percentage of Climbing");
+                    put ("predictedClimb","Percentage of Climbing");
 
                     //Matches
                     put ("currentMatchNum","Matches");
@@ -68,7 +71,7 @@ public class SpecificConstants extends Constants {
 
                     //PitData
                     put ("pitDriveTrain","Drive Train");
-                    put ("pitDidDemonstrateCheesecakePotential","Can Use Cheesecake");
+                    put ("pitCanCheesecake","Can Use Cheesecake");
                     put ("pitClimberType","Type of Climb");
                     put ("pitSEALsNotes","SEAL Notes");
                     put ("pitAvailableWeight","Available Weight");
@@ -79,7 +82,7 @@ public class SpecificConstants extends Constants {
                     put ("didMakeAutoRun","Did Make Auto Run");
                     put ("didCrossAutoZone","Can Cross Auto Zone");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled");
-                    put ("calculatedData.numAllianceSwitchCubeSuccessAuto","Num. Alliance Switch Cubes");
+                    put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes");
                     put ("caluculatedData.numScaleSuccessAuto","Num Auto Scale Success");
 
                     //Information
@@ -116,15 +119,15 @@ public class SpecificConstants extends Constants {
             {
                 put ("calculatedData.avgNumAlliancePlatformIntakeAuto", "numAlliancePlatformIntakeAuto");
                 put ("calculatedData.avgCubesPlacedInScaleAuto","calculatedData.numScaleSuccessAuto");
-                put ("calculatedData.avgCubesPlacedInSwitchAuto","calculatedData.numAllianceSwitchSuccessAuto");
-                put ("calculatedData.avgCubesFumbledTele","numCubesFumbledTele");
+                put ("calculatedData.avgAllianceSwitchCubesAuto","calculatedData.numAllianceSwitchSuccessAuto");
+                put ("calculatedData.avgNumCubesFumbledTele","numCubesFumbledTele");
                 put ("calculatedData.avgCubesPlacedInScaleTele","calculatedData.numScaleSuccessTele");
                 put ("calculatedData.avgOpponentSwitchCubesTele","calculatedData.numOpponentSwitchSuccessTele");
                 put ("calculatedData.avgAllianceSwitchCubesTele","calculatedData.numAllianceSwitchSuccessTele");
                 put ("calculatedData.avgNumExchangeInputTele","numExchangeInput");
                 put ("calculatedData.avgNumGroundIntakeTele","numGroundIntakeTele");
-                put ("calculatedData.avgNumGroundPortalIntake","numGroundPortalIntakeTele");
-                put ("calculatedData.avgNumHumanPortalIntake","numHumanPortalIntakeTele");
+                put ("calculatedData.avgNumGroundPortalIntakeTele","numGroundPortalIntakeTele");
+                put ("calculatedData.avgNumHumanPortalIntakeTele","numHumanPortalIntakeTele");
                 put ("calculatedData.climb","calculatedData.climbTime");
                 //put ("calculatedData.avgDrivingAbility","drivingAbility");
                 put ("calculatedData.avgNumGoodDecisions","numGoodDecisions");

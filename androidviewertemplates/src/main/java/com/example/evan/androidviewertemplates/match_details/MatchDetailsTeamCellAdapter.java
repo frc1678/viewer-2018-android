@@ -27,7 +27,7 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
     //todo
     private String[] fields = {
             "calculatedData.autoRunPercentage",
-            "calculatedData.climbPercentage",
+            "calculatedData.predicttedClimb",
             "calculatedData.avgCubesSpilledTele",
             "calculatedData.avgNumExchangeInputTele",//
             "calculatedData.avgCubesPlacedInScaleTele",//

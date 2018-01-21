@@ -93,7 +93,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgAgility;
     public Float lfmAvgDrivingAbility;
     public Float lfmAvgOpponentSwitchCubesAuto;
-    public Float lfmActualNumRPs;
+
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
 
