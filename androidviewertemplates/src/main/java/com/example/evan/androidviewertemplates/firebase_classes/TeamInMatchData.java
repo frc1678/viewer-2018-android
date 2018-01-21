@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.firebase_classes;
 
 import com.example.evan.androidviewertools.firebase_classes.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -42,21 +43,19 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numGroundIntakeTele;
     public Integer numGroundPortalIntakeTele;
     public Integer numHumanPortalIntakeTele;
-    public ArrayList<Integer> opponentPlatformIntakeTele;
-    public ArrayList<Integer> opponentPlatformIntakeAuto;
-    public ArrayList<Integer> alliancePlatformIntakeTele;
-    public ArrayList<Integer> alliancePlatformIntakeAuto;
+
 
     public Integer numGroundPyramidIntakeAuto;
     public Integer numGroundPyramidIntakeTele;
     public Integer numElevatedPyramidIntakeTele;
     public Integer numElevatedPyramidIntakeAuto;
+    public Integer numGearsFumbledTele;
+    public Integer numGroundGearIntakesTele;
 
-
-    public ArrayList <Integer> opponentPlatformIntakeAuto;
-    public ArrayList <Integer> alliancePlatformIntakeAuto;
-    public ArrayList <Integer> opponentPlatformIntakeTele;
-    public ArrayList <Integer> alliancePlatformIntakeTele;
+    public ArrayList<Boolean> opponentPlatformIntakeAuto;
+    public ArrayList<Boolean> alliancePlatformIntakeAuto;
+    public ArrayList<Boolean> opponentPlatformIntakeTele;
+    public ArrayList<Boolean> alliancePlatformIntakeTele;
     public ArrayList <Integer> numOpponentPlatformIntakeAuto; //todo Delete later.
     public ArrayList <Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
 
@@ -66,7 +65,9 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer rankAgility;
     public Integer rankDefense;
     public Integer rankSpeed;
+
     public Object startingPosition; //todo Change Value
+
     public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
     public ArrayList<Map <String, Object>> scaleAttemptAuto;
     public ArrayList<Map <String, Object>> scaleAttemptTele;

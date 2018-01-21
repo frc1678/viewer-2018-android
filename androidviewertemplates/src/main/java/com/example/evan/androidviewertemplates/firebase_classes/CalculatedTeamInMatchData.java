@@ -20,7 +20,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numAlliancePlatformIntakeTele;
     public Integer numOpponentPlatformIntakeAuto;
     public Integer numOpponentPlatformIntakeTele;
-    public Boolean didClimb;
+
 
     public Integer numScaleSuccessAuto;
     public Integer numScaleFailedAuto;
