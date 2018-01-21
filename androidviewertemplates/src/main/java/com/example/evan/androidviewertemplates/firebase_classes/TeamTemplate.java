@@ -7,8 +7,6 @@ import java.util.Map;
  * Created by Teo on 1/10/2018.
  */
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
-    public String name;
-    public Integer number;
     public CalculatedTeamData calculatedData;
     public Integer numMatchesPlayed;
     public String pitSelectedImageName;
@@ -22,7 +20,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Map<String,String> imageKeys; //todo Delete later.
 
     public Boolean pitCanCheesecake;
-
+    public Boolean pitDidDemonstrateCheesecakePotential;
     public String pitSEALsNotes;
     public String SEALSNotes;
     public String pitProgrammingLanguage;

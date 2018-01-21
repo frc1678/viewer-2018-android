@@ -67,7 +67,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitSelectedImageUrl",
             "pitNotes",
             "pitProgrammingLanguage",
-            "pitDidDemonstrateCheesecakePotential",
+            "pitCanCheesecake",
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
@@ -92,7 +92,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
-            "pitDidDemonstrateCheesecakePotential",
+            "pitCanCheesecake",
             //"superNotes"
     };
 
