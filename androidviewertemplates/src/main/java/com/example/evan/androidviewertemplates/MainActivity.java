@@ -160,6 +160,15 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
 
+            case 9:
+                fragment = new SuperAbilityFragment();
+                latestFragmentId = position;
+                break;
+            case 10:
+                fragment = new LastFourMatchesFragment();
+                latestFragmentId = position;
+                break;
+
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)

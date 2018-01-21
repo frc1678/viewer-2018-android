@@ -13,7 +13,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public CalculatedTeamInMatchData calculatedData;
     public Integer teamNumber;
     public Integer matchNumber;
-    public ArrayList<String> scoutName;
+    public String scoutName;
 
     public String superNotes;
     public Boolean didCrossAutoZone;
@@ -42,7 +42,6 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numGoodDecisisions;
     public Integer numGroundIntakeTele;
     public Integer numGroundPortalIntakeTele;
-    public Integer numHumanPortalIntakeTele;
 
 
     public Integer numGroundPyramidIntakeAuto;
@@ -60,7 +59,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public ArrayList <Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
 
     public Integer numReturnIntake;
-    public Integer numSpilledCubesAuto;
+
     public Integer numSpilledCubesTele;
     public Integer rankAgility;
     public Integer rankDefense;
