@@ -46,8 +46,8 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fails");
 
                     //FaceTheBoss
-                    put ("calculatedData.climb","Avg Climb Time");
-                    put ("predictedClimb","Percentage of Climbing");
+                    put ("calculatedData.avgClimbTime","Avg Climb Time");
+                    put ("calculatedData.predictedClimb","Predicted Climb Percentage");
 
                     //Matches
                     put ("currentMatchNum","Matches");
@@ -62,9 +62,9 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgDrivingAbility","Avg Driving Ability");
 
                     //SuperData
-                    put ("rankSpeed","Speed");
-                    put ("rankAgility","Agility");
-                    put ("rankDefense","Defense");
+                    put ("alculatedData.avgSpeed","Speed");
+                    put ("calculatedData.avgAgility","Agility");
+                    put ("calculatedData.avgDefense","Defense");
                     put ("calculatedData.totalNumGoodDecisions","Total Num of Good Decisions");
                     put ("calculatedData.totalNumBadDecisions","Total Num of Bad Decisions");
                     put ("superNotes","Super Notes");

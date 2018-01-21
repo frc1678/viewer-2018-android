@@ -27,18 +27,18 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"matches, VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgCubesPlacedInSwitchAuto","calculatedData.canScoreBothSwitchSidesAuto",
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
+            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
             "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleFailPercentageAuto"},
             {"calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
-            "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundIntakeTele",
-            "calculatedData.avgNumPortalIntakeTele","calculatedData.switchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
+            "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
+            "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.switchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
             {"calculatedData.climbPercentage", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
                     "superNotes","calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions"},
-            {"pitDriveTrain","pitDidDemonstrateCheesecakePotential","pitClimberType","pitSEALsNotes",
+            {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",
             "pitAvailableWeight","pitProgrammingLanguage"}
 
 
