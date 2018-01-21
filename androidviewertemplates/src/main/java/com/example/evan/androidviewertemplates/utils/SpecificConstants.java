@@ -105,7 +105,7 @@ public class SpecificConstants extends Constants {
 
                     //SuperData
                     put ("rankSpeed","Ranked Speed");
-                    put ("rankagility","Ranked Agility");
+                    put ("rankAgility","Ranked Agility");
                     put ("rankDefense","Ranked Defense");
                     put ("superNotes","Super Notes");
                     put ("numGoodDecisions","Num of Good Decisions");
