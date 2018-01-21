@@ -36,8 +36,11 @@ public class CalculatedTeamInMatchData extends Object {
     public ArrayList<Map <String, Object>> scaleAttemptAuto;
     public Integer numGroundIntakeTele;
     public Integer numHumanPortalIntakeTele;
+    public Integer numGroundPortalIntakeTele;
 
     public Integer numElevatedPyramidIntakeTele;
+    public ArrayList<Boolean> alliancePlatformIntakeAuto;
+    public ArrayList<Map<String, Map<String, Object>>> climb;
     public String superNotes;
     public Object startingPosition;
     public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
@@ -46,6 +49,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numGroundPyramidIntakeTele;
 
     public Integer numScaleSuccessAuto;
+    public Integer numExchangeInput;
     public Integer numReturnIntake;
     public ArrayList<Map <String, Object>> scaleAttemptTele;
     public Integer numSpilledCubesAuto;
@@ -56,6 +60,8 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numScaleSuccessTele;
     public Integer numScaleFailedTele;
     public Float climbTime;
+    public ArrayList<Boolean> alliancePlatformIntakeTele;
+
     public Boolean didClimb;
     public Float avgAllianceSwitchTimeTele;
     public Float avgOpponentSwitchTimeTele;

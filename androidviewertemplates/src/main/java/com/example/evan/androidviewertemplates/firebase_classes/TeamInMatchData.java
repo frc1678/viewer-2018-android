@@ -31,6 +31,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numBadDecisions;
     public Integer numGoodDecisions;
     public Integer rankGoodDecision; //todo Delete later.
+    public Integer numHumanPortalIntakeTele;
+
     public Integer rankBadDecision; //todo Delete Later.
 
     public ArrayList <Integer> numAlliancePlatformIntakeAuto;
@@ -41,6 +43,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer numExchangeInput;
     public Integer numGoodDecisisions;
     public Integer numGroundIntakeTele;
+    public Integer numSpilledCubesAuto;
     public Integer numGroundPortalIntakeTele;
 
 
@@ -66,6 +69,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer rankSpeed;
 
     public Object startingPosition; //todo Change Value
+
 
     public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
     public ArrayList<Map <String, Object>> scaleAttemptAuto;
