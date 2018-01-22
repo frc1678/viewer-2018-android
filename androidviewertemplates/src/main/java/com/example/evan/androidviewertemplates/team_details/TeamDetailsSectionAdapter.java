@@ -27,7 +27,7 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"currentMatchNum", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
             {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
             "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleFailPercentageAuto"},
             {"calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
@@ -37,7 +37,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
-                    "superNotes","calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions"},
+                    "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","superNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",
             "pitAvailableWeight","pitProgrammingLanguage"}
 
@@ -76,6 +76,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
 
     private String[] shouldDisplayAsLongText = {
             "pitNotes",
+            "superNotes",
+            "pitSEALsNotes",
     };
 
     private String[] shouldDisplayAsFurtherInformation = {
@@ -97,22 +99,12 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     };
 
     private String[] createListOnClick = {
-            "matches",
+            "matches"
             /*"calculatedData.firstPickAbility",
             "calculatedData.overallSecondPickAbility",*/
-
     };
 
     private String[] rankInsteadOfGraph = {
-            /*"calculatedData.disabledPercentage",
-            "calculatedData.incapacitatedPercentage",
-            "calculatedData.baselineReachedPercentage",
-            "calculatedData.liftoffPercentage",*/
-            "calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility",
-            "calculatedData.gearAbility",
-            "calculatedData.thirdPickAbility",
-            "calculatedData.allRotorsAbility"
 
     };
 
