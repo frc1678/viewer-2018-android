@@ -128,18 +128,21 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     @Override
     public boolean filter(Match value, String scope) {
         List<Integer> teamsInMatch = new ArrayList<>();
-        List<Object> redTeams = Arrays.asList(Utils.getObjectField(value,"redAllianceTeamNumbers"));
-        List<Object> blueTeams = Arrays.asList(Utils.getObjectField(value, "blueAllianceTeamNumbers"));
-        List<Integer> tempRedAllianceTeams = (List<Integer>)(Object)redTeams.get(0);
-        List<Integer> tempBlueAllianceTeams = (List<Integer>)(Object)blueTeams.get(0);
-        for(int i = 0; i < tempRedAllianceTeams.size(); i++){
-            teamsInMatch.add(tempRedAllianceTeams.get(i));
-        }
-        for(int i = 0; i < tempBlueAllianceTeams.size(); i++){
-            teamsInMatch.add(tempBlueAllianceTeams.get(i));
-        }
-        //Log.e("Please Reach", "Here");
+        try {
+            List<Object> redTeams = Arrays.asList(Utils.getObjectField(value, "redAllianceTeamNumbers"));
+            List<Object> blueTeams = Arrays.asList(Utils.getObjectField(value, "blueAllianceTeamNumbers"));
+            List<Integer> tempRedAllianceTeams = (List<Integer>) (Object) redTeams.get(0);
+            List<Integer> tempBlueAllianceTeams = (List<Integer>) (Object) blueTeams.get(0);
+            for (int i = 0; i < tempRedAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempRedAllianceTeams.get(i));
+            }
+            for (int i = 0; i < tempBlueAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempBlueAllianceTeams.get(i));
+            }
+            //Log.e("Please Reach", "Here");
+        }catch (NullPointerException NPE){
 
+        }
         boolean found = false;
         try{
             //Log.e("Value", value.toString());
@@ -180,7 +183,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         @Override
         public boolean onLongClick(View v) {
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(75);
+            //vibrator.vibrate(75);
             TextView matchNumberTextView = (TextView)v.findViewById(R.id.matchNumber);
             if (StarManager.isImportantMatch(Integer.parseInt(matchNumberTextView.getText().toString()))) {
                 StarManager.removeImportantMatch(Integer.parseInt(matchNumberTextView.getText().toString()));

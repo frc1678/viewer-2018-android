@@ -16,4 +16,11 @@ public class CalculatedMatchData extends Object {
     public Boolean predictedRedAutoQuest;
     public Float redWinChance;
     public Float blueWinChance;
+    public Float redTeleopExchangeAbility;
+    public Float redPredictedPark;
+    public Float redLevitateProbability;
+    public Float bluePredictedPark;
+    public Float blueLevitateProbability;
+
+
 }
