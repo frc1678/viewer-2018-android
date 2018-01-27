@@ -28,9 +28,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
-            "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleFailPercentageAuto"},
-            {"calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
+            {"calculatedData.autoRunPercentage","calculatedData.avgCubesPlacedInScaleAuto","numAllianceSwitchSuccessAuto","calculatedData.canScoreBothSwitchSidesAuto",
+            "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleSuccessPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
+            {"calculatedData.avgCubesSpilledTele","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
             "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
             "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.switchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
             {"calculatedData.predictedClimb", "calculatedData.avgClimbTime"},

@@ -102,7 +102,7 @@ public class CalculatedTeamData extends Object {
     public Float dysfunctionalPercentage;
 
 
-    public Float number;
+    public Integer number;
     public Float climbPercentage;
     public Integer predictedNumAllianceSwitchCubesAuto;
     public Integer predictedNumScaleCubesAuto;
