@@ -60,64 +60,67 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowView = inflater.inflate(R.layout.schedule_cell, parent, false);
         }
+        try {
+            Match match = (Match) getItem(position);
 
-        Match match = (Match)getItem(position);
-
-        if (StarManager.isImportantMatch(match.number)) {
-            rowView.setBackgroundColor(Constants.STAR_COLOR);
-        } else {
-            rowView.setBackgroundColor(Color.TRANSPARENT);
-        }
-
-        TextView matchTextView = (TextView)rowView.findViewById(R.id.matchNumber);
-        if (selectedScope.equals("Match")) {
-            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
-            matchTextView.setText(Utils.highlightTextInString(matchNumber.toString(), searchString));
-        } else {
-            Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match,"number"));
-            matchTextView.setText(matchNumber.toString());
-        }
-        List<Object> redTeams = Arrays.asList(Utils.getObjectField(match,"redAllianceTeamNumbers"));
-        List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
-        List<Integer> tempRedAllianceTeams = (List<Integer>)(Object)redTeams.get(0);
-        List<Integer> tempBlueAllianceTeams = (List<Integer>)(Object)blueTeams.get(0);
-        List<Integer> teamsInMatch = new ArrayList<>();
-        for(int i = 0; i < tempRedAllianceTeams.size(); i++){
-            teamsInMatch.add(tempRedAllianceTeams.get(i));
-        }
-        for(int i = 0; i < tempBlueAllianceTeams.size(); i++){
-            teamsInMatch.add(tempBlueAllianceTeams.get(i));
-        }
-
-        int[] teamTextViewIDs = {R.id.teamOne, R.id.teamTwo, R.id.teamThree, R.id.teamFour, R.id.teamFive, R.id.teamSix};
-        for (int i = 0; i < 6; i++) {
-            TextView teamTextView = (TextView)rowView.findViewById(teamTextViewIDs[i]);
-            if (selectedScope.equals("Team")) {
-                teamTextView.setText(Utils.highlightTextInString(teamsInMatch.get(i).toString(), searchString));
+            if (StarManager.isImportantMatch(match.number)) {
+                rowView.setBackgroundColor(Constants.STAR_COLOR);
             } else {
-                teamTextView.setText(teamsInMatch.get(i).toString());
+                rowView.setBackgroundColor(Color.TRANSPARENT);
             }
-            boolean shouldBold = shouldHighlightTextViewWithText(teamTextView.getText().toString());
-            if (shouldBold) {
-                teamTextView.setBackgroundColor(Color.YELLOW);
+
+            TextView matchTextView = (TextView) rowView.findViewById(R.id.matchNumber);
+            if (selectedScope.equals("Match")) {
+                Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match, "number"));
+                matchTextView.setText(Utils.highlightTextInString(matchNumber.toString(), searchString));
             } else {
-                teamTextView.setBackgroundColor(Color.TRANSPARENT);
+                Integer matchNumber = Integer.valueOf((Integer) Utils.getObjectField(match, "number"));
+                matchTextView.setText(matchNumber.toString());
             }
-        }
+            List<Object> redTeams = Arrays.asList(Utils.getObjectField(match, "redAllianceTeamNumbers"));
+            List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
+            List<Integer> tempRedAllianceTeams = (List<Integer>) (Object) redTeams.get(0);
+            List<Integer> tempBlueAllianceTeams = (List<Integer>) (Object) blueTeams.get(0);
+            List<Integer> teamsInMatch = new ArrayList<>();
+            for (int i = 0; i < tempRedAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempRedAllianceTeams.get(i));
+            }
+            for (int i = 0; i < tempBlueAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempBlueAllianceTeams.get(i));
+            }
 
-        TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
-        TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
+            int[] teamTextViewIDs = {R.id.teamOne, R.id.teamTwo, R.id.teamThree, R.id.teamFour, R.id.teamFive, R.id.teamSix};
+            for (int i = 0; i < 6; i++) {
+                TextView teamTextView = (TextView) rowView.findViewById(teamTextViewIDs[i]);
+                if (selectedScope.equals("Team")) {
+                    teamTextView.setText(Utils.highlightTextInString(teamsInMatch.get(i).toString(), searchString));
+                } else {
+                    teamTextView.setText(teamsInMatch.get(i).toString());
+                }
+                boolean shouldBold = shouldHighlightTextViewWithText(teamTextView.getText().toString());
+                if (shouldBold) {
+                    teamTextView.setBackgroundColor(Color.YELLOW);
+                } else {
+                    teamTextView.setBackgroundColor(Color.TRANSPARENT);
+                }
+            }
 
-        if (match.redScore != null || match.blueScore != null) {
-            redScoreTextView.setText((match.redScore != null) ? match.redScore.toString() : "???");
-            blueScoreTextView.setText((match.blueScore != null) ? match.blueScore.toString() : "???");
-            redScoreTextView.setTextColor(Color.argb(255, 255, 0, 0));
-            blueScoreTextView.setTextColor(Color.argb(255, 0, 0, 255));
-        } else {
-            redScoreTextView.setTextColor(Color.argb(75, 255, 0, 0));
-            blueScoreTextView.setTextColor(Color.argb(75, 0, 0, 255));
-            redScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedRedScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedRedScore"), 2, "???") : "???");
-            blueScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedBlueScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedBlueScore"), 2, "???") : "???");
+            TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
+            TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
+
+            if (match.redScore != null || match.blueScore != null) {
+                redScoreTextView.setText((match.redScore != null) ? match.redScore.toString() : "???");
+                blueScoreTextView.setText((match.blueScore != null) ? match.blueScore.toString() : "???");
+                redScoreTextView.setTextColor(Color.argb(255, 255, 0, 0));
+                blueScoreTextView.setTextColor(Color.argb(255, 0, 0, 255));
+            } else {
+                redScoreTextView.setTextColor(Color.argb(75, 255, 0, 0));
+                blueScoreTextView.setTextColor(Color.argb(75, 0, 0, 255));
+                redScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedRedScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedRedScore"), 2, "???") : "???");
+                blueScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedBlueScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedBlueScore"), 2, "???") : "???");
+            }
+        }catch (NullPointerException NPE){
+            Log.e("MATCH", "IS NULL");
         }
 
         rowView.setOnLongClickListener(new StarLongClickListener());

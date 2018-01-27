@@ -26,12 +26,12 @@ import java.util.Map;
 public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"number","matchNumber"},
-            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchCubeSuccessAuto",
+            {"teamNumber","matchNumber"},
+            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
             "calculatedData.numScaleSuccessAuto"},
             {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
-            {"climb","didPark"},
+            {"didPark"},
             {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
     };
 

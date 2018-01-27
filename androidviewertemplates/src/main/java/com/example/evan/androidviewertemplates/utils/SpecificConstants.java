@@ -26,9 +26,9 @@ public class SpecificConstants extends Constants {
                     //Auto
                     put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
-                    put ("calculatedData.numAllianceSwitchSuccessAuto","Avg Cubes in Switch Auto");
+                    put ("numAllianceSwitchSuccessAuto","Avg Cubes in Switch Auto");
                     put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches Auto");
-                    put ("didMakeAutoRun","Auto Run Auto");
+                    put ("didMakeAutoRun","Did Make Auto Run");
                     put ("calculatedData.switchFailPercentageAuto","Switch Fail Percentage Auto");
                     put("calculatedData.scaleSuccessPercentageAuto","Scale Success Percentage Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Switch Auto");
@@ -38,7 +38,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgNumCubesFumbledTele","Avg Cubes Fumbled Tele");
                     put ("calculatedData.avgCubesPlacedInScaleTele","Avg Cubes in Scale Tele");
                     put ("calculatedData.avgOpponentSwitchCubesTele","Avg Cubes in Blue Switch Tele");
-                    put ("calculatedData.avgOpponentSwitchCubesTele","Avg Cubes in Red Switch Tele");
+                    put ("calculatedData.avgAllianceSwitchCubesTele","Avg Cubes in Red Switch Tele");
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes in Exchange Tele");
                     put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Intake Tele");
                     put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Portal Intake Tele");
@@ -83,10 +83,10 @@ public class SpecificConstants extends Constants {
                     put ("didCrossAutoZone","Can Cross Auto Zone");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled Auto");
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
-                    put ("caluculatedData.numScaleSuccessAuto","Num Auto Scale Success");
+                    put ("calculatedData.numScaleSuccessAuto","Num Auto Scale Success");
 
                     //Information
-                    put ("number","number");
+                    put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
 
                     //Tele
@@ -98,10 +98,9 @@ public class SpecificConstants extends Constants {
                     put ("numHumanPortalIntakeTele","Num Human Intake Tele");
 
                     //FaceTheBoss
-                    put ("climb","Climb");
+                    //put ("climb","Climb");
                     put ("didPark","Did Park");
 
-                    /*need help with instances*/
 
                     //SuperData
                     put ("rankSpeed","Ranked Speed");
