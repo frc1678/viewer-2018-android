@@ -13,7 +13,7 @@ public class SpecificConstants extends Constants {
     public static Map<String, String> DATA_TO_GRAPH;
     //todo
     public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Second Pick", "Super Data", "Last Four Matches"};
-    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2018-9023a.firebaseio.com/";
+    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2018-temp.firebaseio.com/";
     public static String ROOT_FIREBASE_PATH = ORIGINAL_ROOT_FIREBASE_PATH;
     public static String MATCHES_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Matches";
     public static String TEAMS_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Teams";
@@ -26,11 +26,11 @@ public class SpecificConstants extends Constants {
                     //Auto
                     put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
-                    put ("calculatedData.numAllianceSwitchSuccessAuto","Avg Cubes in Switch Auto");
+                    put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes in Switch Auto");
                     put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches Auto");
-                    put ("didMakeAutoRun","Auto Run Auto");
-                    put ("calculatedData.switchFailPercentageAuto","Switch Fail Percentage Auto");
-                    put("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage Auto");
+                    put ("autoRunPercentage","Did Make Auto Run");
+                    put ("calculatedData.allianceSwitchFailPercentageAuto","Switch Fail Percentage Auto");
+                    put ("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Switch Auto");
 
                     //Teleop
@@ -42,8 +42,8 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes in Exchange Tele");
                     put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Intake Tele");
                     put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Portal Intake Tele");
-                    put ("calculatedData.switchFailPercentageTele","Percentage Switch Fails Tele");
-                    put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fails Tele");
+                    put ("calculatedData.allianceSwitchFailPercentageTele","Percentage Switch Fails Tele");
+                    put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fail Tele");
 
                     //FaceTheBoss
                     put ("calculatedData.avgClimbTime","Avg Climb Time");
@@ -67,7 +67,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgDefense","Defense");
                     put ("calculatedData.totalNumGoodDecisions","Total Num of Good Decisions");
                     put ("calculatedData.totalNumBadDecisions","Total Num of Bad Decisions");
-                    put ("superNotes","Super Notes");
+                    put ("totalSuperNotes","Super Notes");
 
                     //PitData
                     put ("pitDriveTrain","Drive Train");
@@ -83,10 +83,10 @@ public class SpecificConstants extends Constants {
                     put ("didCrossAutoZone","Can Cross Auto Zone");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled Auto");
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
-                    put ("caluculatedData.numScaleSuccessAuto","Num Auto Scale Success");
+                    put ("calculatedData.numScaleSuccessAuto","Num Auto Scale Success");
 
                     //Information
-                    put ("number","number");
+                    put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
 
                     //Tele
@@ -101,7 +101,6 @@ public class SpecificConstants extends Constants {
                     put ("climb","Climb");
                     put ("didPark","Did Park");
 
-                    /*need help with instances*/
 
                     //SuperData
                     put ("rankSpeed","Ranked Speed");
