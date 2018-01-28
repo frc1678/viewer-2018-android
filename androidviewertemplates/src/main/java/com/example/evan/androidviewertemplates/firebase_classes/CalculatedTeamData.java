@@ -104,6 +104,7 @@ public class CalculatedTeamData extends Object {
 
     public Float scaleSuccessPercentageTele;
     public Float scaleSuccessPercentageAuto;
+
     public Integer number;
     public Float climbPercentage;
     public Integer predictedNumAllianceSwitchCubesAuto;
