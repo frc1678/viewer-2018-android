@@ -26,11 +26,11 @@ public class SpecificConstants extends Constants {
                     //Auto
                     put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
-                    put ("numAllianceSwitchSuccessAuto","Avg Cubes in Switch Auto");
+                    put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes in Switch Auto");
                     put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches Auto");
-                    put ("didMakeAutoRun","Did Make Auto Run");
-                    put ("calculatedData.switchFailPercentageAuto","Switch Fail Percentage Auto");
-                    put("calculatedData.scaleSuccessPercentageAuto","Scale Success Percentage Auto");
+                    put ("autoRunPercentage","Did Make Auto Run");
+                    put ("calculatedData.allianceSwitchFailPercentageAuto","Switch Fail Percentage Auto");
+                    put ("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Switch Auto");
 
                     //Teleop
@@ -42,8 +42,8 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes in Exchange Tele");
                     put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Intake Tele");
                     put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Portal Intake Tele");
-                    put ("calculatedData.switchFailPercentageTele","Percentage Switch Fails Tele");
-                    put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fails Tele");
+                    put ("calculatedData.allianceSwitchFailPercentageTele","Percentage Switch Fails Tele");
+                    put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fail Tele");
 
                     //FaceTheBoss
                     put ("calculatedData.avgClimbTime","Avg Climb Time");
@@ -67,7 +67,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgDefense","Defense");
                     put ("calculatedData.totalNumGoodDecisions","Total Num of Good Decisions");
                     put ("calculatedData.totalNumBadDecisions","Total Num of Bad Decisions");
-                    put ("superNotes","Super Notes");
+                    put ("totalSuperNotes","Super Notes");
 
                     //PitData
                     put ("pitDriveTrain","Drive Train");

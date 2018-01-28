@@ -31,7 +31,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
             "calculatedData.numScaleSuccessAuto"},
             {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
-            {"didPark"},
+            {"didPark","climb"},
             {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
     };
 
@@ -46,9 +46,14 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {};
+    private String[] displayAsUnranked = {
+            "climb"
+    };
 
-    private String[] shouldDisplayAsLongText = {"superNotes"};
+    private String[] shouldDisplayAsLongText = {
+            "superNotes",
+            "climb"
+    };
 
     private String[] rankInsteadOfGraph = {};
 
