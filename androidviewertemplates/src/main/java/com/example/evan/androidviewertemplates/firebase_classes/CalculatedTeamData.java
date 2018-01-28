@@ -50,7 +50,6 @@ public class CalculatedTeamData extends Object {
     public Float avgSpeed;
     public Float avgDefense;
 
-
     public Float avgDrivingAbility;
     public Float lfmAvgNumOpponentPlatformIntakeAuto;
     public Float lfmAvgNumAlliancePlatformIntakeAuto;
@@ -102,9 +101,8 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgCubesPlacedInScaleTele;
     public Float dysfunctionalPercentage;
 
-    public Float scaleSuccessPercentageTele;
-    public Float scaleSuccessPercentageAuto;
-    public Integer number;
+
+    public Float number;
     public Float climbPercentage;
     public Integer predictedNumAllianceSwitchCubesAuto;
     public Integer predictedNumScaleCubesAuto;
@@ -117,7 +115,7 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumRobotsLifted;
     public Integer totalNumParks;
     public Integer totalNumRobotsLiftAttempts;
-     public Integer totalNumRobotsGroundLifted;
+    public Integer totalNumRobotsGroundLifted;
     public Integer totalNumRobotGroundLiftAttempts;
 
     public Float avgScaleTimeAuto;
@@ -138,19 +136,11 @@ public class CalculatedTeamData extends Object {
     public Float RScoreAgility;
     Float RScoreDrivingAbility;
 
-    //public Float switchFailPercentageAuto;
-    //public Float switchFailPercentageTele;
+    public Float switchFailPercentageAuto;
+    public Float scaleFailPercentageAuto;
+    public Float switchFailPercentageTele;
+    public Float scaleFailPercentageTele;
     public Boolean canScoreBothSwitchSidesAuto;
     public Integer actualSeed;
     public Integer predictedSeed;
-
-
-    public Float allianceSwitchSuccessPercentageAuto;
-    public Float opponentSwitchSuccessPercentageTele;
-    public Float allianceSwitchFailPercentageAuto;
-    public Float allianceSwitchSuccessPercentageTele;
-    public Float allianceSwitchFailPercentageTele;
-    public Float opponentSwitchFailPercentageTele;
-    public Float scaleFailPercentageAuto;
-    public Float scaleFailPercentageTele;
 }

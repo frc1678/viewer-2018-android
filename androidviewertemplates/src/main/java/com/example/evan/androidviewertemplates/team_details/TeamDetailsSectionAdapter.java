@@ -29,15 +29,15 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     private String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
             {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
-            "calculatedData.autoRunPercentage","calculatedData.allianceSwitchFailPercentageAuto","calculatedData.scaleFailPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgCubesSpilledTele","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
+            "didMakeAutoRun","calculatedData.switchFailPercentageAuto","calculatedData.scaleFailPercentageAuto"},
+            {"calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
             "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
-            "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.allianceSwitchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
+            "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.switchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
             {"calculatedData.predictedClimb", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
-                    "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
+                    "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","superNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",
             "pitAvailableWeight","pitProgrammingLanguage"}
 
@@ -71,23 +71,18 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
-            "superNotes",
-            "climb",
-            "totalSuperNotes"
+            "superNotes"
     };
 
     private String[] shouldDisplayAsLongText = {
             "pitNotes",
             "superNotes",
             "pitSEALsNotes",
-            "totalSuperNotes"
-
     };
 
     private String[] shouldDisplayAsFurtherInformation = {
             "matches",
-            "superNotes",
-            "totalSuperNotes"
+            "superNotes"
     };
 
     private String[] notClickableFields = {
