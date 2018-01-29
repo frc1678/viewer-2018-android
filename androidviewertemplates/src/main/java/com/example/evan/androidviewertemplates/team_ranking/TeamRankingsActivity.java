@@ -33,6 +33,7 @@ public class TeamRankingsActivity extends ViewerActivity {
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_team_rankings);
+        refreshPage();
         setActionBarColor();
     }
     public void setActionBarColor(){
@@ -41,6 +42,12 @@ public class TeamRankingsActivity extends ViewerActivity {
         if(actionBar!=null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
+    }
+
+    public void refreshPage(){
+        Fragment fragment = getFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.teamRankingsActivityRelativeLayout, fragment, "").commit();
     }
 
     @Override

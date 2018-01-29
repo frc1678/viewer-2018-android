@@ -2,6 +2,8 @@ package com.example.evan.androidviewertools.team_ranking;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
+import android.text.method.NumberKeyListener;
 import android.util.Log;
 
 import com.example.evan.androidviewertools.utils.Constants;
@@ -20,9 +22,16 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public boolean filter(Team value, String scope) {
-        Integer teamNumber = (Integer)Utils.getObjectField(value, "number");
-        String teamNumberString = Integer.toString(teamNumber);
-        return teamNumberString.indexOf(searchString) == 0;
+
+        try {
+            Integer teamNumber = (Integer) Utils.getObjectField(value, "number");
+            String teamNumberString = Integer.toString(teamNumber);
+            return teamNumberString.indexOf(searchString) == 0;
+        }catch (NullPointerException NPE){
+
+        }finally {
+            return true;
+        }
     }
 
     @Override
@@ -37,8 +46,14 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public String getRankCellText(Team value) {
-        Integer teamNumber = ((Integer) Utils.getObjectField(value,"number"));
-        return Integer.toString(teamNumber);
+        try {
+            Integer teamNumber = ((Integer) Utils.getObjectField(value, "number"));
+            return Integer.toString(teamNumber);
+        }catch (NullPointerException NPE){
+
+        }finally {
+            return "254254";
+        }
     }
 
     @Override
