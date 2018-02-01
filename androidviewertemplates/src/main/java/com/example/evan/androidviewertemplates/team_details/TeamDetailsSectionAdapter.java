@@ -71,7 +71,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
-            "superNotes"
+            "superNotes",
+            "climb"
     };
 
     private String[] shouldDisplayAsLongText = {

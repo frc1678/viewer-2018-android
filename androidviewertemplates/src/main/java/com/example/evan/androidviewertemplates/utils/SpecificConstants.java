@@ -83,7 +83,9 @@ public class SpecificConstants extends Constants {
                     put ("didCrossAutoZone","Can Cross Auto Zone");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled Auto");
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
-                    put ("caluculatedData.numScaleSuccessAuto","Num Auto Scale Success");
+                    put ("calculatedData.numScaleSuccessAuto","Num Auto Scale Success");
+
+
 
                     //Information
                     put ("number","number");

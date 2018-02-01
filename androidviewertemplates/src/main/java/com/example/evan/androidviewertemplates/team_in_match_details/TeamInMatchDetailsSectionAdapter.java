@@ -27,7 +27,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     //todo
     private String[][] fieldsToDisplay = {
             {"number","matchNumber"},
-            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchCubeSuccessAuto",
+            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
             "calculatedData.numScaleSuccessAuto"},
             {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
@@ -46,15 +46,21 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     private String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {};
+    private String[] displayAsUnranked = {
+            "climb"
+    };
 
-    private String[] shouldDisplayAsLongText = {"superNotes"};
+    private String[] shouldDisplayAsLongText = {
+            "superNotes",
+            "climb"
+    };
 
     private String[] rankInsteadOfGraph = {};
 
     private String[] shouldDisplayAsFurtherInformation = {};
 
     private Integer teamNumber;
+
     private Integer matchNumber;
 
     public TeamInMatchDetailsSectionAdapter(Context context, Integer teamNumber, Integer matchNumber) {
