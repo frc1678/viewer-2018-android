@@ -88,7 +88,7 @@ public class SpecificConstants extends Constants {
 
 
                     //Information
-                    put ("number","number");
+                    put ("teamNumber","number");
                     put ("matchNumber","Match Number");
 
                     //Tele
