@@ -28,5 +28,8 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Float pitMaxHeight;
     public Float pitAutoRunTime;
     public ArrayList<String> totalSuperNotes;
+
+    public Integer firstPicklistPosition;
+    public Integer secondPicklistPosition;
 }
 
