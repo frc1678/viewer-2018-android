@@ -31,7 +31,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
             "calculatedData.numScaleSuccessAuto"},
             {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
-            {"climb","didPark"},
+            {"didPark","climb"},
             {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
     };
 
