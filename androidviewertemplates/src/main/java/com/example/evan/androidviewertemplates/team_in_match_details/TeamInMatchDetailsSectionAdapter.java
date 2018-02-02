@@ -60,6 +60,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     private String[] shouldDisplayAsFurtherInformation = {};
 
     private Integer teamNumber;
+
     private Integer matchNumber;
 
     public TeamInMatchDetailsSectionAdapter(Context context, Integer teamNumber, Integer matchNumber) {

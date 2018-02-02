@@ -85,7 +85,6 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
                     put ("calculatedData.numScaleSuccessAuto","Num Auto Scale Success");
 
-                    //Information
                     put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
 
@@ -100,7 +99,6 @@ public class SpecificConstants extends Constants {
                     //FaceTheBoss
                     //put ("climb","Climb");
                     put ("didPark","Did Park");
-
 
                     //SuperData
                     put ("rankSpeed","Ranked Speed");

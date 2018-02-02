@@ -207,6 +207,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     public boolean onRowItemLongClick (AdapterView<?> parent, View view, int section, int row, long id) {
         if (!isUnranked(section, row)) {
             String fieldName = (String)getRowItem(section,row);
+            Log.e("LONG CLICK", fieldName);
             Intent intent = new Intent(context, TeamRankingsActivity.class);
             if (fieldName.startsWith("VIEWER.")) {
                 Intent rankDataArgs = new Intent();

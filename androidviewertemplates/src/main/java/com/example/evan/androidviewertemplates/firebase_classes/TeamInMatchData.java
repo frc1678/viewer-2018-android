@@ -18,6 +18,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public String superNotes;
     public Boolean didCrossAutoZone;
 
+    public Object test; //todo Delete Later
 
     public ArrayList<Map<String,Object>> allianceSwitchAttemptAuto;
     public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
