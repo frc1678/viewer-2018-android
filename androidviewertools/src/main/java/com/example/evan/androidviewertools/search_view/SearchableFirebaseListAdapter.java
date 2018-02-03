@@ -25,7 +25,7 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
     public List<T> filteredValues = new ArrayList<>();
     Comparator<T> filterComparator;
     public Context context;
-    public boolean sortByNumber;
+ //   public boolean sortByNumber;
     private BroadcastReceiver broadcastReceiver;
 
     public SearchableFirebaseListAdapter(Context context, Comparator<T> filterComparator) {
@@ -71,7 +71,7 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
                 //Log.e("filteredValues", filteredValues.toString());
             }
         }
-
+        Collections.sort(filteredValues, filterComparator);
     }
 
 
