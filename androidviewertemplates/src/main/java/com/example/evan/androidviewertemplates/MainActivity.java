@@ -84,6 +84,15 @@ public class MainActivity extends ViewerActivity
         Log.e("test", "Logcat is up!");
         broadcastListener();
 
+
+
+
+
+
+
+
+
+
     }
     public void initializeDrawer(){
         mNavigationDrawerFragment = (SpecificNavigationDrawerFragment)
