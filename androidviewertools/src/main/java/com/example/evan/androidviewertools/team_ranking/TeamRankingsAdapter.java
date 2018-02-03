@@ -46,14 +46,10 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
 
     @Override
     public String getRankCellText(Team value) {
-        try {
-            Integer teamNumber = ((Integer) Utils.getObjectField(value, "number"));
-            return Integer.toString(teamNumber);
-        }catch (NullPointerException NPE){
 
-        }finally {
-            return "254254";
-        }
+        return value.number.toString();
+            /*Integer teamNumber = ((Integer) Utils.getObjectField(value, "number"));
+            return Integer.toString(teamNumber);*/
     }
 
     @Override
