@@ -27,7 +27,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class TeamRankingsActivity extends ViewerActivity {
+public class
+TeamRankingsActivity extends ViewerActivity {
 
     public MenuItem lastMenuItem;
     @Override

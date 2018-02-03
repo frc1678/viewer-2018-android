@@ -11,22 +11,24 @@ import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
 import com.example.evan.androidviewertools.utils.Constants;
 
 /**
- * Created by sam on 1/29/17.
+ * Created by Teo on 2/1/18.
  */
-public class SeedingFragment extends TeamRankingsFragment {
+public class SecondPicklist extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new SeedingAdapter(getActivity().getApplicationContext()));
+        Log.e("seeding", "true");
+        Constants.lastFourMatches = false;
+        Constants.sortByTeamNumber = false;
+        setListAdapter(new SecondPickListAdapter(getActivity().getApplicationContext()));
     }
 
-    /**
-     * Created by colinunger on 1/28/16.
-     */
-    public static class SeedingAdapter extends TeamRankingsAdapter {
+    public static class SecondPickListAdapter extends TeamRankingsAdapter {
 
-        public SeedingAdapter(Context context) {
-            super(context, "calculatedData.actualSeed", "calculatedData.actualSeed", false);
+        public SecondPickListAdapter(Context context) {
+            super(context, "secondPicklistPosition", "secondPicklistPosition", true);
+            Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
+            Constants.lastFourMatches = false;
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){

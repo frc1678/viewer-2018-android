@@ -118,8 +118,10 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumRobotsLifted;
     public Integer totalNumParks;
     public Integer totalNumRobotsLiftAttempts;
-     public Integer totalNumRobotsGroundLifted;
+
+    public Integer totalNumRobotsGroundLifted;
     public Integer totalNumRobotGroundLiftAttempts;
+    public Float predictedPark;
 
     public Float avgScaleTimeAuto;
     public Float avgScaleTimeTele;
