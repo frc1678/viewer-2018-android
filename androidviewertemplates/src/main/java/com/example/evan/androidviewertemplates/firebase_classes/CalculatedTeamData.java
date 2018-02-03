@@ -134,6 +134,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgAllianceSwitchTimeTele;
     public Float lfmAvgOpponentSwitchTimeTele;
 
+    public Float predictedPark;
     public Float RScoreDefense;
     public Float RScoreSpeed;
     public Float RScoreAgility;
