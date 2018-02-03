@@ -121,7 +121,7 @@ public class CalculatedTeamData extends Object {
 
     public Integer totalNumRobotsGroundLifted;
     public Integer totalNumRobotGroundLiftAttempts;
-    public Float predictedPark;
+
 
     public Float avgScaleTimeAuto;
     public Float avgScaleTimeTele;
@@ -140,7 +140,7 @@ public class CalculatedTeamData extends Object {
     public Float RScoreDefense;
     public Float RScoreSpeed;
     public Float RScoreAgility;
-    Float RScoreDrivingAbility;
+    public Float RScoreDrivingAbility;
 
     //public Float switchFailPercentageAuto;
     //public Float switchFailPercentageTele;
