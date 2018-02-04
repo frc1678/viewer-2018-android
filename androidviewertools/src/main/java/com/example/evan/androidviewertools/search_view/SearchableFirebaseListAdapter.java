@@ -71,7 +71,69 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
                 //Log.e("filteredValues", filteredValues.toString());
             }
         }
+        if(Constants.sortByTeamNumber) {
+            sortByTeamNumber();
+            Log.e("Sorted", "by teamNumber");
+
+        }else if(Constants.sortByRank){
+            sortByTeamRank();
+            Log.e("Sorted", "by rank");
+
+        }else if(Constants.sortByFirstPick){
+            sortByFirstPick();
+            Log.e("Sorted", "by first pick");
+        }else if(Constants.sortBySecondPick){
+            sortBySecondPick();
+            Log.e("Sorted", "by second pick");
+
+        }
+        else{
+            sortByTeamRank();
+        }
+    }
+    public void sortByTeamNumber(){
+        Collections.sort(filteredValues, new Comparator<T>() {
+            public int compare(T obj1, T obj2) {
+                // ## Ascending order
+                Integer teamNumberOne = (Integer) Utils.getObjectField(obj1, "number");
+                Integer teamNumberTwo = (Integer) Utils.getObjectField(obj2, "number");
+                return (teamNumberOne).compareTo(teamNumberTwo);// To compare string values
+                // ## Descending order
+                // return obj2.firstName.compareToIgnoreCase(obj1.firstName); // To compare string values
+            }
+        });
+    }
+    public void sortByTeamRank(){
         Collections.sort(filteredValues, filterComparator);
+        Constants.sortByRank = false;
+    }
+    public void sortByFirstPick(){
+        Collections.sort(filteredValues, new Comparator<T>() {
+            public int compare(T obj1, T obj2) {
+                Log.e("sorting by", "first pick");
+                // ## Ascending order
+                Float teamNumberOne = (Float) Utils.getObjectField(obj1, "calculatedData.firstPickAbility");
+                Log.e("firstPickTeamOne", teamNumberOne + "");
+                Float teamNumberTwo = (Float) Utils.getObjectField(obj2, "calculatedData.firstPickAbility");
+                Log.e("teamOne", teamNumberOne + "");
+                Log.e("teamTwo", teamNumberTwo + "");
+                return (teamNumberTwo).compareTo(teamNumberOne);// To compare string values
+                // ## Descending order
+                // return obj2.firstName.compareToIgnoreCase(obj1.firstName); // To compare string values
+            }
+        });
+    }
+    public void sortBySecondPick(){
+        Collections.sort(filteredValues, new Comparator<T>() {
+            public int compare(T obj1, T obj2) {
+                // ## Ascending order
+                Float teamNumberOne = (Float) Utils.getObjectField(obj1, "calculatedData.allRotorsAbility");
+                Float teamNumberTwo = (Float) Utils.getObjectField(obj2, "calculatedData.allRotorsAbility");
+                return (teamNumberTwo).compareTo(teamNumberOne);// To compare string values
+                // ## Descending order
+                // return obj2.firstName.compareToIgnoreCase(obj1.firstName); // To compare string values
+            }
+        });
     }
 
 
