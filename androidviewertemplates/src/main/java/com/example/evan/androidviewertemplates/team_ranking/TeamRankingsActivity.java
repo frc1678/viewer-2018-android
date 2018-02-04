@@ -53,19 +53,66 @@ TeamRankingsActivity extends ViewerActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_rankings, menu);
         return true;
     }
-
+    public void setAllSortConstantsFalse(){
+        Constants.sortByTeamNumber = false;
+        Constants.sortByRank = false;
+        Constants.sortByFirstPick = false;
+        Constants.sortBySecondPick = false;
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        setAllSortConstantsFalse();
+        if (id == R.id.byNumber) {
+            Log.e("number", "clicked");
+            setColorOfItem(item);
+            lastMenuItem = item;
+            setAllSortConstantsFalse();
+            Constants.sortByTeamNumber = true;
+            refreshPage();
+            return true;
+        }
+        if (id == R.id.byRank){
+            Log.e("sort by number", String.valueOf(Constants.sortByTeamNumber));
+            Log.e("Rank", "clicked");
+            setColorOfItem(item);
+            lastMenuItem = item;
+            setAllSortConstantsFalse();
+            Constants.sortByRank = true;
+            refreshPage();
+            return true;
+        }
+        if (id == R.id.byFirstPick){
+            Log.e("first pick", "cliked");
+            setColorOfItem(item);
+            lastMenuItem = item;
+            setAllSortConstantsFalse();
+            Constants.sortByFirstPick = true;
+            refreshPage();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
 
     }
+
+    public void setColorOfItem(MenuItem item){
+        if(lastMenuItem!= null) {
+            SpannableString s1 = new SpannableString(lastMenuItem.getTitle());
+            s1.setSpan(new ForegroundColorSpan(Color.BLACK), 0, s1.length(), 0);
+            lastMenuItem.setTitle(s1);
+        }
+        SpannableString s2 = new SpannableString(item.getTitle());
+        s2.setSpan(new ForegroundColorSpan(Color.GRAY), 0, s2.length(), 0);
+        item.setTitle(s2);
+    }
+
 
     public Fragment getFragment() {
         Fragment fragment = new TeamRankingsActivityFragment();
