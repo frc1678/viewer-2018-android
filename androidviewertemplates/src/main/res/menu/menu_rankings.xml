@@ -24,6 +24,11 @@
                 android:title="First Pick"
                 android:orderInCategory="102"
                 app:showAsAction = "always"/>
+            <item
+                android:id="@+id/bySecondPick"
+                android:title="Second Pick"
+                android:orderInCategory="103"
+                app:showAsAction="always"/>
 
         </menu>
 

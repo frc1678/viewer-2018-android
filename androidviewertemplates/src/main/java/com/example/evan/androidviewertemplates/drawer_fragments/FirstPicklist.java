@@ -26,7 +26,7 @@ public class FirstPicklist extends TeamRankingsFragment {
     public static class FirstPickListAdapter extends TeamRankingsAdapter {
 
         public FirstPickListAdapter(Context context) {
-            super(context, "firstPicklistPosition", "firstPicklistPosition", true);
+            super(context, "picklistPosition", "picklistPosition", true);
             Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
             Constants.lastFourMatches = false;
         }

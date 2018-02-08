@@ -26,7 +26,7 @@ public class PredictedSeedingFragment extends TeamRankingsFragment {
     public static class PredictedSeedingAdapter extends TeamRankingsAdapter {
 
         public PredictedSeedingAdapter(Context context) {
-            super(context, "calculatedData.predictedSeed", "calculatedData.predictedNumRPs", true);
+            super(context, "calculatedData.predictedSeed", "calculatedData.predictedTotalNumRPs", true);
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){
