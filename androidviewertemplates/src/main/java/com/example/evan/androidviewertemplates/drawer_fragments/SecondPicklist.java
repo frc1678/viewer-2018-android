@@ -15,20 +15,28 @@ import com.example.evan.androidviewertools.utils.Constants;
  * Created by Teo on 2/1/18.
  */
 public class SecondPicklist extends TeamRankingsFragment {
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("seeding", "true");
         Util.setAllSortConstantsFalse();
         setListAdapter(new SecondPickListAdapter(getActivity().getApplicationContext()));
+
+
     }
+
+
 
     public static class SecondPickListAdapter extends TeamRankingsAdapter {
 
         public SecondPickListAdapter(Context context) {
-            super(context, "secondPicklistPosition", "secondPicklistPosition", true);
+            super(context, "", "", true);
             Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
             Constants.lastFourMatches = false;
+
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){

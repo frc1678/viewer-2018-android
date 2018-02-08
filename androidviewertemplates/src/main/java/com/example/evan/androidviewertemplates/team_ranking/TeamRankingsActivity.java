@@ -89,11 +89,21 @@ TeamRankingsActivity extends ViewerActivity {
             return true;
         }
         if (id == R.id.byFirstPick){
-            Log.e("first pick", "cliked");
+            Log.e("first pick", "clicked");
             setColorOfItem(item);
             lastMenuItem = item;
             setAllSortConstantsFalse();
             Constants.sortByFirstPick = true;
+            refreshPage();
+            return true;
+        }
+
+        if (id == R.id.bySecondPick){
+            Log.e("second pick", "clicked");
+            setColorOfItem(item);
+            lastMenuItem = item;
+            setAllSortConstantsFalse();
+            Constants.sortBySecondPick = true;
             refreshPage();
             return true;
         }

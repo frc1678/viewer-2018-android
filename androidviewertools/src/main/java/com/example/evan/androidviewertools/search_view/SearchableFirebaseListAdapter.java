@@ -82,9 +82,11 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
         }else if(Constants.sortByFirstPick){
             sortByFirstPick();
             Log.e("Sorted", "by first pick");
+/*
         }else if(Constants.sortBySecondPick){
             sortBySecondPick();
             Log.e("Sorted", "by second pick");
+*/
 
         }
         else{
