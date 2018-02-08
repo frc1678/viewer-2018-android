@@ -97,7 +97,6 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-
         if (id == R.id.bySecondPick){
             Log.e("second pick", "clicked");
             setColorOfItem(item);
@@ -107,7 +106,6 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
 
     }
