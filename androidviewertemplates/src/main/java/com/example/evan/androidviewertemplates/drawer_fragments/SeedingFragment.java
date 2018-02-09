@@ -29,7 +29,7 @@ public class SeedingFragment extends TeamRankingsFragment {
     public static class SeedingAdapter extends TeamRankingsAdapter {
 
         public SeedingAdapter(Context context) {
-            super(context, "calculatedData.actualSeed", "calculatedData.actualSeed", false);
+            super(context, "calculatedData.actualSeed", "calculatedData.actualNumRPs", false);
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){

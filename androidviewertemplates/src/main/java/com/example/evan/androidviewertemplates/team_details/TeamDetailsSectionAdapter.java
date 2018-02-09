@@ -39,7 +39,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",
-            "pitAvailableWeight","pitProgrammingLanguage"}
+            "pitAvailableWeight","pitProgrammingLanguage","calculatedData.pitRampTime"}
 
 
     };
