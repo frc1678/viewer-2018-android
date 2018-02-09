@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.citruscircuits.scout_viewer_2016_android.team_details.TeamRankingsActivity">
+    <item
+        android:id="@+id/rankingSettings"
+        app:showAsAction="always"
+        android:title=""
+        android:icon="@drawable/elipse">
+        <menu>
+
+            <item
+                android:id="@+id/byNumber"
+                android:title="By Number"
+                android:orderInCategory="100"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/byRank"
+                android:title="By Rank"
+                android:orderInCategory="101"
+                app:showAsAction = "always"/>
+            <item
+                android:id="@+id/byFirstPick"
+                android:title="First Pick"
+                android:orderInCategory="102"
+                app:showAsAction = "always"/>
+            <item
+                android:id="@+id/bySecondPick"
+                android:title="Second Pick"
+                android:orderInCategory="103"
+                app:showAsAction="always"/>
+
+        </menu>
+
+    </item>
+</menu>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+
+    <TextView
+        android:id="@+id/firstTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="1:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/firstTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/firstTeamOptionTV"
+        android:hint="Team Number" />
+
+
+    <TextView
+        android:id="@+id/secondTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="2:"
+
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/secondTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/firstTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/secondTeamOptionTV"
+        android:hint="Team Number" />
+
+
+    <TextView
+        android:id="@+id/thirdTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="3:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/thirdTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/secondTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/secondTeamOptionTV"
+        android:hint="Team Number" />
+
+    <TextView
+        android:id="@+id/fourthTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thirdTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="4:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/fourthTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/thirdTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/thirdTeamOptionTV"
+        android:hint="Team Number" />
+
+    <TextView
+        android:id="@+id/fifthTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fourthTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="5:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/fifthTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/fourthTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/fourthTeamOptionTV"
+        android:hint="Team Number" />
+
+    <TextView
+        android:id="@+id/sixthTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fifthTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="6:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/sixthTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/fifthTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/fifthTeamOptionTV"
+        android:hint="Team Number" />
+
+    <TextView
+        android:id="@+id/seventhTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sixthTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="7:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/seventhTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/sixthTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/sixthTeamOptionTV"
+        android:hint="Team Number" />
+
+    <TextView
+        android:id="@+id/eighthTeamOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seventhTeamOptionET"
+        android:layout_marginTop="30dp"
+        android:text="8:"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/eighthTeamOptionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/seventhTeamOptionET"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/seventhTeamOptionTV"
+        android:hint="Team Number" />
+
+
+    <TextView
+        android:id="@+id/firstTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/firstTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/secondTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/secondTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/secondTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/thirdTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thirdTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/thirdTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/fourthTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fourthTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/fourthTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/fifthTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fifthTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/fifthTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/sixthTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sixthTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/sixthTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/seventhTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seventhTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/seventhTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/eighthTeamTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/eighthTeamOptionET"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/eighthTeamOptionTV"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize="18sp" />
+
+
+
+
+</RelativeLayout>

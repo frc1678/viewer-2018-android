@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklist;
 import com.example.evan.androidviewertemplates.drawer_fragments.LastFourMatchesFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.NoteFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -183,7 +184,7 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
             case  12:
-                fragment = new SecondPicklist();
+                fragment = new NoteFragment();
                 latestFragmentId = position;
                 break;
 

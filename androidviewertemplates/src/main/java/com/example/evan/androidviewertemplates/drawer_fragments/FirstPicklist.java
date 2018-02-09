@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
+import com.example.evan.androidviewertemplates.utils.Util;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsAdapter;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
 import com.example.evan.androidviewertools.utils.Constants;
@@ -18,15 +19,14 @@ public class FirstPicklist extends TeamRankingsFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("seeding", "true");
-        Constants.lastFourMatches = false;
-        Constants.sortByTeamNumber = false;
+        Util.setAllSortConstantsFalse();
         setListAdapter(new FirstPickListAdapter(getActivity().getApplicationContext()));
     }
 
     public static class FirstPickListAdapter extends TeamRankingsAdapter {
 
         public FirstPickListAdapter(Context context) {
-            super(context, "firstPicklistPosition", "firstPicklistPosition", true);
+            super(context, "picklistPosition", "picklistPosition", true);
             Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
             Constants.lastFourMatches = false;
         }
