@@ -27,7 +27,7 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Map<String, String> redSwitch;
     public Map<String, String> blueSwitch;
     public Map<String, String> scale;
-
+//.
 
     public Integer foulPointsGainedRed;
     public Integer foulPointsGainedBlue;
