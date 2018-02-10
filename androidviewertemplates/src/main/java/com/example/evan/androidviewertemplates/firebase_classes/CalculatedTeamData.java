@@ -33,7 +33,7 @@ public class CalculatedTeamData extends Object {
     public Float pitAvgDriveTime;
     public Float pitAvgRampTime;
 
-
+//
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
 
