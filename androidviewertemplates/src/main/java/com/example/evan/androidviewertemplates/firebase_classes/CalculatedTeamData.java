@@ -157,4 +157,6 @@ public class CalculatedTeamData extends Object {
     public Float opponentSwitchFailPercentageTele;
     public Float scaleFailPercentageAuto;
     public Float scaleFailPercentageTele;
+
+    public Integer predictedTotalNumRPs;
 }
