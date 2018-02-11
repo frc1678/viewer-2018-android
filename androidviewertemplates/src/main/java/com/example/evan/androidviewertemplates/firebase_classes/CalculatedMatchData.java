@@ -6,21 +6,20 @@ package com.example.evan.androidviewertemplates.firebase_classes;
 
 public class CalculatedMatchData extends Object {
     //Make sure all variables are public
-    public Float predictedBlueScore;
-    public Float predictedRedScore;
-    public Float predictedBlueRPs;
-    public Integer actualBlueRPs;
-    public Float predictedRedRPs;
-    public Integer actualRedRPs;
     public Boolean predictedBlueAutoQuest;
     public Boolean predictedRedAutoQuest;
-    public Float redWinChance;
-    public Float blueWinChance;
-    public Float redTeleopExchangeAbility;
-    public Float redPredictedPark;
-    public Float redLevitateProbability;
-    public Float bluePredictedPark;
     public Float blueLevitateProbability;
-
+    public Float bluePredictedPark;
+    public Float blueWinChance;
+    public Float predictedBlueRPs;
+    public Float predictedBlueScore;
+    public Float predictedRedRPs;
+    public Float predictedRedScore;
+    public Float redLevitateProbability;
+    public Float redPredictedPark;
+    public Float redTeleopExchangeAbility;
+    public Float redWinChance;
+    public Integer actualBlueRPs;
+    public Integer actualRedRPs;
 
 }

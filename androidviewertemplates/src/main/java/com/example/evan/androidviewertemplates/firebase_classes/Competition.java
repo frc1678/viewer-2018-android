@@ -11,12 +11,9 @@ import java.util.List;
  * Created by sam on 1/16/17.
  */
 public class Competition extends Object {
-    public String code;
-    public List<Team> teams;
-    public List<Match> matches;
-    public List<TeamInMatchData> TIMDs;
     public Integer currentMatchNum;
-
-   //is this it???
-
+    public List<Match> matches;
+    public List<Team> teams;
+    public List<TeamInMatchData> TIMDs;
+    public String code;
 }
