@@ -30,7 +30,10 @@ public class CalculatedTeamData extends Object {
     public Float avgOpponentTimeTele;
     public Float avgOpponentTimeAuto;
 
+    public Float pitAvgDriveTime;
+    public Float pitAvgRampTime;
 
+//
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
 
@@ -157,4 +160,6 @@ public class CalculatedTeamData extends Object {
     public Float opponentSwitchFailPercentageTele;
     public Float scaleFailPercentageAuto;
     public Float scaleFailPercentageTele;
+
+    public Integer predictedTotalNumRPs;
 }
