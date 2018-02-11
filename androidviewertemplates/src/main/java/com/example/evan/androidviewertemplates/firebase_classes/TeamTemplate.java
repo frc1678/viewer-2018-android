@@ -34,5 +34,6 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public String pitSEALsNotes;
     public String pitSelectedImage;
     public String pitSelectedImageName;
+    //
 }
 
