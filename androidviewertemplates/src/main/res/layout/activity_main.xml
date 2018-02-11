@@ -26,4 +26,7 @@
         android:name="com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
 
+
+
+
 </android.support.v4.widget.DrawerLayout>
