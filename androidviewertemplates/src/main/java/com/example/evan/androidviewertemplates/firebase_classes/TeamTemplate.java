@@ -30,11 +30,13 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public String pitClimberType;
     public Float pitMaxHeight;
     public ArrayList<Float> pitAutoRunTimes;
-    public Map <Float,Boolean> pitAutoRunTime;
+    public Integer pitAutoRunTime;
     public ArrayList<String> totalSuperNotes;
-    public ArrayList<Object> pitRampTime;
-    public ArrayList<Object> pitDriveTime;
 
+    public Object pitRampTime;
+    public Object pitRampTimes;
+    public Object pitDriveTime;
+    public Object pitDriveTimes;
 
 }
 
