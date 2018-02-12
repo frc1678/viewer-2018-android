@@ -34,9 +34,9 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public ArrayList<String> totalSuperNotes;
 
     public Object pitRampTime;
-    public Object pitRampTimes;
+    public ArrayList<Object> pitRampTimes;
     public Object pitDriveTime;
-    public Object pitDriveTimes;
+    public ArrayList<Object> pitDriveTimes;
 
 }
 

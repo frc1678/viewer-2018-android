@@ -3,10 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HeaderListView/HeaderListView.iml" filepath="$PROJECT_DIR$/HeaderListView/HeaderListView.iml" />
+      <module fileurl="file://C:\Users\Katherine\viewer-2018-android\HeaderListView\HeaderListView.iml" filepath="C:\Users\Katherine\viewer-2018-android\HeaderListView\HeaderListView.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidviewertemplates/androidviewertemplates.iml" filepath="$PROJECT_DIR$/androidviewertemplates/androidviewertemplates.iml" />
+      <module fileurl="file://C:\Users\Katherine\viewer-2018-android\androidviewertemplates\androidviewertemplates.iml" filepath="C:\Users\Katherine\viewer-2018-android\androidviewertemplates\androidviewertemplates.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidviewertools/androidviewertools.iml" filepath="$PROJECT_DIR$/androidviewertools/androidviewertools.iml" />
+      <module fileurl="file://C:\Users\Katherine\viewer-2018-android\androidviewertools\androidviewertools.iml" filepath="C:\Users\Katherine\viewer-2018-android\androidviewertools\androidviewertools.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Katherine\viewer-2018-android\app\app.iml" filepath="C:\Users\Katherine\viewer-2018-android\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewer-2018-android.iml" filepath="$PROJECT_DIR$/viewer-2018-android.iml" />
+      <module fileurl="file://C:\Users\Katherine\viewer-2018-android\viewer-2018-android.iml" filepath="C:\Users\Katherine\viewer-2018-android\viewer-2018-android.iml" />
     </modules>
   </component>
 </project>
