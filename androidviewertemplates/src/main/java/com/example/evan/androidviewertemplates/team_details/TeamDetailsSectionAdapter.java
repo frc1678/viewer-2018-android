@@ -39,7 +39,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",
-            "pitAvailableWeight","pitProgrammingLanguage","pitRampTimes"}
+            "pitAvailableWeight","pitProgrammingLanguage","pitRampTime"}
 
 
     };
@@ -74,7 +74,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "superNotes",
             "climb",
             "totalSuperNotes",
-            "pitRampTimes"
+            "pitRampTime"
     };
 
     private String[] shouldDisplayAsLongText = {
@@ -82,7 +82,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "superNotes",
             "pitSEALsNotes",
             "totalSuperNotes",
-            "pitRampTimes"
+            "pitRampTime"
 
     };
 
@@ -103,7 +103,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitOrganization",
             "pitDriveTrain",
             "pitCanCheesecake",
-            "pitRampTimes"
+            "pitRampTime"
             //"superNotes"
     };
 

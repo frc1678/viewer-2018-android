@@ -76,7 +76,7 @@ public class SpecificConstants extends Constants {
                     put ("pitSEALsNotes","SEAL Notes");
                     put ("pitAvailableWeight","Available Weight");
                     put ("pitProgrammingLanguage","Programming Language");
-                    put ("pitRampTimes","Ramp Time");
+                    put ("pitRampTime","Ramp Time");
 
                 //TeamInMatchDetailsAdapter
                     //Auto

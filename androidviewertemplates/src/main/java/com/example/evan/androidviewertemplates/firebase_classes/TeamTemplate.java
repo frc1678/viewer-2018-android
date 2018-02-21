@@ -33,17 +33,26 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public ArrayList<Float> pitAutoRunTimes;
     public Integer pitAutoRunTime;
     public ArrayList<String> totalSuperNotes;
-    public Map<String,Object> pitRampTimeOutcome;
-    public Map<String,Boolean> pitDriveOutcome;
+
+            public Object pitRampTimeOutcome;
+            //public ArrayList<Boolean> pitRampTimeOutcome;
+
+            public Object pitDriveOutcome;
+            //public Map<String,Boolean> pitDriveOutcome;
+
+            public Object pitRampTime;
+            public Object pitDriveTime;
+            //public ArrayList<Float> pitRampTime;
+            //public ArrayList<Float> pitDriveTime;
+
 
     public Float didThreeExchangeInputPercentage;
-    public Object pitRampTime;
-    public Object pitDriveTime;
-
-    public ArrayList<Object> pitRampTimes;
+    public Object avgPitDriveTime;
+    public Float avgPitRampTime;
+    //public ArrayList<Object> pitRampTimes;
     public Object pitDriveTimes;
     public String pitDriveTest;
-    public Map<String, Boolean> pitDriveTimeOutcome;
+    public ArrayList<Boolean> pitDriveTimeOutcome;
 
 
 }
