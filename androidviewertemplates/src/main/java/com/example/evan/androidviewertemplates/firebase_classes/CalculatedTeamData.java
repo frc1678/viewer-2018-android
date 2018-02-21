@@ -8,6 +8,7 @@ import java.util.Map;
  */
 
 public class CalculatedTeamData extends Object {
+    public Float didThreeExchangeInputPercentage;
     public Float firstPickAbiltiy;
     public Float secondPickAbility;
     public Float disabledPercentage;
@@ -15,7 +16,9 @@ public class CalculatedTeamData extends Object {
     public Float avgNumOpponentPlatformIntakeAuto;
     public Float avgNumAlliancePlatformIntakeAuto;
     public Float avgNumGroundPyramidIntakeAuto;
+    public Float soloClimbPercentage;
     public Float avgNumElevatedPyramidIntakeAuto;
+    public Float assistedClimbPercentage;
     public Float avgNumCubesFumbledAuto;
     public Float avgNumCubesFumbledTele;
     public Float avgNumGroundPyramidIntakeTele;
@@ -24,7 +27,10 @@ public class CalculatedTeamData extends Object {
     public Float avgNumAlliancePlatformIntakeTele;
     //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
+    public Float activeLiftClimbPercentage;
+    public Float activeNoClimbLiftClimbPercentage;
 
+    public Float activeAssistClimbPercentage;
     public Float avgAllianceTimeTele;
     public Float avgAllianceTimeAuto;
     public Float avgOpponentTimeTele;

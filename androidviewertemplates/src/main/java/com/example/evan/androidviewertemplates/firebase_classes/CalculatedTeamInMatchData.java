@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class CalculatedTeamInMatchData extends Object {
 
+    public Boolean didThreeExchangeInput;
     public Integer rankDefense;
     public Integer numCubesFumbledAuto;
     public String scoutName;

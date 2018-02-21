@@ -17,6 +17,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Integer firstPicklistPosition;
     public Integer secondPicklistPosition;
 
+
     public Integer pitAvailableWeight;
     public String pitDriveTrain;
     public Map<String,String> pitImageKeys;
@@ -32,11 +33,21 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public ArrayList<Float> pitAutoRunTimes;
     public Integer pitAutoRunTime;
     public ArrayList<String> totalSuperNotes;
-
+    public Object pitRampTimeOutcome;
+    //public ArrayList<Boolean> pitRampTimeOutcome;
+    public Object pitDriveOutcome;
+    //public Map<String,Boolean> pitDriveOutcome;
     public Object pitRampTime;
-    public ArrayList<Object> pitRampTimes;
     public Object pitDriveTime;
-    public ArrayList<Object> pitDriveTimes;
+    //public ArrayList<Float> pitRampTime;
+    //public ArrayList<Float> pitDriveTime;
+    public Float didThreeExchangeInputPercentage;
+    public Object avgPitDriveTime;
+    public Float avgPitRampTime;
+    //public ArrayList<Object> pitRampTimes;
+    public Object pitDriveTimes;
+    public String pitDriveTest;
+    public ArrayList<Boolean> pitDriveTimeOutcome;
 
 }
 
