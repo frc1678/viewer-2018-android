@@ -17,6 +17,7 @@ public class CalculatedTeamData extends Object {
     public Float avgNumAlliancePlatformIntakeAuto;
     public Float avgNumGroundPyramidIntakeAuto;
     public Float soloClimbPercentage;
+    public Float parkPercentage;
     public Float avgNumElevatedPyramidIntakeAuto;
     public Float assistedClimbPercentage;
     public Float avgNumCubesFumbledAuto;
@@ -29,6 +30,7 @@ public class CalculatedTeamData extends Object {
     public Float avgNumGroundIntakeTele;
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;
+    public Boolean canGroundIntake;
 
     public Float activeAssistClimbPercentage;
     public Float avgAllianceTimeTele;
@@ -36,6 +38,7 @@ public class CalculatedTeamData extends Object {
     public Float avgOpponentTimeTele;
     public Float avgOpponentTimeAuto;
 
+    public ArrayList<String> totalSuperNotes;
     public Float pitAvgDriveTime;
     public Float pitAvgRampTime;
 
