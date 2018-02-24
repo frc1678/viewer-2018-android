@@ -28,9 +28,9 @@ public class CalculatedTeamData extends Object {
     public Float avgNumAlliancePlatformIntakeTele;
     //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
+    public Boolean canGroundIntake;
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;
-    public Boolean canGroundIntake;
 
     public Float activeAssistClimbPercentage;
     public Float avgAllianceTimeTele;
@@ -45,7 +45,6 @@ public class CalculatedTeamData extends Object {
 //
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
-
     public Float avgNumExchangeInputTele;
     public Float avgNumRetrunIntakeTele;
     public Float avgCubesSpilledAuto;
