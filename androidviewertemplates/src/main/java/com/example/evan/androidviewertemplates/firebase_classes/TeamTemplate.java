@@ -8,7 +8,6 @@ import java.util.Map;
  */
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
     public CalculatedTeamData calculatedData;
-    public Integer numMatchesPlayed;
     public String pitSelectedImageName;
     public String pitSelectedImage;
     public Map <String,String> pitAllImageURLs;

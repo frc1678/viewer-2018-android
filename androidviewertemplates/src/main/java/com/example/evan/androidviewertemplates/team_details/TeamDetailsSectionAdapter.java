@@ -27,7 +27,7 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "numMatchesPlayed"},
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "calculatedData.numMatchesPlayed"},
             {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
             "calculatedData.autoRunPercentage","calculatedData.allianceSwitchFailPercentageAuto","calculatedData.scaleFailPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
             {"calculatedData.avgCubesSpilledTele","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
@@ -35,7 +35,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.allianceSwitchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
             {"calculatedData.predictedClimb", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
-            {"calculatedData.avgDrivingAbility"},
+            {"calculatedData.avgDrivingAbility","calculatedData.percentSuccessOppositeSwitchSideAuto"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",

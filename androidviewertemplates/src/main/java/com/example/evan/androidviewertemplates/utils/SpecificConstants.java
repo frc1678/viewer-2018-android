@@ -52,7 +52,7 @@ public class SpecificConstants extends Constants {
                     //Matches
                     put ("matches","Matches");
                     put ("VIEWER.matchesUntilNextMatchForTeam","Matches Until Next Match");
-                    put ("numMatchesPlayed","Num. Matches Played");
+                    put ("calculatedData.numMatchesPlayed","Num. Matches Played");
 
                     //Status
                     put ("calculatedData.incapacitatedPercentage","Incapacitated");
@@ -60,6 +60,7 @@ public class SpecificConstants extends Constants {
 
                     //HighLevel
                     put ("calculatedData.avgDrivingAbility","Avg Driving Ability");
+                    put ("calculatedData.percentSuccessOppositeSwitchSideAuto","Opp. Switch Side Success %");
 
                     //SuperData
                     put ("calculatedData.avgSpeed","Speed");

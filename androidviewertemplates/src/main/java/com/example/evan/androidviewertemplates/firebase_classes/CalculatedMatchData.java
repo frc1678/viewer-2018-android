@@ -12,15 +12,17 @@ public class CalculatedMatchData extends Object {
     public Integer actualBlueRPs;
     public Float predictedRedRPs;
     public Integer actualRedRPs;
-    public Boolean predictedBlueAutoQuest;
-    public Boolean predictedRedAutoQuest;
+    public Float predictedBlueAutoQuest;
+    public Float predictedRedAutoQuest;
     public Float redWinChance;
     public Float blueWinChance;
-    public Float redTeleopExchangeAbility;
     public Float redPredictedPark;
-    public Float redLevitateProbability;
     public Float bluePredictedPark;
+    public Float redLevitateProbability;
     public Float blueLevitateProbability;
-
+    public Float redTeleopExchangeAbility;
+    public Float blueTeleopExchangeAbilit;
+    public Float redPredictedFaceTheBoss;
+    public Float bluePredictedFaceTheBoss;
 
 }

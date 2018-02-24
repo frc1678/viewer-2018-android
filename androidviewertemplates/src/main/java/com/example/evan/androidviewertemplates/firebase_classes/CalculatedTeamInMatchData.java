@@ -8,7 +8,7 @@ import java.util.Map;
  */
 
 public class CalculatedTeamInMatchData extends Object {
-
+    public Integer numRobotsLifted;
     public Boolean didThreeExchangeInput;
     public Integer rankDefense;
     public Integer numCubesFumbledAuto;
@@ -20,6 +20,10 @@ public class CalculatedTeamInMatchData extends Object {
     public Boolean didPark;
     public Integer numGroundPyramidIntakeAuto;
     public Integer numElevatedPyramidIntakeAuto;
+
+    public Float timeToOwnAllianceSwitchAuto;
+    public Float timeToOwnScaleAuto;
+
     public Integer numRPs;
     public Integer numAllianceSwitchSuccessAuto;
     public Integer numAllianceSwitchSuccessTele;
