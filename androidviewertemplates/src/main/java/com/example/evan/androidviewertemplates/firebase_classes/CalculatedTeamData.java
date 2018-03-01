@@ -120,7 +120,6 @@ public class CalculatedTeamData extends Object {
     public Float teleopOpponentSwitchAbility;
     public Float avgTimeToOwnScaleAuto;
     public Boolean canPlaceHighLayerCube;
-    public Boolean canGroundIntake;
     public Integer numRobotsLifted;
     public Integer totalNumHighLayerCubes;
 
