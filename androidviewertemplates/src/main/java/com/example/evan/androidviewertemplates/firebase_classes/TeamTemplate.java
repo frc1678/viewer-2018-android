@@ -10,7 +10,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public CalculatedTeamData calculatedData;
     public String pitSelectedImageName;
     public String pitSelectedImage;
-    public Map <String,String> pitAllImageURLs;
+    public ArrayList<String> pitAllImageURLs;
     public Map <String,String> pitAllImageUrls; //Todo Delete later.
     public Integer picklistPosition;
     public Integer firstPicklistPosition;
@@ -19,7 +19,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
 
     public Integer pitAvailableWeight;
     public String pitDriveTrain;
-    public Map<String,String> pitImageKeys;
+    public ArrayList<String> pitImageKeys;
     public Map<String,String> imageKeys; //todo Delete later.
 
     public Boolean pitCanCheesecake;
@@ -28,6 +28,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public String SEALSNotes;
     public String pitProgrammingLanguage;
     public String pitClimberType;
+    public String pitWheelDiameter;
     public Float pitMaxHeight;
     public ArrayList<Float> pitAutoRunTimes;
     public Integer pitAutoRunTime;
