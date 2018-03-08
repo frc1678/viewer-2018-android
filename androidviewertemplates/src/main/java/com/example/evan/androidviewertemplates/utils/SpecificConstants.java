@@ -48,6 +48,12 @@ public class SpecificConstants extends Constants {
                     //FaceTheBoss
                     put ("calculatedData.avgClimbTime","Avg Climb Time");
                     put ("calculatedData.predictedClimb","Predicted Climb Percentage");
+                    put ("calculatedData.soloClimbPercentage", "Solo Climb %");
+                    put ("calculatedData.assistedClimbPercentage", "Assisted Climb %");
+                    put ("calculatedData.activeLiftClimbPercentage", "Active Lift Climb %");
+                    put ("calculatedData.activeNoClimbLiftClimbPercentage", "Active No Climb Lift %");
+                    put ("calculatedData.activeAssistClimbPercentage", "Active Assist Climb %");
+
 
                     //Matches
                     put ("matches","Matches");

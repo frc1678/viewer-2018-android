@@ -33,7 +33,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             {"calculatedData.avgCubesSpilledTele","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
             "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
             "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.allianceSwitchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
-            {"calculatedData.predictedClimb", "calculatedData.avgClimbTime"},
+            {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility","calculatedData.percentSuccessOppositeSwitchSideAuto"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
@@ -59,7 +59,12 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.disabledPercentage",
             "calculatedData.incapacitatedPercentage",
             "calculatedData.baselineReachedPercentage",
-            "calculatedData.liftoffPercentage"};
+            "calculatedData.liftoffPercentage",
+            "calculatedData.soloClimbPercentage",
+            "calculatedData.assistedClimbPercentage",
+            "calculatedData.activeLiftClimbPercentage",
+            "calculatedData.activeNoClimbLiftClimbPercentage",
+            "calculatedData.activeAssistClimbPercentage"};
 
     private String[] displayAsUnranked = {
             "matches",
