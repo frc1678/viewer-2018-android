@@ -27,9 +27,10 @@ public class CalculatedTeamData extends Object {
     public Float avgNumAlliancePlatformIntakeTele;
     //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
-    public Boolean canGroundIntake;
+
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;
+
     public Float activeAssistClimbPercentage;
     public Float avgAllianceTimeTele;
     public Float avgAllianceTimeAuto;
@@ -120,6 +121,7 @@ public class CalculatedTeamData extends Object {
     public Float teleopOpponentSwitchAbility;
     public Float avgTimeToOwnScaleAuto;
     public Boolean canPlaceHighLayerCube;
+    public Boolean canGroundIntake;
     public Integer numRobotsLifted;
     public Integer totalNumHighLayerCubes;
 
