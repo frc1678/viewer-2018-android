@@ -105,7 +105,7 @@ public class SpecificConstants extends Constants {
                     put ("numHumanPortalIntakeTele","Num Human Portal Intake Tele");
 
                     //FaceTheBoss
-                    //put ("climb","Climb");
+                    put ("climb","Climb");
                     put ("didPark","Did Park");
 
                     //SuperData
