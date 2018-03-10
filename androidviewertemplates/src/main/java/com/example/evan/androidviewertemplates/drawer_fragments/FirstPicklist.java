@@ -18,7 +18,6 @@ public class FirstPicklist extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("seeding", "true");
         Util.setAllSortConstantsFalse();
         setListAdapter(new FirstPickListAdapter(getActivity().getApplicationContext()));
     }
@@ -26,15 +25,49 @@ public class FirstPicklist extends TeamRankingsFragment {
     public static class FirstPickListAdapter extends TeamRankingsAdapter {
 
         public FirstPickListAdapter(Context context) {
+
             super(context, "picklistPosition", "picklistPosition", true);
             Log.e("RankByNumber", String.valueOf(Constants.sortByTeamNumber));
             Constants.lastFourMatches = false;
+            Constants.firstPickList = true;
         }
         @Override
         public Intent getTeamDetailsActivityIntent(){
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Override
     public Intent getTeamDetailsActivityIntent(){
         return new Intent(getActivity(), TeamDetailsActivity.class);
