@@ -88,7 +88,7 @@ public class SpecificConstants extends Constants {
                 //TeamInMatchDetailsAdapter
                     //Auto
                     put ("didMakeAutoRun","Did Make Auto Run");
-                    put ("didCrossAutoZone","Can Cross Auto Zone");
+                    put ("calculatedData.canScoreOppositeSwitchAuto","Can Score Opposite Switch");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled Auto");
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
                     put ("calculatedData.numScaleSuccessAuto","Num. Auto Scale Success");

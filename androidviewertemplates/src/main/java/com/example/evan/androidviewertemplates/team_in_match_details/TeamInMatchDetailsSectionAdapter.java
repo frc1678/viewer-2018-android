@@ -27,7 +27,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     //todo
     private String[][] fieldsToDisplay = {
             {"teamNumber","matchNumber"},
-            {"didMakeAutoRun","didCrossAutoZone","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
+            {"didMakeAutoRun","calculatedData.canScoreOppositeSwitchAuto","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
             "calculatedData.numScaleSuccessAuto"},
             {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
