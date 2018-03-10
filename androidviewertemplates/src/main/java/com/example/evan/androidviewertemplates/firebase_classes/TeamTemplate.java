@@ -48,6 +48,6 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Object pitDriveTimes;
     public String pitDriveTest;
     public ArrayList<Boolean> pitDriveTimeOutcome;
-
+    public Integer maxScaleCubes;
 }
 
