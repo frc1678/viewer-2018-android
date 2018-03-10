@@ -16,7 +16,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Object scoutName;
 
     public String superNotes;
-    public Boolean didCrossAutoZone;
+
 
     public Object test; //todo Delete Later
 

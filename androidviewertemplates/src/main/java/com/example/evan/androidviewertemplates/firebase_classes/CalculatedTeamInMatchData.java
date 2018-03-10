@@ -61,7 +61,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numScaleFailedAuto;
     public Integer numCubesFumbledTele;
     public Boolean didMakeAutoRun;
-    public Boolean didCrossAutoZone;
+    public Boolean canScoreOppositeSwitchAuto;
     public Integer numScaleSuccessTele;
     public Integer numScaleFailedTele;
     public Float climbTime;
