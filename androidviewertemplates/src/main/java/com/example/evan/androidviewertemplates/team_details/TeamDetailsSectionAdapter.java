@@ -27,15 +27,15 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "calculatedData.canScoreOppositeSwitchAuto"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto",
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
+            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.canScoreOppositeSwitchAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
             "calculatedData.autoRunPercentage","calculatedData.allianceSwitchFailPercentageAuto","calculatedData.scaleFailPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgCubesSpilledTele","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
+            {"calculatedData.avgCubesSpilledTele","calculatedData.totalCubesPlaced","calculatedData.maxScaleCubes","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
             "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
             "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.allianceSwitchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
-            {"calculatedData.avgDrivingAbility","calculatedData.percentSuccessOppositeSwitchSideAuto"},
+            {"calculatedData.avgDrivingAbility"},
             {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
             {"pitDriveTrain","pitCanCheesecake","pitClimberType","pitSEALsNotes",

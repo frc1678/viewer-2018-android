@@ -107,6 +107,11 @@ public class CalculatedTeamData extends Object {
 
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
+    public Integer maxScaleCubes;
+    public Float lfmAvgNumCubesPlacedAuto;
+    public Float lfmAvgNumCubesPlacedTele;
+    public Float avgNumCubesPlacedAuto;
+    public Float avgNumCubesPlacedTele;
 
 
     public Float percentSuccessOppositeSwitchSideAuto;
@@ -124,7 +129,8 @@ public class CalculatedTeamData extends Object {
     public Boolean canGroundIntake;
     public Integer numRobotsLifted;
     public Integer totalNumHighLayerCubes;
-
+    public Boolean canScoreOppositeSwitchAuto;
+    public Integer totalCubesPlaced;
     public Integer numMatchesPlayed;
     public Float predictedClimb;
     public Float lfmAvgCubesPlacedInScaleTele;
