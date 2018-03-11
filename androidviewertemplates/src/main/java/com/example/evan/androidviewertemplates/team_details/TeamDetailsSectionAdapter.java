@@ -29,8 +29,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     private String[][] fieldsToDisplay = {
 
             {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.canScoreOppositeSwitchAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
-
+            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.canScoreBothSwitchSidesAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.percentSuccessOppositeSwitchSideAuto",
             "calculatedData.autoRunPercentage","calculatedData.allianceSwitchFailPercentageAuto","calculatedData.scaleFailPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
             {"calculatedData.avgCubesSpilledTele","calculatedData.totalCubesPlaced","calculatedData.maxScaleCubes","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
             "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",

@@ -62,7 +62,6 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public ArrayList<Boolean> alliancePlatformIntakeTele;
     public ArrayList <Integer> numOpponentPlatformIntakeAuto; //todo Delete later.
     public ArrayList <Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
-
     public Integer numReturnIntake;
 
     public Integer numSpilledCubesTele;
@@ -71,7 +70,7 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Integer rankSpeed;
 
     public Object startingPosition; //todo Change Value
-
+    public Boolean switchIsOpposite;
 
     public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
     public ArrayList<Map <String, Object>> scaleAttemptAuto;

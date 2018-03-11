@@ -29,12 +29,11 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes in Switch Auto");
-                    put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Both Switches Auto");
-                    put ("autoRunPercentage","Did Make Auto Run");
-                    put ("calculatedData.allianceSwitchFailPercentageAuto","Switch Fail Percentage Auto");
-                    put ("calculatedData.scaleFailPercentageAuto","Scale Fail Percentage Auto");
+                    put ("calculatedData.allianceSwitchFailPercentageAuto","Switch Fail % Auto");
+                    put ("calculatedData.scaleFailPercentageAuto","Scale Fail % Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Alliance Switch Auto");
                     put ("calculatedData.percentSuccessOppositeSwitchSideAuto","Opp. Switch Side Success %");
+                    put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Opp. Switch");
 
                     //Teleop
                     put ("calculatedData.avgCubesSpilledTele","Avg Cubes Spilled Tele");
@@ -45,14 +44,14 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes in Exchange Tele");
                     put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Portal Intake Tele");
                     put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Human Portal Intake Tele");
-                    put ("calculatedData.allianceSwitchFailPercentageTele","Percentage Switch Fails Tele");
-                    put ("calculatedData.scaleFailPercentageTele","Percentage Scale Fail Tele");
+                    put ("calculatedData.allianceSwitchFailPercentageTele","Switch Fails % Tele");
+                    put ("calculatedData.scaleFailPercentageTele","Scale Fail % Tele");
                     put ("calculatedData.maxScaleCubes","Max Scale Cubes");
                     put ("calculatedData.totalCubesPlaced", "Total Cubes Placed");
 
                     //FaceTheBoss
                     put ("calculatedData.avgClimbTime","Avg Climb Time");
-                    put ("calculatedData.predictedClimb","Predicted Climb Percentage");
+                    put ("calculatedData.predictedClimb","Predicted Climb %");
                     put ("calculatedData.soloClimbPercentage", "Solo Climb %");
                     put ("calculatedData.assistedClimbPercentage", "Assisted Climb %");
                     put ("calculatedData.activeLiftClimbPercentage", "Active Lift Climb %");
@@ -95,17 +94,15 @@ public class SpecificConstants extends Constants {
                 //TeamInMatchDetailsAdapter
                     //Auto
                     put ("didMakeAutoRun","Did Make Auto Run");
-                    put ("calculatedData.canScoreOppositeSwitchAuto","Score Opposite Switch");
                     put ("numCubesFumbledAuto","Number Cubes Fumbled Auto");
                     put ("calculatedData.numAllianceSwitchSuccessAuto","Num. Alliance Switch Cubes Auto");
                     put ("calculatedData.numScaleSuccessAuto","Num. Auto Scale Success");
-
                     put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
-
+                    put ("calculatedData.canScoreOppositeSwitchAuto","Can Score Opp. Switch");
                     //Tele
-                    put ("calculatedData.numAllianceSwitchSuccessTele","Num Cubes Placed in Alliance Switch Tele");
-                    put ("calculatedData.numOpponentSwitchSuccessTele","Num Cubes Placed in Opponent Switch Tele");
+                    put ("calculatedData.numAllianceSwitchSuccessTele","Num. Alli. Switch Success Tele");
+                    put ("calculatedData.numOpponentSwitchSuccessTele","Num. Opp. Switch Success Tele");
                     put ("calculatedData.numScaleSuccessTele","Scale Success Tele");
                     put ("numExchangeInput","Num Cubes Placed in Exchange Tele");
                     put ("numGroundIntakeTele","Num Ground Intake Tele");
@@ -118,12 +115,12 @@ public class SpecificConstants extends Constants {
                     put ("didPark","Did Park");
 
                     //SuperData
-                    put ("rankSpeed","Ranked Speed");
-                    put ("rankAgility","Ranked Agility");
-                    put ("rankDefense","Ranked Defense");
+                    put ("rankSpeed","Speed");
+                    put ("rankAgility","Agility");
+                    put ("rankDefense","Defense");
                     put ("superNotes","Super Notes");
-                    put ("numGoodDecisions","Num of Good Decisions");
-                    put ("numBadDecisions","Num of Bad Decisions");
+                    put ("numGoodDecisions","Num. Good Decisions");
+                    put ("numBadDecisions","Num. Bad Decisions");
 
 
 //                put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
