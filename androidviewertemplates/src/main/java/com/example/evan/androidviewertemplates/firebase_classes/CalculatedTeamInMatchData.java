@@ -66,6 +66,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer numScaleFailedTele;
     public Float climbTime;
     public ArrayList<Boolean> alliancePlatformIntakeTele;
+    public Boolean switchIsOpposite;
 
     public Boolean didClimb;
     public Float avgAllianceSwitchTimeTele;

@@ -15,6 +15,7 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Integer picklistPosition;
     public Integer firstPicklistPosition;
     public Integer secondPicklistPosition;
+    //public lfmAvgCubesPlacedTele;
 
 
     public Integer pitAvailableWeight;
