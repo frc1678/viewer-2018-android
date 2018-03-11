@@ -183,10 +183,6 @@ public class MainActivity extends ViewerActivity
                 fragment = new FirstPicklist();
                 latestFragmentId = position;
                 break;
-            case  12:
-                fragment = new NoteFragment();
-                latestFragmentId = position;
-                break;
 
         }
         fragmentManager.beginTransaction()
