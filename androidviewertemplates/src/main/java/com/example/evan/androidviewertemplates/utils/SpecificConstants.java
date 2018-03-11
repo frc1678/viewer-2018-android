@@ -90,6 +90,7 @@ public class SpecificConstants extends Constants {
                     put ("pitRampTime","Ramp Time");
                     put ("pitDriveTimeOutcome","Drive Time Outcome");
                     put ("pitHasCamera","Has a Camera");
+                    put ("pitRobotDimensions","Robot Dimensions");
 
                 //TeamInMatchDetailsAdapter
                     //Auto
