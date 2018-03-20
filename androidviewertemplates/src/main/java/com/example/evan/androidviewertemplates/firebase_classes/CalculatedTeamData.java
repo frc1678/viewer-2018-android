@@ -11,6 +11,7 @@ public class CalculatedTeamData extends Object {
     public Float didThreeExchangeInputPercentage;
     public Float firstPickAbiltiy;
     public Float secondPickAbility;
+    public Float switchFailPercentageAuto;
     public Float disabledPercentage;
     public Float incapacitatedPercentage;
     public Float avgNumOpponentPlatformIntakeAuto;
@@ -20,6 +21,7 @@ public class CalculatedTeamData extends Object {
     public Float avgNumElevatedPyramidIntakeAuto;
     public Float assistedClimbPercentage;
     public Float avgNumCubesFumbledAuto;
+    public Float switchFailPercentageTele;
     public Float avgNumCubesFumbledTele;
     public Float avgNumGroundPyramidIntakeTele;
     public Float avgNumElevatedPyramidIntakeTele;
