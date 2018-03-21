@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
 
-    public Boolean pitDriveTimeOutcome;
+    public ArrayList<Boolean> pitDriveTimeOutcome;
     public ArrayList<Float> pitAutoRunTimes;
     public ArrayList<String> totalSuperNotes;
     public Boolean canScoreOppositeSwitchAuto;

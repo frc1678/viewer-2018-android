@@ -45,7 +45,6 @@ import java.util.Map;
  */
 public class FirstPicklist extends Fragment {
 
-    public Integer counter;
 
     //Creating the DatabaseReference, dref, which we'll use whenever we need to send/receive from Firebase.
     DatabaseReference dref;
@@ -78,7 +77,7 @@ public class FirstPicklist extends Fragment {
 
         LayoutInflater fakeInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View myLayout = fakeInflater.inflate(R.layout.firstpicklist, null);
+        final View myLayout = fakeInflater.inflate(R.layout.firstpicklist, null);
 
         final ListView listView = (ListView) myLayout.findViewById(R.id.listview);
 
@@ -115,12 +114,34 @@ public class FirstPicklist extends Fragment {
 
                     passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                    passwordDialog.setContentView(R.layout.picklistdialog);
+                    passwordDialog.setContentView(R.layout.passworddialog);
 
-                    EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                    passwordDialog.setCancelable(false);
 
+                    passwordDialog.setCanceledOnTouchOutside(false);
 
+                    passwordDialog.show();
 
+                    Boolean value = false;
+
+                        final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
+
+                        passwordButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                                if (passwordEditText.getText().toString().equals("ahh")) {
+                                    Log.e("passwordEditText:",passwordEditText.getText().toString());
+                                    Log.e("Password is correct","Password inputed: "+passwordEditText.getText().toString());
+                                    passwordDialog.dismiss();
+                                } else {
+                                    Log.e("Password is incorrect","Password inputed: "+passwordEditText.getText().toString());
+
+                                    Toast.makeText(getActivity(), "hacking = bad",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                    });
 
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -128,8 +149,9 @@ public class FirstPicklist extends Fragment {
 
                         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                            counter = -1;
+                            Constants.counter = -1;
 
+                            Log.e("Counter",String.valueOf(Constants.counter));
                             Log.e("onItemClickListener", "a listview cell was clicked!~!~");
 
                             final Dialog dialog = new Dialog(context);
@@ -152,11 +174,19 @@ public class FirstPicklist extends Fragment {
 
                                     //upButton onClick
 
-                                    counter = counter + 1;
+                                    Constants.counter = Constants.counter + 1;
 
-                                    Integer myTeam = position - counter ; //7 -159
+                                 /*   if (Constants.counter > 0); {
+                                        Toast.makeText(getActivity(), "Pressing the up button could cause incorrect movements! Please click out of dialog.",
+                                                Toast.LENGTH_LONG).show();
 
-                                    Integer otherTeam = position - (counter + 1); //6 - 1678
+                                    }*/
+
+                                    Log.e("Counter", String.valueOf(Constants.counter));
+
+                                    Integer myTeam = position - Constants.counter ; //7 -159
+
+                                    Integer otherTeam = position - (Constants.counter + 1); //6 - 1678
 
 
                                     Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
@@ -179,14 +209,16 @@ public class FirstPicklist extends Fragment {
 
                                     Log.e("Position - 1: ",Constants.picklistMap.get(position - 1));
 
-                                    if(myTeam != 0) {
+                                    Log.e("myTeam",myTeam.toString());
+
+                                    if(myTeam > 0) {
 
                                         dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
                                         dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
 
                                     } else {
 
-                                        Toast.makeText(getActivity(), "Nice try. If you try it again, the app is going to crash as punishment ... (:",
+                                        Toast.makeText(getActivity(), "Nice try.",
                                                 Toast.LENGTH_LONG).show();
 
                                     }
@@ -203,11 +235,21 @@ public class FirstPicklist extends Fragment {
 
                                     //downButton onClick
 
-                                    counter = counter + 1;
 
-                                    Integer myTeam = position + counter ; //7 -159
+                                    Constants.counter = Constants.counter + 1;
 
-                                    Integer otherTeam = position + (counter + 1); //6 - 1678
+                                  /*  if (Constants.counter > 0); {
+                                        Toast.makeText(getActivity(), "Pressing the up button could cause incorrect movements! Please click out of dialog.",
+                                                Toast.LENGTH_LONG).show();
+
+                                    }*/
+
+
+                                    Log.e("Counter", String.valueOf(Constants.counter));
+
+                                    Integer myTeam = position + Constants.counter ; //
+
+                                    Integer otherTeam = position + (Constants.counter + 1); //
 
                                     Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
 
@@ -221,7 +263,9 @@ public class FirstPicklist extends Fragment {
 
                                     Constants.picklistMap.put(myTeam, extraValue);
 
-                                    if(myTeam != 60) {
+                                    Log.e("myTeam",myTeam.toString());
+
+                                    if(myTeam < 52) {
 
                                         dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
                                         dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
@@ -229,7 +273,7 @@ public class FirstPicklist extends Fragment {
 
                                     } else {
 
-                                        Toast.makeText(getActivity(), "Nice try. If you try it again, the app is going to crash as punishment ... (:",
+                                        Toast.makeText(getActivity(), "Nice try.",
                                                 Toast.LENGTH_LONG).show();
 
                                     }
