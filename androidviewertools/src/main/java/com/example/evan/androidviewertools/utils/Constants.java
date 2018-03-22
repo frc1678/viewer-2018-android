@@ -1,6 +1,7 @@
 package com.example.evan.androidviewertools.utils;
 
 import android.graphics.Color;
+import android.util.Log;
 
 
 import java.util.HashMap;
@@ -19,6 +20,9 @@ public class Constants {
     public static final int TEAM_NUMBER = 1678;
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
+    public static Map<Integer, String> picklistMap = new HashMap<>();
+    public static Map<Integer, String> newPicklistMap = new HashMap<>();
+    public static int counter;
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;
@@ -31,4 +35,5 @@ public class Constants {
         put("https://1678-strat-dev-2016.firebaseio.com/", "IMXOxXD3FjOOUoMGJlkAK5pAtn89mGIWAEnaKJhP");
     }};
     //yup, you read that right, those are all of the firebase passwords hard coded in one place
+    //lol^
 }

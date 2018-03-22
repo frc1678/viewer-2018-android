@@ -1,3 +1,4 @@
+
 package com.example.evan.androidviewertemplates.firebase_classes;
 
 import com.example.evan.androidviewertools.firebase_classes.*;
@@ -63,13 +64,38 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public ArrayList <Integer> numOpponentPlatformIntakeAuto; //todo Delete later.
     public ArrayList <Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
     public Integer numReturnIntake;
+    public Object TeamInMatchDatas;
 
     public Integer numSpilledCubesTele;
     public Integer rankAgility;
+    public Integer totalNumScaleFoul;
     public Integer rankDefense;
     public Integer rankSpeed;
 
-    public Object startingPosition; //todo Change Value
+    public Object startingPosition; //todo Change V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // alue
     public Boolean switchIsOpposite;
 
     public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;

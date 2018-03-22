@@ -1,3 +1,4 @@
+
 package com.example.evan.androidviewertemplates.firebase_classes;
 
 import java.lang.reflect.Array;
@@ -8,57 +9,44 @@ import java.util.Map;
  * Created by Teo on 1/10/2018.
  */
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
-    public CalculatedTeamData calculatedData;
-    public String pitSelectedImageName;
-    public String pitSelectedImage;
-    public Map <String,String> pitAllImageUrls; //Todo Delete later.
-    public Integer picklistPosition;
-    public Integer firstPicklistPosition;
-    public Integer secondPicklistPosition;
-    //public lfmAvgCubesPlacedTele;
 
-
-    public Integer pitAvailableWeight;
-    public String pitDriveTrain;
-
-    public Map<String,String> imageKeys; //todo Delete later.
-
-    public Boolean pitCanCheesecake;
-    public Boolean pitDidDemonstrateCheesecakePotential;
-    public String pitSEALsNotes;
-    public String SEALSNotes;
-    public String pitProgrammingLanguage;
-    public String pitClimberType;
-    public String pitWheelDiameter;
-    public String pitRobotDimensions;
+    public ArrayList<Boolean> pitDriveTimeOutcome;
     public ArrayList<Float> pitAutoRunTimes;
-    public Integer pitAutoRunTime;
     public ArrayList<String> totalSuperNotes;
     public Boolean canScoreOppositeSwitchAuto;
-    public Object pitRampTimeOutcome;
-    //public ArrayList<Boolean> pitRampTimeOutcome;
-    public Object pitDriveOutcome;
+    public Boolean pitCanCheesecake;
+    public Boolean pitDidDemonstrateCheesecakePotential;
+    public Boolean pitHasCamera;
+    public CalculatedTeamData calculatedData;
     public Float avgNumCubesPlacedAuto;
     public Float avgNumCubesPlacedTele;
-    //public Map<String,Boolean> pitDriveOutcome;
-    public Object pitRampTime;
-    public Object pitDriveTime;
-    public Integer numMatchesPlayed;
-
-
-
-    //public ArrayList<Float> pitRampTime;
-    //public ArrayList<Float> pitDriveTime;
-    public Float didThreeExchangeInputPercentage;
-    public Object avgPitDriveTime;
     public Float avgPitRampTime;
-    //public ArrayList<Object> pitRampTimes;
+    public Float didThreeExchangeInputPercentage;
+    public Float pitMaxHeight;
+    public Integer firstPicklistPosition;
+    public Integer numMatchesPlayed;
+    public Integer picklistPosition;
+    public Integer pitAutoRunTime;
+    public Integer pitAvailableWeight;
+    public Integer secondPicklistPosition;
+    public Map <String,String> pitAllImageUrls; //Todo Delete later.
+    public Map<String,String> imageKeys; //todo Delete later.
+    public Object   pitAllImageURLs;
+    public Object   pitImageKeys;
+    public Object avgPitDriveTime;
+    public Object pitDriveOutcome;
+    public Object pitDriveTime;
     public Object pitDriveTimes;
+    public Object pitRampTime;
+    public Object pitRampTimeOutcome;
+    public String SEALSNotes;
+    public String pitClimberType;
     public String pitDriveTest;
-    public ArrayList<Boolean>  pitDriveTimeOutcome;
-    public Boolean pitHasCamera;
-    public ArrayList<String>   pitImageKeys;
-    public ArrayList<String>   pitAllImageURLs;
-
+    public String pitDriveTrain;
+    public String pitProgrammingLanguage;
+    public String pitRobotDimensions;
+    public String pitSEALsNotes;
+    public String pitSelectedImage;
+    public String pitSelectedImageName;
+    public String pitWheelDiameter;
 }
-
