@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.util.Log;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,9 +21,6 @@ public class Constants {
     public static String rankFilterName = "";
     public static final int STAR_COLOR = Color.argb(255, 255, 255, 204);
     public static final int TEAM_NUMBER = 1678;
-    public static Map<Integer, String> picklistMap = new HashMap<>();
-    public static int counter;
-
     /////Ranking Filters////////
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
@@ -41,4 +40,52 @@ public class Constants {
     }};
     //yup, you read that right, those are all of the firebase passwords hard coded in one place
     //lol^
+    public static final ArrayList<String> viableLFM = new ArrayList<>(Arrays.asList(
+            "calculatedData.lfmAvgNumRobotsLifted",
+            "calculatedData.lfmAvgNumAlliancePlatformIntakeAuto",
+            "calculatedData.lfmAvgNumAlliancePlatformIntakeTele",
+            "calculatedData.lfmAvgNumOpponentPlatformIntakeTele",
+            "calculatedData.lfmAvgNumCubesFumbledAuto",
+            "calculatedData.lfmAvgNumCubesFumbledTele",
+            "calculatedData.lfmAvgNumElevatedPyramidIntakeAuto",
+            "calculatedData.lfmAvgNumElevatedPyramidIntakeTele",
+            "calculatedData.lfmAvgNumGroundPyramidIntakeAuto",
+            "calculatedData.lfmAvgNumGroundPyramidIntakeTele",
+            "calculatedData.lfmAvgNumGroundIntakeTele",
+            "calculatedData.lfmAvgNumGroundPortalIntakeTele",
+            "calculatedData.lfmAvgNumHumanPortalIntakeTele",
+            "calculatedData.lfmAvgNumExchangeInputTele",
+            "calculatedData.lfmAvgNumReturnIntakeTele",
+            "calculatedData.lfmAvgNumGoodDecisions",
+            "calculatedData.lfmAvgNumBadDecisions",
+            "calculatedData.lfmAvgCubesSpilledAuto",
+            "calculatedData.lfmAvgCubesSpilledTele",
+            "calculatedData.lfmAvgCubesPlacedInScaleAuto",
+            "calculatedData.lfmAvgCubesPlacedInScaleTele",
+            "calculatedData.lfmAvgAllianceSwitchCubesAuto",
+            "calculatedData.lfmAvgAllianceSwitchCubesTele",
+            "calculatedData.lfmAvgOpponentSwitchCubesTele",
+            "calculatedData.lfmAvgScaleTimeAuto",
+            "calculatedData.lfmAvgScaleTimeTele",
+            "calculatedData.lfmAvgAllianceSwitchTimeAuto",
+            "calculatedData.lfmAvgAllianceSwitchTimeTele",
+            "calculatedData.lfmAvgOpponentSwitchTimeTele",
+            "calculatedData.lfmAvgSpeed",
+            "calculatedData.lfmAvgDefense",
+            "calculatedData.lfmAvgAgility",
+            "calculatedData.lfmAvgDrivingAbility"
+
+    ));
 }
+
+
+
+
+
+
+
+
+
+
+
+
