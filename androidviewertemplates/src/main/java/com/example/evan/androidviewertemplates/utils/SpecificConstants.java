@@ -57,6 +57,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.activeLiftClimbPercentage", "Active Lift Climb %");
                     put ("calculatedData.activeNoClimbLiftClimbPercentage", "Active No Climb Lift %");
                     put ("calculatedData.activeAssistClimbPercentage", "Active Assist Climb %");
+                    put ("calculatedData.climbPercentage", "Climb %");
 
 
                     //Matches

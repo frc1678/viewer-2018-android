@@ -61,6 +61,7 @@ TeamRankingsActivity extends ViewerActivity {
         Constants.sortByRank = false;
         Constants.sortByFirstPick = false;
         Constants.sortBySecondPick = false;
+        Constants.sortByLfm = false;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -103,6 +104,15 @@ TeamRankingsActivity extends ViewerActivity {
             lastMenuItem = item;
             setAllSortConstantsFalse();
             Constants.sortBySecondPick = true;
+            refreshPage();
+            return true;
+        }
+        if (id == R.id.byLfm){
+            Log.e("LFM", "clicked");
+            setColorOfItem(item);
+            lastMenuItem = item;
+            setAllSortConstantsFalse();
+            Constants.sortByLfm = true;
             refreshPage();
             return true;
         }
