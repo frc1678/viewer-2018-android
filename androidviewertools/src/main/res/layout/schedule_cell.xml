@@ -115,4 +115,12 @@
         android:textColor="#0000ff"
         android:text="160"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/blueScore"
+        android:background="#E8E8EE"
+        android:layout_marginTop="25dp"/>
+
+
 </RelativeLayout>
