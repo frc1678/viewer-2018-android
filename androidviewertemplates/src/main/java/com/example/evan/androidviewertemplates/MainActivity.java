@@ -176,10 +176,6 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
             case 10:
-                fragment = new LastFourMatchesFragment();
-                latestFragmentId = position;
-                break;
-            case 11:
                 fragment = new FirstPicklist();
                 latestFragmentId = position;
                 break;

@@ -29,7 +29,11 @@
                 android:title="Second Pick"
                 android:orderInCategory="103"
                 app:showAsAction="always"/>
-
+            <item
+                android:id="@+id/byLfm"
+                android:title="LFM"
+                android:orderInCategory="104"
+                app:showAsAction="always"/>
         </menu>
 
     </item>
