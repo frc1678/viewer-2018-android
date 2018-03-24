@@ -103,13 +103,16 @@ public class FirstPicklist extends Fragment {
 
                 saveMap(context, key, Constants.picklistMap);
 
-                if (Constants.picklistMap.size() == 52) {
+
+                if (Constants.picklistMap.size() >= 65) {
+
 
                     FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
 
                     listView.setAdapter(adapter);
 
 
+/*
                     final Dialog passwordDialog = new Dialog(context);
 
                     passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -142,6 +145,24 @@ public class FirstPicklist extends Fragment {
                                 }
                             }
                     });
+                    final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
+
+                    passwordButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                            if (passwordEditText.getText().toString().equals("password")) {
+                                Log.e("passwordEditText:", passwordEditText.getText().toString());
+                                Log.e("Password is correct", "Password inputed: " + passwordEditText.getText().toString());
+                                passwordDialog.dismiss();
+                            } else {
+                                Log.e("Password is incorrect", "Password inputed: " + passwordEditText.getText().toString());
+
+                                Toast.makeText(getActivity(), "hacking = bad",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });*/
 
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -151,7 +172,7 @@ public class FirstPicklist extends Fragment {
 
                             Constants.counter = -1;
 
-                            Log.e("Counter",String.valueOf(Constants.counter));
+                            Log.e("Counter", String.valueOf(Constants.counter));
                             Log.e("onItemClickListener", "a listview cell was clicked!~!~");
 
                             final Dialog dialog = new Dialog(context);
@@ -184,7 +205,7 @@ public class FirstPicklist extends Fragment {
 
                                     Log.e("Counter", String.valueOf(Constants.counter));
 
-                                    Integer myTeam = position - Constants.counter ; //7 -159
+                                    Integer myTeam = position - Constants.counter; //7 -159
 
                                     Integer otherTeam = position - (Constants.counter + 1); //6 - 1678
 
@@ -205,13 +226,13 @@ public class FirstPicklist extends Fragment {
 
                                     Constants.picklistMap.put(otherTeam, extraValue); //6
 
-                                    Log.e("Position: ",Constants.picklistMap.get(position));
+                                    Log.e("Position: ", Constants.picklistMap.get(position));
 
-                                    Log.e("Position - 1: ",Constants.picklistMap.get(position - 1));
+                                    Log.e("Position - 1: ", Constants.picklistMap.get(position - 1));
 
-                                    Log.e("myTeam",myTeam.toString());
+                                    Log.e("myTeam", myTeam.toString());
 
-                                    if(myTeam > 0) {
+                                    if (myTeam > 0) {
 
                                         dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
                                         dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
@@ -247,7 +268,7 @@ public class FirstPicklist extends Fragment {
 
                                     Log.e("Counter", String.valueOf(Constants.counter));
 
-                                    Integer myTeam = position + Constants.counter ; //
+                                    Integer myTeam = position + Constants.counter; //
 
                                     Integer otherTeam = position + (Constants.counter + 1); //
 
@@ -263,9 +284,10 @@ public class FirstPicklist extends Fragment {
 
                                     Constants.picklistMap.put(myTeam, extraValue);
 
-                                    Log.e("myTeam",myTeam.toString());
 
-                                    if(myTeam < 52) {
+                                    Log.e("myTeam", myTeam.toString());
+
+                                    if (myTeam < 65) {
 
                                         dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
                                         dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));

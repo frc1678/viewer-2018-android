@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.util.Log;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,8 +18,10 @@ public class Constants {
     public static final String STARS_MODIFIED_ACTION = "org.citruscircuits.scout_viewer_2016_android.starsmodified";
     public static final String[] MATCH_SCOPES = {"Team", "Match"};
     public static final String[] TEAM_SCOPES = {"Team"};
+    public static String rankFilterName = "";
     public static final int STAR_COLOR = Color.argb(255, 255, 255, 204);
     public static final int TEAM_NUMBER = 1678;
+    /////Ranking Filters////////
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
     public static Map<Integer, String> picklistMap = new HashMap<>();
@@ -26,7 +30,7 @@ public class Constants {
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;
-    public static boolean firstPickList = false;
+    public static boolean sortByLfm = false;
     public static final Map<String, String> FIREBASE_KEYS = new HashMap<String, String>() {{
         put("https://1678-dev2-2016.firebaseio.com/", "hL8fStivTbHUXM8A0KXBYPg2cMsl80EcD7vgwJ1u");
         put("https://1678-dev-2016.firebaseio.com/","j1r2wo3RUPMeUZosxwvVSFEFVcrXuuMAGjk6uPOc");
@@ -36,4 +40,53 @@ public class Constants {
     }};
     //yup, you read that right, those are all of the firebase passwords hard coded in one place
     //lol^
+
+    public static final ArrayList<String> viableLFM = new ArrayList<>(Arrays.asList(
+            "calculatedData.lfmAvgNumRobotsLifted",
+            "calculatedData.lfmAvgNumAlliancePlatformIntakeAuto",
+            "calculatedData.lfmAvgNumAlliancePlatformIntakeTele",
+            "calculatedData.lfmAvgNumOpponentPlatformIntakeTele",
+            "calculatedData.lfmAvgNumCubesFumbledAuto",
+            "calculatedData.lfmAvgNumCubesFumbledTele",
+            "calculatedData.lfmAvgNumElevatedPyramidIntakeAuto",
+            "calculatedData.lfmAvgNumElevatedPyramidIntakeTele",
+            "calculatedData.lfmAvgNumGroundPyramidIntakeAuto",
+            "calculatedData.lfmAvgNumGroundPyramidIntakeTele",
+            "calculatedData.lfmAvgNumGroundIntakeTele",
+            "calculatedData.lfmAvgNumGroundPortalIntakeTele",
+            "calculatedData.lfmAvgNumHumanPortalIntakeTele",
+            "calculatedData.lfmAvgNumExchangeInputTele",
+            "calculatedData.lfmAvgNumReturnIntakeTele",
+            "calculatedData.lfmAvgNumGoodDecisions",
+            "calculatedData.lfmAvgNumBadDecisions",
+            "calculatedData.lfmAvgCubesSpilledAuto",
+            "calculatedData.lfmAvgCubesSpilledTele",
+            "calculatedData.lfmAvgCubesPlacedInScaleAuto",
+            "calculatedData.lfmAvgCubesPlacedInScaleTele",
+            "calculatedData.lfmAvgAllianceSwitchCubesAuto",
+            "calculatedData.lfmAvgAllianceSwitchCubesTele",
+            "calculatedData.lfmAvgOpponentSwitchCubesTele",
+            "calculatedData.lfmAvgScaleTimeAuto",
+            "calculatedData.lfmAvgScaleTimeTele",
+            "calculatedData.lfmAvgAllianceSwitchTimeAuto",
+            "calculatedData.lfmAvgAllianceSwitchTimeTele",
+            "calculatedData.lfmAvgOpponentSwitchTimeTele",
+            "calculatedData.lfmAvgSpeed",
+            "calculatedData.lfmAvgDefense",
+            "calculatedData.lfmAvgAgility",
+            "calculatedData.lfmAvgDrivingAbility"
+
+    ));
 }
+
+
+
+
+
+
+
+
+
+
+
+
