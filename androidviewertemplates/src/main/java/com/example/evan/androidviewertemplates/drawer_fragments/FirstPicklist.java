@@ -103,11 +103,14 @@ public class FirstPicklist extends Fragment {
 
                 saveMap(context, key, Constants.picklistMap);
 
+
                 if (Constants.picklistMap.size() >= 65) {
+
 
                     FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
 
                     listView.setAdapter(adapter);
+
 
 /*
                     final Dialog passwordDialog = new Dialog(context);
@@ -124,6 +127,24 @@ public class FirstPicklist extends Fragment {
 
                     Boolean value = false;
 
+                        final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
+
+                        passwordButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                                if (passwordEditText.getText().toString().equals("ahh")) {
+                                    Log.e("passwordEditText:",passwordEditText.getText().toString());
+                                    Log.e("Password is correct","Password inputed: "+passwordEditText.getText().toString());
+                                    passwordDialog.dismiss();
+                                } else {
+                                    Log.e("Password is incorrect","Password inputed: "+passwordEditText.getText().toString());
+
+                                    Toast.makeText(getActivity(), "hacking = bad",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                    });
                     final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
 
                     passwordButton.setOnClickListener(new View.OnClickListener() {
@@ -262,6 +283,7 @@ public class FirstPicklist extends Fragment {
                                     Constants.picklistMap.put(otherTeam, onClickMap.get(myTeam));
 
                                     Constants.picklistMap.put(myTeam, extraValue);
+
 
                                     Log.e("myTeam", myTeam.toString());
 

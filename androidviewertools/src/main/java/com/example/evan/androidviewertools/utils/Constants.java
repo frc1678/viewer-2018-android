@@ -40,6 +40,7 @@ public class Constants {
     }};
     //yup, you read that right, those are all of the firebase passwords hard coded in one place
     //lol^
+
     public static final ArrayList<String> viableLFM = new ArrayList<>(Arrays.asList(
             "calculatedData.lfmAvgNumRobotsLifted",
             "calculatedData.lfmAvgNumAlliancePlatformIntakeAuto",
