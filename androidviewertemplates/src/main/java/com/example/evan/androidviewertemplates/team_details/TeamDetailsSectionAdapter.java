@@ -109,8 +109,8 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitOrganization",
             "pitDriveTrain",
             "pitCanCheesecake",
-            "pitRampTime"
-            //"superNotes"
+            "pitRampTime",
+            "calculatedData.maxScaleCubes"
     };
 
     private String[] createListOnClick = {
