@@ -33,7 +33,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.scaleFailPercentageAuto","Scale Fail % Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Alliance Switch Auto");
                     put ("calculatedData.percentSuccessOppositeSwitchSideAuto","Opp. Switch Side Success %");
-                    put ("calculatedData.canScoreBothSwitchSidesAuto","Can Score Opp. Switch");
+                    put ("calculatedData.canScoreBothSwitchSidesAuto","Can score on opp. alliance switch side");
 
                     //Teleop
                     put ("calculatedData.avgCubesSpilledTele","Avg Cubes Spilled Tele");
@@ -101,7 +101,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.numScaleSuccessAuto","Num. Auto Scale Success");
                     put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
-                    put ("calculatedData.canScoreOppositeSwitchAuto","Can Score Opp. Switch");
+                    put ("calculatedData.canScoreOppositeSwitchAuto","Can score on opp. alliance switch side");
                     //Tele
                     put ("calculatedData.numAllianceSwitchSuccessTele","Num. Alli. Switch Success Tele");
                     put ("calculatedData.numOpponentSwitchSuccessTele","Num. Opp. Switch Success Tele");
