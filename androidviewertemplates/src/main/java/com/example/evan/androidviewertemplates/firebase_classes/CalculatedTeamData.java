@@ -114,7 +114,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgNumCubesPlacedTele;
     public Float avgNumCubesPlacedAuto;
     public Float avgNumCubesPlacedTele;
-
+    public Float maxExchangeCubes;
 
     public Float percentSuccessOppositeSwitchSideAuto;
     public Float avgNumRobotsLifted;

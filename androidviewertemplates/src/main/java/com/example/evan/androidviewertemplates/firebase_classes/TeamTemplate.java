@@ -44,7 +44,8 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public String pitDriveTest;
     public String pitDriveTrain;
     public String pitProgrammingLanguage;
-    public String pitRobotDimensions;
+    public Float pitRobotWidth;
+    public Float pitRobotLength;
     public String pitSEALsNotes;
     public String pitSelectedImage;
     public String pitSelectedImageName;
