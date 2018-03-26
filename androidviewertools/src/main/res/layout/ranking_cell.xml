@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/valueTextView"
+        android:background="#d3d3d3"
         android:layout_marginTop="15dp"/>
 
 </RelativeLayout>
