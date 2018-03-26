@@ -54,9 +54,18 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "High Level",
             "Super Data",
             "Pit Data"
+
     };
 
     private String[] shouldDisplayAsPercentage = {
+            "calculatedData.disabledPercentage",
+            "calculatedData.percentSuccessOppositeSwitchSideAuto",
+            "calculatedData.autoRunPercentage",
+            "calculatedData.allianceSwitchFailPercentageAuto",
+            "calculatedData.scaleFailPercentageAuto",
+            "calculatedData.allianceSwitchFailPercentageTele",
+            "calculatedData.scaleFailPercentageTele",
+            "calculatedData.assistedClimbPercentage",
             "calculatedData.disabledPercentage",
             "calculatedData.incapacitatedPercentage",
             "calculatedData.baselineReachedPercentage",
@@ -109,8 +118,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitOrganization",
             "pitDriveTrain",
             "pitCanCheesecake",
-            "pitRampTime"
-            //"superNotes"
+            "pitRampTime",
+            "calculatedData.maxScaleCubes",
+            "calculatedData.totalCubesPlaced"
     };
 
     private String[] createListOnClick = {
