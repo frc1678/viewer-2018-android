@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.drawer_fragments;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -19,10 +20,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
+import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +41,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 
 /**
@@ -45,20 +49,16 @@ import java.util.Map;
  */
 public class FirstPicklist extends Fragment {
 
+    public static Boolean picklistValue = false;
 
-    //Creating the DatabaseReference, dref, which we'll use whenever we need to send/receive from Firebase.
     DatabaseReference dref;
 
-    //Creating the FirebaseDatabase, dataBase, which we'll 'mix' with dref later one.
     FirebaseDatabase dataBase;
 
-    //Creating the context (getActivity())
     Context context;
 
-    //Creates the <Integer,String> map "teams".
     public Map<Integer, String> teams = new HashMap<>();
 
-    //onCreate method, which we won't use much as this class is a Fragment, so we use onViewCreate instead!
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -81,6 +81,8 @@ public class FirstPicklist extends Fragment {
 
         final ListView listView = (ListView) myLayout.findViewById(R.id.listview);
 
+        final Button picklistEditButton = (Button) myLayout.findViewById(R.id.picklistEditButton);
+
         dataBase = FirebaseDatabase.getInstance();
 
         dref = dataBase.getReference();
@@ -91,7 +93,7 @@ public class FirstPicklist extends Fragment {
 
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                String teamNumber = dataSnapshot.getValue().toString();
+                final String teamNumber = dataSnapshot.getValue().toString();
 
                 Integer teamPicklistPosition = Integer.parseInt(dataSnapshot.getKey());
 
@@ -111,209 +113,183 @@ public class FirstPicklist extends Fragment {
 
                     listView.setAdapter(adapter);
 
-
-/*
-                    final Dialog passwordDialog = new Dialog(context);
-
-                    passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-                    passwordDialog.setContentView(R.layout.passworddialog);
-
-                    passwordDialog.setCancelable(false);
-
-                    passwordDialog.setCanceledOnTouchOutside(false);
-
-                    passwordDialog.show();
-
-                    Boolean value = false;
-
-                        final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
-
-                        passwordButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
-                                if (passwordEditText.getText().toString().equals("ahh")) {
-                                    Log.e("passwordEditText:",passwordEditText.getText().toString());
-                                    Log.e("Password is correct","Password inputed: "+passwordEditText.getText().toString());
-                                    passwordDialog.dismiss();
-                                } else {
-                                    Log.e("Password is incorrect","Password inputed: "+passwordEditText.getText().toString());
-
-                                    Toast.makeText(getActivity(), "hacking = bad",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-                    });
-                    final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
-
-                    passwordButton.setOnClickListener(new View.OnClickListener() {
+                    picklistEditButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
-                            if (passwordEditText.getText().toString().equals("password")) {
-                                Log.e("passwordEditText:", passwordEditText.getText().toString());
-                                Log.e("Password is correct", "Password inputed: " + passwordEditText.getText().toString());
-                                passwordDialog.dismiss();
-                            } else {
-                                Log.e("Password is incorrect", "Password inputed: " + passwordEditText.getText().toString());
+                            final Dialog passwordDialog = new Dialog(context);
 
-                                Toast.makeText(getActivity(), "hacking = bad",
-                                        Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });*/
+                            passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            passwordDialog.setContentView(R.layout.passworddialog);
 
-                        @Override
+                            passwordDialog.show();
 
-                        public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                            Boolean value = false;
 
-                            Constants.counter = -1;
+                            final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
 
-                            Log.e("Counter", String.valueOf(Constants.counter));
-                            Log.e("onItemClickListener", "a listview cell was clicked!~!~");
-
-                            final Dialog dialog = new Dialog(context);
-
-                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-                            dialog.setContentView(R.layout.picklistdialog);
-
-                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                            Button upButton = (Button) dialog.findViewById(R.id.upButton);
-
-                            Button downButton = (Button) dialog.findViewById(R.id.downButton);
-
-                            upButton.setOnClickListener(new View.OnClickListener() {
-
+                            passwordButton.setOnClickListener(new View.OnClickListener() {
                                 @Override
+                                public void onClick(View view) {
+                                    EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                                    if (passwordEditText.getText().toString().equals("ahh")) {
+                                        Log.e("passwordEditText:",passwordEditText.getText().toString());
+                                        Log.e("Password is correct","Password inputed: "+passwordEditText.getText().toString());
+                                        picklistEditButton.setText("YOU ARE IN EDIT MODE");
+                                        Toast.makeText(getActivity(), "YOU ARE IN EDIT MODE", Toast.LENGTH_LONG).show();
+                                        passwordDialog.dismiss();
+                                        FirstPicklist.picklistValue = true;
+                                        Log.e("picklistValue pre.",FirstPicklist.picklistValue.toString());
+                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-                                public void onClick(View v) {
+                                            @Override
 
-                                    //upButton onClick
+                                            public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
 
-                                    Constants.counter = Constants.counter + 1;
+                                                TextView teamNumberTextView = (TextView)view.findViewById(R.id.teamNumber);
+                                                final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
+                                                Log.e("teamString",teamString.toString());
 
-                                 /*   if (Constants.counter > 0); {
-                                        Toast.makeText(getActivity(), "Pressing the up button could cause incorrect movements! Please click out of dialog.",
-                                                Toast.LENGTH_LONG).show();
+                                                final Dialog dialog = new Dialog(context);
 
-                                    }*/
+                                                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                    Log.e("Counter", String.valueOf(Constants.counter));
+                                                dialog.setContentView(R.layout.picklistdialog);
 
-                                    Integer myTeam = position - Constants.counter; //7 -159
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-                                    Integer otherTeam = position - (Constants.counter + 1); //6 - 1678
+                                                Button upButton = (Button) dialog.findViewById(R.id.upButton);
+
+                                                Button downButton = (Button) dialog.findViewById(R.id.downButton);
+
+                                                upButton.setOnClickListener(new View.OnClickListener() {
+
+                                                    @Override
+
+                                                    public void onClick(View v) {
+
+                                                        //upButton onClick
+
+                                                        Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
+
+                                                        Integer otherTeam = myTeam - 1;
 
 
-                                    Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
+                                                        Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
 
-                                    String extraValue;
+                                                        String extraValue;
 
-                                    Log.e("myposition", myTeam.toString());
+                                                        extraValue = onClickMap.get(myTeam);
 
-                                    Log.e("otherposition", otherTeam.toString());
+                                                        String team = onClickMap.get(otherTeam);
 
-                                    extraValue = onClickMap.get(myTeam); //159
+                                                        Constants.picklistMap.put(myTeam, onClickMap.get(otherTeam));
 
-                                    String team = onClickMap.get(otherTeam);
+                                                        Constants.picklistMap.put(otherTeam, extraValue);
 
-                                    Constants.picklistMap.put(myTeam, onClickMap.get(otherTeam));
+                                                        if (myTeam > 0) {
 
-                                    Constants.picklistMap.put(otherTeam, extraValue); //6
+                                                            dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
+                                                            dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
 
-                                    Log.e("Position: ", Constants.picklistMap.get(position));
+                                                        } else {
 
-                                    Log.e("Position - 1: ", Constants.picklistMap.get(position - 1));
+                                                            Toast.makeText(getActivity(), "Nice try.",
+                                                                    Toast.LENGTH_LONG).show();
 
-                                    Log.e("myTeam", myTeam.toString());
+                                                        }
 
-                                    if (myTeam > 0) {
+                                                    }
 
-                                        dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
-                                        dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
+                                                });
 
+                                                downButton.setOnClickListener(new View.OnClickListener() {
+
+                                                    @Override
+
+                                                    public void onClick(View v) {
+
+                                                        //downButton onClick
+
+
+                                                        Constants.counter = Constants.counter + 1;
+
+
+                                                        Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
+
+                                                        Integer otherTeam = myTeam + 1;
+
+                                                        Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
+
+                                                        String extraValue;
+
+                                                        extraValue = onClickMap.get(otherTeam);
+
+                                                        String team = onClickMap.get(myTeam);
+
+                                                        Constants.picklistMap.put(otherTeam, onClickMap.get(myTeam));
+
+                                                        Constants.picklistMap.put(myTeam, extraValue);
+
+                                                        if (myTeam < 65) {
+
+                                                            dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
+                                                            dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
+
+
+                                                        } else {
+
+                                                            Toast.makeText(getActivity(), "Nice try.",
+                                                                    Toast.LENGTH_LONG).show();
+
+                                                        }
+
+                                                    }
+
+                                                });
+
+                                                dialog.show();
+                                            }
+
+                                        });
                                     } else {
+                                        Log.e("Password is incorrect","Password inputed: "+passwordEditText.getText().toString());
 
-                                        Toast.makeText(getActivity(), "Nice try.",
+                                        Toast.makeText(getActivity(), "hacking = bad",
                                                 Toast.LENGTH_LONG).show();
-
+                                        passwordEditText.getText().clear();
                                     }
-
                                 }
-
                             });
 
-                            downButton.setOnClickListener(new View.OnClickListener() {
 
-                                @Override
-
-                                public void onClick(View v) {
-
-                                    //downButton onClick
-
-
-                                    Constants.counter = Constants.counter + 1;
-
-                                  /*  if (Constants.counter > 0); {
-                                        Toast.makeText(getActivity(), "Pressing the up button could cause incorrect movements! Please click out of dialog.",
-                                                Toast.LENGTH_LONG).show();
-
-                                    }*/
-
-
-                                    Log.e("Counter", String.valueOf(Constants.counter));
-
-                                    Integer myTeam = position + Constants.counter; //
-
-                                    Integer otherTeam = position + (Constants.counter + 1); //
-
-                                    Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
-
-                                    String extraValue;
-
-                                    extraValue = onClickMap.get(otherTeam);
-
-                                    String team = onClickMap.get(myTeam);
-
-                                    Constants.picklistMap.put(otherTeam, onClickMap.get(myTeam));
-
-                                    Constants.picklistMap.put(myTeam, extraValue);
-
-
-                                    Log.e("myTeam", myTeam.toString());
-
-                                    if (myTeam < 65) {
-
-                                        dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
-                                        dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
-
-
-                                    } else {
-
-                                        Toast.makeText(getActivity(), "Nice try.",
-                                                Toast.LENGTH_LONG).show();
-
-                                    }
-
-                                }
-
-                            });
-
-                            dialog.show();
                         }
-
                     });
 
+                    listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                        @Override
+                        public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                            Integer teamNumberClicked = Integer.parseInt(Constants.picklistMap.get(position));
+                            Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
+                            teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
+                            teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                            context.startActivity(teamDetailsViewIntent);
+                        return true;
+                        }
+                    });
                     adapter.notifyDataSetChanged();
 
                 }
 
 
+            }
+
+
+            public Intent getTeamDetailsActivityIntent(){
+                return new Intent(getActivity(), TeamDetailsActivity.class);
             }
 
             @Override
@@ -376,7 +352,14 @@ public class FirstPicklist extends Fragment {
         return sortedMap;
 
     }
-
+    public static <Integer, String> Integer getKeyByValue(Map<Integer, String> map, String value) {
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            if (Objects.equals(value, entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
     @Override
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
