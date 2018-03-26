@@ -34,10 +34,4 @@
         android:textSize="20sp"
         android:text="311.67"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/valueTextView"
-        android:layout_marginTop="15dp"/>
-
 </RelativeLayout>

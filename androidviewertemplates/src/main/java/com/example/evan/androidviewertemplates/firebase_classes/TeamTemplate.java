@@ -50,4 +50,6 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public String pitSelectedImage;
     public String pitSelectedImageName;
     public String pitWheelDiameter;
+    public Float pitRobotLength;
+    public Float pitRobotWidth;
 }
