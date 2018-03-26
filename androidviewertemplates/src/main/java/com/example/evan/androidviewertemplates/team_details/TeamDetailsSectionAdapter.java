@@ -59,6 +59,14 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
 
     private String[] shouldDisplayAsPercentage = {
             "calculatedData.disabledPercentage",
+            "calculatedData.percentSuccessOppositeSwitchSideAuto",
+            "calculatedData.autoRunPercentage",
+            "calculatedData.allianceSwitchFailPercentageAuto",
+            "calculatedData.scaleFailPercentageAuto",
+            "calculatedData.allianceSwitchFailPercentageTele",
+            "calculatedData.scaleFailPercentageTele",
+            "calculatedData.assistedClimbPercentage",
+            "calculatedData.disabledPercentage",
             "calculatedData.incapacitatedPercentage",
             "calculatedData.baselineReachedPercentage",
             "calculatedData.liftoffPercentage",
