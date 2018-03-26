@@ -54,6 +54,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "High Level",
             "Super Data",
             "Pit Data"
+
     };
 
     private String[] shouldDisplayAsPercentage = {
