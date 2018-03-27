@@ -196,4 +196,19 @@ public class CalculatedTeamData extends Object {
     public Float scaleFailPercentageTele;
 
     public Integer predictedTotalNumRPs;
+
+    public Integer lfmMaxScaleCubes;
+    public Integer lfmMaxExchangeCubes;
+    public Integer maxExchangeCubes;
+    public Float lfmAutoRunPercentage;
+    public Float lfmIncapacitatedPercentage;
+    public Float lfmDisabledPercentage;
+    public Float lfmDysfunctionalPercentage;
+    public Float lfmTotalCubesPlaced;
+    public Float lfmSoloClimbPercentage;
+    public Float lfmAssistedClimbPercentage;
+    public Float lfmActiveLiftClimbPercentage;
+    public Float lfmActiveNoClimbLiftClimbPercentage;
+    public Float lfmActiveAssistClimbPercentage;
+    public Float lfmAvgClimbTime;
 }
