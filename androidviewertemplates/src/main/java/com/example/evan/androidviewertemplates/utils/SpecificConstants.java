@@ -124,6 +124,23 @@ public class SpecificConstants extends Constants {
                     put ("numGoodDecisions","Num. Good Decisions");
                     put ("numBadDecisions","Num. Bad Decisions");
 
+                    put("lfm", "Last Four Matches");
+                    put("fullcomp", "Full Comp. Data");
+                //LastFourMatches
+                    //Auto
+                    put ("calculatedData.lfmAvgCubesPlacedInScaleAuto","");
+                    put ("calculatedData.lfmAvgAllianceSwitchCubesAuto","");
+                    put ("","");
+                    put ("","");
+                    put ("","");
+                    //Teleop
+                    put ("","");
+                    put ("","");
+                    put ("","");
+                    put ("","");
+                    put ("","");
+
+
 
 //                put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
             }

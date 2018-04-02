@@ -24,28 +24,25 @@ import java.util.Map;
 /**
  * Created by citruscircuits on 1/23/16.
  */
-public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
+public class TeamDetailsSectionAdapter extends TeamAdapter {
     //todo
-    private String[][] fieldsToDisplay = {
-
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.canScoreBothSwitchSidesAuto","calculatedData.avgAllianceSwitchCubesAuto","calculatedData.percentSuccessOppositeSwitchSideAuto",
-            "calculatedData.autoRunPercentage","calculatedData.allianceSwitchFailPercentageAuto","calculatedData.scaleFailPercentageAuto","calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgCubesSpilledTele","calculatedData.totalCubesPlaced","calculatedData.maxScaleCubes","calculatedData.avgNumCubesFumbledTele","calculatedData.avgCubesPlacedInScaleTele","calculatedData.avgOpponentSwitchCubesTele",
-            "calculatedData.avgAllianceSwitchCubesTele","calculatedData.avgNumExchangeInputTele","calculatedData.avgNumGroundPortalIntakeTele",
-            "calculatedData.avgNumHumanPortalIntakeTele","calculatedData.allianceSwitchFailPercentageTele","calculatedData.scaleFailPercentageTele"},
+    static String[][] fieldsToDisplay = {
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
+            {"calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
+                    "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchFailPercentageAuto", "calculatedData.scaleFailPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
+            {"calculatedData.avgCubesSpilledTele", "calculatedData.totalCubesPlaced", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
+                    "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
+                    "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchFailPercentageTele", "calculatedData.scaleFailPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
-            {"calculatedData.incapacitatedPercentage","calculatedData.disabledPercentage"},
+            {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
-            {"calculatedData.avgSpeed","calculatedData.avgAgility","calculatedData.avgDefense",
-                    "calculatedData.totalNumGoodDecisions","calculatedData.totalNumBadDecisions","totalSuperNotes"},
-            {"pitDriveTrain","pitCanCheesecake","pitRobotDimensions","pitClimberType","pitSEALsNotes",
-            "pitAvailableWeight","pitProgrammingLanguage","pitRampTime"}
-
-
+            {"calculatedData.avgSpeed", "calculatedData.avgAgility", "calculatedData.avgDefense",
+                    "calculatedData.totalNumGoodDecisions", "calculatedData.totalNumBadDecisions", "totalSuperNotes"},
+            {"pitDriveTrain", "pitCanCheesecake", "pitRobotDimensions", "pitClimberType", "pitSEALsNotes",
+                    "pitAvailableWeight", "pitProgrammingLanguage", "pitRampTime"}
     };
 
-    private String[] sectionTitles = {
+    static String[] sectionTitles = {
             "Matches",
             "Auto",
             "Teleop",
@@ -54,10 +51,9 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "High Level",
             "Super Data",
             "Pit Data"
-
     };
 
-    private String[] shouldDisplayAsPercentage = {
+    static String[] shouldDisplayAsPercentage = {
             "calculatedData.disabledPercentage",
             "calculatedData.percentSuccessOppositeSwitchSideAuto",
             "calculatedData.autoRunPercentage",
@@ -76,7 +72,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.activeNoClimbLiftClimbPercentage",
             "calculatedData.activeAssistClimbPercentage"};
 
-    private String[] displayAsUnranked = {
+    static String[] displayAsUnranked = {
             "matches",
             "VIEWER.matchesUntilNextMatchForTeam",
             "pitSelectedImageUrl",
@@ -92,7 +88,7 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "pitRampTime"
     };
 
-    private String[] shouldDisplayAsLongText = {
+    static String[] shouldDisplayAsLongText = {
             "pitNotes",
             "superNotes",
             "pitSEALsNotes",
@@ -101,14 +97,15 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
 
     };
 
-    private String[] shouldDisplayAsFurtherInformation = {
+    static String[] shouldDisplayAsFurtherInformation = {
             "matches",
             "superNotes",
             "totalSuperNotes",
+            "lfm"
 
     };
 
-    private String[] notClickableFields = {
+    static String[] notClickableFields = {
             "VIEWER.matchesUntilNextMatchForTeam",
             "pitDetails",
             "pitSelectedImageUrl",
@@ -123,69 +120,30 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             "calculatedData.totalCubesPlaced"
     };
 
-    private String[] createListOnClick = {
-            "matches"
+    static String[] createListOnClick = {
+            "matches",
+            "lfm"
+
             /*"calculatedData.firstPickAbility",
             "calculatedData.overallSecondPickAbility",*/
     };
 
-    private String[] rankInsteadOfGraph = {
+    static String[] rankInsteadOfGraph = {
 
     };
 
 
-    Integer teamNumber;
-    private Context context;
-
     public TeamDetailsSectionAdapter(Context context, Integer teamNumber) {
-        super(context);
-        this.teamNumber = teamNumber;
-        this.context = context;
-    }
-
-    @Override
-    public String[][] getFieldsToDisplay() {
-        return fieldsToDisplay;
-    }
-
-    @Override
-    public String[] getSectionTitles() {
-        return sectionTitles;
-    }
-
-    @Override
-    public String[] getUnrankedFields() {
-        return displayAsUnranked;
-    }
-
-    @Override
-    public String[] getLongTextFields() {
-        return shouldDisplayAsLongText;
-    }
-
-    @Override
-    public String[] getPercentageFields() {
-        return shouldDisplayAsPercentage;
-    }
-
-    @Override
-    public String[] getFurtherInformationFields() {
-        return shouldDisplayAsFurtherInformation;
-    }
-
-    @Override
-    public String[] getNotClickableFields() {
-        return notClickableFields;
-    }
-
-    @Override
-    public String[] getNonDefaultClickResponseFields() {
-        return createListOnClick;
-    }
-
-    @Override
-    public String[] getRankInsteadOfGraphFields() {
-        return rankInsteadOfGraph;
+        super(context,teamNumber,
+                rankInsteadOfGraph,
+                createListOnClick,
+                notClickableFields,
+                shouldDisplayAsLongText,
+                shouldDisplayAsFurtherInformation,
+                displayAsUnranked,
+                shouldDisplayAsPercentage,
+                sectionTitles,
+                fieldsToDisplay);
     }
 
 
@@ -196,72 +154,10 @@ public class TeamDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
             Intent teamMatchesIntent = new Intent(context, MatchesActivity.class);
             teamMatchesIntent.putExtra("teamNumber", teamNumber).putExtra("field", "matches");
             context.startActivity(teamMatchesIntent);
+        } else if (key.equals("lfm")) {
+            Intent lfmIntent = new Intent(context, LastFourMatchesActivity.class);
+            lfmIntent.putExtra("teamNumber", teamNumber);
+            context.startActivity(lfmIntent);
         }
-
-    }
-
-    @Override
-    public String getUpdatedAction() {
-        return Constants.TEAMS_UPDATED_ACTION;
-    }
-
-    @Override
-    public Object getObject() {
-        return FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
-    }
-
-    @Override
-    public List<Object> getObjectList() {
-        List<Object> teams = new ArrayList<>();
-        teams.addAll(FirebaseLists.teamsList.getValues());
-        return teams;
-    }
-
-    @Override
-    public boolean isOtherTypeOfView(int section, int row) {
-        return (Arrays.asList(shouldDisplayAsLongText).contains(getRowItem(section, row)) ||
-                Arrays.asList(shouldDisplayAsFurtherInformation).contains(getRowItem(section, row)));
-    }
-
-    @Override
-    public boolean onRowItemLongClick (AdapterView<?> parent, View view, int section, int row, long id) {
-        if (!isUnranked(section, row)) {
-            String fieldName = (String)getRowItem(section,row);
-            Intent intent = new Intent(context, TeamRankingsActivity.class);
-            if (fieldName.startsWith("VIEWER.")) {
-                Intent rankDataArgs = new Intent();
-                fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), rankDataArgs, getViewerDataPointsClass());
-            }
-            String[] splitName = fieldName.split("\\.");
-            Constants.rankFilterName = splitName[1];
-            Log.e("FIELD NAME", Constants.rankFilterName);
-            intent.putExtra("teamNumber", teamNumber).putExtra("field", fieldName)
-                    .putExtra("displayValueAsPercentage", Arrays.asList(getPercentageFields()).contains(getRowItem(section,row)));
-            context.startActivity(intent);
-        }
-        return true;
-    }
-
-
-    @Override
-    public Intent getRankActivityIntent() {
-        Log.e("ranking intent", "called");
-        return new Intent(context, TeamRankingsActivity.class);
-    }
-
-    @Override
-    public Intent getGraphActivityIntent() {
-        Log.e("graph intent", "called");
-        return new Intent(context, RankingsActivity.class);
-    }
-
-    @Override
-    public Map<String, String> getKeysToTitles() {
-        return SpecificConstants.KEYS_TO_TITLES;
-    }
-
-    @Override
-    public Class<?> getViewerDataPointsClass() {
-        return ViewerDataPoints.class;
     }
 }
