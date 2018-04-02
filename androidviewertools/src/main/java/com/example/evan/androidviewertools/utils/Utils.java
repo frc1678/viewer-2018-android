@@ -54,6 +54,14 @@ public class Utils {
         return getObjectField(object, fieldName) != null;
     }
 
+    public static void sortListByFieldName(List<Object> os, String fieldName) {
+        sortListByFieldName(os, fieldName, true);
+    }
+
+    public static void sortListByFieldName(List<Object> os, String fieldName, boolean isReversed) {
+        Collections.sort(os, new ObjectFieldComparator(fieldName, isReversed));
+    }
+
     public static Integer getRankOfObject(Object o, List<Object> os, String fieldName) {
         return getRankOfObject(o, os, fieldName, true);
     }
@@ -63,7 +71,7 @@ public class Utils {
             return null;
         }
         try {
-            Collections.sort(os, new ObjectFieldComparator(fieldName, isReversed));
+            sortListByFieldName(os, fieldName, isReversed);
             return os.indexOf(o);
         } catch (IllegalArgumentException iae) {
             return null;

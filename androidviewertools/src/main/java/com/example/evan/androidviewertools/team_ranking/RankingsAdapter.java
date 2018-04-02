@@ -3,6 +3,7 @@ package com.example.evan.androidviewertools.team_ranking;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,18 +16,22 @@ import com.example.evan.androidviewertools.R;
 import com.example.evan.androidviewertools.search_view.SearchableFirebaseListAdapter;
 import com.example.evan.androidviewertools.utils.Utils;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T> {
+public abstract class RankingsAdapter<T extends Object> extends SearchableFirebaseListAdapter<T> {
     private String rankFieldName;
     private String valueFieldName;
+    private Map<T, Integer> rankCache;
 
     public RankingsAdapter(Context context, String rankFieldName, String valueFieldName, boolean isNotReversed) {
         super(context, new ObjectFieldComparator(rankFieldName, isNotReversed));
         this.rankFieldName = rankFieldName;
         this.valueFieldName = valueFieldName;
-
-
+        this.rankCache = new HashMap<>();
     }
 
     @Override
@@ -143,23 +148,36 @@ public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T
         }
     }
 
+    private String formatRank(Integer rank) {
+        if (rank != null) {
+            return rank + 1 + "";
+        } else {
+            return "?";
+        }
+    }
+
     public String getRankText(T value) {
-        Integer rank =  Utils.getRankOfObject(value, getOtherValuesForRanking(), rankFieldName);
-        if (rank != null) {
-            return rank + 1 + "";
-        } else {
-            return "?";
+        if (! this.rankCache.containsKey(value)) {
+            recacheRanks();
+        }
+
+        Integer rank = this.rankCache.get(value);
+        return formatRank(rank);
+    }
+
+    public void recacheRanks() {
+        this.rankCache.clear();
+        List<T> vals = getOtherValuesForRanking();
+        Utils.sortListByFieldName((List<Object>)vals, rankFieldName);
+        for (Integer i = 0; i < vals.size(); i++) {
+            this.rankCache.put(vals.get(i), i);
         }
     }
 
-    public String getPredictedRankText(T value){
-        Integer rank =  Utils.getRankOfObject(value, getOtherValuesForRanking(), "calculatedData.predictedSeed");
-        if (rank != null) {
-            return rank + 1 + "";
-        } else {
-            return "?";
-        }
+    public void onFirebaseDataChanged() {
+        super.onFirebaseDataChanged();
+        recacheRanks();
     }
 
-    public abstract List<Object> getOtherValuesForRanking();
+    public abstract List<T> getOtherValuesForRanking();
 }
