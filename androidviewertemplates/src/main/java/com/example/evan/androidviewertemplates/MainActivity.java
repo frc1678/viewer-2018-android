@@ -1,10 +1,7 @@
 package com.example.evan.androidviewertemplates;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -22,18 +19,14 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
-import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklist;
-import com.example.evan.androidviewertemplates.drawer_fragments.LastFourMatchesFragment;
-import com.example.evan.androidviewertemplates.drawer_fragments.NoteFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.ScheduleFragment;
-import com.example.evan.androidviewertemplates.drawer_fragments.SecondPicklist;
 import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
@@ -176,7 +169,7 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
             case 10:
-                fragment = new FirstPicklist();
+                fragment = new FirstPicklistFragment();
                 latestFragmentId = position;
                 break;
 
