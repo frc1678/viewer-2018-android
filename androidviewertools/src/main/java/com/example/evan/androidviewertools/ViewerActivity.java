@@ -17,8 +17,7 @@ public abstract class ViewerActivity extends ActionBarActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if (getResources().getConfiguration().orientation == 1) {
             onCreate();
-        }
-    }
+        }}
     public abstract void onCreate();
     public abstract Intent getMainActivityIntent();
     @Override

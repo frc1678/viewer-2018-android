@@ -1,9 +1,9 @@
 {
   "project_info": {
     "project_number": "1058293089807",
-    "firebase_url": "https://scouting-2018-9023a.firebaseio.com",
-    "project_id": "scouting-2018-9023a",
-    "storage_bucket": "scouting-2018-9023a.appspot.com"
+    "firebase_url": "ttps://scouting-2018-temp.firebaseio.com/",
+    "project_id": "scouting-2018-temp",
+    "storage_bucket": "scouting-2018-temp.appspot.com"
   },
   "client": [
     {

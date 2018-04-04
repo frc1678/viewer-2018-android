@@ -36,44 +36,16 @@ import java.io.File;
 import java.io.FileInputStream;
 
 
-public class TeamDetailsActivity extends ViewerActivity {
-
-    LinearLayout headerPhotoLinearLayout;
-    Integer teamNumber;
-    BroadcastReceiver teamUpdatedReceiver;
+public class TeamDetailsActivity extends TeamActivity {
     BroadcastReceiver photoDownloadedReceiver;
-    BroadcastReceiver starReceiver;
     Bitmap bitmap;
-
 
     @Override
     public void onCreate() {
-        setContentView(R.layout.activity_section_listview);
-        setActionBarColor();
-        teamNumber = getIntent().getIntExtra("teamNumber", 1678);
+        super.onCreate();
         setTitle("Team " + teamNumber + " Details");
 
-        HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
-
         teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
-        View teamDetailsHeaderView = getLayoutInflater().inflate(R.layout.team_details_header, null);
-        teamDetailsHeaderListView.getListView().addHeaderView(teamDetailsHeaderView, null, false);
-
-        teamUpdatedReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                reload();
-            }
-        };
-        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(teamUpdatedReceiver, new IntentFilter(Constants.TEAMS_UPDATED_ACTION));
-
-        starReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                reload();
-            }
-        };
-        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(starReceiver, new IntentFilter(Constants.STARS_MODIFIED_ACTION));
 
         photoDownloadedReceiver = new BroadcastReceiver() {
             @Override
@@ -85,45 +57,13 @@ public class TeamDetailsActivity extends ViewerActivity {
             }
         };
 
-        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(photoDownloadedReceiver, new IntentFilter(Constants.NEW_TEAM_PHOTO_ACTION));
 
-        headerPhotoLinearLayout = (LinearLayout)teamDetailsHeaderView.findViewById(R.id.teamDetailsTeamPhotoLinearLayout);
+        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(photoDownloadedReceiver, new IntentFilter(Constants.NEW_TEAM_PHOTO_ACTION));
 
         reload();
         reloadTeamImage();
     }
-    public void setActionBarColor(){
-        ActionBar actionBar = getSupportActionBar();
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
-        if(actionBar!=null) {
-            actionBar.setBackgroundDrawable(colorDrawable);
-        }
-    }
 
-    public void reload() {
-        HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
-        View teamDetailsHeaderView = teamDetailsHeaderListView.getChildAt(0);
-        if (StarManager.isStarredTeam(teamNumber)) {
-            teamDetailsHeaderView.setBackgroundColor(Constants.STAR_COLOR);
-        } else {
-            teamDetailsHeaderView.setBackgroundColor(Color.TRANSPARENT);
-        }
-
-        Team team = FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
-
-        TextView teamDetailsTeamNumberTextView = (TextView)teamDetailsHeaderView.findViewById(R.id.teamDetailsTeamNumberTextView);
-        teamDetailsTeamNumberTextView.setText(Utils.getDisplayValue(team, "number"));
-        teamDetailsTeamNumberTextView.setOnLongClickListener(new StarLongClickListener());
-
-        TextView teamDetailsTeamNameTextView = (TextView)teamDetailsHeaderView.findViewById(R.id.teamDetailsTeamNameTextView);
-        teamDetailsTeamNameTextView.setText(Utils.getDisplayValue(team, "name"));
-
-        TextView teamDetailsSeedingTextView = (TextView)teamDetailsHeaderListView.findViewById(R.id.teamDetailsSeeding);
-        teamDetailsSeedingTextView.setText((Utils.fieldIsNotNull(team, "calculatedData.actualSeed")) ? Utils.roundDataPoint(Utils.getObjectField(team, "calculatedData.actualSeed"), 2, "???") : "???");
-
-        TextView teamDetailsPredictedSeedingTextView = (TextView)teamDetailsHeaderListView.findViewById(R.id.teamDetailsPredictedSeeding);
-        teamDetailsPredictedSeedingTextView.setText((Utils.fieldIsNotNull(team, "calculatedData.predictedSeed")) ? Utils.roundDataPoint(Utils.getObjectField(team, "calculatedData.predictedSeed"), 2, "???") : "???");
-    }
 
     public void reloadTeamImage() {
         Log.e("reload", "team image");
@@ -158,8 +98,6 @@ public class TeamDetailsActivity extends ViewerActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        LocalBroadcastManager.getInstance(getApplicationContext()).unregisterReceiver(teamUpdatedReceiver);
         LocalBroadcastManager.getInstance(getApplicationContext()).unregisterReceiver(photoDownloadedReceiver);
 
         if (bitmap != null) {
@@ -168,26 +106,4 @@ public class TeamDetailsActivity extends ViewerActivity {
 
     }
 
-    private class StarLongClickListener implements View.OnLongClickListener {
-
-        @Override
-        public boolean onLongClick(View v) {
-            Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(75);
-            TextView teamNumberTextView = (TextView)v;
-            Integer teamNumber = Integer.parseInt(teamNumberTextView.getText().toString());
-            if (StarManager.isStarredTeam(teamNumber)) {
-                StarManager.removeStarredTeam(teamNumber);
-            } else {
-                StarManager.addStarredTeam(teamNumber);
-            }
-            reload();
-            return true;
-        }
-    }
-
-    @Override
-    public Intent getMainActivityIntent() {
-        return new Intent(this, MainActivity.class);
-    }
 }

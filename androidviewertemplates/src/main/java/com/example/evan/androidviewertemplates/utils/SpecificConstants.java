@@ -124,6 +124,41 @@ public class SpecificConstants extends Constants {
                     put ("numGoodDecisions","Num. Good Decisions");
                     put ("numBadDecisions","Num. Bad Decisions");
 
+                    put("lfm", "Last Four Matches");
+                    put("fullcomp", "Full Comp. Data");
+                //LastFourMatches
+                    //Auto
+                    put ("calculatedData.lfmAvgClimbTime","Avg. Climb Time");
+                    put ("calculatedData.lfmAutoRunPercentage","Run Percentage");
+
+                    //Teleop
+                    put ("calculatedData.lfmTotalCubesPlaced","Total Cubes Placed");
+                    put ("calculatedData.lfmMaxExchangeCubes","Max Exchange Cubes");
+                    put ("calculatedData.lfmMaxScaleCubes","Max Scale Cubes");
+                    put ("calculatedData.lfmAvgCubesInExchangeTele","Avg Cubes in Exchange");
+                    put ("calculatedData.lfmAvgNumCubesFumbledTele","Avg Cubes Fumbled");
+                    put ("calculatedData.lfmAvgCubesPlacedInScaleTele","Avg Cubes Placed in Scale");
+                    //put ("calculatedData.lfmAvgOpponentSwitchCubesTele","");
+                    put ("calculatedData.lfmAvgAllianceSwitchCubesTele","Avg Switch Cubes");
+                    put ("calculatedData.lfmAvgNumExchangeInputTele","Avg Exchange Input");
+
+                    //FaceTheBoss
+                    put ("calculatedData.lfmSoloClimbPercentage","Solo Climb %");
+                    put ("calculatedData.lfmAssistedClimbPercentage","Assisted Climb %");
+                    put ("calculatedData.lfmActiveLiftClimbPercentage","Active Lift Climb %");
+                    put ("calculatedData.lfmActiveNoClimbLiftClimbPercentage","Active No Lift Climb %");
+                    put ("calculatedData.lfmActiveAssistClimbPercentage","Active Assist Climb %");
+                    put ("calculatedData.lfmAvgClimbTime","Avg Climb Time %");
+
+                    //Status
+                    put("calculatedData.lfmIncapacitatedPercentage","Incap. %");
+                    put("calculatedData.lfmDisabledPercentage","Disabled %");
+
+                    //HighLevel
+                    put("calculatedData.lfmAvgDrivingAbility","Avg Driving Ability");
+
+
+
 
 //                put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
             }
@@ -144,6 +179,33 @@ public class SpecificConstants extends Constants {
                 //put ("calculatedData.avgDrivingAbility","drivingAbility");
                 put ("calculatedData.avgNumGoodDecisions","numGoodDecisions");
                 put ("calculatedData.avgNumBadDecisions","numBadDecisions");
+
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
+                put ("calculatedData.","");
             }
         };
         //replace all 'DEFENSE's with the correct defenses
