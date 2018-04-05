@@ -57,11 +57,12 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
     };
 
     static String[][] fieldsToDisplay = {
-            {"fullcomp"},
-            {"lfmMaxExchangeCubes"},
-            {"lfmAvgClimbTime"},
-            {"lfmAutoRunPercentage"},
-            {"lfmTotalCubesPlaced"},
+
+            {"calculatedData.lfmAvgClimbTime","calculatedData.lfmAutoRunPercentage",},
+            {"calculatedData.lfmTotalCubesPlaced","calculatedData.lfmMaxExchangeCubes" ,"calculatedData.lfmMaxScaleCubes","calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
+            {"calculatedData.lfmSoloClimbPercentage","calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage","calculatedData.lfmAvgClimbTime"},
+            {"calculatedData.lfmIncapacitatedPercentage", "calculatedData.lfmDisabledPercentage"},
+            {"calculatedData.lfmAvgDrivingAbility"},
     };
 
     static {
