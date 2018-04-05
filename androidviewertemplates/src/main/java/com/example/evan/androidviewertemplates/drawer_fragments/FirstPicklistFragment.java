@@ -192,8 +192,15 @@ public class FirstPicklistFragment extends Fragment {
            }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                final String teamNumber = dataSnapshot.getValue().toString();
+                Integer teamPicklistPosition = Integer.parseInt(dataSnapshot.getKey());
+                teams.put(teamPicklistPosition, teamNumber);
+                Constants.picklistMap.put(teamPicklistPosition, teamNumber.toString());
+                String key = new String();
+                saveMap(context, key, Constants.picklistMap);
                 FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
                 listView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
