@@ -52,7 +52,7 @@ public class CalculatedTeamData extends Object {
     public Float avgOpponentTimeTele;
     public Float avgOpponentTimeAuto;
 
-    public ArrayList<String> totalSuperNotes;
+    public ArrayList<Object> totalSuperNotes;
     public Float pitAvgDriveTime;
     public Float pitAvgRampTime;
 
