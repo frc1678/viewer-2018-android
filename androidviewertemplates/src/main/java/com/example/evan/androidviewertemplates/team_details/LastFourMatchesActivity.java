@@ -24,7 +24,4 @@ public class LastFourMatchesActivity extends TeamActivity {
 
         reload();
     }
-
-public class LastFourMatchesActivity {
-
 }
