@@ -172,6 +172,10 @@ public class MainActivity extends ViewerActivity
                 fragment = new FirstPicklistFragment();
                 latestFragmentId = position;
                 break;
+            //case 11:
+            //    fragment = new OfflinePicklistFragment();
+            //    latestFragmentId = position;
+            //    break;
 
         }
         fragmentManager.beginTransaction()
