@@ -35,6 +35,7 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
         broadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
+                onFirebaseDataChanged();
                 searchWithTextInScope(searchString, selectedScope);
                 notifyDataSetChanged();
             }
@@ -171,6 +172,8 @@ public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
     public abstract boolean filter(T value, String scope);
 
     public abstract List<T> getFirebaseList();
+
+    public void onFirebaseDataChanged() { }
 
     public void cleanup() {
         LocalBroadcastManager.getInstance(context).unregisterReceiver(broadcastReceiver);

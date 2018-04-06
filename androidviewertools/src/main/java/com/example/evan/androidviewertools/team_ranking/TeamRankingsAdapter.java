@@ -71,8 +71,8 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
     }
 
     @Override
-    public List<Object> getOtherValuesForRanking() {
-        return new ArrayList<Object>(FirebaseLists.teamsList.getValues());
+    public List<Team> getOtherValuesForRanking() {
+        return new ArrayList<Team>(FirebaseLists.teamsList.getValues());
     }
 
     public abstract Intent getTeamDetailsActivityIntent();
