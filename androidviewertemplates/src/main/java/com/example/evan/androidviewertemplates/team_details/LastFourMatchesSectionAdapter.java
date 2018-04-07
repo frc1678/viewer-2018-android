@@ -65,12 +65,6 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
             {"calculatedData.lfmAvgDrivingAbility"},
     };
 
-    static {
-        for (String[] a : fieldsToDisplay) {
-            rankInsteadOfGraph = (String[])ArrayUtil.addAll(a, rankInsteadOfGraph);
-        }
-    }
-
     @Override
     public void handleNonDefaultClick(int section, int row) {
         String key = (String)getRowItem(section, row);
