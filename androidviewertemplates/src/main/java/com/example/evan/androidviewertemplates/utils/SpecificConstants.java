@@ -135,7 +135,7 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.lfmTotalCubesPlaced","Total Cubes Placed");
                     put ("calculatedData.lfmMaxExchangeCubes","Max Exchange Cubes");
                     put ("calculatedData.lfmMaxScaleCubes","Max Scale Cubes");
-                    put ("calculatedData.lfmAvgCubesInExchangeTele","Avg Cubes in Exchange");
+                    //put ("calculatedData.lfmAvgCubesInExchangeTele","Avg Cubes in Exchange");
                     put ("calculatedData.lfmAvgNumCubesFumbledTele","Avg Cubes Fumbled");
                     put ("calculatedData.lfmAvgCubesPlacedInScaleTele","Avg Cubes Placed in Scale");
                     //put ("calculatedData.lfmAvgOpponentSwitchCubesTele","");
@@ -165,6 +165,7 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
+            //TeamDetails
                 put ("calculatedData.avgCubesPlacedInScaleAuto","calculatedData.numScaleSuccessAuto");
                 put ("calculatedData.avgAllianceSwitchCubesAuto","calculatedData.numAllianceSwitchSuccessAuto");
                 put ("calculatedData.avgNumCubesFumbledTele","numCubesFumbledTele");
@@ -179,33 +180,18 @@ public class SpecificConstants extends Constants {
                 //put ("calculatedData.avgDrivingAbility","drivingAbility");
                 put ("calculatedData.avgNumGoodDecisions","numGoodDecisions");
                 put ("calculatedData.avgNumBadDecisions","numBadDecisions");
+            //LFM Graphing:
+                put ("calculatedData.lfmAvgClimbTime","calculatedData.climbtime");
+                put ("calculatedData.lfmTotalCubesPlaced","calculatedData.numCubesPlacedTele");
+                put ("calculatedData.lfmMaxExchangeCubes","calculatedData.numExchangeInput");
+                put ("calculatedData.lfmAvgNumExchangeInputTele","calculatedData.numExchangeInput");
+                put ("calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.numCubesFumbledTele");
+                put ("calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.numScaleSuccessTele");
+                put ("calculatedData.lfmAvgAllianceSwitchCubesTele","calculatedData.numAllianceSwitchSuccessTele");
+                put ("calculatedData.lfmAvgClimbTime","calculatedData.climbTime");
+                put ("calculatedData.lfmIncapacitatedPercentage","calculatedData.didGetIncapacitated");
+                put ("calculatedData.lfmDisabledPercentage","calculatedData.didGetDisabled");
 
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
             }
         };
         //replace all 'DEFENSE's with the correct defenses
