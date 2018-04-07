@@ -40,7 +40,7 @@ public class StarredMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean shouldHighlightTextViewWithText(String text) {
-            return false;
+            return true;
         }
 
         @Override

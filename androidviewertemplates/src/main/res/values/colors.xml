@@ -6,4 +6,9 @@
     <color name="material_blue_500">#5677fc</color>
     <color name="white">#ffffff</color>
     <color name="turq">#56fcda</color>
+    <color name="light_blue">#b5d1ff</color>
+    <color name="light_gray">#E8E8EE</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="black">#000000</color>
+
 </resources>

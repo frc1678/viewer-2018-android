@@ -23,6 +23,7 @@ import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.utils.Constants;
+import com.example.evan.androidviewertools.utils.GlobalV;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -87,6 +88,17 @@ public class FirstPicklistFragment extends Fragment {
                     Constants.offlinePicklist.putAll(Constants.picklistMap);
                     FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
                     listView.setAdapter(adapter);
+
+                    if (GlobalV.highlightTeamAmountGlobal != null) {
+                        for (int i = 0; i <= GlobalV.highlightTeamAmountGlobal; i++) {
+                            if (Constants.picklistMap.get(i) !=  null && !GlobalV.highlightTeamsList.contains(Constants.picklistMap.get(i))) {
+                                GlobalV.highlightTeamsList.add(Constants.picklistMap.get(i));
+                            }
+                        }
+                    }
+
+                    Log.e("highlightTeamsList", GlobalV.highlightTeamsList.toString());
+
                     picklistEditButton.setOnClickListener(new View.OnClickListener() {
                        @Override
                        public void onClick(View view) {
