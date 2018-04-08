@@ -37,7 +37,6 @@ public class MatchDetailsActivity extends ViewerActivity {
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_match_details);
-        updateUI();
 
         matchNumber = getIntent().getIntExtra("matchNumber", 0);
         setTitle("Match " + matchNumber + " Details");
@@ -82,8 +81,7 @@ public class MatchDetailsActivity extends ViewerActivity {
             MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell)findViewById(teamCellIDs[i]);
             matchDetailsTeamCell.update(allTeamNumbers.get(i), (i < 3));
         }
-
-        if (StarManager.isImportantMatch(matchNumber)) {
+        updateUI();        if (StarManager.isImportantMatch(matchNumber)) {
             getWindow().getDecorView().setBackgroundColor(SpecificConstants.STAR_COLOR);
         } else {
             getWindow().getDecorView().setBackgroundColor(Color.WHITE);
