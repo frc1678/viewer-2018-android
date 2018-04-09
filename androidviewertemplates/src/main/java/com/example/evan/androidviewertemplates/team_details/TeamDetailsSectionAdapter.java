@@ -123,9 +123,6 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
     static String[] createListOnClick = {
             "matches",
             "lfm"
-
-            /*"calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility",*/
     };
 
     static String[] rankInsteadOfGraph = {
