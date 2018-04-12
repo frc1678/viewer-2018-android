@@ -23,6 +23,7 @@ import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.utils.Constants;
+import com.example.evan.androidviewertools.utils.GlobalV;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -80,12 +81,24 @@ public class FirstPicklistFragment extends Fragment {
                 final String teamNumber = dataSnapshot.getValue().toString();
                 Integer teamPicklistPosition = Integer.parseInt(dataSnapshot.getKey());
                 teams.put(teamPicklistPosition, teamNumber);
-                Constants.picklistMap.put(teamPicklistPosition, teamNumber.toString());
-                String key = new String();
-                saveMap(context, key, Constants.picklistMap);
-                if (Constants.picklistMap.size() >= 65) {
+                Constants.picklistMap.put(teamPicklistPosition, teamNumber);
+                Integer teamCount = Integer.parseInt(dataSnapshot.getKey());
+                if (Constants.picklistMap.size() >= teamCount) {
+                    Log.e("picklistPassword",picklistPassword);
+                    Constants.offlinePicklist.putAll(Constants.picklistMap);
                     FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
                     listView.setAdapter(adapter);
+
+                    if (GlobalV.highlightTeamAmountGlobal != null) {
+                        for (int i = 0; i <= GlobalV.highlightTeamAmountGlobal; i++) {
+                            if (Constants.picklistMap.get(i) !=  null && !GlobalV.highlightTeamsList.contains(Constants.picklistMap.get(i))) {
+                                GlobalV.highlightTeamsList.add(Constants.picklistMap.get(i));
+                            }
+                        }
+                    }
+
+                    Log.e("highlightTeamsList", GlobalV.highlightTeamsList.toString());
+
                     picklistEditButton.setOnClickListener(new View.OnClickListener() {
                        @Override
                        public void onClick(View view) {
@@ -99,6 +112,7 @@ public class FirstPicklistFragment extends Fragment {
                                @Override
                                public void onClick(View view) {
                                    EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+
                                    if (passwordEditText.getText().toString().equals(picklistPassword)) { //todo hardcode password
                                        picklistEditButton.setText("YOU ARE IN EDIT MODE");
                                        Toast.makeText(getActivity(), "YOU ARE IN EDIT MODE", Toast.LENGTH_LONG).show();
@@ -143,7 +157,6 @@ public class FirstPicklistFragment extends Fragment {
                                                     @Override
                                                     public void onClick(View v) {
                                                         //downButton onClick
-                                                        Constants.counter = Constants.counter + 1;
                                                         Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
                                                         Integer otherTeam = myTeam + 1;
                                                         Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);

@@ -25,8 +25,7 @@ public class Constants {
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
     public static Map<Integer, String> picklistMap = new HashMap<>();
-    public static Map<Integer, String> newPicklistMap = new HashMap<>();
-    public static int counter;
+    public static Map<Integer, String> offlinePicklist = new HashMap<>();
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;

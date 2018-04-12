@@ -20,7 +20,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public abstract class SearchableFirebaseListAdapter<T> extends BaseAdapter {
+public abstract class  SearchableFirebaseListAdapter<T> extends BaseAdapter {
     public String searchString;
     public String selectedScope;
     public List<T> filteredValues = new ArrayList<>();

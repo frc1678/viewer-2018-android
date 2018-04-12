@@ -23,11 +23,13 @@ import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.OfflinePicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.ScheduleFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.SettingsFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.TeamScheduleFragment;
@@ -170,6 +172,14 @@ public class MainActivity extends ViewerActivity
                 break;
             case 10:
                 fragment = new FirstPicklistFragment();
+                latestFragmentId = position;
+                break;
+            case 11:
+                fragment = new OfflinePicklistFragment();
+                latestFragmentId = position;
+                break;
+            case 12:
+                fragment = new SettingsFragment();
                 latestFragmentId = position;
                 break;
 

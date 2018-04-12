@@ -22,6 +22,7 @@ import com.example.evan.androidviewertemplates.firebase_classes.Match;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
 import com.example.evan.androidviewertools.services.StarManager;
+import com.example.evan.androidviewertools.utils.GlobalV;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 
@@ -80,11 +81,32 @@ public class MatchDetailsActivity extends ViewerActivity {
             MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell)findViewById(teamCellIDs[i]);
             matchDetailsTeamCell.update(allTeamNumbers.get(i), (i < 3));
         }
-
-        if (StarManager.isImportantMatch(matchNumber)) {
+        updateUI();        if (StarManager.isImportantMatch(matchNumber)) {
             getWindow().getDecorView().setBackgroundColor(SpecificConstants.STAR_COLOR);
         } else {
             getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+        }
+        ArrayList<Integer> teamsList = new ArrayList<>();
+        teamsList.addAll(allTeamNumbers);
+        Log.e("teamslist",teamsList.toString());
+        for (int i = 0; i < teamCellIDs.length; i++) {
+            Log.e("allteamnumbersgeti",teamsList.get(i).toString());
+            Log.e("onpickteamslist",String.valueOf(onPicklist(teamsList.get(i).toString())));
+            if (onPicklist(teamsList.get(i).toString())) {
+                Log.e("1","true");
+                TextView tempTeam = (TextView) findViewById(teamCellIDs[i]);
+                Log.e("tempteam",tempTeam.toString());
+                tempTeam.setBackgroundColor(Color.CYAN);
+            } else if (String.valueOf(teamsList.get(i).toString().indexOf(0)).equals("-")) {
+                TextView tempTeam = (TextView) findViewById(teamCellIDs[i]);
+
+                Log.e("2","true");
+                Log.e("tempteam",tempTeam.toString());
+                tempTeam.setBackgroundColor(Color.RED);
+            } else {
+                getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+
+            }
         }
 
         TextView matchDetailsMatchTitleTextView = (TextView)findViewById(R.id.matchDetailsMatchTitleTextView);
@@ -127,6 +149,19 @@ public class MatchDetailsActivity extends ViewerActivity {
             updateUI();
             return true;
         }
+    }
+    public boolean onPicklist(String team) {
+        for (int i = 0; i < GlobalV.highlightTeamAmountGlobal; i++) {
+            if (team.equals(GlobalV.highlightTeamsList.get(i))) {
+
+                return true;
+
+            } else {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override

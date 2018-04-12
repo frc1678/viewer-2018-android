@@ -5,14 +5,10 @@
     <ListView
         android:layout_below="@+id/picklistEditButton"
         android:id="@+id/listview"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_alignParentRight="true"
-
         android:paddingRight="5dp"
-
         android:text="test"
         android:textAlignment="textEnd"
         android:textStyle="bold" />

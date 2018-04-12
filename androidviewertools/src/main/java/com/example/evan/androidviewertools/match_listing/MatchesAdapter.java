@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 
 import com.example.evan.androidviewertools.utils.Constants;
+import com.example.evan.androidviewertools.utils.GlobalV;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.example.evan.androidviewertools.utils.ObjectFieldComparator;
 import com.example.evan.androidviewertools.R;
@@ -63,6 +65,8 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         try {
             Match match = (Match) getItem(position);
 
+
+
             if (StarManager.isImportantMatch(match.number)) {
                 rowView.setBackgroundColor(Constants.STAR_COLOR);
             } else {
@@ -98,8 +102,10 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                     teamTextView.setText(teamsInMatch.get(i).toString());
                 }
                 boolean shouldBold = shouldHighlightTextViewWithText(teamTextView.getText().toString());
+
                 if (shouldBold) {
                     teamTextView.setBackgroundColor(Color.YELLOW);
+                    Log.e("shouldBold","yellow"+shouldBold);
                 } else {
                     teamTextView.setBackgroundColor(Color.TRANSPARENT);
                 }
@@ -216,4 +222,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     public abstract boolean shouldHighlightTextViewWithText(String text);
 
     public abstract Intent getMatchDetailsActivityIntent();
+
+
 }
