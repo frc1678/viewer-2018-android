@@ -29,8 +29,8 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.autoRunPercentage", "Auto Run Percent Success");
                     put ("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes in Switch Auto");
-                    put ("calculatedData.allianceSwitchFailPercentageAuto","Switch Fail % Auto");
-                    put ("calculatedData.scaleFailPercentageAuto","Scale Fail % Auto");
+                    put ("calculatedData.allianceSwitchSuccessPercentageAuto","Switch Success % Auto");
+                    put ("calculatedData.scaleSuccessPercentageAuto","Scale Success % Auto");
                     put ("calculatedData.avgAllianceSwitchCubesAuto","Avg Cubes In Alliance Switch Auto");
                     put ("calculatedData.percentSuccessOppositeSwitchSideAuto","Opp. Switch Side Success %");
                     put ("calculatedData.canScoreBothSwitchSidesAuto","Can score on opp. alliance switch side");
@@ -44,8 +44,8 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.avgNumExchangeInputTele","Avg Cubes in Exchange Tele");
                     put ("calculatedData.avgNumGroundPortalIntakeTele","Avg Ground Portal Intake Tele");
                     put ("calculatedData.avgNumHumanPortalIntakeTele","Avg Human Portal Intake Tele");
-                    put ("calculatedData.allianceSwitchFailPercentageTele","Switch Fails % Tele");
-                    put ("calculatedData.scaleFailPercentageTele","Scale Fail % Tele");
+                    put ("calculatedData.allianceSwitchSuccessPercentageTele","Switch Success % Tele");
+                    put ("calculatedData.scaleSuccessPercentageTele","Scale Success % Tele");
                     put ("calculatedData.maxScaleCubes","Max Scale Cubes");
                     put ("calculatedData.totalCubesPlaced", "Total Cubes Placed");
 
@@ -165,47 +165,36 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
+                put ("calculatedData.avgCubesSpilledTele","numSpilledCubesTele");
+
                 put ("calculatedData.avgCubesPlacedInScaleAuto","calculatedData.numScaleSuccessAuto");
                 put ("calculatedData.avgAllianceSwitchCubesAuto","calculatedData.numAllianceSwitchSuccessAuto");
                 put ("calculatedData.avgNumCubesFumbledTele","numCubesFumbledTele");
                 put ("calculatedData.avgCubesPlacedInScaleTele","calculatedData.numScaleSuccessTele");
-                put ("calculatedData.avgOpponentSwitchCubesTele","calculatedData.numOpponentSwitchSuccessTele");
+                put ("calculatedData.avgOpponentSwitchCubesTele","calculatedData.numOp                                                                                                  ponentSwitchSuccessTele");
                 put ("calculatedData.avgAllianceSwitchCubesTele","calculatedData.numAllianceSwitchSuccessTele");
                 put ("calculatedData.avgNumExchangeInputTele","numExchangeInput");
                 put ("calculatedData.avgNumGroundIntakeTele","numGroundIntakeTele");
                 put ("calculatedData.avgNumGroundPortalIntakeTele","numGroundPortalIntakeTele");
                 put ("calculatedData.avgNumHumanPortalIntakeTele","numHumanPortalIntakeTele");
                 put ("calculatedData.climb","calculatedData.climbTime");
+                put ("calculatedData.avgClimbTime", "calculatedData.climbTime");
                 //put ("calculatedData.avgDrivingAbility","drivingAbility");
                 put ("calculatedData.avgNumGoodDecisions","numGoodDecisions");
                 put ("calculatedData.avgNumBadDecisions","numBadDecisions");
+                put ("calculatedData.autoRunPercentage", "didMakeAutoRun");
 
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
-                put ("calculatedData.","");
+                //LFM Graphing:
+                put ("calculatedData.lfmAvgClimbTime","calculatedData.climbtime");
+                put ("calculatedData.lfmTotalCubesPlaced","calculatedData.numCubesPlacedTele");
+                //put ("calculatedData.lfmMaxExchangeCubes","calculatedData.numExchangeInput");
+                put ("calculatedData.lfmAvgNumExchangeInputTele","calculatedData.numExchangeInput");
+                put ("calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.numCubesFumbledTele");
+                put ("calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.numScaleSuccessTele");
+                put ("calculatedData.lfmAvgAllianceSwitchCubesTele","calculatedData.numAllianceSwitchSuccessTele");
+                put ("calculatedData.lfmAvgClimbTime","calculatedData.climbTime");
+                put ("calculatedData.lfmIncapacitatedPercentage","calculatedData.didGetIncapacitated");
+                put ("calculatedData.lfmDisabledPercentage","calculatedData.didGetDisabled");
             }
         };
         //replace all 'DEFENSE's with the correct defenses

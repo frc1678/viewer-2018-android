@@ -29,10 +29,10 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
     static String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
             {"calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
-                    "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchFailPercentageAuto", "calculatedData.scaleFailPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
+                    "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
             {"calculatedData.avgCubesSpilledTele", "calculatedData.totalCubesPlaced", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
                     "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
-                    "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchFailPercentageTele", "calculatedData.scaleFailPercentageTele"},
+                    "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
@@ -57,10 +57,10 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             "calculatedData.disabledPercentage",
             "calculatedData.percentSuccessOppositeSwitchSideAuto",
             "calculatedData.autoRunPercentage",
-            "calculatedData.allianceSwitchFailPercentageAuto",
-            "calculatedData.scaleFailPercentageAuto",
-            "calculatedData.allianceSwitchFailPercentageTele",
-            "calculatedData.scaleFailPercentageTele",
+            "calculatedData.allianceSwitchSuccessPercentageAuto",
+            "calculatedData.scaleSuccessPercentageAuto",
+            "calculatedData.allianceSwitchSuccessPercentageTele",
+            "calculatedData.scaleSuccessPercentageTele",
             "calculatedData.assistedClimbPercentage",
             "calculatedData.disabledPercentage",
             "calculatedData.incapacitatedPercentage",
@@ -129,7 +129,15 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
     };
 
     static String[] rankInsteadOfGraph = {
-
+            "calculatedData.canScoreBothSwitchSidesAuto",
+            "calculatedData.percentSuccessOppositeSwitchSideAuto",
+            "calculatedData.avgSpeed",
+            "calculatedData.avgAgility",
+            "calculatedData.avgDefense",
+            "calculatedData.allianceSwitchSuccessPercentageAuto",
+            "calculatedData.allianceSwitchSuccessPercentageTele",
+            "calculatedData.scaleSuccessPercentageAuto",
+            "calculatedData.scaleSuccessPercentageTele"
     };
 
 

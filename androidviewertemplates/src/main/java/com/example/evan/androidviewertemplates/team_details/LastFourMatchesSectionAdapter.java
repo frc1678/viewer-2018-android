@@ -24,7 +24,10 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
                 fieldsToDisplay);
     }
 
-    static  String[] rankInsteadOfGraph = {};
+    static  String[] rankInsteadOfGraph = {
+            "calculatedData.lfmMaxExchangeCubes",
+            "calculatedData.lfmMaxScaleCubes"
+    };
 
     static  String[] createListOnClick = {
             "fullcomp"
@@ -65,11 +68,6 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
             {"calculatedData.lfmAvgDrivingAbility"},
     };
 
-    static {
-        for (String[] a : fieldsToDisplay) {
-            rankInsteadOfGraph = (String[])ArrayUtil.addAll(a, rankInsteadOfGraph);
-        }
-    }
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
