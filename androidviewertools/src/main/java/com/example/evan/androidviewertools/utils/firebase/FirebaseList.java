@@ -29,7 +29,7 @@ public class FirebaseList<T> {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
            //     Log.e("datapointError", dataSnapshot.getValue().toString());
                 T model = dataSnapshot.getValue(firebaseClass);
-
+                Log.e("FIREBASE ACTIVITY", "CHILD WAS ADDED");
                 String key = dataSnapshot.getKey();
 
                 // Insert into the correct location, based on s
@@ -53,6 +53,7 @@ public class FirebaseList<T> {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Log.e("FIREBASE ACTIVITY", "CHILD WAS CHANGED");
                 String key = dataSnapshot.getKey();
                 T newModel = dataSnapshot.getValue(firebaseClass);
                 int index = keys.indexOf(key);
@@ -71,6 +72,7 @@ public class FirebaseList<T> {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.e("FIREBASE ACTIVITY", "CHILD WAS REMOVED");
                 String key = dataSnapshot.getKey();
                 int index = keys.indexOf(key);
 
@@ -90,6 +92,7 @@ public class FirebaseList<T> {
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                Log.e("FIREBASE ACTIVITY", "CHILD WAS MOVED");
                 String key = dataSnapshot.getKey();
                 T newModel = dataSnapshot.getValue(firebaseClass);
                 int index = keys.indexOf(key);

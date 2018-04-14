@@ -27,6 +27,9 @@ public class CalculatedTeamData extends Object {
     public Float avgNumElevatedPyramidIntakeTele;
     public Float avgNumOpponentPlatformIntakeTele;
     public Float avgNumAlliancePlatformIntakeTele;
+    public Float avgTotalCubesPlaced;
+    public Float avgScaleCubesBy100s;
+    public Float avgScaleCubesBy120s;
     //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
     public Float avgNumGroundIntakeTele;
     public Float lfmActiveLiftClimbPercentage;
@@ -42,6 +45,8 @@ public class CalculatedTeamData extends Object {
     public Float lfmAutoRunPercentage;
     public Float lfmDisabledPercentage;
     public Float lfmAvgClimbTime;
+    public Float lfmAvgScaleCubesBy120s;
+    public Float lfmAvgScaleCubesBy100s;
 
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;
@@ -101,6 +106,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgNumGoodDecicions;
     public Float lfmAvgAllianceSwitchCubesAuto;
     public Float lfmAvgAllianceSwitchCubesTele;
+    public Float lfmAvgTotalCubesPlaced;
 
 
     public Float avgNumReturnIntakeTele;
@@ -123,6 +129,7 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
     public Integer maxScaleCubes;
+    public Integer totalSwitchOwnership;
     public Float lfmAvgNumCubesPlacedAuto;
     public Float lfmAvgNumCubesPlacedTele;
     public Float avgNumCubesPlacedAuto;
