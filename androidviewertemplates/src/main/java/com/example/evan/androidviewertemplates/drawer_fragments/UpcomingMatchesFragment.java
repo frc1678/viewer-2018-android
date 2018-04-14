@@ -10,6 +10,7 @@ import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
 import com.example.evan.androidviewertools.services.StarManager;
+import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 
 
@@ -20,7 +21,7 @@ public class UpcomingMatchesFragment extends MatchesFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Constants.isInSeedingFragment = false;
         setListAdapter(new UpcomingMatchesAdapter(getActivity().getApplicationContext()));
     }
 

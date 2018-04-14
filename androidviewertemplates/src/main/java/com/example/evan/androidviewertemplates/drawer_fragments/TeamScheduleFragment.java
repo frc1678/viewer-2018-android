@@ -9,6 +9,7 @@ import com.example.evan.androidviewertemplates.match_details.MatchDetailsActivit
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
+import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 
 import java.util.Arrays;
@@ -22,7 +23,7 @@ public class TeamScheduleFragment extends MatchesFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Constants.isInSeedingFragment = false;
         Integer teamNumber = getArguments().getInt("teamNumber");
 
         setListAdapter(new CitrusScheduleAdapter(getActivity().getApplicationContext(), teamNumber));

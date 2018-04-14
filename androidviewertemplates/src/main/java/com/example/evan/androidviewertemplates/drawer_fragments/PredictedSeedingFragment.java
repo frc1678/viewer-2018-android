@@ -8,6 +8,7 @@ import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertemplates.utils.Util;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsAdapter;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
+import com.example.evan.androidviewertools.utils.Constants;
 
 /**
  * Created by sam on 1/29/17.
@@ -16,6 +17,7 @@ public class PredictedSeedingFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Constants.isInSeedingFragment = false;
         Util.setAllSortConstantsFalse();
         setListAdapter(new PredictedSeedingAdapter(getActivity().getApplicationContext()));
     }

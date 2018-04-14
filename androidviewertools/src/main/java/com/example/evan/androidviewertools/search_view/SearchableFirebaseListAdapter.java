@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.team_ranking.TeamRankingsFragment;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;

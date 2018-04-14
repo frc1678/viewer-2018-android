@@ -29,7 +29,7 @@ public class SuperAbilityListFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Constants.isInSeedingFragment = false;
         field = getArguments().getString("field");
         setListAdapter(new SuperAbilityListAdapter(getActivity().getApplicationContext(), field));
     }
