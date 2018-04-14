@@ -39,6 +39,10 @@ public class CalculatedTeamInMatchData extends Object {
     public Float drivingAbility;
     public Float timeToOwnAllianceSwitchAuto;
     public Float timeToOwnScaleAuto;
+    public Integer switchOwnership;
+    public Integer numCubesScaleAt120s;
+    public Integer numCubesScaleAt100s;
+    public Integer totalCubesPlaced;
     public Integer cubeAblility;
     public Integer numAlliancePlatformIntakeAuto;
     public Integer numAlliancePlatformIntakeTele;
