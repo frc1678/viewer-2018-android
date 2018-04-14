@@ -47,7 +47,9 @@ public class SpecificConstants extends Constants {
                     put ("calculatedData.allianceSwitchSuccessPercentageTele","Switch Success % Tele");
                     put ("calculatedData.scaleSuccessPercentageTele","Scale Success % Tele");
                     put ("calculatedData.maxScaleCubes","Max Scale Cubes");
-                    put ("calculatedData.totalCubesPlaced", "Total Cubes Placed");
+                    put ("calculatedData.avgScaleCubesBy100s","Avg Scale Cubes by 100s");
+                    put ("calculatedData.avgScaleCubesBy120s","Avg Scale Cubes by 120s");
+                    put ("calculatedData.avgTotalCubesPlaced","Avg Total Cubes Placed");
 
                     //FaceTheBoss
                     put ("calculatedData.avgClimbTime","Avg Climb Time");
@@ -102,6 +104,7 @@ public class SpecificConstants extends Constants {
                     put ("teamNumber","Number");
                     put ("matchNumber","Match Number");
                     put ("calculatedData.canScoreOppositeSwitchAuto","Can score on opp. alliance switch side");
+
                     //Tele
                     put ("calculatedData.numAllianceSwitchSuccessTele","Num. Alli. Switch Success Tele");
                     put ("calculatedData.numOpponentSwitchSuccessTele","Num. Opp. Switch Success Tele");
@@ -109,8 +112,7 @@ public class SpecificConstants extends Constants {
                     put ("numExchangeInput","Num Cubes Placed in Exchange Tele");
                     put ("numGroundIntakeTele","Num Ground Intake Tele");
                     put ("numHumanPortalIntakeTele","Num Human Portal Intake Tele");
-
-
+                    put ("calculatedData.totalCubesPlaced","Total Cubes Placed");
 
                     //FaceTheBoss
                     put ("climb","Climb");
@@ -123,24 +125,25 @@ public class SpecificConstants extends Constants {
                     put ("superNotes","Super Notes");
                     put ("numGoodDecisions","Num. Good Decisions");
                     put ("numBadDecisions","Num. Bad Decisions");
-
                     put("lfm", "Last Four Matches");
                     put("fullcomp", "Full Comp. Data");
+
                 //LastFourMatches
                     //Auto
                     put ("calculatedData.lfmAvgClimbTime","Avg. Climb Time");
                     put ("calculatedData.lfmAutoRunPercentage","Run Percentage");
 
                     //Teleop
-                    put ("calculatedData.lfmTotalCubesPlaced","Total Cubes Placed");
                     put ("calculatedData.lfmMaxExchangeCubes","Max Exchange Cubes");
                     put ("calculatedData.lfmMaxScaleCubes","Max Scale Cubes");
                     put ("calculatedData.lfmAvgCubesInExchangeTele","Avg Cubes in Exchange");
                     put ("calculatedData.lfmAvgNumCubesFumbledTele","Avg Cubes Fumbled");
                     put ("calculatedData.lfmAvgCubesPlacedInScaleTele","Avg Cubes Placed in Scale");
-                    //put ("calculatedData.lfmAvgOpponentSwitchCubesTele","");
                     put ("calculatedData.lfmAvgAllianceSwitchCubesTele","Avg Switch Cubes");
                     put ("calculatedData.lfmAvgNumExchangeInputTele","Avg Exchange Input");
+                    put ("calculatedData.lfmAvgScaleCubesBy100s","Avg Scale Cubes by 100s");
+                    put ("calculatedData.lfmAvgScaleCubesBy120s","Avg Scale Cubes by 120s");
+                    put ("calculatedData.lfmAvgTotalCubesPlaced","Avg Total Cubes Placed");
 
                     //FaceTheBoss
                     put ("calculatedData.lfmSoloClimbPercentage","Solo Climb %");
@@ -158,15 +161,12 @@ public class SpecificConstants extends Constants {
                     put("calculatedData.lfmAvgDrivingAbility","Avg Driving Ability");
 
 
-
-
 //                put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String> () {
             {
                 put ("calculatedData.avgCubesSpilledTele","numSpilledCubesTele");
-
                 put ("calculatedData.avgCubesPlacedInScaleAuto","calculatedData.numScaleSuccessAuto");
                 put ("calculatedData.avgAllianceSwitchCubesAuto","calculatedData.numAllianceSwitchSuccessAuto");
                 put ("calculatedData.avgNumCubesFumbledTele","numCubesFumbledTele");
@@ -179,15 +179,16 @@ public class SpecificConstants extends Constants {
                 put ("calculatedData.avgNumHumanPortalIntakeTele","numHumanPortalIntakeTele");
                 put ("calculatedData.climb","calculatedData.climbTime");
                 put ("calculatedData.avgClimbTime", "calculatedData.climbTime");
-                //put ("calculatedData.avgDrivingAbility","drivingAbility");
                 put ("calculatedData.avgNumGoodDecisions","numGoodDecisions");
                 put ("calculatedData.avgNumBadDecisions","numBadDecisions");
                 put ("calculatedData.autoRunPercentage", "didMakeAutoRun");
+                put ("calculatedData.avgScaleCubesBy100s","calculatedData.numCubesScaleAt100s");
+                put ("calculatedData.avgScaleCubesBy120s","calculatedData.numCubesScaleAt120s");
+                put ("calculatedData.avgTotalCubesPlaced","calculatedData.totalCubesPlaced");
 
                 //LFM Graphing:
+                put ("calculatedData.lfmAvgTotalCubesPlaced","calculatedData.totalCubesPlaced");
                 put ("calculatedData.lfmAvgClimbTime","calculatedData.climbtime");
-                put ("calculatedData.lfmTotalCubesPlaced","calculatedData.numCubesPlacedTele");
-                //put ("calculatedData.lfmMaxExchangeCubes","calculatedData.numExchangeInput");
                 put ("calculatedData.lfmAvgNumExchangeInputTele","calculatedData.numExchangeInput");
                 put ("calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.numCubesFumbledTele");
                 put ("calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.numScaleSuccessTele");
@@ -195,6 +196,8 @@ public class SpecificConstants extends Constants {
                 put ("calculatedData.lfmAvgClimbTime","calculatedData.climbTime");
                 put ("calculatedData.lfmIncapacitatedPercentage","calculatedData.didGetIncapacitated");
                 put ("calculatedData.lfmDisabledPercentage","calculatedData.didGetDisabled");
+                put ("calculatedData.lfmAvgScaleCubesBy100s","calculatedData.lfmnumCubesScaleAt100s");
+                put ("calculatedData.lfmAvgScaleCubesBy120s","calculatedData.lfmnumCubesScaleAt120s");
             }
         };
         //replace all 'DEFENSE's with the correct defenses
