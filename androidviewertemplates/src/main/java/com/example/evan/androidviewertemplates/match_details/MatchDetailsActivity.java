@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Vibrator;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MatchDetailsActivity extends ViewerActivity {
+    Context context;
     private Integer matchNumber;
     private BroadcastReceiver matchesUpdatedReceiver;
     private BroadcastReceiver starReceiver;
@@ -69,6 +71,16 @@ public class MatchDetailsActivity extends ViewerActivity {
         }
     }
 
+    public boolean onStarredMatches(Integer team) {
+        for(int i = 0; i < StarManager.starredTeams.size(); i++) {
+            if(team.equals(StarManager.starredTeams.get(i))) {
+                return  true;
+            }
+        }
+        return false;
+    }
+
+
     private void updateUI() {
         Match match = (Match)FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
         int[] teamCellIDs = {R.id.redTeamCell1, R.id.redTeamCell2, R.id.redTeamCell3, R.id.blueTeamCell1, R.id.blueTeamCell2, R.id.blueTeamCell3};
@@ -78,6 +90,14 @@ public class MatchDetailsActivity extends ViewerActivity {
         allTeamNumbers.addAll(match.blueAllianceTeamNumbers);
         for (int i = 0; i < teamCellIDs.length; i++) {
             MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell)findViewById(teamCellIDs[i]);
+            if (onStarredMatches(allTeamNumbers.get(i))) {
+                if (match.redAllianceTeamNumbers.contains(allTeamNumbers.get(i))) {
+                    matchDetailsTeamCell.setBackgroundColor(Color.parseColor("#FFC2C2"));
+                }
+                if (match.blueAllianceTeamNumbers.contains(allTeamNumbers.get(i))) {
+                    matchDetailsTeamCell.setBackgroundColor(Color.parseColor("#B7DAFF"));
+                }
+            }
             matchDetailsTeamCell.update(allTeamNumbers.get(i), (i < 3));
         }
 
@@ -86,6 +106,7 @@ public class MatchDetailsActivity extends ViewerActivity {
         } else {
             getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         }
+
 
         TextView matchDetailsMatchTitleTextView = (TextView)findViewById(R.id.matchDetailsMatchTitleTextView);
         matchDetailsMatchTitleTextView.setText("Q" + match.number.toString());
@@ -106,6 +127,8 @@ public class MatchDetailsActivity extends ViewerActivity {
         blueAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedBlueScore"));
         blueAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float) Utils.getObjectField(match, "calculatedData.blueWinChance"), 0));
         //todo
+
+
     }
 
 

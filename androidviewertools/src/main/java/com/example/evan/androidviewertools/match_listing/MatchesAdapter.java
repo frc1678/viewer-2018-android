@@ -97,9 +97,11 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 } else {
                     teamTextView.setText(teamsInMatch.get(i).toString());
                 }
-                boolean shouldBold = shouldHighlightTextViewWithText(teamTextView.getText().toString());
-                if (shouldBold) {
-                    teamTextView.setBackgroundColor(Color.YELLOW);
+
+                Integer team = Integer.parseInt(teamTextView.getText().toString());
+
+                if (onStarredMatches(team)) {
+                    teamTextView.setBackgroundColor(Color.LTGRAY);
                 } else {
                     teamTextView.setBackgroundColor(Color.TRANSPARENT);
                 }
@@ -178,6 +180,15 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     public List<Match> getFirebaseList() {
         return FirebaseLists.matchesList.getValues();
     }
+    public boolean onStarredMatches(Integer team) {
+        for(int i = 0; i < StarManager.starredTeams.size(); i++) {
+            if(team.equals(StarManager.starredTeams.get(i))) {
+                return  true;
+            }
+        }
+        return false;
+    }
+
 
     public abstract boolean secondaryFilter (Match value);
 
@@ -196,6 +207,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             notifyDataSetChanged();
             return true;
         }
+
     }
 
     private class MatchClickListener implements View.OnClickListener {
@@ -216,4 +228,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     public abstract boolean shouldHighlightTextViewWithText(String text);
 
     public abstract Intent getMatchDetailsActivityIntent();
+
+
 }

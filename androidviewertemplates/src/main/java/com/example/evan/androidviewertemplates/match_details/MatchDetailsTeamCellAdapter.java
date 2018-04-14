@@ -2,6 +2,7 @@ package com.example.evan.androidviewertemplates.match_details;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
+import com.example.evan.androidviewertools.services.StarManager;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 
@@ -74,6 +76,9 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
 
         TextView teamNumberTextView = (TextView)rowView.findViewById(R.id.teamNumberTextView);
         teamNumberTextView.setText(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)));
+        if(StarManager.starredTeams.contains(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)))) {
+            teamNumberTextView.setBackgroundColor(Color.RED);
+        }
 
         TextView valueTextView = (TextView)rowView.findViewById(R.id.valueTextView);
         TeamTemplate team = (TeamTemplate)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
