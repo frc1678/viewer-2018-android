@@ -29,7 +29,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
             {"teamNumber","matchNumber"},
             {"didMakeAutoRun","calculatedData.canScoreOppositeSwitchAuto","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
             "calculatedData.numScaleSuccessAuto"},
-            {"calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
+            {"calculatedData.totalCubesPlaced","calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
                     "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
             {"didPark","climb"},
             {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},

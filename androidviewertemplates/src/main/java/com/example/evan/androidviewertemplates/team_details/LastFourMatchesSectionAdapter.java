@@ -61,11 +61,11 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
 
     static String[][] fieldsToDisplay = {
 
-            {"calculatedData.lfmAvgClimbTime","calculatedData.lfmAutoRunPercentage",},
-            {"calculatedData.lfmTotalCubesPlaced","calculatedData.lfmMaxExchangeCubes" ,"calculatedData.lfmMaxScaleCubes","calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
+            {"calculatedData.lfmAvgClimbTime","calculatedData.lfmAutoRunPercentage"},
+            {"calculatedData.lfmAvgTotalCubesPlaced","calculatedData.lfmMaxExchangeCubes" ,"calculatedData.lfmAvgScaleCubesBy100s","calculatedData.lfmAvgScaleCubesBy120s","calculatedData.lfmMaxScaleCubes","calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
             {"calculatedData.lfmSoloClimbPercentage","calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage","calculatedData.lfmAvgClimbTime"},
             {"calculatedData.lfmIncapacitatedPercentage", "calculatedData.lfmDisabledPercentage"},
-            {"calculatedData.lfmAvgDrivingAbility"},
+            {"calculatedData.lfmAvgDrivingAbility","calculatedData."},
     };
 
 

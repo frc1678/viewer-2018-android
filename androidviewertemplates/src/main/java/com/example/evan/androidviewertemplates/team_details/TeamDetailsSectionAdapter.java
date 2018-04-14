@@ -30,7 +30,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
             {"calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
                     "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgCubesSpilledTele", "calculatedData.totalCubesPlaced", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
+            {"calculatedData.avgTotalCubesPlaced","calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s" ,"calculatedData.avgScaleCubesBy120s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
                     "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
                     "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
@@ -116,16 +116,11 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             "pitDriveTrain",
             "pitCanCheesecake",
             "pitRampTime",
-            "calculatedData.maxScaleCubes",
-            "calculatedData.totalCubesPlaced"
     };
 
     static String[] createListOnClick = {
             "matches",
             "lfm"
-
-            /*"calculatedData.firstPickAbility",
-            "calculatedData.overallSecondPickAbility",*/
     };
 
     static String[] rankInsteadOfGraph = {
@@ -137,6 +132,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             "calculatedData.allianceSwitchSuccessPercentageAuto",
             "calculatedData.allianceSwitchSuccessPercentageTele",
             "calculatedData.scaleSuccessPercentageAuto",
+            "calculatedData.maxScaleCubes",
             "calculatedData.scaleSuccessPercentageTele"
     };
 
