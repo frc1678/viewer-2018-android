@@ -9,6 +9,7 @@ import com.example.evan.androidviewertemplates.match_details.MatchDetailsActivit
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.match_listing.MatchesFragment;
+import com.example.evan.androidviewertools.utils.Constants;
 
 
 /**
@@ -18,7 +19,7 @@ public class ScheduleFragment extends MatchesFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Constants.isInSeedingFragment = false;
         setListAdapter(new ScheduleAdapter(getActivity().getApplicationContext()));
     }
 

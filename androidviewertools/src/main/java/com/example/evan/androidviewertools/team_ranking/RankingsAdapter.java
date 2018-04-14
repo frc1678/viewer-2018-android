@@ -3,6 +3,7 @@ package com.example.evan.androidviewertools.team_ranking;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T
 
         if (rowView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.ranking_cell, parent, false);
+            rowView = inflater.inflate(R.layout.ranking_list_cell, parent, false);
         }
 
         T value = (T)getItem(position);
@@ -62,6 +63,8 @@ public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T
 
         TextView rankingTextView = (TextView)rowView.findViewById(R.id.rankingTextView);
         rankingTextView.setText(getRankText(value));
+
+        Log.e("FILTER " + (String) Utils.getObjectField(value, "name"), getRankText(value));
 
         TextView teamNumberTextView = (TextView)rowView.findViewById(R.id.teamNumberTextView);
         if (searchString.length() > 0) {
@@ -80,11 +83,24 @@ public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T
         rowView.setOnLongClickListener(new StarLongClickListener());
         rowView.setOnClickListener(new RankClickListener());
 
+        checkIfInSeedingFragment(rowView, value);
+
         return rowView;
     }
 
     public Object getRankCellDataPoint(T value) {
         return Utils.getObjectField(value, valueFieldName);
+    }
+
+    public void checkIfInSeedingFragment(View rowView, T value){
+        if(Constants.isInSeedingFragment) {
+            TextView predictedRankTextView = (TextView) rowView.findViewById(R.id.predictedSeedTextView);
+            predictedRankTextView.setText(getPredictedRankText(value));
+            predictedRankTextView.setAlpha(1f);
+            TextView predictedRPTextView = (TextView) rowView.findViewById(R.id.predictedNumRP);
+            predictedRPTextView.setText(Utils.roundDataPoint(Utils.getObjectField(value, "calculatedData.predictedNumRPs"), 2, "???"));
+            predictedRPTextView.setAlpha(1f);
+        }
     }
 
     public abstract String getRankCellText(T value);
@@ -130,7 +146,16 @@ public abstract class RankingsAdapter<T> extends SearchableFirebaseListAdapter<T
     public String getRankText(T value) {
         Integer rank =  Utils.getRankOfObject(value, getOtherValuesForRanking(), rankFieldName);
         if (rank != null) {
-            return filteredValues.indexOf(value) + 1 + "";
+            return rank + 1 + "";
+        } else {
+            return "?";
+        }
+    }
+
+    public String getPredictedRankText(T value){
+        Integer rank =  Utils.getRankOfObject(value, getOtherValuesForRanking(), "calculatedData.predictedSeed");
+        if (rank != null) {
+            return rank + 1 + "";
         } else {
             return "?";
         }

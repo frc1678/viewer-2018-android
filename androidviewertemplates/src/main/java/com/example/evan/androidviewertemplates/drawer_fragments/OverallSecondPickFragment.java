@@ -20,6 +20,7 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Constants.isInSeedingFragment = false;
         Util.setAllSortConstantsFalse();
         setListAdapter(new OverallSecondPickAdapter(getActivity().getApplicationContext()));
     }

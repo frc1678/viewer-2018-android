@@ -18,6 +18,7 @@ public class SeedingFragment extends TeamRankingsFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Constants.isInSeedingFragment = true;
         Util.setAllSortConstantsFalse();
         setListAdapter(new SeedingAdapter(getActivity().getApplicationContext()));
 
