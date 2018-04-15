@@ -61,9 +61,15 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
 
     static String[][] fieldsToDisplay = {
 
+<<<<<<< Updated upstream
             {"calculatedData.lfmAvgClimbTime","calculatedData.lfmAutoRunPercentage"},
             {"calculatedData.lfmAvgTotalCubesPlaced","calculatedData.lfmMaxExchangeCubes" ,"calculatedData.lfmAvgScaleCubesBy100s","calculatedData.lfmAvgScaleCubesBy120s","calculatedData.lfmMaxScaleCubes","calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
             {"calculatedData.lfmSoloClimbPercentage","calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage","calculatedData.lfmAvgClimbTime"},
+=======
+            {"calculatedData.lfmAutoRunPercentage"},
+            {"calculatedData.lfmAvgTotalCubesPlaced", "calculatedData.lfmMaxExchangeCubes", "calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmMaxScaleCubes", "calculatedData.lfmAvgNumCubesFumbledTele", "calculatedData.lfmAvgCubesPlacedInScaleTele", "calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
+            {"calculatedData.lfmSoloClimbPercentage", "calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage", "calculatedData.lfmAvgClimbTime"},
+>>>>>>> Stashed changes
             {"calculatedData.lfmIncapacitatedPercentage", "calculatedData.lfmDisabledPercentage"},
             {"calculatedData.lfmAvgDrivingAbility","calculatedData."},
     };
