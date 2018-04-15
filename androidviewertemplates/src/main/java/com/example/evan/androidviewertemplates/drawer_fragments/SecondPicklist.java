@@ -17,7 +17,6 @@ import com.example.evan.androidviewertools.utils.Constants;
 public class SecondPicklist extends TeamRankingsFragment {
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,6 @@ public class SecondPicklist extends TeamRankingsFragment {
     }
 
 
-
     public static class SecondPickListAdapter extends TeamRankingsAdapter {
 
         public SecondPickListAdapter(Context context) {
@@ -38,13 +36,15 @@ public class SecondPicklist extends TeamRankingsFragment {
             Constants.lastFourMatches = false;
 
         }
+
         @Override
-        public Intent getTeamDetailsActivityIntent(){
+        public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
+
     @Override
-    public Intent getTeamDetailsActivityIntent(){
+    public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
 }

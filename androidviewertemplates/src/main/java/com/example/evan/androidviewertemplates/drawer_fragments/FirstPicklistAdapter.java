@@ -56,7 +56,6 @@ public class FirstPicklistAdapter extends BaseAdapter {
         convertView = cell;
 
 
-
         return convertView;
     }
 

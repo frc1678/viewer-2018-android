@@ -54,7 +54,7 @@ public class RecentMatchesFragment extends MatchesFragment {
             finally {
                 return true;
             }*/
-            return (Integer)Utils.getObjectField(value, "blueScore") != null;
+            return (Integer) Utils.getObjectField(value, "blueScore") != null;
         }
 
         @Override
@@ -69,6 +69,7 @@ public class RecentMatchesFragment extends MatchesFragment {
     }
 
     private Activity context = getActivity();
+
     @Override
     public Intent getMatchDetailsActivityIntent() {
         return new Intent(context, MatchDetailsActivity.class);

@@ -26,13 +26,13 @@ import java.util.Map;
 public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
     //todo
     private String[][] fieldsToDisplay = {
-            {"teamNumber","matchNumber"},
-            {"didMakeAutoRun","calculatedData.canScoreOppositeSwitchAuto","numCubesFumbledAuto","calculatedData.numAllianceSwitchSuccessAuto",
-            "calculatedData.numScaleSuccessAuto"},
-            {"calculatedData.totalCubesPlaced","calculatedData.numAllianceSwitchSuccessTele","calculatedData.numScaleSuccessTele","calculatedData.numOpponentSwitchSuccessTele",
-                    "numExchangeInput","numGroundIntakeTele","numHumanPortalIntakeTele"},
-            {"didPark","climb"},
-            {"rankSpeed","rankAgility","rankDefense","superNotes","numGoodDecisions","numBadDecisions"},
+            {"teamNumber", "matchNumber"},
+            {"didMakeAutoRun", "calculatedData.canScoreOppositeSwitchAuto", "numCubesFumbledAuto", "calculatedData.numAllianceSwitchSuccessAuto",
+                    "calculatedData.numScaleSuccessAuto"},
+            {"calculatedData.totalCubesPlaced", "calculatedData.numAllianceSwitchSuccessTele", "calculatedData.numScaleSuccessTele", "calculatedData.numOpponentSwitchSuccessTele",
+                    "numExchangeInput", "numGroundIntakeTele", "numHumanPortalIntakeTele"},
+            {"didPark", "climb"},
+            {"rankSpeed", "rankAgility", "rankDefense", "superNotes", "numGoodDecisions", "numBadDecisions"},
     };
 
     private String[] sectionTitles = {
@@ -106,7 +106,9 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     }
 
     @Override
-    public String[] getFurtherInformationFields() { return shouldDisplayAsFurtherInformation; }
+    public String[] getFurtherInformationFields() {
+        return shouldDisplayAsFurtherInformation;
+    }
 
     @Override
     public String[] getNotClickableFields() {
@@ -125,7 +127,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
-        String key = (String)getRowItem(section, row);
+        String key = (String) getRowItem(section, row);
 
     }
 

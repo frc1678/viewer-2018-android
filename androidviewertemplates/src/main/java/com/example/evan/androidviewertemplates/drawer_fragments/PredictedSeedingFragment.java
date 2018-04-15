@@ -30,14 +30,15 @@ public class PredictedSeedingFragment extends TeamRankingsFragment {
         public PredictedSeedingAdapter(Context context) {
             super(context, "calculatedData.predictedSeed", "calculatedData.predictedTotalNumRPs", true);
         }
+
         @Override
-        public Intent getTeamDetailsActivityIntent(){
+        public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
 
     @Override
-    public Intent getTeamDetailsActivityIntent(){
+    public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
 }

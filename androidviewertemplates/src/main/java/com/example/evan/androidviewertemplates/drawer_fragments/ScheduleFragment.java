@@ -48,6 +48,7 @@ public class ScheduleFragment extends MatchesFragment {
     }
 
     private Activity context = getActivity();
+
     @Override
     public Intent getMatchDetailsActivityIntent() {
         return new Intent(context, MatchDetailsActivity.class);

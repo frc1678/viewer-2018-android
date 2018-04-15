@@ -24,34 +24,34 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
                 fieldsToDisplay);
     }
 
-    static  String[] rankInsteadOfGraph = {
+    static String[] rankInsteadOfGraph = {
             "calculatedData.lfmMaxExchangeCubes",
             "calculatedData.lfmMaxScaleCubes"
     };
 
-    static  String[] createListOnClick = {
+    static String[] createListOnClick = {
             "fullcomp"
     };
 
-    static  String[] notClickableFields = {
+    static String[] notClickableFields = {
     };
 
-    static  String[] shouldDisplayAsFurtherInformation = {
+    static String[] shouldDisplayAsFurtherInformation = {
             "fullcomp"
     };
 
-    static  String[] shouldDisplayAsLongText = {
+    static String[] shouldDisplayAsLongText = {
     };
 
-    static  String[] displayAsUnranked = {
+    static String[] displayAsUnranked = {
     };
 
-    static  String[] shouldDisplayAsPercentage = {
+    static String[] shouldDisplayAsPercentage = {
             "lfmAutoRunPercentage",
             "lfmSoloClimbPercentage"
     };
 
-    static  String[] sectionTitles = {
+    static String[] sectionTitles = {
             "Auto",
             "Teleop",
             "Face The Boss",
@@ -60,24 +60,15 @@ public class LastFourMatchesSectionAdapter extends TeamAdapter {
     };
 
     static String[][] fieldsToDisplay = {
-
-<<<<<<< Updated upstream
-            {"calculatedData.lfmAvgClimbTime","calculatedData.lfmAutoRunPercentage"},
-            {"calculatedData.lfmAvgTotalCubesPlaced","calculatedData.lfmMaxExchangeCubes" ,"calculatedData.lfmAvgScaleCubesBy100s","calculatedData.lfmAvgScaleCubesBy120s","calculatedData.lfmMaxScaleCubes","calculatedData.lfmAvgNumCubesFumbledTele","calculatedData.lfmAvgCubesPlacedInScaleTele","calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
-            {"calculatedData.lfmSoloClimbPercentage","calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage","calculatedData.lfmAvgClimbTime"},
-=======
             {"calculatedData.lfmAutoRunPercentage"},
             {"calculatedData.lfmAvgTotalCubesPlaced", "calculatedData.lfmMaxExchangeCubes", "calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmMaxScaleCubes", "calculatedData.lfmAvgNumCubesFumbledTele", "calculatedData.lfmAvgCubesPlacedInScaleTele", "calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
             {"calculatedData.lfmSoloClimbPercentage", "calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage", "calculatedData.lfmAvgClimbTime"},
->>>>>>> Stashed changes
-            {"calculatedData.lfmIncapacitatedPercentage", "calculatedData.lfmDisabledPercentage"},
-            {"calculatedData.lfmAvgDrivingAbility","calculatedData."},
     };
 
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
-        String key = (String)getRowItem(section, row);
+        String key = (String) getRowItem(section, row);
         if (key.equals("fullcomp")) {
             Intent fullcompIntent = new Intent(context, TeamDetailsActivity.class);
             fullcompIntent.putExtra("teamNumber", teamNumber);

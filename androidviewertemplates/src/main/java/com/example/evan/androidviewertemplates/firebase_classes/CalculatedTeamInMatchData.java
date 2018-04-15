@@ -13,12 +13,12 @@ public class CalculatedTeamInMatchData extends Object {
     public ArrayList<Boolean> alliancePlatformIntakeAuto;
     public ArrayList<Boolean> alliancePlatformIntakeTele;
     public ArrayList<Boolean> opponentPlatformIntakeTele;
-    public ArrayList<Map <String, Object>> scaleAttemptAuto;
-    public ArrayList<Map <String, Object>> scaleAttemptTele;
-    public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
+    public ArrayList<Map<String, Object>> scaleAttemptAuto;
+    public ArrayList<Map<String, Object>> scaleAttemptTele;
+    public ArrayList<Map<String, Object>> opponentSwitchAttemptTele;
     public ArrayList<Map<String, Map<String, Object>>> climb;
-    public ArrayList<Map<String,Object>> allianceSwitchAttemptAuto;
-    public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
+    public ArrayList<Map<String, Object>> allianceSwitchAttemptAuto;
+    public ArrayList<Map<String, Object>> allianceSwitchAttemptTele;
     public Boolean canScoreOppositeSwitchAuto;
     public Boolean didClimb;
     public Boolean didConflictWithAuto;
@@ -40,6 +40,7 @@ public class CalculatedTeamInMatchData extends Object {
     public Float timeToOwnAllianceSwitchAuto;
     public Float timeToOwnScaleAuto;
     public Integer switchOwnership;
+    public Integer numCubesScaleAt110s;
     public Integer numCubesScaleAt120s;
     public Integer numCubesScaleAt100s;
     public Integer totalCubesPlaced;

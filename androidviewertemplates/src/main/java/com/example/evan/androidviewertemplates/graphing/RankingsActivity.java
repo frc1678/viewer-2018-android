@@ -22,6 +22,7 @@ public class RankingsActivity extends ViewerActivity {
 
     private Integer teamNumber;
     private static Activity context;
+
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_rankings);
@@ -48,10 +49,11 @@ public class RankingsActivity extends ViewerActivity {
         //Log.e("after transaction", "true");
 
     }
-    public void setActionBarColor(){
+
+    public void setActionBarColor() {
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
-        if(actionBar!=null) {
+        if (actionBar != null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
     }
@@ -62,7 +64,7 @@ public class RankingsActivity extends ViewerActivity {
         return new Intent(this, MainActivity.class);
     }
 
-    public static class graphingFrag extends TeamInMatchDataGraphFragment{
+    public static class graphingFrag extends TeamInMatchDataGraphFragment {
         @Override
         public Intent getTeamInMatchDetailsIntent() {
             return new Intent(context, TeamInMatchDetailsActivity.class);

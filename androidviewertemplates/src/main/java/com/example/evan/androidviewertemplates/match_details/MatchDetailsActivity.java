@@ -58,23 +58,24 @@ public class MatchDetailsActivity extends ViewerActivity {
         LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(starReceiver, new IntentFilter(SpecificConstants.STARS_MODIFIED_ACTION));
 
         LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(matchesUpdatedReceiver, new IntentFilter(SpecificConstants.MATCHES_UPDATED_ACTION));
-        TextView matchNumberTextView = (TextView)findViewById(R.id.matchDetailsMatchTitleTextView);
+        TextView matchNumberTextView = (TextView) findViewById(R.id.matchDetailsMatchTitleTextView);
         matchNumberTextView.setOnLongClickListener(new StarLongClickListener());
         updateUI();
         setActionBarColor();
     }
-    public void setActionBarColor(){
+
+    public void setActionBarColor() {
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
-        if(actionBar!=null) {
+        if (actionBar != null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
     }
 
     public boolean onStarredMatches(Integer team) {
-        for(int i = 0; i < StarManager.starredTeams.size(); i++) {
-            if(team.equals(StarManager.starredTeams.get(i))) {
-                return  true;
+        for (int i = 0; i < StarManager.starredTeams.size(); i++) {
+            if (team.equals(StarManager.starredTeams.get(i))) {
+                return true;
             }
         }
         return false;
@@ -82,14 +83,14 @@ public class MatchDetailsActivity extends ViewerActivity {
 
 
     private void updateUI() {
-        Match match = (Match)FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
+        Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
         int[] teamCellIDs = {R.id.redTeamCell1, R.id.redTeamCell2, R.id.redTeamCell3, R.id.blueTeamCell1, R.id.blueTeamCell2, R.id.blueTeamCell3};
         List<Integer> allTeamNumbers = new ArrayList<>();
         Log.e("matchDetailsRedTeams", match.redAllianceTeamNumbers.toString());
         allTeamNumbers.addAll(match.redAllianceTeamNumbers);
         allTeamNumbers.addAll(match.blueAllianceTeamNumbers);
         for (int i = 0; i < teamCellIDs.length; i++) {
-            MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell)findViewById(teamCellIDs[i]);
+            MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell) findViewById(teamCellIDs[i]);
             if (onStarredMatches(allTeamNumbers.get(i))) {
                 if (match.redAllianceTeamNumbers.contains(allTeamNumbers.get(i))) {
                     matchDetailsTeamCell.setBackgroundColor(Color.parseColor("#FFC2C2"));
@@ -108,20 +109,20 @@ public class MatchDetailsActivity extends ViewerActivity {
         }
 
 
-        TextView matchDetailsMatchTitleTextView = (TextView)findViewById(R.id.matchDetailsMatchTitleTextView);
+        TextView matchDetailsMatchTitleTextView = (TextView) findViewById(R.id.matchDetailsMatchTitleTextView);
         matchDetailsMatchTitleTextView.setText("Q" + match.number.toString());
 
-        TextView redAllianceScoreTextView = (TextView)findViewById(R.id.matchDetailsRedAllianceScore);
-        TextView redAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsRedAlliancePredictedScore);
-        TextView redAllianceWinChanceTextView = (TextView)findViewById(R.id.matchDetailsRedAllianceWinChance);
+        TextView redAllianceScoreTextView = (TextView) findViewById(R.id.matchDetailsRedAllianceScore);
+        TextView redAlliancePredictedScoreTextView = (TextView) findViewById(R.id.matchDetailsRedAlliancePredictedScore);
+        TextView redAllianceWinChanceTextView = (TextView) findViewById(R.id.matchDetailsRedAllianceWinChance);
 
         redAllianceScoreTextView.setText(Utils.getMatchDisplayValue(match, "redScore"));
         redAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedRedScore"));
-        redAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float)Utils.getObjectField(match, "calculatedData.redWinChance"), 0));
+        redAllianceWinChanceTextView.setText(Utils.dataPointToPercentage((Float) Utils.getObjectField(match, "calculatedData.redWinChance"), 0));
 
-        TextView blueAllianceScoreTextView = (TextView)findViewById(R.id.matchDetailsBlueAllianceScore);
-        TextView blueAlliancePredictedScoreTextView = (TextView)findViewById(R.id.matchDetailsBlueAlliancePredictedScore);
-        TextView blueAllianceWinChanceTextView = (TextView)findViewById(R.id.matchDetailsBlueAllianceWinChance);
+        TextView blueAllianceScoreTextView = (TextView) findViewById(R.id.matchDetailsBlueAllianceScore);
+        TextView blueAlliancePredictedScoreTextView = (TextView) findViewById(R.id.matchDetailsBlueAlliancePredictedScore);
+        TextView blueAllianceWinChanceTextView = (TextView) findViewById(R.id.matchDetailsBlueAllianceWinChance);
 
         blueAllianceScoreTextView.setText(Utils.getMatchDisplayValue(match, "blueScore"));
         blueAlliancePredictedScoreTextView.setText(Utils.getMatchDisplayValue(match, "calculatedData.predictedBlueScore"));
@@ -138,7 +139,7 @@ public class MatchDetailsActivity extends ViewerActivity {
         public boolean onLongClick(View v) {
             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(75);
-            TextView matchNumberTextView = (TextView)v;
+            TextView matchNumberTextView = (TextView) v;
             String matchNumberString = matchNumberTextView.getText().toString().substring(1);
             Integer matchNumberClicked = Integer.parseInt(matchNumberString);
             if (StarManager.isImportantMatch(matchNumberClicked)) {

@@ -62,18 +62,19 @@ public class PicklistCell extends RelativeLayout {
     }
 
 
-    public static Map<String,Integer> loadMap(String key, Context context){
-        Map<String,Integer> outputMap = new HashMap<String,Integer>();
+    public static Map<String, Integer> loadMap(String key, Context context) {
+        Map<String, Integer> outputMap = new HashMap<String, Integer>();
         SharedPreferences pSharedPref = context.getSharedPreferences("MyPREF", Context.MODE_PRIVATE);
-        try{
+        try {
             //get from shared prefs
             String storedHashMapString = pSharedPref.getString(key, (new JSONObject()).toString());
-            java.lang.reflect.Type type = new TypeToken<HashMap<String, Integer>>(){}.getType();
+            java.lang.reflect.Type type = new TypeToken<HashMap<String, Integer>>() {
+            }.getType();
             Gson gson = new Gson();
 
-            return  gson.fromJson(storedHashMapString, type);
+            return gson.fromJson(storedHashMapString, type);
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return outputMap;
