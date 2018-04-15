@@ -36,7 +36,7 @@ public class UpcomingMatchesFragment extends MatchesFragment {
 
         @Override
         public boolean secondaryFilter(Match value) {
-            return (Integer)Utils.getObjectField(value, "blueScore") == null;
+            return (Integer) Utils.getObjectField(value, "blueScore") == null;
         }
 
         @Override
@@ -51,6 +51,7 @@ public class UpcomingMatchesFragment extends MatchesFragment {
     }
 
     private Activity context = getActivity();
+
     @Override
     public Intent getMatchDetailsActivityIntent() {
         return new Intent(context, MatchDetailsActivity.class);

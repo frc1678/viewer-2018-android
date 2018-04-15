@@ -71,17 +71,17 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
             rowView = inflater.inflate(R.layout.team_in_match_ranking_cell, parent, false);
         }
 
-        TextView rankingTextView = (TextView)rowView.findViewById(R.id.rankingTextView);
+        TextView rankingTextView = (TextView) rowView.findViewById(R.id.rankingTextView);
         rankingTextView.setText(getRankTextOfRow(position));
 
-        TextView teamNumberTextView = (TextView)rowView.findViewById(R.id.teamNumberTextView);
+        TextView teamNumberTextView = (TextView) rowView.findViewById(R.id.teamNumberTextView);
         teamNumberTextView.setText(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)));
-        if(StarManager.starredTeams.contains(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)))) {
+        if (StarManager.starredTeams.contains(SpecificConstants.KEYS_TO_TITLES.get(getItem(position)))) {
             teamNumberTextView.setBackgroundColor(Color.RED);
         }
 
-        TextView valueTextView = (TextView)rowView.findViewById(R.id.valueTextView);
-        TeamTemplate team = (TeamTemplate)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+        TextView valueTextView = (TextView) rowView.findViewById(R.id.valueTextView);
+        TeamTemplate team = (TeamTemplate) FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
         if (Arrays.asList(fieldsToDisplayAsPercentages).contains(getItem(position))) {
             valueTextView.setText(Utils.dataPointToPercentage((Float) Utils.getObjectField(team, (String) getItem(position)), 0));
         } else {
@@ -100,13 +100,15 @@ public class MatchDetailsTeamCellAdapter extends BaseAdapter {
     }
 
     public String getRankTextOfRow(int position) {
-        String fieldName = (String)getItem(position);
-        TeamTemplate team = (TeamTemplate)FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+        String fieldName = (String) getItem(position);
+        TeamTemplate team = (TeamTemplate) FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
         List<Object> teams = new ArrayList<>();
         teams.addAll(FirebaseLists.teamsList.getValues());
         Integer rank = Utils.getRankOfObject(team, teams, fieldName, Arrays.asList(reverseRankFields).contains(fieldName));
         return (rank != null) ? (++rank).toString() : "?";
-    };
+    }
+
+    ;
 
     @Override
     public boolean isEnabled(int position) {

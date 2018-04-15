@@ -32,13 +32,15 @@ public class SeedingFragment extends TeamRankingsFragment {
         public SeedingAdapter(Context context) {
             super(context, "calculatedData.actualSeed", "calculatedData.actualNumRPs", true);
         }
+
         @Override
-        public Intent getTeamDetailsActivityIntent(){
+        public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
+
     @Override
-    public Intent getTeamDetailsActivityIntent(){
+    public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
 }

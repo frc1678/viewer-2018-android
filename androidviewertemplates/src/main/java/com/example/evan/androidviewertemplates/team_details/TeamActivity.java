@@ -57,7 +57,7 @@ public class TeamActivity extends com.example.evan.androidviewertools.ViewerActi
         teamDetailsHeaderListView.setAdapter(new TeamDetailsSectionAdapter(this, teamNumber));
         teamDetailsHeaderView = getLayoutInflater().inflate(R.layout.team_details_header, null);
         teamDetailsHeaderListView.getListView().addHeaderView(teamDetailsHeaderView, null, false);
-        headerPhotoLinearLayout = (LinearLayout)teamDetailsHeaderView.findViewById(R.id.teamDetailsTeamPhotoLinearLayout);
+        headerPhotoLinearLayout = (LinearLayout) teamDetailsHeaderView.findViewById(R.id.teamDetailsTeamPhotoLinearLayout);
 
         teamUpdatedReceiver = new BroadcastReceiver() {
             @Override
@@ -83,13 +83,14 @@ public class TeamActivity extends com.example.evan.androidviewertools.ViewerActi
             actionBar.setBackgroundDrawable(colorDrawable);
         }
     }
+
     private class StarLongClickListener implements View.OnLongClickListener {
 
         @Override
         public boolean onLongClick(View v) {
-            Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(75);
-            TextView teamNumberTextView = (TextView)v;
+            TextView teamNumberTextView = (TextView) v;
             Integer teamNumber = Integer.parseInt(teamNumberTextView.getText().toString());
             if (StarManager.isStarredTeam(teamNumber)) {
                 StarManager.removeStarredTeam(teamNumber);
@@ -100,6 +101,7 @@ public class TeamActivity extends com.example.evan.androidviewertools.ViewerActi
             return true;
         }
     }
+
     public void reload() {
         HeaderListView teamDetailsHeaderListView = (HeaderListView) findViewById(R.id.teamDetailsHeaderListView);
         View teamDetailsHeaderView = teamDetailsHeaderListView.getChildAt(0);

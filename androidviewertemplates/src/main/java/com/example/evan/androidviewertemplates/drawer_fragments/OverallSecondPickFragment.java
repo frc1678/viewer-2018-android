@@ -34,13 +34,15 @@ public class OverallSecondPickFragment extends TeamRankingsFragment {
         public OverallSecondPickAdapter(Context context) {
             super(context, "calculatedData.secondPickAbility", "calculatedData.secondPickAbility", false);
         }
+
         @Override
-        public Intent getTeamDetailsActivityIntent(){
+        public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
+
     @Override
-    public Intent getTeamDetailsActivityIntent(){
+    public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
 }
