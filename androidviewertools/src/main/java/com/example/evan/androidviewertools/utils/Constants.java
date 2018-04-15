@@ -26,10 +26,12 @@ public class Constants {
     public static boolean sortByRank = false;
     public static Map<Integer, String> picklistMap = new HashMap<>();
     public static Map<Integer, String> newPicklistMap = new HashMap<>();
+    public static ArrayList<Integer> highlightedTeams = new ArrayList<>();
     public static int counter;
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;
+    public static boolean highlightTeamSchedule = false;
     public static boolean sortByLfm = false;
     public static boolean isInSeedingFragment = false;
     public static final Map<String, String> FIREBASE_KEYS = new HashMap<String, String>() {{

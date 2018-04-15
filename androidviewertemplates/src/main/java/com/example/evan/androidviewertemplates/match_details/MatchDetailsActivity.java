@@ -34,6 +34,7 @@ public class MatchDetailsActivity extends ViewerActivity {
     private Integer matchNumber;
     private BroadcastReceiver matchesUpdatedReceiver;
     private BroadcastReceiver starReceiver;
+    public static List<Integer> allTeamNumbers = new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -85,7 +86,6 @@ public class MatchDetailsActivity extends ViewerActivity {
     private void updateUI() {
         Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
         int[] teamCellIDs = {R.id.redTeamCell1, R.id.redTeamCell2, R.id.redTeamCell3, R.id.blueTeamCell1, R.id.blueTeamCell2, R.id.blueTeamCell3};
-        List<Integer> allTeamNumbers = new ArrayList<>();
         Log.e("matchDetailsRedTeams", match.redAllianceTeamNumbers.toString());
         allTeamNumbers.addAll(match.redAllianceTeamNumbers);
         allTeamNumbers.addAll(match.blueAllianceTeamNumbers);

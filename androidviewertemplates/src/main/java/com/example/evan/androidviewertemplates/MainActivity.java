@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.OurScheduleHighlightFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -38,6 +39,7 @@ import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 
@@ -126,14 +128,17 @@ public class MainActivity extends ViewerActivity
         switch (position) {
             default:
             case 0:
+                Constants.highlightTeamSchedule = false;
                 fragment = new RecentMatchesFragment();
                 latestFragmentId = position;
                 break;
             case 1:
+                Constants.highlightTeamSchedule = false;
                 fragment = new UpcomingMatchesFragment();
                 latestFragmentId = position;
                 break;
             case 2:
+                Constants.highlightTeamSchedule = false;
                 Bundle args = new Bundle();
                 args.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
                 fragment = new TeamScheduleFragment();
@@ -141,36 +146,49 @@ public class MainActivity extends ViewerActivity
                 fragment.setArguments(args);
                 break;
             case 3:
+                Constants.highlightTeamSchedule = false;
                 fragment = new StarredMatchesFragment();
                 latestFragmentId = position;
                 break;
             case 4:
+                Constants.highlightTeamSchedule = false;
                 fragment = new ScheduleFragment();
                 latestFragmentId = position;
                 break;
             case 5:
+                Constants.highlightTeamSchedule = false;
                 fragment = new SeedingFragment();
                 latestFragmentId = position;
                 break;
             case 6:
+                Constants.highlightTeamSchedule = false;
                 fragment = new PredictedSeedingFragment();
                 latestFragmentId = position;
                 break;
             case 7:
+                Constants.highlightTeamSchedule = false;
                 fragment = new FirstPickAbilityFragment();
                 latestFragmentId = position;
                 break;
             case 8:
+                Constants.highlightTeamSchedule = false;
                 fragment = new OverallSecondPickFragment();
                 latestFragmentId = position;
                 break;
 
             case 9:
+                Constants.highlightTeamSchedule = false;
                 fragment = new SuperAbilityFragment();
                 latestFragmentId = position;
                 break;
             case 10:
+                Constants.highlightTeamSchedule = false;
                 fragment = new FirstPicklistFragment();
+                latestFragmentId = position;
+                break;
+            case 11:
+                Constants.highlightTeamSchedule = true;
+                fragment = new OurScheduleHighlightFragment();
                 latestFragmentId = position;
                 break;
 
