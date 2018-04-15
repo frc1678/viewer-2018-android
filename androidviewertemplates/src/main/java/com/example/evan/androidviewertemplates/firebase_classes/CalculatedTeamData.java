@@ -38,6 +38,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAssistedClimbPercentage;
     public Float lfmActiveAssistClimbPercentage;
     public Float lfmSoloClimbPercentage;
+    public Float lfmAvgSwitchOwnership;
     public Float lfmDysfunctionalPercentage;
     public Float lfmActiveNoClimbLiftClimbPercentage;
     public Integer lfmMaxExchangeCubes;
