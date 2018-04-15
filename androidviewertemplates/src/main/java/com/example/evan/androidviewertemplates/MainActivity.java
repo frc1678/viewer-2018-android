@@ -88,7 +88,8 @@ public class MainActivity extends ViewerActivity
 /*        ProgressDialog dialog = ProgressDialog.show(MainActivity.this, "Esketit",
                 "Loading. Please wait...", true);*/
     }
-    public void initializeDrawer(){
+
+    public void initializeDrawer() {
         mNavigationDrawerFragment = (SpecificNavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         onSectionAttached(0);
@@ -211,6 +212,7 @@ public class MainActivity extends ViewerActivity
         }
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public void onDestroy() {
         /*editor.putString("key", "asdf").apply();
@@ -247,7 +249,7 @@ public class MainActivity extends ViewerActivity
         return new Intent(this, this.getClass());
     }
 
-    private void refresh(){
+    private void refresh() {
         FirebaseLists.matchesList.cancelListen();
         FirebaseLists.teamInMatchDataList.cancelListen();
         FirebaseLists.teamsList.cancelListen();
@@ -256,7 +258,8 @@ public class MainActivity extends ViewerActivity
         Log.e("refreshed", "true");
 
     }
-    public void broadcastListener(){
+
+    public void broadcastListener() {
         starReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {

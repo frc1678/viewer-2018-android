@@ -27,6 +27,7 @@ public class TeamRankingsActivityFragment extends TeamRankingsFragment {
         getActivity().setTitle(SpecificConstants.KEYS_TO_TITLES.get(field));
         setListAdapter(new TeamRankingsActivityAdapter(getActivity().getApplicationContext(), field, displayValueAsPercentage));
     }
+
     public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
@@ -34,14 +35,17 @@ public class TeamRankingsActivityFragment extends TeamRankingsFragment {
 
     public static class TeamRankingsActivityAdapter extends TeamRankingsAdapter {
         private Boolean displayValueAsPercentage;
+
         public TeamRankingsActivityAdapter(Context context, String field, Boolean displayValueAsPercentage) {
             super(context, field, field, false);
             this.displayValueAsPercentage = displayValueAsPercentage;
         }
+
         @Override
         public Boolean displayValueAsPercentage() {
             return displayValueAsPercentage;
         }
+
         public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }

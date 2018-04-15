@@ -30,7 +30,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
             {"calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
                     "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgTotalCubesPlaced","calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s" ,"calculatedData.avgScaleCubesBy120s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
+            {"calculatedData.avgSwitchOwnership","calculatedData.avgTotalCubesPlaced", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
                     "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
                     "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
@@ -138,7 +138,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
 
 
     public TeamDetailsSectionAdapter(Context context, Integer teamNumber) {
-        super(context,teamNumber,
+        super(context, teamNumber,
                 rankInsteadOfGraph,
                 createListOnClick,
                 notClickableFields,
@@ -153,7 +153,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
-        String key = (String)getRowItem(section, row);
+        String key = (String) getRowItem(section, row);
         if (key.equals("matches")) {
             Intent teamMatchesIntent = new Intent(context, MatchesActivity.class);
             teamMatchesIntent.putExtra("teamNumber", teamNumber).putExtra("field", "matches");

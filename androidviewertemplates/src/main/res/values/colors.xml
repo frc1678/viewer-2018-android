@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="material_blue_500">#5677fc</color>
-    <color name="white">#ffffff</color>
-    <color name="turq">#56fcda</color>
+    <color name="colorPrimary">#5063c9</color>
+    <color name="colorPrimaryDark">#3b4693</color>
+    <color name="colorAccent">#de5684</color>
+    <color name="material_blue_500">#5e76d7</color>
+    <color name="white">#f1ffe5</color>
+    <color name="turq">#8ddacb</color>
     <color name="lightblue">#A8C4FF</color>
     <color name="lightred">#FFA4A4</color>
 

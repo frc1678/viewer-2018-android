@@ -29,10 +29,10 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Integer pitAutoRunTime;
     public Integer pitAvailableWeight;
     public Integer secondPicklistPosition;
-    public Map <String,String> pitAllImageUrls; //Todo Delete later.
-    public Map<String,String> imageKeys; //todo Delete later.
-    public Object   pitAllImageURLs;
-    public Object   pitImageKeys;
+    public Map<String, String> pitAllImageUrls; //Todo Delete later.
+    public Map<String, String> imageKeys; //todo Delete later.
+    public Object pitAllImageURLs;
+    public Object pitImageKeys;
     public Object avgPitDriveTime;
     public Object pitDriveOutcome;
     public Object pitDriveTime;

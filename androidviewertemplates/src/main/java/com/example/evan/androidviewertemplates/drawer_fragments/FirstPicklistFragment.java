@@ -1,4 +1,5 @@
 package com.example.evan.androidviewertemplates.drawer_fragments;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
@@ -30,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -38,22 +41,25 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
 /**
-* Created by Teo on 2/1/18.
-*/
+ * Created by Teo on 2/1/18.
+ */
 public class FirstPicklistFragment extends Fragment {
     public static Boolean picklistValue = false;
     DatabaseReference dref;
     FirebaseDatabase dataBase;
     Context context;
-    public static String picklistPassword= "";
+    public static String picklistPassword = "";
     public Map<Integer, String> teams = new HashMap<>();
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View myLayout = inflater.inflate(R.layout.firstpicklist, null);
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LayoutInflater fakeInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -87,28 +93,28 @@ public class FirstPicklistFragment extends Fragment {
                     FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
                     listView.setAdapter(adapter);
                     picklistEditButton.setOnClickListener(new View.OnClickListener() {
-                       @Override
-                       public void onClick(View view) {
-                           final Dialog passwordDialog = new Dialog(context);
+                        @Override
+                        public void onClick(View view) {
+                            final Dialog passwordDialog = new Dialog(context);
                             passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                             passwordDialog.setContentView(R.layout.passworddialog);
                             passwordDialog.show();
                             Boolean value = false;
                             final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
                             passwordButton.setOnClickListener(new View.OnClickListener() {
-                               @Override
-                               public void onClick(View view) {
-                                   EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
-                                   if (passwordEditText.getText().toString().equals(picklistPassword)) { //todo hardcode password
-                                       picklistEditButton.setText("YOU ARE IN EDIT MODE");
-                                       Toast.makeText(getActivity(), "YOU ARE IN EDIT MODE", Toast.LENGTH_LONG).show();
-                                       passwordDialog.dismiss();
-                                       FirstPicklistFragment.picklistValue = true;
-                                       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                                    if (passwordEditText.getText().toString().equals(picklistPassword)) { //todo hardcode password
+                                        picklistEditButton.setText("YOU ARE IN EDIT MODE");
+                                        Toast.makeText(getActivity(), "YOU ARE IN EDIT MODE", Toast.LENGTH_LONG).show();
+                                        passwordDialog.dismiss();
+                                        FirstPicklistFragment.picklistValue = true;
+                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
-                                                TextView teamNumberTextView = (TextView)view.findViewById(R.id.teamNumber);
-                                               final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
+                                                TextView teamNumberTextView = (TextView) view.findViewById(R.id.teamNumber);
+                                                final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
                                                 final Dialog dialog = new Dialog(context);
                                                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                                 dialog.setContentView(R.layout.picklistdialog);
@@ -120,7 +126,7 @@ public class FirstPicklistFragment extends Fragment {
                                                     public void onClick(View v) {
                                                         //upButton onClick
                                                         Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
-                                                        if(myTeam!=0) {
+                                                        if (myTeam != 0) {
                                                             Integer otherTeam = myTeam - 1;
                                                             Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
                                                             String extraValue;
@@ -154,42 +160,44 @@ public class FirstPicklistFragment extends Fragment {
                                                         Constants.picklistMap.put(myTeam, extraValue);
                                                         if (myTeam < 65) {
                                                             dref.child("picklist").child(myTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(myTeam)));
-                                                           dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
+                                                            dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
                                                         } else {
                                                             Toast.makeText(getActivity(), "Nice try.",
-                                                                   Toast.LENGTH_LONG).show();
+                                                                    Toast.LENGTH_LONG).show();
                                                         }
                                                     }
                                                 });
                                                 dialog.show();
-                                           }
+                                            }
                                         });
-                                   } else {
+                                    } else {
                                         Toast.makeText(getActivity(), "hacking = bad",
-                                               Toast.LENGTH_LONG).show();
-                                       passwordEditText.getText().clear();
-                                   }
-                               }
-                           });
+                                                Toast.LENGTH_LONG).show();
+                                        passwordEditText.getText().clear();
+                                    }
+                                }
+                            });
                         }
-                   });
+                    });
                     listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                         @Override
-                       public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                        public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                             Integer teamNumberClicked = Integer.parseInt(Constants.picklistMap.get(position));
-                           Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
-                           teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
-                           teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
+                            teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
+                            teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(teamDetailsViewIntent);
-                       return true;
-                       }
-                   });
-                   adapter.notifyDataSetChanged();
+                            return true;
+                        }
+                    });
+                    adapter.notifyDataSetChanged();
                 }
             }
-            public Intent getTeamDetailsActivityIntent(){
-               return new Intent(getActivity(), TeamDetailsActivity.class);
-           }
+
+            public Intent getTeamDetailsActivityIntent() {
+                return new Intent(getActivity(), TeamDetailsActivity.class);
+            }
+
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 final String teamNumber = dataSnapshot.getValue().toString();
@@ -202,18 +210,22 @@ public class FirstPicklistFragment extends Fragment {
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
             }
+
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
         return myLayout;
-   }
+    }
+
     private Map<Integer, String> sortByValue(Map<Integer, String> teams) {
         List<Map.Entry<Integer, String>> list = new LinkedList<Map.Entry<Integer, String>>(teams.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, String>>() {
@@ -227,18 +239,21 @@ public class FirstPicklistFragment extends Fragment {
         }
         return sortedMap;
     }
-   public static <Integer, String> Integer getKeyByValue(Map<Integer, String> map, String value) {
-       for (Map.Entry<Integer, String> entry : map.entrySet()) {
-           if (Objects.equals(value, entry.getValue())) {
-               return entry.getKey();
-           }
-       }
-       return null;
-   }
-   @Override
+
+    public static <Integer, String> Integer getKeyByValue(Map<Integer, String> map, String value) {
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            if (Objects.equals(value, entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Constants.picklistMap.clear();
     }
+
     public static void saveMap(Context context, String key, Map<Integer, String> inputMap) {
         SharedPreferences pSharedPref = context.getSharedPreferences("MyPREF", Context.MODE_PRIVATE);
         if (pSharedPref != null) {

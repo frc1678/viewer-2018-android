@@ -32,13 +32,14 @@ public class TeamInMatchDetailsActivity extends ViewerActivity {
         matchNumber = getIntent().getIntExtra("match", 1);
         setTitle("TeamTemplate " + teamNumber + " In Match " + matchNumber + " Details");
 
-        HeaderListView teamDetailsHeaderListView = (HeaderListView)findViewById(R.id.teamDetailsHeaderListView);
+        HeaderListView teamDetailsHeaderListView = (HeaderListView) findViewById(R.id.teamDetailsHeaderListView);
         teamDetailsHeaderListView.setAdapter(new TeamInMatchDetailsSectionAdapter(this, teamNumber, matchNumber));
     }
-    public void setActionBarColor(){
+
+    public void setActionBarColor() {
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
-        if(actionBar!=null) {
+        if (actionBar != null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
     }

@@ -58,7 +58,7 @@ public class MatchDetailsTeamCell extends LinearLayout {
         @Override
         public void onClick(View v) {
             Log.e("test", "CLICKED!");
-            TextView teamNumberTextView = (TextView)v.findViewById(R.id.matchDetailsTeamCellTeamNumberTextView);
+            TextView teamNumberTextView = (TextView) v.findViewById(R.id.matchDetailsTeamCellTeamNumberTextView);
             String teamNumberText = teamNumberTextView.getText().toString();
             Integer teamNumber = Integer.parseInt(teamNumberText);
             Intent matchDetailsTeamCellClickedIntent = new Intent(getContext(), TeamDetailsActivity.class);
@@ -74,12 +74,12 @@ public class MatchDetailsTeamCell extends LinearLayout {
     }
 
     public void updateUI() {
-        TextView teamNumberTextView = (TextView)findViewById(R.id.matchDetailsTeamCellTeamNumberTextView);
+        TextView teamNumberTextView = (TextView) findViewById(R.id.matchDetailsTeamCellTeamNumberTextView);
         teamNumberTextView.setText(teamNumber.toString());
         teamNumberTextView.setTextColor((isRed) ? Color.RED : Color.BLUE);
         teamNumberTextView.setOnClickListener(new MatchDetailsTeamClickedListener());
 
-        ListView listView = (ListView)findViewById(R.id.matchDetailsTeamCellTeamValues);
+        ListView listView = (ListView) findViewById(R.id.matchDetailsTeamCellTeamValues);
         listView.setAdapter(new MatchDetailsTeamCellAdapter(getContext(), teamNumber));
     }
 }

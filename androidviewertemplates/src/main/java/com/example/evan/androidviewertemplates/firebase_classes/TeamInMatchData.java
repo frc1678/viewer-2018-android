@@ -21,8 +21,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
 
     public Object test; //todo Delete Later
 
-    public ArrayList<Map<String,Object>> allianceSwitchAttemptAuto;
-    public ArrayList<Map<String,Object>> allianceSwitchAttemptTele;
+    public ArrayList<Map<String, Object>> allianceSwitchAttemptAuto;
+    public ArrayList<Map<String, Object>> allianceSwitchAttemptTele;
 
     public ArrayList<Map<String, Map<String, Object>>> climb;
 
@@ -37,8 +37,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
 
     public Integer rankBadDecision; //todo Delete Later.
 
-    public ArrayList <Integer> numAlliancePlatformIntakeAuto;
-    public ArrayList <Integer> numAlliancePlatformIntakeTele;
+    public ArrayList<Integer> numAlliancePlatformIntakeAuto;
+    public ArrayList<Integer> numAlliancePlatformIntakeTele;
 
     public Integer numCubesFumbledAuto;
     public Integer numCubesFumbledTele;
@@ -61,8 +61,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public ArrayList<Boolean> alliancePlatformIntakeAuto;
     public ArrayList<Boolean> opponentPlatformIntakeTele;
     public ArrayList<Boolean> alliancePlatformIntakeTele;
-    public ArrayList <Integer> numOpponentPlatformIntakeAuto; //todo Delete later.
-    public ArrayList <Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
+    public ArrayList<Integer> numOpponentPlatformIntakeAuto; //todo Delete later.
+    public ArrayList<Integer> numOpponentPlatformIntakeTele; //todo Delete Later.
     public Integer numReturnIntake;
     public Object TeamInMatchDatas;
 
@@ -75,32 +75,12 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
     public Object startingPosition; //todo Change V
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // alue
     public Boolean switchIsOpposite;
 
-    public ArrayList<Map <String,Object>> opponentSwitchAttemptTele;
-    public ArrayList<Map <String, Object>> scaleAttemptAuto;
-    public ArrayList<Map <String, Object>> scaleAttemptTele;
+    public ArrayList<Map<String, Object>> opponentSwitchAttemptTele;
+    public ArrayList<Map<String, Object>> scaleAttemptAuto;
+    public ArrayList<Map<String, Object>> scaleAttemptTele;
     public Integer numGoodDecision;
     public Integer numBadDecision;
     public Integer numSpeed;

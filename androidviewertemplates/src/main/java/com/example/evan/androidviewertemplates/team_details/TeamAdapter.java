@@ -40,16 +40,16 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
     Integer teamNumber;
     protected Context context;
 
-    public TeamAdapter (Context context, Integer teamNumber,
-                        String[] rankInsteadOfGraph,
-                        String[] createListOnClick,
-                        String[] notClickableFields,
-                        String[] shouldDisplayAsLongText,
-                        String[] shouldDisplayAsFurtherInformation,
-                        String[] displayAsUnranked,
-                        String[] shouldDisplayAsPercentage,
-                        String[] sectionTitles,
-                        String[][] fieldsToDisplay) {
+    public TeamAdapter(Context context, Integer teamNumber,
+                       String[] rankInsteadOfGraph,
+                       String[] createListOnClick,
+                       String[] notClickableFields,
+                       String[] shouldDisplayAsLongText,
+                       String[] shouldDisplayAsFurtherInformation,
+                       String[] displayAsUnranked,
+                       String[] shouldDisplayAsPercentage,
+                       String[] sectionTitles,
+                       String[][] fieldsToDisplay) {
         super(context);
         this.teamNumber = teamNumber;
         this.context = context;
@@ -134,9 +134,9 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
     }
 
     @Override
-    public boolean onRowItemLongClick (AdapterView<?> parent, View view, int section, int row, long id) {
+    public boolean onRowItemLongClick(AdapterView<?> parent, View view, int section, int row, long id) {
         if (!isUnranked(section, row)) {
-            String fieldName = (String)getRowItem(section,row);
+            String fieldName = (String) getRowItem(section, row);
             Intent intent = new Intent(context, TeamRankingsActivity.class);
             if (fieldName.startsWith("VIEWER.")) {
                 Intent rankDataArgs = new Intent();
@@ -146,7 +146,7 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
             Constants.rankFilterName = splitName[1];
             Log.e("FIELD NAME", Constants.rankFilterName);
             intent.putExtra("teamNumber", teamNumber).putExtra("field", fieldName)
-                    .putExtra("displayValueAsPercentage", Arrays.asList(getPercentageFields()).contains(getRowItem(section,row)));
+                    .putExtra("displayValueAsPercentage", Arrays.asList(getPercentageFields()).contains(getRowItem(section, row)));
             context.startActivity(intent);
         }
         return true;

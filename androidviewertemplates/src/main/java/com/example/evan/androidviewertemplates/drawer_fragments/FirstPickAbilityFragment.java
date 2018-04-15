@@ -31,13 +31,15 @@ public class FirstPickAbilityFragment extends TeamRankingsFragment {
         public FirstPickAbilityAdapter(Context context) {
             super(context, "calculatedData.firstPickAbility", "calculatedData.firstPickAbility", false);
         }
+
         @Override
-        public Intent getTeamDetailsActivityIntent(){
+        public Intent getTeamDetailsActivityIntent() {
             return new Intent(context, TeamDetailsActivity.class);
         }
     }
+
     @Override
-    public Intent getTeamDetailsActivityIntent(){
+    public Intent getTeamDetailsActivityIntent() {
         return new Intent(getActivity(), TeamDetailsActivity.class);
     }
 }

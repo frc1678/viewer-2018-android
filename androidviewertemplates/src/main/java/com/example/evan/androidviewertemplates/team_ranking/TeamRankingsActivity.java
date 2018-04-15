@@ -31,21 +31,23 @@ public class
 TeamRankingsActivity extends ViewerActivity {
 
     public MenuItem lastMenuItem;
+
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_team_rankings);
         refreshPage();
         setActionBarColor();
     }
-    public void setActionBarColor(){
+
+    public void setActionBarColor() {
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
-        if(actionBar!=null) {
+        if (actionBar != null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
     }
 
-    public void refreshPage(){
+    public void refreshPage() {
         Fragment fragment = getFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.teamRankingsActivityRelativeLayout, fragment, "").commit();
@@ -56,13 +58,15 @@ TeamRankingsActivity extends ViewerActivity {
         getMenuInflater().inflate(R.menu.menu_rankings, menu);
         return true;
     }
-    public void setAllSortConstantsFalse(){
+
+    public void setAllSortConstantsFalse() {
         Constants.sortByTeamNumber = false;
         Constants.sortByRank = false;
         Constants.sortByFirstPick = false;
         Constants.sortBySecondPick = false;
         Constants.sortByLfm = false;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -79,7 +83,7 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-        if (id == R.id.byRank){
+        if (id == R.id.byRank) {
             Log.e("sort by number", String.valueOf(Constants.sortByTeamNumber));
             Log.e("Rank", "clicked");
             setColorOfItem(item);
@@ -89,7 +93,7 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-        if (id == R.id.byFirstPick){
+        if (id == R.id.byFirstPick) {
             Log.e("first pick", "clicked");
             setColorOfItem(item);
             lastMenuItem = item;
@@ -98,7 +102,7 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-        if (id == R.id.bySecondPick){
+        if (id == R.id.bySecondPick) {
             Log.e("second pick", "clicked");
             setColorOfItem(item);
             lastMenuItem = item;
@@ -107,7 +111,7 @@ TeamRankingsActivity extends ViewerActivity {
             refreshPage();
             return true;
         }
-        if (id == R.id.byLfm){
+        if (id == R.id.byLfm) {
             Log.e("LFM", "clicked");
             setColorOfItem(item);
             lastMenuItem = item;
@@ -120,8 +124,8 @@ TeamRankingsActivity extends ViewerActivity {
 
     }
 
-    public void setColorOfItem(MenuItem item){
-        if(lastMenuItem!= null) {
+    public void setColorOfItem(MenuItem item) {
+        if (lastMenuItem != null) {
             SpannableString s1 = new SpannableString(lastMenuItem.getTitle());
             s1.setSpan(new ForegroundColorSpan(Color.BLACK), 0, s1.length(), 0);
             lastMenuItem.setTitle(s1);
@@ -136,7 +140,7 @@ TeamRankingsActivity extends ViewerActivity {
         Fragment fragment = new TeamRankingsActivityFragment();
         Bundle arguments = new Bundle();
         arguments.putString("field", getIntent().getStringExtra("field"));
-        Log.e("field",getIntent().getStringExtra("field"));
+        Log.e("field", getIntent().getStringExtra("field"));
         arguments.putInt("team", getIntent().getIntExtra("team", 0));
         arguments.putBoolean("displayValueAsPercentage", getIntent().getBooleanExtra("displayValueAsPercentage", false));
         fragment.setArguments(arguments);

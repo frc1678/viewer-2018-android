@@ -10,7 +10,10 @@ import java.util.Map;
 public class CalculatedTeamData extends Object {
     public Float didThreeExchangeInputPercentage;
     public Float firstPickAbiltiy;
+    public Integer totalNumRPs;
     public Float secondPickAbility;
+    public Integer avgScaleCubesBy120s;
+    public Integer avgScaleCubesBy110s;
     public Float switchFailPercentageAuto;
     public Float disabledPercentage;
     public Float incapacitatedPercentage;
@@ -29,8 +32,7 @@ public class CalculatedTeamData extends Object {
     public Float avgNumAlliancePlatformIntakeTele;
     public Float avgTotalCubesPlaced;
     public Float avgScaleCubesBy100s;
-    public Float avgScaleCubesBy120s;
-    //public ArrayList<String> avgNumAlliancePlatformIntakeTele;
+    public Float avgScaleCubesBy120;
     public Float avgNumGroundIntakeTele;
     public Float lfmActiveLiftClimbPercentage;
     public Float lfmAssistedClimbPercentage;
@@ -45,6 +47,7 @@ public class CalculatedTeamData extends Object {
     public Float lfmAutoRunPercentage;
     public Float lfmDisabledPercentage;
     public Float lfmAvgClimbTime;
+    public Float lfmAvgScaleCubesBy110s;
     public Float lfmAvgScaleCubesBy120s;
     public Float lfmAvgScaleCubesBy100s;
 
@@ -61,7 +64,6 @@ public class CalculatedTeamData extends Object {
     public Float pitAvgDriveTime;
     public Float pitAvgRampTime;
 
-//
     public Float avgNumGroundPortalIntakeTele;
     public Float avgNumHumanPortalIntakeTele;
     public Float avgNumExchangeInputTele;
@@ -80,7 +82,6 @@ public class CalculatedTeamData extends Object {
     public Float avgSpeed;
     public Float avgDefense;
     public Float avgDrivingAbility;
-
 
     public Float lfmAvgNumOpponentPlatformIntakeAuto;
     public Float lfmAvgNumAlliancePlatformIntakeAuto;
@@ -108,15 +109,12 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgAllianceSwitchCubesTele;
     public Float lfmAvgTotalCubesPlaced;
 
-
     public Float avgNumReturnIntakeTele;
     public Float numSuccessfulClimbs;
     public Float firstPickAbility;
     public Float lfmAvgOpponentSwitchCubesTele;
     public Float avgAllianceSwitchCubesAuto;
 
-
-    /*public Float lfmAvgNumCubesFumbledAuto;*/
     public Float lfmAvgCubesSpilledAuto;
     public Float lfmAvgCubesSpilledTele;
     public Float lfmAvgSpeed;
@@ -129,6 +127,7 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumGoodDecisions;
     public Integer totalNumBadDecisions;
     public Integer maxScaleCubes;
+    public Integer avgSwitchOwnership;
     public Integer totalSwitchOwnership;
     public Float lfmAvgNumCubesPlacedAuto;
     public Float lfmAvgNumCubesPlacedTele;
@@ -175,17 +174,14 @@ public class CalculatedTeamData extends Object {
     public Integer totalNumRobotsLifted;
     public Integer totalNumParks;
     public Integer totalNumRobotsLiftAttempts;
-
     public Integer totalNumRobotsGroundLifted;
     public Integer totalNumRobotGroundLiftAttempts;
-
 
     public Float avgScaleTimeAuto;
     public Float avgScaleTimeTele;
     public Float avgAllianceSwitchTimeAuto;
     public Float avgOpponentSwitchTimeTele;
     public Float avgAllianceSwitchTimeTele;
-
 
     public Float lfmAvgScaleTimeAuto;
     public Float lfmAvgScaleTimeTele;
@@ -199,12 +195,9 @@ public class CalculatedTeamData extends Object {
     public Float RScoreAgility;
     public Float RScoreDrivingAbility;
 
-    //public Float switchFailPercentageAuto;
-    //public Float switchFailPercentageTele;
     public Boolean canScoreBothSwitchSidesAuto;
     public Integer actualSeed;
     public Integer predictedSeed;
-
 
     public Float allianceSwitchSuccessPercentageAuto;
     public Float opponentSwitchSuccessPercentageTele;
