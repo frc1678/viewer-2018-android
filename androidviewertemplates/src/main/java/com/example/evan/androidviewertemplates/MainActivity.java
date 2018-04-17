@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.FunctionFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OurScheduleHighlightFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
@@ -191,6 +192,13 @@ public class MainActivity extends ViewerActivity
                 fragment = new OurScheduleHighlightFragment();
                 latestFragmentId = position;
                 break;
+            case 12:
+                Constants.highlightTeamSchedule = true;
+                fragment = new FunctionFragment();
+                latestFragmentId = position;
+                break;
+
+
 
         }
         fragmentManager.beginTransaction()

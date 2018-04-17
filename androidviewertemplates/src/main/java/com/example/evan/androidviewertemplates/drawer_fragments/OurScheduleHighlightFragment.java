@@ -32,7 +32,7 @@ public class OurScheduleHighlightFragment extends MatchesFragment {
         super.onCreate(savedInstanceState);
         Constants.isInSeedingFragment = false;
         Integer teamNumber = Integer.parseInt(FirebaseLists.teamsList.getKeys().get(0));
-        setListAdapter(new TeamScheduleFragment.CitrusScheduleAdapter(getActivity().getApplicationContext(), teamNumber));
+        setListAdapter(new OurScheduleHighlightFragment.CitrusScheduleAdapter(getActivity().getApplicationContext()));
     }
 
     /**
@@ -42,9 +42,9 @@ public class OurScheduleHighlightFragment extends MatchesFragment {
         Integer teamNumber;
 
 
-        public CitrusScheduleAdapter(Context context, Integer teamNumber) {
+        public CitrusScheduleAdapter(Context context) {
             super(context, true);
-            this.teamNumber = teamNumber;
+            teamNumber = 1678;
         }
 
         @Override
