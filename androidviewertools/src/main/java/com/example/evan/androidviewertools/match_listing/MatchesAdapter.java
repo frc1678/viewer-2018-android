@@ -65,7 +65,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         try {
             Match match = (Match) getItem(position);
 
-            if (StarManager.isImportantMatch(match.number)) {
+            if (StarManager.isImportantMatch(match.number) && !Constants.highlightTeamSchedule) {
                 rowView.setBackgroundColor(Constants.STAR_COLOR);
             } else {
                 rowView.setBackgroundColor(Color.TRANSPARENT);
@@ -101,13 +101,8 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 }
 
                 Integer team = Integer.parseInt(teamTextView.getText().toString());
-                if (!Constants.highlightTeamSchedule) {
-                    if (onStarredMatches(team)) {
-                        teamTextView.setBackgroundColor(Color.LTGRAY);
-                    } else {
-                        teamTextView.setBackgroundColor(Color.TRANSPARENT);
-                    }
-                } else {
+
+
                     if (onHighlightedTeams(team) && !onStarredMatches(team)) {
                         teamTextView.setBackgroundColor(Color.parseColor("#89F186"));
                     } else if (onStarredMatches(team) && !onHighlightedTeams(team)){
@@ -118,7 +113,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                         teamTextView.setBackgroundColor(Color.TRANSPARENT);
                     }
                 }
-            }
+
 
             TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
             TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
