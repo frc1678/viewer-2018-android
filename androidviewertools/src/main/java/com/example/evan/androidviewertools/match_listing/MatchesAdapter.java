@@ -109,22 +109,22 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                         teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
                 //Only on Starred:
                     } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.LTGRAY);
-                //Only on Team:
+                        teamTextView.setBackgroundColor(Color.parseColor("#e2f442"));
+                //Only on Picklist:
                     } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.LTGRAY);
+                        teamTextView.setBackgroundColor(Color.parseColor("#f98181"));
                 //On ALL:
                     } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
-                        teamTextView.setBackgroundColor(Color.parseColor("#9AC6FF"));
+                        teamTextView.setBackgroundColor(Color.parseColor("#e572e1"));
                 //On Highlight && Starred
                     } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.LTGRAY);
-                //Only Starred && Team:
+                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
+                //Only Starred && Picklist:
                     } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.LTGRAY);
-                //On Team && Highlight:
+                        teamTextView.setBackgroundColor(Color.parseColor("#f4a142"));
+                //On Picklist && Highlight:
                     } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.LTGRAY;
+                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
                     }else {
                         teamTextView.setBackgroundColor(Color.TRANSPARENT);
                     }
