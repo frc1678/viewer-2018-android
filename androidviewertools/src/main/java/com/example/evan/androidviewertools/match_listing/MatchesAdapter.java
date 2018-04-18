@@ -23,6 +23,7 @@ import com.example.evan.androidviewertools.services.StarManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match> {
     public Context context;
@@ -102,14 +103,29 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
                 Integer team = Integer.parseInt(teamTextView.getText().toString());
 
-
-                    if (onHighlightedTeams(team) && !onStarredMatches(team)) {
-                        teamTextView.setBackgroundColor(Color.parseColor("#89F186"));
-                    } else if (onStarredMatches(team) && !onHighlightedTeams(team)){
+                Log.e("teamPicklist",onTeamPicklist(team) + "$" + team);
+                //Only on Highlight:
+                    if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
+                        teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
+                //Only on Starred:
+                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
                         teamTextView.setBackgroundColor(Color.LTGRAY);
-                    } else if (onStarredMatches(team) && onHighlightedTeams(team)) {
+                //Only on Team:
+                    } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.LTGRAY);
+                //On ALL:
+                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
                         teamTextView.setBackgroundColor(Color.parseColor("#9AC6FF"));
-                    } else {
+                //On Highlight && Starred
+                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.LTGRAY);
+                //Only Starred && Team:
+                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.LTGRAY);
+                //On Team && Highlight:
+                    } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.LTGRAY;
+                    }else {
                         teamTextView.setBackgroundColor(Color.TRANSPARENT);
                     }
                 }
@@ -193,6 +209,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     public List<Match> getFirebaseList() {
         return FirebaseLists.matchesList.getValues();
     }
+
     public boolean onStarredMatches(Integer team) {
         for(int i = 0; i < StarManager.starredTeams.size(); i++) {
             if(team.equals(StarManager.starredTeams.get(i))) {
@@ -209,7 +226,17 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
         return false;
     }
+    public boolean onTeamPicklist(Integer team) {
+        for (int i = 0; i < Constants.teamsFromPicklist; i++) {
+            Log.e("...",team.toString() + "()()" + Constants.picklistMap.get(i));
+            if (team.toString().equals(Constants.picklistMap.get(i))) {
+                Log.e("true",team.toString() + " " + Constants.picklistMap.get(i));
+                return true;
 
+            }
+        }
+        return false;
+    }
 
     public abstract boolean secondaryFilter (Match value);
 
