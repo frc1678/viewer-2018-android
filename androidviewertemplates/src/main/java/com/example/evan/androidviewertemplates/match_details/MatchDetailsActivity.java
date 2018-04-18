@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MatchDetailsActivity extends ViewerActivity {
-    Context context;
     private Integer matchNumber;
     private BroadcastReceiver matchesUpdatedReceiver;
     private BroadcastReceiver starReceiver;
@@ -84,11 +83,13 @@ public class MatchDetailsActivity extends ViewerActivity {
 
 
     private void updateUI() {
+        allTeamNumbers.clear();
         Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber.toString());
         int[] teamCellIDs = {R.id.redTeamCell1, R.id.redTeamCell2, R.id.redTeamCell3, R.id.blueTeamCell1, R.id.blueTeamCell2, R.id.blueTeamCell3};
-        Log.e("matchDetailsRedTeams", match.redAllianceTeamNumbers.toString());
         allTeamNumbers.addAll(match.redAllianceTeamNumbers);
         allTeamNumbers.addAll(match.blueAllianceTeamNumbers);
+        Log.e("allTeamNumbers", allTeamNumbers.toString());
+
         for (int i = 0; i < teamCellIDs.length; i++) {
             MatchDetailsTeamCell matchDetailsTeamCell = (MatchDetailsTeamCell) findViewById(teamCellIDs[i]);
             if (onStarredMatches(allTeamNumbers.get(i))) {
