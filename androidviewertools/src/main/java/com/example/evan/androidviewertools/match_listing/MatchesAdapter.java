@@ -110,7 +110,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 }
 
                 Integer team = Integer.parseInt(teamTextView.getText().toString());
-
+                //todo Add
                 //Only on Highlight:
                     if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
                         teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
@@ -270,6 +270,26 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     }
 
 
+    public void saveToSharedPreferences() {
+        StringBuilder stringBuilder= new StringBuilder();
+        for (Object s : Constants.highlightedTeams.toArray()) {
+            stringBuilder.append(s);
+            stringBuilder.append(",");
+        }
+        SharedPreferences settings = context.getSharedPreferences("PREFS", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("highlightedTeams",stringBuilder.toString());
+        editor.commit();
+    }
+    public void getFromSharedPreferences() {
+        SharedPreferences settings = context.getSharedPreferences("PREFS", 0);
+        String highlightedTeamsString = settings.getString("highlightedTeams","");
+        String[] highlightedTeamsStringList = highlightedTeamsString.split(",");
+        List<String> highlightedTeamsList = new ArrayList<>();
+        for (int i = 0; i < highlightedTeamsStringList.length; i++) {
+            highlightedTeamsList.add(highlightedTeamsStringList[i]);
+        }
+    }
 
     public abstract boolean secondaryFilter (Match value);
 
@@ -277,6 +297,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
         @Override
         public boolean onLongClick(View v) {
+            getFromSharedPreferences();
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
             //vibrator.vibrate(75);
             TextView matchNumberTextView = (TextView)v.findViewById(R.id.matchNumber);
@@ -313,29 +334,15 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             if (!Constants.highlightedMatches.contains(Integer.parseInt(matchNumberTextView.getText().toString()))) {
                 Constants.highlightedMatches.add(Integer.parseInt(matchNumberTextView.getText().toString()));
                 updateHighlightedTeams();
+                saveToSharedPreferences();
             } else {
                 Constants.highlightedMatches.remove(Constants.highlightedMatches.indexOf(Integer.parseInt(matchNumberTextView.getText().toString())));
                 updateHighlightedTeams();
+                saveToSharedPreferences();
             }
             Log.e("highlightedTeamsFin",Constants.highlightedTeams.toString());
             Log.e("highlightedMatchesFin",Constants.highlightedMatches.toString());
 
-
-
-            //
-
-           /* if (Constants.highlightedTeams.containsAll(teamsInMatch)) {
-                for (int p = 0; p < teamsInMatch.size(); p++) {
-                    Constants.highlightedTeams.remove(teamsInMatch.get(p));
-                }
-            } else {
-                for (int i = 0; i < teamsInMatch.size(); i++) {
-                    if (!Constants.highlightedTeams.contains(teamsInMatch.get(i))) {
-                        Constants.highlightedTeams.add(teamsInMatch.get(i));
-                    }
-
-                }
-            }*/
             notifyDataSetChanged();
             return true;
         }
