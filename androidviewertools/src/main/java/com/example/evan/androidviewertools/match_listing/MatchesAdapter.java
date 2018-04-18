@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Vibrator;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.example.evan.androidviewertools.ViewerApplicationTemplate;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.example.evan.androidviewertools.utils.ObjectFieldComparator;
@@ -22,16 +20,11 @@ import com.example.evan.androidviewertools.search_view.SearchableFirebaseListAda
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.services.StarManager;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match> {
     public Context context;
@@ -266,30 +259,31 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 }
             }
         }
+
+
         return Constants.highlightedTeams;
     }
-
-
-    public void saveToSharedPreferences() {
-        StringBuilder stringBuilder= new StringBuilder();
-        for (Object s : Constants.highlightedTeams.toArray()) {
-            stringBuilder.append(s);
-            stringBuilder.append(",");
+//todo Fix SharedPreferences: !!!
+/*    SharedPreferences prefs = context.getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+    SharedPreferences.Editor prefsEditor = prefs.edit();
+    public void saveToSharedPreferences(ArrayList<Integer> data) {
+        Gson gson = new Gson();
+        List<String> textList = new ArrayList<String>();
+        for (int i = 0; i < data.size(); i++) {
+            textList.add(data.get(i).toString());
+            Log.e("textList",textList.toString());
         }
-        SharedPreferences settings = context.getSharedPreferences("PREFS", 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("highlightedTeams",stringBuilder.toString());
-        editor.commit();
+        String jsonText = gson.toJson(textList);
+        prefsEditor.putString("key", jsonText);
+        prefsEditor.apply();
     }
     public void getFromSharedPreferences() {
-        SharedPreferences settings = context.getSharedPreferences("PREFS", 0);
-        String highlightedTeamsString = settings.getString("highlightedTeams","");
-        String[] highlightedTeamsStringList = highlightedTeamsString.split(",");
-        List<String> highlightedTeamsList = new ArrayList<>();
-        for (int i = 0; i < highlightedTeamsStringList.length; i++) {
-            highlightedTeamsList.add(highlightedTeamsStringList[i]);
-        }
-    }
+        Gson gson = new Gson();
+        String jsonText = prefs.getString("key", null);
+        String[] text = gson.fromJson(jsonText, String[].class);  //EDIT: gso to gson
+        Log.e("text",text.toString());
+    }*/
+
 
     public abstract boolean secondaryFilter (Match value);
 
@@ -297,7 +291,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
         @Override
         public boolean onLongClick(View v) {
-            getFromSharedPreferences();
+
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
             //vibrator.vibrate(75);
             TextView matchNumberTextView = (TextView)v.findViewById(R.id.matchNumber);
@@ -334,11 +328,9 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             if (!Constants.highlightedMatches.contains(Integer.parseInt(matchNumberTextView.getText().toString()))) {
                 Constants.highlightedMatches.add(Integer.parseInt(matchNumberTextView.getText().toString()));
                 updateHighlightedTeams();
-                saveToSharedPreferences();
             } else {
                 Constants.highlightedMatches.remove(Constants.highlightedMatches.indexOf(Integer.parseInt(matchNumberTextView.getText().toString())));
                 updateHighlightedTeams();
-                saveToSharedPreferences();
             }
             Log.e("highlightedTeamsFin",Constants.highlightedTeams.toString());
             Log.e("highlightedMatchesFin",Constants.highlightedMatches.toString());
