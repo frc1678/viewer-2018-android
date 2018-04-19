@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button style="@style/AppTheme.Button"
+        android:id="@+id/confirmButton"
+        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_marginLeft="10dp"
+        android:text="CONFIRM"
+        android:layout_marginRight="10dp"/>
+    <EditText
+        android:id="@+id/teamsOfPicklistEditText"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:hint="0"
+        android:gravity="center"
+        android:textSize="30dp"/>
+
+
+</LinearLayout>

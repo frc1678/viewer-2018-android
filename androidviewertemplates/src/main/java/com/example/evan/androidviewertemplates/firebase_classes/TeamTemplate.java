@@ -13,7 +13,11 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public ArrayList<Boolean> pitDriveTimeOutcome;
     public ArrayList<Float> pitAutoRunTimes;
     public ArrayList<String> totalSuperNotes;
+    public Boolean pitCanDoPIDOnDriveTrain;
+    public Boolean pitHasEncodersOnBothSides;
     public Boolean canScoreOppositeSwitchAuto;
+    public Boolean pitHasGyro;
+
     public Boolean pitCanCheesecake;
     public Boolean pitDidDemonstrateCheesecakePotential;
     public Boolean pitHasCamera;

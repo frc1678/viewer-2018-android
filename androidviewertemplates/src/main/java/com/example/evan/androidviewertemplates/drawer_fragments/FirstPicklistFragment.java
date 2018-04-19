@@ -149,7 +149,6 @@ public class FirstPicklistFragment extends Fragment {
                                                     @Override
                                                     public void onClick(View v) {
                                                         //downButton onClick
-                                                        Constants.counter = Constants.counter + 1;
                                                         Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
                                                         Integer otherTeam = myTeam + 1;
                                                         Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);

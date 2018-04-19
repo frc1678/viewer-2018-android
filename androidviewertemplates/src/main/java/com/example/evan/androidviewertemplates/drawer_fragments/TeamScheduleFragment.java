@@ -22,6 +22,7 @@ import java.util.List;
 public class TeamScheduleFragment extends MatchesFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         Constants.isInSeedingFragment = false;
         Integer teamNumber = getArguments().getInt("teamNumber");
@@ -39,6 +40,7 @@ public class TeamScheduleFragment extends MatchesFragment {
         public CitrusScheduleAdapter(Context context, Integer teamNumber) {
             super(context, true);
             this.teamNumber = teamNumber;
+            Constants.highlightTeamSchedule = true;
         }
 
         @Override

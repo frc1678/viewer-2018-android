@@ -2,6 +2,7 @@ package com.example.evan.androidviewertools.match_listing;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Vibrator;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.example.evan.androidviewertools.search_view.SearchableFirebaseListAda
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.services.StarManager;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,9 +29,11 @@ import java.util.List;
 public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match> {
     public Context context;
 
+
     public MatchesAdapter(Context context, boolean isNotReversed) {
         super(context, new ObjectFieldComparator("number", isNotReversed));
         this.context = context;
+
     }
 
     @Override
@@ -63,7 +67,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         try {
             Match match = (Match) getItem(position);
 
-            if (StarManager.isImportantMatch(match.number)) {
+            if (StarManager.isImportantMatch(match.number) && !Constants.highlightTeamSchedule) {
                 rowView.setBackgroundColor(Constants.STAR_COLOR);
             } else {
                 rowView.setBackgroundColor(Color.TRANSPARENT);
@@ -99,13 +103,33 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 }
 
                 Integer team = Integer.parseInt(teamTextView.getText().toString());
-
-                if (onStarredMatches(team)) {
-                    teamTextView.setBackgroundColor(Color.LTGRAY);
-                } else {
-                    teamTextView.setBackgroundColor(Color.TRANSPARENT);
+                //todo Add
+                //Only on Highlight:
+                    if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
+                        teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
+                //Only on Starred:
+                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.parseColor("#e2f442"));
+                //Only on Picklist:
+                    } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.parseColor("#f98181"));
+                //On ALL:
+                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
+                        teamTextView.setBackgroundColor(Color.parseColor("#e572e1"));
+                //On Highlight && Starred
+                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
+                //Only Starred && Picklist:
+                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.parseColor("#f4a142"));
+                //On Picklist && Highlight:
+                    } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
+                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
+                    }else {
+                        teamTextView.setBackgroundColor(Color.TRANSPARENT);
+                    }
                 }
-            }
+
 
             TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
             TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
@@ -125,7 +149,12 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             Log.e("MATCH", "IS NULL");
         }
 
-        rowView.setOnLongClickListener(new StarLongClickListener());
+        if (Constants.highlightTeamSchedule) {
+            rowView.setOnLongClickListener(new HighlightTeamListener());
+
+        } else {
+            rowView.setOnLongClickListener(new StarLongClickListener());
+        }
         rowView.setOnClickListener(new MatchClickListener());
         return rowView;
     }
@@ -180,6 +209,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     public List<Match> getFirebaseList() {
         return FirebaseLists.matchesList.getValues();
     }
+
     public boolean onStarredMatches(Integer team) {
         for(int i = 0; i < StarManager.starredTeams.size(); i++) {
             if(team.equals(StarManager.starredTeams.get(i))) {
@@ -188,6 +218,71 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
         return false;
     }
+    public boolean onHighlightedTeams(Integer team) {
+        for (int i = 0; i < Constants.highlightedTeams.size(); i++) {
+            if (team.equals(Constants.highlightedTeams.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean onTeamPicklist(Integer team) {
+        for (int i = 0; i < Constants.teamsFromPicklist; i++) {
+            if (team.toString().equals(Constants.picklistMap.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public ArrayList<Integer> updateHighlightedTeams() {
+        Log.e("highlightMat..", Constants.highlightedMatches.toString());
+        Constants.highlightedTeams.clear();
+        for (int p = 0; p < Constants.highlightedMatches.size(); p++) {
+            Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(Constants.highlightedMatches.get(p).toString());
+            List<Integer> teamsInMatch = new ArrayList<>();
+            List<Object> redTeams = Arrays.asList(Utils.getObjectField(match, "redAllianceTeamNumbers"));
+            List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
+            List<Integer> tempRedAllianceTeams = (List<Integer>) (Object) redTeams.get(0);
+            List<Integer> tempBlueAllianceTeams = (List<Integer>) (Object) blueTeams.get(0);
+            Log.e("redTeams",redTeams.toString());
+            Log.e("blueTeams",blueTeams.toString());
+            for (int i = 0; i < tempRedAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempRedAllianceTeams.get(i));
+                if (!Constants.highlightedTeams.contains(tempRedAllianceTeams.get(i))) {
+                    Constants.highlightedTeams.add(tempRedAllianceTeams.get(i));
+                }
+                for (int g = 0; g < tempBlueAllianceTeams.size(); g++) {
+                    teamsInMatch.add(tempBlueAllianceTeams.get(g));
+                    if (!Constants.highlightedTeams.contains(tempBlueAllianceTeams.get(g))) {
+                        Constants.highlightedTeams.add(tempBlueAllianceTeams.get(g));
+                    }
+                }
+            }
+        }
+
+
+        return Constants.highlightedTeams;
+    }
+//todo Fix SharedPreferences: !!!
+/*    SharedPreferences prefs = context.getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+    SharedPreferences.Editor prefsEditor = prefs.edit();
+    public void saveToSharedPreferences(ArrayList<Integer> data) {
+        Gson gson = new Gson();
+        List<String> textList = new ArrayList<String>();
+        for (int i = 0; i < data.size(); i++) {
+            textList.add(data.get(i).toString());
+            Log.e("textList",textList.toString());
+        }
+        String jsonText = gson.toJson(textList);
+        prefsEditor.putString("key", jsonText);
+        prefsEditor.apply();
+    }
+    public void getFromSharedPreferences() {
+        Gson gson = new Gson();
+        String jsonText = prefs.getString("key", null);
+        String[] text = gson.fromJson(jsonText, String[].class);  //EDIT: gso to gson
+        Log.e("text",text.toString());
+    }*/
 
 
     public abstract boolean secondaryFilter (Match value);
@@ -196,6 +291,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
         @Override
         public boolean onLongClick(View v) {
+
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
             //vibrator.vibrate(75);
             TextView matchNumberTextView = (TextView)v.findViewById(R.id.matchNumber);
@@ -204,6 +300,41 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             } else {
                 StarManager.addImportantMatch(Integer.parseInt(matchNumberTextView.getText().toString()));
             }
+            notifyDataSetChanged();
+            return true;
+        }
+
+    }
+    private class HighlightTeamListener implements View.OnLongClickListener {
+
+        @Override
+        public boolean onLongClick(View v) {
+            Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+            TextView matchNumberTextView = (TextView)v.findViewById(R.id.matchNumber);
+            Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumberTextView.getText().toString());
+            List<Integer> teamsInMatch = new ArrayList<>();
+            List<Object> redTeams = Arrays.asList(Utils.getObjectField(match, "redAllianceTeamNumbers"));
+            List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
+            List<Integer> tempRedAllianceTeams = (List<Integer>) (Object) redTeams.get(0);
+            List<Integer> tempBlueAllianceTeams = (List<Integer>) (Object) blueTeams.get(0);
+
+            for (int i = 0; i < tempRedAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempRedAllianceTeams.get(i));
+            }
+            for (int i = 0; i < tempBlueAllianceTeams.size(); i++) {
+                teamsInMatch.add(tempBlueAllianceTeams.get(i));
+            }
+
+            if (!Constants.highlightedMatches.contains(Integer.parseInt(matchNumberTextView.getText().toString()))) {
+                Constants.highlightedMatches.add(Integer.parseInt(matchNumberTextView.getText().toString()));
+                updateHighlightedTeams();
+            } else {
+                Constants.highlightedMatches.remove(Constants.highlightedMatches.indexOf(Integer.parseInt(matchNumberTextView.getText().toString())));
+                updateHighlightedTeams();
+            }
+            Log.e("highlightedTeamsFin",Constants.highlightedTeams.toString());
+            Log.e("highlightedMatchesFin",Constants.highlightedMatches.toString());
+
             notifyDataSetChanged();
             return true;
         }
