@@ -23,7 +23,8 @@ public class TeamInMatchData extends com.example.evan.androidviewertools.firebas
 
     public ArrayList<Map<String, Object>> allianceSwitchAttemptAuto;
     public ArrayList<Map<String, Object>> allianceSwitchAttemptTele;
-
+    public ArrayList<Object> vault;
+    public Integer cycle;
     public ArrayList<Map<String, Map<String, Object>>> climb;
 
     public Boolean didGetDisabled;

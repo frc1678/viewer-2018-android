@@ -25,6 +25,7 @@ public class CalculatedTeamData extends Object {
     public Float assistedClimbPercentage;
     public Float avgNumCubesFumbledAuto;
     public Float switchFailPercentageTele;
+    public Float lfmAvgAllVaultTime;
     public Float avgNumCubesFumbledTele;
     public Float avgNumGroundPyramidIntakeTele;
     public Float avgNumElevatedPyramidIntakeTele;

@@ -4,7 +4,8 @@ package com.example.evan.androidviewertemplates.firebase_classes;
  * Created by Teo on 1/11/2018.
  */
 
-public class CalculatedMatchData extends Object {
+public class
+CalculatedMatchData extends Object {
     //Make sure all variables are public
     public Float predictedBlueScore;
     public Float predictedRedScore;

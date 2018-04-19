@@ -107,6 +107,22 @@
         android:text="/"/>
 
     <TextView
+        android:id="@+id/rankingPointDisplayBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0000ff"
+        android:layout_alignStart="@+id/blueScore"/>
+
+    <TextView
+        android:id="@+id/rankingPointDisplayRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:paddingRight="8dp"
+        android:layout_alignStart="@+id/redScore"
+        />
+
+    <TextView
         android:id="@+id/blueScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

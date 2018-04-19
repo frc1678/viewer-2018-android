@@ -145,6 +145,31 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 redScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedRedScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedRedScore"), 2, "???") : "???");
                 blueScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedBlueScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedBlueScore"), 2, "???") : "???");
             }
+
+            TextView rankingPointDisplayBlue = (TextView) rowView.findViewById(R.id.rankingPointDisplayBlue);
+            TextView rankingPointDisplayRed = (TextView) rowView.findViewById(R.id.rankingPointDisplayRed);
+
+            Integer rankingPointsRed = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualRedRPs").toString());
+            Integer rankingPointsBlue = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualBlueRPs").toString());
+
+            rankingPointsRed = rankingPointsRed - 2;
+            rankingPointsBlue = rankingPointsBlue - 2;
+
+            if (rankingPointsRed > 0) {
+                if (rankingPointsRed == 1) {
+                    rankingPointDisplayRed.setText("●");
+                } else if (rankingPointsRed == 2) {
+                    rankingPointDisplayRed.setText("●●");
+                }
+            }
+            if (rankingPointsBlue > 0) {
+                if (rankingPointsBlue == 1) {
+                    rankingPointDisplayBlue.setText("●");
+                } else if (rankingPointsBlue == 2) {
+                    rankingPointDisplayBlue.setText("●●");
+                }
+            }
+
         }catch (NullPointerException NPE){
             Log.e("MATCH", "IS NULL");
         }
