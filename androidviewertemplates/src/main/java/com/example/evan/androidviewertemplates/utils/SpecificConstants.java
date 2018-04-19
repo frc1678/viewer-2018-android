@@ -36,6 +36,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.canScoreBothSwitchSidesAuto", "Can score on opp. alliance switch side");
 
                 //Teleop
+                put("calculatedData.avgAllVaultTime", "Avg Vault Time");
                 put("calculatedData.avgCubesSpilledTele", "Avg Cubes Spilled Tele");
                 put("calculatedData.avgNumCubesFumbledTele", "Avg Cubes Fumbled Tele");
                 put("calculatedData.avgCubesPlacedInScaleTele", "Avg Cubes in Scale Tele");
@@ -94,6 +95,9 @@ public class SpecificConstants extends Constants {
                 put("pitDriveTimeOutcome", "Drive Time Outcome");
                 put("pitHasCamera", "Has a Camera");
                 put("pitRobotDimensions", "Robot Dimensions");
+                put("pitCanDoPIDOnDriveTrain", "Can Do PID On Drive Train");
+                put("pitHasEncodersOnBothSides", "Has Encoders On Both Sides");
+                put("pitHasGyro", "Has Gyro");
 
                 //TeamInMatchDetailsAdapter
                 //Auto
@@ -166,6 +170,7 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String>() {
             {
+                put("calculatedData.avgAllVaultTime", "calculatedData.avgVaultTime");
                 put("calculatedData.avgCubesSpilledTele", "numSpilledCubesTele");
                 put("calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.numScaleSuccessAuto");
                 put("calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.numAllianceSwitchSuccessAuto");

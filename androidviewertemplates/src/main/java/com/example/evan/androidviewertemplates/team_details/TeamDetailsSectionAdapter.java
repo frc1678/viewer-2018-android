@@ -30,7 +30,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
             {"calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
                     "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgTotalCubesPlaced", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
+            {"calculatedData.avgAllVaultTime", "calculatedData.avgTotalCubesPlaced", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
                     "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
                     "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
@@ -39,7 +39,7 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             {"calculatedData.avgSpeed", "calculatedData.avgAgility", "calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions", "calculatedData.totalNumBadDecisions", "totalSuperNotes"},
             {"pitDriveTrain", "pitCanCheesecake", "pitRobotDimensions", "pitClimberType", "pitSEALsNotes",
-                    "pitAvailableWeight", "pitProgrammingLanguage", "pitRampTime"}
+                    "pitAvailableWeight", "pitProgrammingLanguage", "pitRampTime", "pitCanDoPIDOnDriveTrain", "pitHasEncodersOnBothSides", "pitHasGyro"}
     };
 
     static String[] sectionTitles = {
@@ -85,7 +85,10 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             "superNotes",
             "climb",
             "totalSuperNotes",
-            "pitRampTime"
+            "pitRampTime",
+            "pitCanDoPIDOnDriveTrain",
+            "pitHasEncodersOnBothSides",
+            "pitHasGyro"
     };
 
     static String[] shouldDisplayAsLongText = {
@@ -116,6 +119,9 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             "pitDriveTrain",
             "pitCanCheesecake",
             "pitRampTime",
+            "pitCanDoPIDOnDriveTrain",
+            "pitHasEncodersOnBothSides",
+            "pitHasGyro"
     };
 
     static String[] createListOnClick = {
