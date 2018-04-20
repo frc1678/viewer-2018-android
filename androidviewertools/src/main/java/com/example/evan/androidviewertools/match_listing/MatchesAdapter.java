@@ -96,6 +96,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             int[] teamTextViewIDs = {R.id.teamOne, R.id.teamTwo, R.id.teamThree, R.id.teamFour, R.id.teamFive, R.id.teamSix};
             for (int i = 0; i < 6; i++) {
                 TextView teamTextView = (TextView) rowView.findViewById(teamTextViewIDs[i]);
+
                 if (selectedScope.equals("Team")) {
                     teamTextView.setText(Utils.highlightTextInString(teamsInMatch.get(i).toString(), searchString));
                 } else {
@@ -104,31 +105,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
                 Integer team = Integer.parseInt(teamTextView.getText().toString());
                 //todo Add
-                //Only on Highlight:
-                    if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
-                        teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
-                //Only on Starred:
-                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#e2f442"));
-                //Only on Picklist:
-                    } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#f98181"));
-                //On ALL:
-                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
-                        teamTextView.setBackgroundColor(Color.parseColor("#e572e1"));
-                //On Highlight && Starred
-                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
-                //Only Starred && Picklist:
-                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#f4a142"));
-                //On Picklist && Highlight:
-                    } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
-                    }else {
-                        teamTextView.setBackgroundColor(Color.TRANSPARENT);
-                    }
-                }
 
 
             TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
