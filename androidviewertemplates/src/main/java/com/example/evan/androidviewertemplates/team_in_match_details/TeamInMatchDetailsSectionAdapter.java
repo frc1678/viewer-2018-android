@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 
 
 import com.example.evan.androidviewertemplates.graphing.RankingsActivity;
+import com.example.evan.androidviewertemplates.team_details.TeamAdapter;
 import com.example.evan.androidviewertemplates.team_ranking.TeamRankingsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertemplates.utils.ViewerDataPoints;
@@ -23,9 +24,22 @@ import java.util.Map;
 /**
  * Created by colinunger on 1/31/16.
  */
-public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAdapter {
+public class TeamInMatchDetailsSectionAdapter extends TeamAdapter {
     //todo
-    private String[][] fieldsToDisplay = {
+    public TeamInMatchDetailsSectionAdapter(Context context, Integer teamNumber, Integer matchNumber) {
+        super(context, teamNumber,
+                rankInsteadOfGraph,
+                createListOnClick,
+                notClickableFields,
+                shouldDisplayAsLongText,
+                shouldDisplayAsFurtherInformation,
+                displayAsUnranked,
+                shouldDisplayAsPercentage,
+                sectionTitles,
+                fieldsToDisplay);
+    }
+
+    static String[][] fieldsToDisplay = {
             {"teamNumber", "matchNumber"},
             {"didMakeAutoRun", "calculatedData.canScoreOppositeSwitchAuto", "numCubesFumbledAuto", "calculatedData.numAllianceSwitchSuccessAuto",
                     "calculatedData.numScaleSuccessAuto"},
@@ -35,7 +49,7 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
             {"rankSpeed", "rankAgility", "rankDefense", "superNotes", "numGoodDecisions", "numBadDecisions"},
     };
 
-    private String[] sectionTitles = {
+    static String[] sectionTitles = {
             "Information",
             "Auto",
             "Tele",
@@ -44,92 +58,33 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
 
     };
 
-    private String[] shouldDisplayAsPercentage = {};
+    static String[] shouldDisplayAsPercentage = {};
 
-    private String[] displayAsUnranked = {
+    static String[] displayAsUnranked = {
             "climb"
     };
 
-    private String[] shouldDisplayAsLongText = {
+    static String[] shouldDisplayAsLongText = {
             "superNotes",
             "climb"
     };
+    static String[] notClickableFields = {};
 
-    private String[] rankInsteadOfGraph = {};
+    static String[] createListOnClick = {};
 
-    private String[] shouldDisplayAsFurtherInformation = {};
+    static String[] rankInsteadOfGraph = {};
 
-    private Integer teamNumber;
+    static String[] shouldDisplayAsFurtherInformation = {};
 
-    private Integer matchNumber;
+    static Integer teamNumber;
 
-    public TeamInMatchDetailsSectionAdapter(Context context, Integer teamNumber, Integer matchNumber) {
-        super(context);
-        this.teamNumber = teamNumber;
-        this.matchNumber = matchNumber;
-    }
-
-
-    @Override
-    public boolean isOtherTypeOfView(int section, int row) {
-        return (Arrays.asList(shouldDisplayAsLongText).contains(getRowItem(section, row)));
-    }
-
-    @Override
-    public void onRowItemClick(AdapterView<?> parent, View view, int section, int row, long id) {
-
-    }
-
-    @Override
-    public String[][] getFieldsToDisplay() {
-        return fieldsToDisplay;
-    }
-
-    @Override
-    public String[] getSectionTitles() {
-        return sectionTitles;
-    }
-
-    @Override
-    public String[] getUnrankedFields() {
-        return displayAsUnranked;
-    }
-
-    @Override
-    public String[] getLongTextFields() {
-        return shouldDisplayAsLongText;
-    }
-
-    @Override
-    public String[] getPercentageFields() {
-        return shouldDisplayAsPercentage;
-    }
-
-    @Override
-    public String[] getFurtherInformationFields() {
-        return shouldDisplayAsFurtherInformation;
-    }
-
-    @Override
-    public String[] getNotClickableFields() {
-        return displayAsUnranked;
-    }
-
-    @Override
-    public String[] getNonDefaultClickResponseFields() {
-        return new String[0];
-    }
-
-    @Override
-    public String[] getRankInsteadOfGraphFields() {
-        return rankInsteadOfGraph;
-    }
+    static Integer matchNumber;
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
-        String key = (String) getRowItem(section, row);
-
-    }
+        String key = (String) getRowItem(section, row); }
+    @Override
+    public void onRowItemClick(AdapterView<?> parent, View view, int section, int row, long id) {}
 
     @Override
     public String getUpdatedAction() {
@@ -152,11 +107,6 @@ public class TeamInMatchDetailsSectionAdapter extends MultitypeRankingsSectionAd
     @Override
     public boolean isRowEnabled(int section, int row) {
         return false;
-    }
-
-    @Override
-    public Intent getRankActivityIntent() {
-        return new Intent(context, TeamRankingsActivity.class);
     }
 
     @Override

@@ -107,45 +107,45 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 //todo Add
 
 
-            TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
-            TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
+                TextView redScoreTextView = (TextView) rowView.findViewById(R.id.redScore);
+                TextView blueScoreTextView = (TextView) rowView.findViewById(R.id.blueScore);
 
-            if (match.redScore != null || match.blueScore != null) {
-                redScoreTextView.setText((match.redScore != null) ? match.redScore.toString() : "???");
-                blueScoreTextView.setText((match.blueScore != null) ? match.blueScore.toString() : "???");
-                redScoreTextView.setTextColor(Color.argb(255, 255, 0, 0));
-                blueScoreTextView.setTextColor(Color.argb(255, 0, 0, 255));
-            } else {
-                redScoreTextView.setTextColor(Color.argb(75, 255, 0, 0));
-                blueScoreTextView.setTextColor(Color.argb(75, 0, 0, 255));
-                redScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedRedScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedRedScore"), 2, "???") : "???");
-                blueScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedBlueScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedBlueScore"), 2, "???") : "???");
-            }
+                if (match.redScore != null || match.blueScore != null) {
+                    redScoreTextView.setText((match.redScore != null) ? match.redScore.toString() : "???");
+                    blueScoreTextView.setText((match.blueScore != null) ? match.blueScore.toString() : "???");
+                    redScoreTextView.setTextColor(Color.argb(255, 255, 0, 0));
+                    blueScoreTextView.setTextColor(Color.argb(255, 0, 0, 255));
+                } else {
+                    redScoreTextView.setTextColor(Color.argb(75, 255, 0, 0));
+                    blueScoreTextView.setTextColor(Color.argb(75, 0, 0, 255));
+                    redScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedRedScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedRedScore"), 2, "???") : "???");
+                    blueScoreTextView.setText((Utils.fieldIsNotNull(match, "calculatedData.predictedBlueScore")) ? Utils.roundDataPoint(Utils.getObjectField(match, "calculatedData.predictedBlueScore"), 2, "???") : "???");
+                }
 
-            TextView rankingPointDisplayBlue = (TextView) rowView.findViewById(R.id.rankingPointDisplayBlue);
-            TextView rankingPointDisplayRed = (TextView) rowView.findViewById(R.id.rankingPointDisplayRed);
+                TextView rankingPointDisplayBlue = (TextView) rowView.findViewById(R.id.rankingPointDisplayBlue);
+                TextView rankingPointDisplayRed = (TextView) rowView.findViewById(R.id.rankingPointDisplayRed);
 
-            Integer rankingPointsRed = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualRedRPs").toString());
-            Integer rankingPointsBlue = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualBlueRPs").toString());
+                Integer rankingPointsRed = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualRedRPs").toString());
+                Integer rankingPointsBlue = Integer.valueOf(Utils.getObjectField(match, "calculatedData.actualBlueRPs").toString());
 
-            rankingPointsRed = rankingPointsRed - 2;
-            rankingPointsBlue = rankingPointsBlue - 2;
+                rankingPointsRed = rankingPointsRed - 2;
+                rankingPointsBlue = rankingPointsBlue - 2;
 
-            if (rankingPointsRed > 0) {
-                if (rankingPointsRed == 1) {
-                    rankingPointDisplayRed.setText("●");
-                } else if (rankingPointsRed == 2) {
-                    rankingPointDisplayRed.setText("●●");
+                if (rankingPointsRed > 0) {
+                    if (rankingPointsRed == 1) {
+                        rankingPointDisplayRed.setText("●");
+                    } else if (rankingPointsRed == 2) {
+                        rankingPointDisplayRed.setText("●●");
+                    }
+                }
+                if (rankingPointsBlue > 0) {
+                    if (rankingPointsBlue == 1) {
+                        rankingPointDisplayBlue.setText("●");
+                    } else if (rankingPointsBlue == 2) {
+                        rankingPointDisplayBlue.setText("●●");
+                    }
                 }
             }
-            if (rankingPointsBlue > 0) {
-                if (rankingPointsBlue == 1) {
-                    rankingPointDisplayBlue.setText("●");
-                } else if (rankingPointsBlue == 2) {
-                    rankingPointDisplayBlue.setText("●●");
-                }
-            }
-
         }catch (NullPointerException NPE){
             Log.e("MATCH", "IS NULL");
         }

@@ -20,10 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Katherine on 3/27/2018.
- */
 
+//This is the parent class for the two adapters: TeamDetailsSectionAdapter and LasFourMatchesSectionAdapter
 public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
 
     private final String[] rankInsteadOfGraph;
@@ -35,7 +33,6 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
     private final String[] shouldDisplayAsPercentage;
     private final String[] sectionTitles;
     private final String[][] fieldsToDisplay;
-
 
     Integer teamNumber;
     protected Context context;
@@ -109,23 +106,6 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
         return rankInsteadOfGraph;
     }
 
-
-    @Override
-    public String getUpdatedAction() {
-        return Constants.TEAMS_UPDATED_ACTION;
-    }
-
-    @Override
-    public Object getObject() {
-        return FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
-    }
-
-    @Override
-    public List<Object> getObjectList() {
-        List<Object> teams = new ArrayList<>();
-        teams.addAll(FirebaseLists.teamsList.getValues());
-        return teams;
-    }
 
     @Override
     public boolean isOtherTypeOfView(int section, int row) {

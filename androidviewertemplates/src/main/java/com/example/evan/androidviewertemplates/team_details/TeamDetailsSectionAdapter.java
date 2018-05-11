@@ -170,4 +170,20 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             context.startActivity(lfmIntent);
         }
     }
+    @Override
+    public String getUpdatedAction() {
+        return Constants.TEAMS_UPDATED_ACTION;
+    }
+
+    @Override
+    public Object getObject() {
+        return FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+    }
+
+    @Override
+    public List<Object> getObjectList() {
+        List<Object> teams = new ArrayList<>();
+        teams.addAll(FirebaseLists.teamsList.getValues());
+        return teams;
+    }
 }

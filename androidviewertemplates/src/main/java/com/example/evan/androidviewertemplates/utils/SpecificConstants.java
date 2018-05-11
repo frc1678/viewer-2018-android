@@ -67,6 +67,7 @@ public class SpecificConstants extends Constants {
                 put("matches", "Matches");
                 put("VIEWER.matchesUntilNextMatchForTeam", "Matches Until Next Match");
                 put("calculatedData.numMatchesPlayed", "Num. Matches Played");
+                put("lfm", "Last Four Matches");
 
                 //Status
                 put("calculatedData.incapacitatedPercentage", "Incapacitated");
@@ -129,7 +130,6 @@ public class SpecificConstants extends Constants {
                 put("superNotes", "Super Notes");
                 put("numGoodDecisions", "Num. Good Decisions");
                 put("numBadDecisions", "Num. Bad Decisions");
-                put("lfm", "Last Four Matches");
                 put("fullcomp", "Full Comp. Data");
 
                 //LastFourMatches
