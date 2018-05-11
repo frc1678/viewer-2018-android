@@ -12,7 +12,7 @@ public class SpecificConstants extends Constants {
     public static Map<String, String> KEYS_TO_TITLES;
     public static Map<String, String> DATA_TO_GRAPH;
     //todo
-    public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Second Pick", "Super Data", "Live Picklist", "Highlight", "Function"};
+    public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Second Pick", "Super Data", "Live Picklist", "Function"};
 
     public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2018-houston.firebaseio.com/";
 
@@ -170,13 +170,13 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String>() {
             {
+                put("calculatedData.avgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchSuccessTele");
                 put("calculatedData.avgAllVaultTime", "calculatedData.avgVaultTime");
                 put("calculatedData.avgCubesSpilledTele", "numSpilledCubesTele");
                 put("calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.numScaleSuccessAuto");
                 put("calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.numAllianceSwitchSuccessAuto");
                 put("calculatedData.avgNumCubesFumbledTele", "numCubesFumbledTele");
                 put("calculatedData.avgCubesPlacedInScaleTele", "calculatedData.numScaleSuccessTele");
-                put("calculatedData.avgOpponentSwitchCubesTele", "calculatedData.numOp                                                                                                  ponentSwitchSuccessTele");
                 put("calculatedData.avgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchSuccessTele");
                 put("calculatedData.avgNumExchangeInputTele", "numExchangeInput");
                 put("calculatedData.avgNumGroundIntakeTele", "numGroundIntakeTele");
@@ -192,10 +192,10 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgTotalCubesPlaced", "calculatedData.totalCubesPlaced");
 
                 //LFM Graphing:
+                put("calculatedData.lfmAvgNumExchangeInputTele", "calculatedData.numExchangeInputTele");
                 put("calculatedData.lfmAutoRunPercentage","didMakeAutoRun");
                 put("calculatedData.lfmAvgTotalCubesPlaced", "calculatedData.totalCubesPlaced");
                 put("calculatedData.lfmAvgClimbTime", "calculatedData.climbtime");
-                put("calculatedData.lfmAvgNumExchangeInputTele", "calculatedData.numExchangeInput");
                 put("calculatedData.lfmAvgNumCubesFumbledTele", "calculatedData.numCubesFumbledTele");
                 put("calculatedData.lfmAvgCubesPlacedInScaleTele", "calculatedData.numScaleSuccessTele");
                 put("calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchSuccessTele");

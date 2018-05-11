@@ -2,8 +2,10 @@ package com.example.evan.androidviewertemplates.drawer_fragments;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +21,16 @@ import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseList;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class FunctionFragment extends Fragment {
     Context context;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
@@ -35,6 +44,7 @@ public class FunctionFragment extends Fragment {
         final Button clearedStarredTeams = (Button) myLayout.findViewById(R.id.clearStarredTeams);
         final Button clearHighlightedTeams = (Button) myLayout.findViewById(R.id.clearHighlightedTeams);
 
+
         teamsOfPicklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,11 +52,15 @@ public class FunctionFragment extends Fragment {
                 teamsOfPicklistDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 teamsOfPicklistDialog.setContentView(R.layout.teamsofpicklist);
                 final EditText teamsOfPicklistEditText = (EditText) teamsOfPicklistDialog.findViewById(R.id.teamsOfPicklistEditText);
+                teamsOfPicklistEditText.setText(String.valueOf(Constants.teamsFromPicklist));
                 Button confirmButton = (Button) teamsOfPicklistDialog.findViewById(R.id.confirmButton);
                 confirmButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (Integer.parseInt(teamsOfPicklistEditText.getText().toString()) < FirebaseLists.teamsList.getKeys().size() && teamsOfPicklistEditText.getText()!= null)   {
+                        if (teamsOfPicklistEditText.getText().toString().equals("")) {
+                            teamsOfPicklistEditText.setText(0);
+                        }
+                        if (Integer.parseInt(teamsOfPicklistEditText.getText().toString()) < FirebaseLists.teamsList.getKeys().size() && teamsOfPicklistEditText.getText() != null) {
                             Constants.teamsFromPicklist = Integer.parseInt(teamsOfPicklistEditText.getText().toString());
                             teamsOfPicklistDialog.dismiss();
                         } else {
@@ -77,5 +91,7 @@ public class FunctionFragment extends Fragment {
         });
         return myLayout;
     }
+    //todo Fix SharedPreferences: !!!
+
 }
 
