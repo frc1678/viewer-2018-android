@@ -3,7 +3,6 @@
     android:layout_width="wrap_content" android:layout_height="wrap_content">
 
     <ListView
-        android:layout_below="@+id/picklistEditButton"
         android:id="@+id/listview"
 
         android:layout_width="match_parent"
@@ -16,12 +15,6 @@
         android:text="test"
         android:textAlignment="textEnd"
         android:textStyle="bold" />
-
-    <Button style="@style/AppTheme.Button"
-        android:id="@+id/picklistEditButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Edit"/>
 
 
 

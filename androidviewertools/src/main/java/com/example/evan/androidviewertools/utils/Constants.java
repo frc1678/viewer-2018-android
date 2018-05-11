@@ -24,9 +24,12 @@ public class Constants {
     /////Ranking Filters////////
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
+    public static Integer matchNumber;
     public static Map<Integer, String> picklistMap = new HashMap<>();
     public static ArrayList<Integer> highlightedTeams = new ArrayList<>();
     public static ArrayList<Integer> highlightedMatches = new ArrayList<>();
+    public static ArrayList<Integer> onOurAllianceList = new ArrayList<>();
+    public static ArrayList<Integer> onOpponentAllianceList = new ArrayList<>();
     public static int teamsFromPicklist;
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;

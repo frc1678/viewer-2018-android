@@ -22,13 +22,14 @@ public class CalculatedTeamData extends Object {
     public Float avgNumGroundPyramidIntakeAuto;
     public Float soloClimbPercentage;
     public Float avgNumElevatedPyramidIntakeAuto;
+    public Float lfmAvgAllVaultTime;
     public Float assistedClimbPercentage;
     public Float avgNumCubesFumbledAuto;
     public Float switchFailPercentageTele;
-    public Float lfmAvgAllVaultTime;
     public Float avgNumCubesFumbledTele;
     public Float avgNumGroundPyramidIntakeTele;
     public Float avgNumElevatedPyramidIntakeTele;
+    public Integer vaultTimeScore;
     public Float avgNumOpponentPlatformIntakeTele;
     public Float avgNumAlliancePlatformIntakeTele;
     public Float avgTotalCubesPlaced;
