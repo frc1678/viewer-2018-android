@@ -288,7 +288,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
     }
     public ArrayList<Integer> updateHighlightedTeams() {
         HashSet<String> set = new HashSet<>();
-        ViewerActivity.myPref.getStringSet("Testing", set);
         Log.e("set",set.toString());
 
         Constants.highlightedTeams.clear();
@@ -314,33 +313,6 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         }
         ViewerActivity.myEditor.putStringSet("Testing", makeStringSetOutOfList(Constants.highlightedTeams)).commit();
         return Constants.highlightedTeams;
-    }
-
-    public boolean onOurAlliance(Integer team) {
-        String matchNumber = Constants.matchNumber.toString();
-        Match match = (Match) FirebaseLists.matchesList.getFirebaseObjectByKey(matchNumber);
-        List<Object> redTeams = Arrays.asList(Utils.getObjectField(match, "redAllianceTeamNumbers"));
-        List<Object> blueTeams = Arrays.asList(Utils.getObjectField(match, "blueAllianceTeamNumbers"));
-        List<Integer> tempRedAllianceTeams = (List<Integer>) (Object) redTeams.get(0);
-        List<Integer> tempBlueAllianceTeams = (List<Integer>) (Object) blueTeams.get(0);
-        for (int i = 0; i < tempRedAllianceTeams.size(); i++) {
-            //update using matches instead of teams like updateHighlightedTeams();
-            if (tempRedAllianceTeams.get(i).equals(1678)) {
-                if (tempRedAllianceTeams.contains(team)) {
-                    Constants.onOurAllianceList.add(team);
-                    return true;
-                }
-            }
-        }
-        for (int i = 0; i < tempBlueAllianceTeams.size(); i++) {
-            if (tempBlueAllianceTeams.get(i).equals(1678)) {
-                if (tempBlueAllianceTeams.contains(team)) {
-                    Constants.onOurAllianceList.add(team);
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     public boolean onOpponentAlliance(Integer team) {

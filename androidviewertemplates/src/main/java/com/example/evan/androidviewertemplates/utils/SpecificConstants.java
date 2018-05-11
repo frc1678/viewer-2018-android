@@ -148,6 +148,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.lfmAvgScaleCubesBy100s", "Avg Scale Cubes by 100s");
                 put("calculatedData.lfmAvgScaleCubesBy110s", "Avg Scale Cubes by 110s");
                 put("calculatedData.lfmAvgTotalCubesPlaced", "Avg Total Cubes Placed");
+                put("calculatedData.lfmAvgOpponentSwitchCubesTele", "Avg Opp. Switch Cubes");
 
                 //FaceTheBoss
                 put("calculatedData.lfmSoloClimbPercentage", "Solo Climb %");
@@ -204,6 +205,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.lfmDisabledPercentage", "calculatedData.didGetDisabled");
                 put("calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmnumCubesScaleAt100s");
                 put("calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmnumCubesScaleAt110s");
+                put("calculatedData.lfmAvgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchSuccessTele");
             }
         };
         //replace all 'DEFENSE's with the correct defenses
