@@ -41,6 +41,7 @@ import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
@@ -83,6 +84,10 @@ public class MainActivity extends ViewerActivity
         } else {
             Log.i("Can Vibrate", "NO");
         }
+        if (ViewerActivity.myPref.contains("test")) {
+            Constants.highlightedMatches = MatchesAdapter.getFromSharedHighlightedTeams();
+        }
+
         initializeDrawer();
         setActionBarColor();
         Log.e("test", "Logcat is up!");
