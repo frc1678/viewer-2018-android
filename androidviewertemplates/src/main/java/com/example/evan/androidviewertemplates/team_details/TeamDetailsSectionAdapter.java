@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * Created by citruscircuits on 1/23/16.
  */
-public class TeamDetailsSectionAdapter extends TeamAdapter {
+public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     //todo
     static String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
@@ -169,5 +169,21 @@ public class TeamDetailsSectionAdapter extends TeamAdapter {
             lfmIntent.putExtra("teamNumber", teamNumber);
             context.startActivity(lfmIntent);
         }
+    }
+    @Override
+    public String getUpdatedAction() {
+        return Constants.TEAMS_UPDATED_ACTION;
+    }
+
+    @Override
+    public Object getObject() {
+        return FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+    }
+
+    @Override
+    public List<Object> getObjectList() {
+        List<Object> teams = new ArrayList<>();
+        teams.addAll(FirebaseLists.teamsList.getValues());
+        return teams;
     }
 }

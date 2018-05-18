@@ -14,7 +14,7 @@ public class SpecificConstants extends Constants {
     //todo
     public static final String[] DRAWER_TITLES = {"Recent Matches", "Upcoming Matches", "Our Schedule", "Starred Matches", "Schedule", "Seeding", "Predicted Seeding", "First Pick", "Second Pick", "Super Data", "Live Picklist", "Function"};
 
-    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2018-houston.firebaseio.com/";
+    public static final String ORIGINAL_ROOT_FIREBASE_PATH = "https://scouting-2018-temp.firebaseio.com/";
 
     public static String ROOT_FIREBASE_PATH = ORIGINAL_ROOT_FIREBASE_PATH;
     public static String MATCHES_PATH = ORIGINAL_ROOT_FIREBASE_PATH + "Matches";
@@ -67,6 +67,7 @@ public class SpecificConstants extends Constants {
                 put("matches", "Matches");
                 put("VIEWER.matchesUntilNextMatchForTeam", "Matches Until Next Match");
                 put("calculatedData.numMatchesPlayed", "Num. Matches Played");
+                put("lfm", "Last Four Matches");
 
                 //Status
                 put("calculatedData.incapacitatedPercentage", "Incapacitated");
@@ -129,7 +130,6 @@ public class SpecificConstants extends Constants {
                 put("superNotes", "Super Notes");
                 put("numGoodDecisions", "Num. Good Decisions");
                 put("numBadDecisions", "Num. Bad Decisions");
-                put("lfm", "Last Four Matches");
                 put("fullcomp", "Full Comp. Data");
 
                 //LastFourMatches
