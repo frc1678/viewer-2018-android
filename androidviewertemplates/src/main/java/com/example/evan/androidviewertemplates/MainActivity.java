@@ -37,6 +37,7 @@ import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesF
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
+import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
@@ -68,10 +69,10 @@ public class MainActivity extends ViewerActivity
     private Integer latestFragmentId;
     private BroadcastReceiver starReceiver;
 
+
     @Override
     public void onCreate() {
         setContentView(R.layout.activity_main);
-
         context = this.getApplicationContext();
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         /*prefs = getSharedPreferences("prefFile1", Context.MODE_PRIVATE);
@@ -188,12 +189,6 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
             case 11:
-                Constants.highlightTeamSchedule = true;
-                fragment = new OurScheduleHighlightFragment();
-                latestFragmentId = position;
-                break;
-            case 12:
-                Constants.highlightTeamSchedule = true;
                 fragment = new FunctionFragment();
                 latestFragmentId = position;
                 break;
