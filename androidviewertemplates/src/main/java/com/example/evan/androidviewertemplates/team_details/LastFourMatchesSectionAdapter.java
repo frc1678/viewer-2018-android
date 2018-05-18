@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Katherine on 3/27/2018.
  */
 
-public class LastFourMatchesSectionAdapter extends TeamAdapter {
+public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
 
     public LastFourMatchesSectionAdapter(Context context, Integer teamNumber) {
         super(context, teamNumber,

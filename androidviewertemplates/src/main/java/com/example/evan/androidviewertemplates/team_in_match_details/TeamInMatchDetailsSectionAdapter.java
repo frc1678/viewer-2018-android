@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 
 
 import com.example.evan.androidviewertemplates.graphing.RankingsActivity;
-import com.example.evan.androidviewertemplates.team_details.TeamAdapter;
+import com.example.evan.androidviewertemplates.team_details.TeamSectionAdapter;
 import com.example.evan.androidviewertemplates.team_ranking.TeamRankingsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertemplates.utils.ViewerDataPoints;
@@ -24,7 +24,11 @@ import java.util.Map;
 /**
  * Created by colinunger on 1/31/16.
  */
-public class TeamInMatchDetailsSectionAdapter extends TeamAdapter {
+public class TeamInMatchDetailsSectionAdapter extends TeamSectionAdapter {
+
+    private Integer teamNumber;
+
+    private Integer matchNumber;
     //todo
     public TeamInMatchDetailsSectionAdapter(Context context, Integer teamNumber, Integer matchNumber) {
         super(context, teamNumber,
@@ -37,6 +41,8 @@ public class TeamInMatchDetailsSectionAdapter extends TeamAdapter {
                 shouldDisplayAsPercentage,
                 sectionTitles,
                 fieldsToDisplay);
+        this.matchNumber = matchNumber;
+        this.teamNumber = teamNumber;
     }
 
     static String[][] fieldsToDisplay = {
@@ -76,9 +82,6 @@ public class TeamInMatchDetailsSectionAdapter extends TeamAdapter {
 
     static String[] shouldDisplayAsFurtherInformation = {};
 
-    static Integer teamNumber;
-
-    static Integer matchNumber;
 
     @Override
     public void handleNonDefaultClick(int section, int row) {
@@ -93,6 +96,9 @@ public class TeamInMatchDetailsSectionAdapter extends TeamAdapter {
 
     @Override
     public Object getObject() {
+        Log.e("TIMD TeamNumber", teamNumber.toString());
+        Log.e("TIMD MatchNumber", matchNumber.toString());
+
         return FirebaseLists.teamInMatchDataList.getFirebaseObjectByKey(teamNumber.toString() + "Q" + matchNumber.toString());
     }
 

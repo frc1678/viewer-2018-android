@@ -22,7 +22,7 @@ import java.util.Map;
 
 
 //This is the parent class for the two adapters: TeamDetailsSectionAdapter and LasFourMatchesSectionAdapter
-public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
+public abstract class TeamSectionAdapter extends MultitypeRankingsSectionAdapter {
 
     private final String[] rankInsteadOfGraph;
     private final String[] createListOnClick;
@@ -37,7 +37,7 @@ public abstract class TeamAdapter extends MultitypeRankingsSectionAdapter {
     Integer teamNumber;
     protected Context context;
 
-    public TeamAdapter(Context context, Integer teamNumber,
+    public TeamSectionAdapter(Context context, Integer teamNumber,
                        String[] rankInsteadOfGraph,
                        String[] createListOnClick,
                        String[] notClickableFields,

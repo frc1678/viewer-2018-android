@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * Created by citruscircuits on 1/23/16.
  */
-public class TeamDetailsSectionAdapter extends TeamAdapter {
+public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     //todo
     static String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
