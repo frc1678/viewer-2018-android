@@ -41,6 +41,7 @@ import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
+import com.example.evan.androidviewertools.match_listing.MatchesAdapter;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
@@ -75,17 +76,27 @@ public class MainActivity extends ViewerActivity
         setContentView(R.layout.activity_main);
         context = this.getApplicationContext();
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        /*prefs = getSharedPreferences("prefFile1", Context.MODE_PRIVATE);
-        editor = prefs.edit();*/
         fragmentTagNames = new HashMap<>();
         if (v.hasVibrator()) {
             Log.i("Can Vibrate", "YES");
         } else {
             Log.i("Can Vibrate", "NO");
         }
+        //Not game-specific ~ Keep.
+        if (ViewerActivity.myPref.contains("highlightedTeams")) {
+            if (!MatchesAdapter.getFromSharedHighlightedTeams().isEmpty()) {
+                Constants.highlightedMatches = MatchesAdapter.getFromSharedHighlightedTeams();
+            }
+        }
+        if (ViewerActivity.myPref.contains("teamsFromPicklist")) {
+            if (!FunctionFragment.getFromSharedTeamsFromPicklist().toString().equals("")) {
+                Constants.teamsFromPicklist = FunctionFragment.getFromSharedTeamsFromPicklist();
+            } else {
+                Constants.teamsFromPicklist = 0;
+                }
+            }
         initializeDrawer();
         setActionBarColor();
-        Log.e("test", "Logcat is up!");
         broadcastListener();
 
 
@@ -113,12 +124,6 @@ public class MainActivity extends ViewerActivity
         }
     }
 
-    public Integer getSavedPosition() {
-        Integer position;
-        position = prefs.getInt("id", 0);
-        Log.e("initial saved position", position + "");
-        return position;
-    }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {

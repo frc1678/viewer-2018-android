@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
+import com.example.evan.androidviewertools.utils.AsteriskPasswordTransformationMethod;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseList;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
@@ -94,6 +95,7 @@ public class FirstPicklistFragment extends Fragment {
 
                     final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
                     final EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
+                    passwordEditText.setTransformationMethod(new AsteriskPasswordTransformationMethod());
 
     passwordButton.setOnClickListener(new View.OnClickListener() {
     @Override
