@@ -33,10 +33,7 @@ public class PicklistCell extends RelativeLayout {
     String teamNumber;
     Integer teamPicklistPosition;
     String teamNumberValue;
-    String teamPositionValue;
-    String positionTextView;
-    Button downButton;
-    Button upButton;
+
     String string;
     Map<String, Integer> map = new HashMap<>();
 
@@ -47,37 +44,13 @@ public class PicklistCell extends RelativeLayout {
         this.teamPicklistPosition = teamPicklistPosition;
         this.context = context;
         teamNumberValue = Constants.picklistMap.get(teamNumber);
-        //teamPositionValue = Constants.picklistMap.get();
-
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.firstpicklistcelllayout, this, true);
 
         TextView position = (TextView) findViewById(R.id.rankNumber);
-
-
         TextView number = (TextView) findViewById(R.id.teamNumber);
         number.setText(teamNumber);
         position.setText(teamPicklistPosition.toString());
     }
-
-
-    public static Map<String, Integer> loadMap(String key, Context context) {
-        Map<String, Integer> outputMap = new HashMap<String, Integer>();
-        SharedPreferences pSharedPref = context.getSharedPreferences("MyPREF", Context.MODE_PRIVATE);
-        try {
-            //get from shared prefs
-            String storedHashMapString = pSharedPref.getString(key, (new JSONObject()).toString());
-            java.lang.reflect.Type type = new TypeToken<HashMap<String, Integer>>() {
-            }.getType();
-            Gson gson = new Gson();
-
-            return gson.fromJson(storedHashMapString, type);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return outputMap;
-    }
-
 }

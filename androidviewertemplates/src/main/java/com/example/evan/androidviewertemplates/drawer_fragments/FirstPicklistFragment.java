@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -61,7 +62,6 @@ public class FirstPicklistFragment extends Fragment {
         context = getContext();
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View myLayout = inflater.inflate(R.layout.firstpicklist, null);
@@ -108,11 +108,13 @@ public class FirstPicklistFragment extends Fragment {
               FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
               listView.setAdapter(adapter);
               FirstPicklistFragment.picklistValue = true;
+
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
     TextView teamNumberTextView = (TextView) view.findViewById(R.id.teamNumber);
     final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
+    Constants.tempTeamNumber = teamString;
     final Dialog dialog = new Dialog(context);
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     dialog.setContentView(R.layout.picklistdialog);
@@ -125,6 +127,7 @@ public class FirstPicklistFragment extends Fragment {
              //upButton onClick
              Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
              upButtonClick(myTeam);
+             listView.smoothScrollToPosition(myTeam);
             }
          });
     downButton.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +136,7 @@ public class FirstPicklistFragment extends Fragment {
             //downButton onClick
             Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
             downButtonClick(myTeam);
+            listView.smoothScrollToPosition(myTeam);
             }
          });
     dialog.show();
@@ -169,7 +173,12 @@ public class FirstPicklistFragment extends Fragment {
          Integer teamPicklistPosition = Integer.parseInt(dataSnapshot.getKey());
          putIntoPicklistMaps(teamNumber, teamPicklistPosition);
          FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
-         listView.setAdapter(adapter);
+        Parcelable state = listView.onSaveInstanceState();
+        listView.setAdapter(adapter);
+        listView.onRestoreInstanceState(state);
+        final Integer teamString = Integer.parseInt(String.valueOf(Constants.tempTeamNumber));
+        Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
+        listView.smoothScrollToPosition(myTeam);
          adapter.notifyDataSetChanged();
         }
     @Override
@@ -238,9 +247,7 @@ public class FirstPicklistFragment extends Fragment {
         if (myTeam != 0) {
             Integer otherTeam = myTeam - 1;
             Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
-            String extraValue;
-            extraValue = onClickMap.get(myTeam);
-            String team = onClickMap.get(otherTeam);
+            String extraValue = onClickMap.get(myTeam);
             Constants.picklistMap.put(myTeam, onClickMap.get(otherTeam));
             Constants.picklistMap.put(otherTeam, extraValue);
             if (myTeam > 0) {
@@ -252,9 +259,7 @@ public class FirstPicklistFragment extends Fragment {
     public static void downButtonClick(Integer myTeam) {
             Integer otherTeam = myTeam + 1;
             Map<Integer, String> onClickMap = sortByValue(Constants.picklistMap);
-            String extraValue;
-            extraValue = onClickMap.get(otherTeam);
-            String team = onClickMap.get(myTeam);
+            String extraValue = onClickMap.get(otherTeam);
             Constants.picklistMap.put(otherTeam, onClickMap.get(myTeam));
             Constants.picklistMap.put(myTeam, extraValue);
             if (myTeam < 65) {
