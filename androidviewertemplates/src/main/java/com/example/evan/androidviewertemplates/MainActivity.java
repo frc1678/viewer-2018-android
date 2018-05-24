@@ -82,27 +82,19 @@ public class MainActivity extends ViewerActivity
         } else {
             Log.i("Can Vibrate", "NO");
         }
+        //Not game-specific ~ Keep.
         if (ViewerActivity.myPref.contains("highlightedTeams")) {
             if (!MatchesAdapter.getFromSharedHighlightedTeams().isEmpty()) {
-                Log.e("Highlighted Teams", MatchesAdapter.getFromSharedHighlightedTeams().toString());
                 Constants.highlightedMatches = MatchesAdapter.getFromSharedHighlightedTeams();
-            } else {
-                Log.e("Highlighted Matches", "No Highlighted Teams In List.");
             }
-        } else {
-            Log.e("highlightedMatchesPref", "Does not contain 'highlightedTeams'.");
         }
         if (ViewerActivity.myPref.contains("teamsFromPicklist")) {
             if (!FunctionFragment.getFromSharedTeamsFromPicklist().toString().equals("")) {
-                Log.e("Teams From Picklist", FunctionFragment.getFromSharedTeamsFromPicklist().toString());
                 Constants.teamsFromPicklist = FunctionFragment.getFromSharedTeamsFromPicklist();
             } else {
-                Log.e("Teams From Picklist", "No Teams From Picklist.");
+                Constants.teamsFromPicklist = 0;
+                }
             }
-        } else {
-            Log.e("teamsFromPicklistPref", "Does not contain 'teamsFromPicklist'.");
-            Constants.teamsFromPicklist = 0;
-        }
         initializeDrawer();
         setActionBarColor();
         broadcastListener();
@@ -132,12 +124,6 @@ public class MainActivity extends ViewerActivity
         }
     }
 
-    public Integer getSavedPosition() {
-        Integer position;
-        position = prefs.getInt("id", 0);
-        Log.e("initial saved position", position + "");
-        return position;
-    }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
