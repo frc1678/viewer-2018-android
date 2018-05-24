@@ -69,9 +69,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.e("before",Constants.highlightedTeams.toString());
         updateHighlightedTeams();
-        Log.e("after",Constants.highlightedTeams.toString());
         View rowView = convertView;
         if (rowView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -356,34 +354,22 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
             }
         return false;
     }
-    public HashSet<String> makeStringSetOutOfList(ArrayList<Integer> list) {
-        ArrayList<String> stringList = new ArrayList<>();
-        for (Integer i : list) {
-            stringList.add(list.toString());
-        }
-        HashSet<String> set = new HashSet<>();
-        set.addAll(stringList);
-        Log.e("setOne",set.toString());
-        return set;
-    }
+
 
     public  void saveToSharedHighlightedTeams() {
         Gson gson = new Gson();
         String jsonText = gson.toJson(Constants.highlightedMatches);
-        ViewerActivity.myEditor.putString("test", jsonText);
+        ViewerActivity.myEditor.putString("highlightedTeams", jsonText);
         ViewerActivity.myEditor.apply();
     }
     public static ArrayList<Integer> getFromSharedHighlightedTeams() {
         Gson gson = new Gson();
-        String jsonText = ViewerActivity.myPref.getString("test", null);
-        Log.e("jsonText",jsonText);
+        String jsonText = ViewerActivity.myPref.getString("highlightedTeams", null);
         List<String> textList = Arrays.asList(gson.fromJson(jsonText, String[].class));
-        Log.e("textList",textList.toString());
         ArrayList<Integer> matches = new ArrayList<>();
         for (int i = 0; i < textList.size(); i++) {
             matches.add(Integer.valueOf(textList.get(i)));
         }
-        Log.e("texATtter",matches.toString());
         return matches;
     }
 

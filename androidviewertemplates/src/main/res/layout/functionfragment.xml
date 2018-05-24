@@ -30,6 +30,24 @@
         android:text="Clear highlighted teams"
         android:layout_marginRight="10dp"/>
 
+    <Button style="@style/AppTheme.Button"
+        android:id="@+id/clearHighlightedMatches"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Clear highlighted matches"
+        android:layout_marginRight="10dp"/>
+
+    <Button style="@style/AppTheme.Button"
+        android:id="@+id/clearStarredMatches"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Clear starred matches"
+        android:layout_marginRight="10dp"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -39,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="Last updated: 5/9/18"/>
+            android:text="Last updated: 5/23/18"/>
     </RelativeLayout>
 
 

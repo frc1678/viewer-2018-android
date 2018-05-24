@@ -76,21 +76,35 @@ public class MainActivity extends ViewerActivity
         setContentView(R.layout.activity_main);
         context = this.getApplicationContext();
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        /*prefs = getSharedPreferences("prefFile1", Context.MODE_PRIVATE);
-        editor = prefs.edit();*/
         fragmentTagNames = new HashMap<>();
         if (v.hasVibrator()) {
             Log.i("Can Vibrate", "YES");
         } else {
             Log.i("Can Vibrate", "NO");
         }
-        if (ViewerActivity.myPref.contains("test")) {
-            Constants.highlightedMatches = MatchesAdapter.getFromSharedHighlightedTeams();
+        if (ViewerActivity.myPref.contains("highlightedTeams")) {
+            if (!MatchesAdapter.getFromSharedHighlightedTeams().isEmpty()) {
+                Log.e("Highlighted Teams", MatchesAdapter.getFromSharedHighlightedTeams().toString());
+                Constants.highlightedMatches = MatchesAdapter.getFromSharedHighlightedTeams();
+            } else {
+                Log.e("Highlighted Matches", "No Highlighted Teams In List.");
+            }
+        } else {
+            Log.e("highlightedMatchesPref", "Does not contain 'highlightedTeams'.");
         }
-
+        if (ViewerActivity.myPref.contains("teamsFromPicklist")) {
+            if (!FunctionFragment.getFromSharedTeamsFromPicklist().toString().equals("")) {
+                Log.e("Teams From Picklist", FunctionFragment.getFromSharedTeamsFromPicklist().toString());
+                Constants.teamsFromPicklist = FunctionFragment.getFromSharedTeamsFromPicklist();
+            } else {
+                Log.e("Teams From Picklist", "No Teams From Picklist.");
+            }
+        } else {
+            Log.e("teamsFromPicklistPref", "Does not contain 'teamsFromPicklist'.");
+            Constants.teamsFromPicklist = 0;
+        }
         initializeDrawer();
         setActionBarColor();
-        Log.e("test", "Logcat is up!");
         broadcastListener();
 
 
