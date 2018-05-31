@@ -46,33 +46,17 @@ public class TeamInMatchDetailsSectionAdapter extends TeamSectionAdapter {
     }
 
     static String[][] fieldsToDisplay = {
-            {"teamNumber", "matchNumber"},
-            {"didMakeAutoRun", "calculatedData.canScoreOppositeSwitchAuto", "numCubesFumbledAuto", "calculatedData.numAllianceSwitchSuccessAuto",
-                    "calculatedData.numScaleSuccessAuto"},
-            {"calculatedData.totalCubesPlaced", "calculatedData.numAllianceSwitchSuccessTele", "calculatedData.numScaleSuccessTele", "calculatedData.numOpponentSwitchSuccessTele",
-                    "numExchangeInput", "numGroundIntakeTele", "numHumanPortalIntakeTele"},
-            {"didPark", "climb"},
-            {"rankSpeed", "rankAgility", "rankDefense", "superNotes", "numGoodDecisions", "numBadDecisions"},
     };
 
     static String[] sectionTitles = {
-            "Information",
-            "Auto",
-            "Tele",
-            "Face The Boss",
-            "Super Data",
-
     };
 
     static String[] shouldDisplayAsPercentage = {};
 
     static String[] displayAsUnranked = {
-            "climb"
     };
 
     static String[] shouldDisplayAsLongText = {
-            "superNotes",
-            "climb"
     };
     static String[] notClickableFields = {};
 
