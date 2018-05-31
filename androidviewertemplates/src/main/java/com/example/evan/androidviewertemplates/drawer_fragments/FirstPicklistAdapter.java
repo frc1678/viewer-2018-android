@@ -21,11 +21,9 @@ public class FirstPicklistAdapter extends BaseAdapter {
     Map<Integer, String> teams;
 
     public FirstPicklistAdapter(Context context, Map<Integer, String> teams) {
-
         super();
         this.context = context;
         this.teams = teams;
-
 
     }
 
@@ -52,10 +50,7 @@ public class FirstPicklistAdapter extends BaseAdapter {
         String teamNumber = teams.get(position);
         Integer teamPicklistPosition = position;
         PicklistCell cell = new PicklistCell(context, teamNumber, teamPicklistPosition);
-
         convertView = cell;
-
-
         return convertView;
     }
 

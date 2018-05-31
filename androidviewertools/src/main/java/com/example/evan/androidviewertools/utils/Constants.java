@@ -31,6 +31,7 @@ public class Constants {
     public static ArrayList<Integer> onOurAllianceList = new ArrayList<>();
     public static ArrayList<Integer> onOpponentAllianceList = new ArrayList<>();
     public static int teamsFromPicklist;
+    public static int tempTeamNumber;
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;

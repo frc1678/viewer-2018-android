@@ -37,13 +37,9 @@ import static android.content.Context.MODE_PRIVATE;
 public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match> {
     public static Context context;
 
-
-
     public MatchesAdapter(Context context, boolean isNotReversed) {
         super(context, new ObjectFieldComparator("number", isNotReversed));
         this.context = context;
-
-
 
     }
 
