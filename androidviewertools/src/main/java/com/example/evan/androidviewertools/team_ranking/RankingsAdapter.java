@@ -69,8 +69,6 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
         TextView rankingTextView = (TextView)rowView.findViewById(R.id.rankingTextView);
         rankingTextView.setText(getRankText(value));
 
-        Log.e("FILTER " + (String) Utils.getObjectField(value, "name"), getRankText(value));
-
         TextView teamNumberTextView = (TextView)rowView.findViewById(R.id.teamNumberTextView);
         if (searchString.length() > 0) {
             teamNumberTextView.setText(Utils.highlightTextInString(getRankCellText(value), searchString));
@@ -88,7 +86,7 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
         rowView.setOnLongClickListener(new StarLongClickListener());
         rowView.setOnClickListener(new RankClickListener());
 
-        checkIfInSeedingFragment(rowView, value);
+        //checkIfInSeedingFragment(rowView, value);
 
         return rowView;
     }
@@ -100,7 +98,7 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
     public void checkIfInSeedingFragment(View rowView, T value){
         if(Constants.isInSeedingFragment) {
             TextView predictedRankTextView = (TextView) rowView.findViewById(R.id.predictedSeedTextView);
-            predictedRankTextView.setText(getPredictedRankText(value));
+            //predictedRankTextView.setText(getPredictedRankText(value));
             predictedRankTextView.setAlpha(1f);
             TextView predictedRPTextView = (TextView) rowView.findViewById(R.id.predictedNumRP);
             predictedRPTextView.setText(Utils.roundDataPoint(Utils.getObjectField(value, "calculatedData.predictedNumRPs"), 2, "???"));
