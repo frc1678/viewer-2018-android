@@ -1,6 +1,5 @@
 package com.example.evan.androidviewertemplates;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
@@ -9,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
+import com.example.evan.androidviewertools.LowpassFilterRunnable;
 import com.example.evan.androidviewertools.ViewerApplicationTemplate;
 import com.example.evan.androidviewertools.firebase_classes.Match;
 import com.example.evan.androidviewertools.firebase_classes.Team;
@@ -23,6 +23,8 @@ import com.instabug.library.invocation.InstabugInvocationEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class ViewerApplication extends ViewerApplicationTemplate {
@@ -33,7 +35,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
     public void onCreate() {
         super.onCreate();
         //todo
-        startListListeners(getApplicationContext(), com.example.evan.androidviewertemplates.firebase_classes.Match.class, TeamTemplate.class, com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData.class);
+        startListListeners(com.example.evan.androidviewertemplates.firebase_classes.Match.class, TeamTemplate.class, com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData.class);
         //setupFirebaseAuth(this);
         new Instabug.Builder(this, "8acf9a491975145b686561255f5e3410")
                 .setInvocationEvent(InstabugInvocationEvent.SHAKE)
@@ -61,12 +63,12 @@ public class ViewerApplication extends ViewerApplicationTemplate {
     }
 
 
-    public static void startListListeners(final Context context, Class<? extends Match> matchClass, Class<? extends Team> teamClass, Class<? extends TeamInMatchData> teamInMatchClass) {
+    public void startListListeners(Class<? extends Match> matchClass, Class<? extends Team> teamClass, Class<? extends TeamInMatchData> teamInMatchClass) {
         FirebaseLists.matchesList = new FirebaseList<>(SpecificConstants.MATCHES_PATH, new FirebaseList.FirebaseUpdatedCallback() {
             @Override
             public void execute(String key, String previousValue) {
                 Log.i("MATCHES", key);
-                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(SpecificConstants.MATCHES_UPDATED_ACTION).putExtra("key", key).putExtra("previousValue", previousValue));
+                LocalBroadcastManager.getInstance(ViewerApplication.this.getApplicationContext()).sendBroadcast(new Intent(SpecificConstants.RAW_MATCHES_UPDATED_ACTION).putExtra("key", key).putExtra("previousValue", previousValue));
             }
         }, matchClass);
 
@@ -74,7 +76,7 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             @Override
             public void execute(String key, String previousValue) {
                 Log.i("TEAMS", key);
-                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(SpecificConstants.TEAMS_UPDATED_ACTION).putExtra("key", key));
+                LocalBroadcastManager.getInstance(ViewerApplication.this.getApplicationContext()).sendBroadcast(new Intent(SpecificConstants.RAW_TEAMS_UPDATED_ACTION).putExtra("key", key));
             }
         }, teamClass);
 
@@ -82,9 +84,16 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             @Override
             public void execute(String key, String previousValue) {
                 Log.i("TEAMS_IN_MATCHES", key);
-                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(SpecificConstants.TEAM_IN_MATCH_DATAS_UPDATED_ACTION).putExtra("key", key));
+                LocalBroadcastManager.getInstance(ViewerApplication.this.getApplicationContext()).sendBroadcast(new Intent(SpecificConstants.RAW_TEAM_IN_MATCH_DATAS_UPDATED_ACTION).putExtra("key", key));
             }
         }, teamInMatchClass);
+
+        Set<String> firebaseUpdatedActions = new HashSet<>();
+        firebaseUpdatedActions.add(SpecificConstants.RAW_MATCHES_UPDATED_ACTION);
+        firebaseUpdatedActions.add(SpecificConstants.RAW_TEAMS_UPDATED_ACTION);
+        firebaseUpdatedActions.add(SpecificConstants.RAW_TEAM_IN_MATCH_DATAS_UPDATED_ACTION);
+        LowpassFilterRunnable firebaseUpdatedRunnable = new LowpassFilterRunnable(this.getApplicationContext(), firebaseUpdatedActions);
+        new Thread(firebaseUpdatedRunnable).start();
     }
 
     private void handleUncaughtException(Thread thread, Throwable e) {
@@ -107,5 +116,4 @@ public class ViewerApplication extends ViewerApplicationTemplate {
         }
 
     }
-
 }

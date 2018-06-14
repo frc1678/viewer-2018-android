@@ -4,15 +4,20 @@ import android.graphics.Color;
 import android.util.Log;
 
 
+import com.example.evan.androidviewertools.LowpassFilterRunnable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Constants {
-    public static final String TEAMS_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.teamsupdated";
-    public static final String MATCHES_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.matchesupdated";
-    public static final String TEAM_IN_MATCH_DATAS_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.teaminmatchdatasupdated";
+    public static final String RAW_TEAMS_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.teamsupdated";
+    public static final String TEAMS_UPDATED_ACTION = LowpassFilterRunnable.getFilteredAction(RAW_TEAMS_UPDATED_ACTION);
+    public static final String RAW_MATCHES_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.matchesupdated";
+    public static final String MATCHES_UPDATED_ACTION = LowpassFilterRunnable.getFilteredAction(RAW_MATCHES_UPDATED_ACTION);
+    public static final String RAW_TEAM_IN_MATCH_DATAS_UPDATED_ACTION = "org.citruscircuits.scout_viewer_2016_android.teaminmatchdatasupdated";
+    public static final String TEAM_IN_MATCH_DATAS_UPDATED_ACTION = LowpassFilterRunnable.getFilteredAction(RAW_TEAM_IN_MATCH_DATAS_UPDATED_ACTION);
     public static final String NEW_TEAM_PHOTO_ACTION = "org.citruscircuits.scout_viewer_2016_android.newteamphoto";
     public static final String NEW_MATCH_PLAYED_ACTION = "org.citruscircuits.scout_viewer_2016_android.newmatchplayed";
     public static final String STARS_MODIFIED_ACTION = "org.citruscircuits.scout_viewer_2016_android.starsmodified";

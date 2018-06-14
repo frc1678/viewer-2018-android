@@ -261,7 +261,6 @@ public class MainActivity extends ViewerActivity
                 @Override
                 public void run() {
                     Looper.prepare();
-                    refresh();
                 }
             };
             thread.start();
@@ -275,17 +274,7 @@ public class MainActivity extends ViewerActivity
         return new Intent(this, this.getClass());
     }
 
-    private void refresh() {
-        FirebaseLists.matchesList.cancelListen();
-        FirebaseLists.teamInMatchDataList.cancelListen();
-        FirebaseLists.teamsList.cancelListen();
-        ViewerApplication.startListListeners(context, Match.class, TeamTemplate.class, TeamInMatchData.class);
-        Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show();
-        Log.e("refreshed", "true");
-
-    }
-
-    public void broadcastListener() {
+    public void broadcastListener(){
         starReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {

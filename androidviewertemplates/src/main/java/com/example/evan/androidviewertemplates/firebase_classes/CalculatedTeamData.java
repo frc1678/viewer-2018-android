@@ -29,7 +29,6 @@ public class CalculatedTeamData extends Object {
     public Float avgNumCubesFumbledTele;
     public Float avgNumGroundPyramidIntakeTele;
     public Float avgNumElevatedPyramidIntakeTele;
-    public Integer vaultTimeScore;
     public Float avgNumOpponentPlatformIntakeTele;
     public Float avgNumAlliancePlatformIntakeTele;
     public Float avgTotalCubesPlaced;
