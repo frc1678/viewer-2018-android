@@ -176,7 +176,6 @@ public class Utils {
             Log.e("methodName", "get" + Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1));
             Log.e("className", viewerDataPointsClass.getName());
             Method method = viewerDataPointsClass.getMethod("getMatchesUntilNextMatchForTeam", object.getClass(), Intent.class);
-            Log.e("testing", "here");
             return method.invoke(viewerDataPointsClass.newInstance(), object, args);
         } catch (NoSuchMethodException NSME) {
             Log.e("Method", "ERROR");

@@ -57,6 +57,7 @@ public class LowpassFilterRunnable implements Runnable {
             for (String action : this.queue) {
                 localBroadcastManager.sendBroadcast(new Intent(LowpassFilterRunnable.getFilteredAction(action)));
             }
+            this.queue.clear();
         }
     }
 }

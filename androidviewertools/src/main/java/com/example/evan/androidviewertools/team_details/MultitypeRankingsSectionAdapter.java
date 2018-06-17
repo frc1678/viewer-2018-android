@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,10 +43,13 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
 
     public void recache() {
         this.rankCache.clear();
-        Log.e("recaching", "Recaching the whole list now");
         String[][] fields = getFieldsToDisplay();
         for (int section_i = 0; section_i < fields.length; section_i++) {
             for (int row_i = 0; row_i < fields[section_i].length; row_i++) {
+                if (this.isUnranked(section_i, row_i)) {
+                    continue;
+                }
+
                 Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
 
                 String fieldName = (String)getRowItem(section_i, row_i);
@@ -76,7 +78,6 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     @Override
     public int numberOfRows(int section) {
         if (section > -1) {
-            Log.e("NumFields", getFieldsToDisplay()[section].length + "" );
             return getFieldsToDisplay()[section].length;
         } else {
             return 0;
@@ -121,14 +122,12 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         if (fieldKey.contains("VIEWER.")) {
             Intent intent = new Intent();
             try {
-
                 return (Utils.getViewerObjectField(object, fieldKey.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
             } catch (NullPointerException npe) {
                 return "???";
             }
         }
         if (new ArrayList<>(Arrays.asList(getPercentageFields())).contains(fieldKey)) {
-            //Log.e(fieldKey, Utils.getObjectField(getObject(), fieldKey).toString());
             return Utils.dataPointToPercentage((Float)Utils.getObjectField(getObject(), fieldKey), 1);
         }
         return Utils.getDisplayValue(object, fieldKey);
