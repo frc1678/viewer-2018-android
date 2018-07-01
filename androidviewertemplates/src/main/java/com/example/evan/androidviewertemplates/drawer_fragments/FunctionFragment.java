@@ -45,6 +45,7 @@ public class FunctionFragment extends Fragment {
         final Button clearHighlightedTeams = (Button) myLayout.findViewById(R.id.clearHighlightedTeams);
         final Button clearHighlightedMatches = (Button) myLayout.findViewById(R.id.clearHighlightedMatches);
         final Button clearStarredMatches = (Button) myLayout.findViewById(R.id.clearStarredMatches);
+        final Button clearSelectedTeamsFromPicklist = (Button) myLayout.findViewById(R.id.clearSelectedFromPicklist);
 
         teamsOfPicklist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +107,15 @@ public class FunctionFragment extends Fragment {
             public void onClick(View view) {
             StarManager.importantMatches.clear();
                 Toast.makeText(getActivity(), "Starred Matches have been cleared.",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        clearSelectedTeamsFromPicklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.alreadySelectedOnPicklist.clear();
+                Toast.makeText(getActivity(), "Teams" +
+                                " Selected On Picklist have been cleared.",
                         Toast.LENGTH_LONG).show();
             }
         });

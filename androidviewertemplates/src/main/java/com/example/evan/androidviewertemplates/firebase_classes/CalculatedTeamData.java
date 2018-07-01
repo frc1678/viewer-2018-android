@@ -54,7 +54,6 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgScaleCubesBy110s;
     public Float lfmAvgScaleCubesBy120s;
     public Float lfmAvgScaleCubesBy100s;
-    public Float vaultTimeScore;
 
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;

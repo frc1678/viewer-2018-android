@@ -3,7 +3,6 @@ package com.example.evan.androidviewertemplates.drawer_fragments;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -23,11 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.R;
-import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.team_details.TeamDetailsActivity;
 import com.example.evan.androidviewertools.utils.AsteriskPasswordTransformationMethod;
 import com.example.evan.androidviewertools.utils.Constants;
-import com.example.evan.androidviewertools.utils.firebase.FirebaseList;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -35,9 +32,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -91,59 +86,31 @@ public class FirstPicklistFragment extends Fragment {
                     final Dialog passwordDialog = new Dialog(context);
                     passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     passwordDialog.setContentView(R.layout.passworddialog);
-                    passwordDialog.show();
-
                     final Button passwordButton = passwordDialog.findViewById(R.id.passwordButton);
                     final EditText passwordEditText = (EditText) passwordDialog.findViewById(R.id.passwordEditText);
                     passwordEditText.setTransformationMethod(new AsteriskPasswordTransformationMethod());
+
+    if (!Constants.alreadyEnteredPasswordInCurrentSession) {
+        passwordDialog.show();
+    } else {
+        FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
+        listView.setAdapter(adapter);
+        setAdapterEssentials(adapter, listView, context);
+        FirstPicklistFragment.picklistValue = true;
+    }
 
     passwordButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         final String passwordText = passwordEditText.getText().toString();
-        passwordDialog.dismiss();
-         Log.e("password",passwordText.toString());
-         Log.e("passwordtwo",picklistPassword);
          if (checkPassword(passwordText)) {
+              Constants.alreadyEnteredPasswordInCurrentSession = true;
+              passwordDialog.dismiss();
               FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
               listView.setAdapter(adapter);
-              FirstPicklistFragment.picklistValue = true;
-
-    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
-    TextView teamNumberTextView = (TextView) view.findViewById(R.id.teamNumber);
-    final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
-    Constants.tempTeamNumber = teamString;
-    final Dialog dialog = new Dialog(context);
-    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-    dialog.setContentView(R.layout.picklistdialog);
-    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-    Button upButton = (Button) dialog.findViewById(R.id.upButton);
-    Button downButton = (Button) dialog.findViewById(R.id.downButton);
-    upButton.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             //upButton onClick
-             Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
-             upButtonClick(myTeam);
-             listView.smoothScrollToPosition(myTeam);
-            }
-         });
-    downButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //downButton onClick
-            Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
-            downButtonClick(myTeam);
-            listView.smoothScrollToPosition(myTeam);
-            }
-         });
-    dialog.show();
-        }
-    });
-    adapter.notifyDataSetChanged();
-    } else {
+             setAdapterEssentials(adapter, listView, context);
+             FirstPicklistFragment.picklistValue = true;
+              } else {
          Toast.makeText(getActivity(), "hacking = bad",
               Toast.LENGTH_LONG).show();
          passwordEditText.getText().clear();
@@ -151,15 +118,56 @@ public class FirstPicklistFragment extends Fragment {
         }
     });
 
+
     listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-         Integer teamNumberClicked = Integer.parseInt(Constants.picklistMap.get(position));
-         Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
-         teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
-         teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-         context.startActivity(teamDetailsViewIntent);
-         return true;
+        final Dialog longClickDialog = new Dialog(context);
+        longClickDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        longClickDialog.setContentView(R.layout.longclickdialog);
+
+        TextView teamNumberDisplay = (TextView) longClickDialog.findViewById(R.id.teamNumberDisplay);
+        Button teamDetails = (Button) longClickDialog.findViewById(R.id.teamDetailsButton);
+        Button highlightCellButton = (Button) longClickDialog.findViewById(R.id.highlightTextButton);
+
+        teamNumberDisplay.setText(Constants.picklistMap.get(position));
+        longClickDialog.show();
+
+        teamDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer teamNumberClicked = Integer.parseInt(Constants.picklistMap.get(position));
+                Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
+                teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
+                teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(teamDetailsViewIntent);
+                Parcelable state = listView.onSaveInstanceState();
+                FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
+                listView.setAdapter(adapter);
+                listView.onRestoreInstanceState(state);
+                longClickDialog.dismiss();
+            }
+        });
+
+        highlightCellButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer team =  Integer.parseInt(Constants.picklistMap.get(position));
+                if (!onAlreadySelectedOnPicklist(team)) {
+                    Constants.alreadySelectedOnPicklist.add(team);
+                } else {
+                    Constants.alreadySelectedOnPicklist.remove(team);
+                }
+                Parcelable state = listView.onSaveInstanceState();
+                FirstPicklistAdapter adapter = new FirstPicklistAdapter(context, sortByValue(Constants.picklistMap));
+                listView.setAdapter(adapter);
+                listView.onRestoreInstanceState(state);
+
+                longClickDialog.dismiss();
+            }
+        });
+
+        return true;
                 }
             });
         }
@@ -267,5 +275,51 @@ public class FirstPicklistFragment extends Fragment {
                 dref.child("picklist").child(otherTeam.toString()).setValue(Integer.parseInt(Constants.picklistMap.get(otherTeam)));
             }
         }
+
+    public static void setAdapterEssentials(FirstPicklistAdapter adapter, final ListView listView, final Context context) {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
+                TextView teamNumberTextView = (TextView) view.findViewById(R.id.teamNumber);
+                final Integer teamString = Integer.parseInt(teamNumberTextView.getText().toString());
+                Constants.tempTeamNumber = teamString;
+                final Dialog dialog = new Dialog(context);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.picklistdialog);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                Button upButton = (Button) dialog.findViewById(R.id.upButton);
+                Button downButton = (Button) dialog.findViewById(R.id.downButton);
+                upButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //upButton onClick
+                        Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
+                        upButtonClick(myTeam);
+                        listView.smoothScrollToPosition(myTeam);
+                    }
+                });
+                downButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //downButton onClick
+                        Integer myTeam = getKeyByValue(Constants.picklistMap, teamString.toString());
+                        downButtonClick(myTeam);
+                        listView.smoothScrollToPosition(myTeam);
+                    }
+                });
+                dialog.show();
+            }
+        });
+        adapter.notifyDataSetChanged();
     }
+
+    public Boolean onAlreadySelectedOnPicklist(Integer team) {
+        for (int i = 0; i < Constants.alreadySelectedOnPicklist.size(); i++) {
+            if (Constants.alreadySelectedOnPicklist.get(i).equals(team)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
 

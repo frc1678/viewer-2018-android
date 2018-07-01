@@ -30,6 +30,8 @@ public class Constants {
     public static ArrayList<Integer> highlightedMatches = new ArrayList<>();
     public static ArrayList<Integer> onOurAllianceList = new ArrayList<>();
     public static ArrayList<Integer> onOpponentAllianceList = new ArrayList<>();
+    public static ArrayList<Integer> alreadySelectedOnPicklist = new ArrayList<>();
+    public static boolean alreadyEnteredPasswordInCurrentSession;
     public static int teamsFromPicklist;
     public static int tempTeamNumber;
     public static boolean sortByFirstPick = false;
