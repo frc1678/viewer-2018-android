@@ -55,7 +55,7 @@ public class FirstPicklistAdapter extends BaseAdapter {
         convertView = cell;
         for (int i = 0; i < Constants.alreadySelectedOnPicklist.size(); i++) {
             if (Constants.alreadySelectedOnPicklist.get(i).toString().equals(teamNumber)){
-                convertView.setBackgroundColor(Color.parseColor("#fffddd"));
+                convertView.setBackgroundColor(Color.parseColor("#FFA4A4"));
             }
         }
         return convertView;
