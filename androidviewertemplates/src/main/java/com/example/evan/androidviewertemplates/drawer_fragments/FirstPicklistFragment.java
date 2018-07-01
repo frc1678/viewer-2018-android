@@ -83,7 +83,6 @@ public class FirstPicklistFragment extends Fragment {
 
                 if (checkTeamsListSize(Constants.picklistMap)) {
                     Constants.rankedTeamsListByActualSeed = Constants.picklistMap;
-                    Log.e("ranktedTeams",Constants.rankedTeamsListByActualSeed.toString());
                     final Dialog passwordDialog = new Dialog(context);
                     passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     passwordDialog.setContentView(R.layout.passworddialog);
