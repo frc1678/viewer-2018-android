@@ -82,7 +82,8 @@ public class FirstPicklistFragment extends Fragment {
                 putIntoPicklistMaps(teamNumber, teamPicklistPosition);
 
                 if (checkTeamsListSize(Constants.picklistMap)) {
-
+                    Constants.rankedTeamsListByActualSeed = Constants.picklistMap;
+                    Log.e("ranktedTeams",Constants.rankedTeamsListByActualSeed.toString());
                     final Dialog passwordDialog = new Dialog(context);
                     passwordDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     passwordDialog.setContentView(R.layout.passworddialog);
@@ -321,5 +322,11 @@ public class FirstPicklistFragment extends Fragment {
         }
         return false;
     }
+
+    public void updateRankedTeamsList(Map<Integer,String> teamsMap) {
+
+    }
+
+
 }
 
