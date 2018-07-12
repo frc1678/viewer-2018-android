@@ -1,14 +1,12 @@
-package com.example.evan.androidviewertemplates.drawer_fragments;
+package com.example.evan.androidviewertemplates.team_details;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
-import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PicklistCell;
+
 
 import java.util.Map;
 
@@ -21,9 +19,11 @@ public class FirstPicklistAdapter extends BaseAdapter {
     Map<Integer, String> teams;
 
     public FirstPicklistAdapter(Context context, Map<Integer, String> teams) {
-        super();
-        this.context = context;
-        this.teams = teams;
+
+            super();
+            this.context = context;
+            this.teams = teams;
+
 
     }
 
@@ -50,7 +50,11 @@ public class FirstPicklistAdapter extends BaseAdapter {
         String teamNumber = teams.get(position);
         Integer teamPicklistPosition = position;
         PicklistCell cell = new PicklistCell(context, teamNumber, teamPicklistPosition);
+
         convertView = cell;
+
+
+
         return convertView;
     }
 

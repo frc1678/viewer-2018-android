@@ -5,7 +5,7 @@
 
     <Button style="@style/AppTheme.Button"
     android:id="@+id/teamsOfPicklist"
-    android:layout_height="60dp"
+    android:layout_height="80dp"
     android:layout_width="match_parent"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
@@ -14,7 +14,7 @@
 
     <Button style="@style/AppTheme.Button"
         android:id="@+id/clearStarredTeams"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -23,7 +23,7 @@
 
     <Button style="@style/AppTheme.Button"
         android:id="@+id/clearHighlightedTeams"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -32,7 +32,7 @@
 
     <Button style="@style/AppTheme.Button"
         android:id="@+id/clearHighlightedMatches"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -41,20 +41,11 @@
 
     <Button style="@style/AppTheme.Button"
         android:id="@+id/clearStarredMatches"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:text="Clear starred matches"
-        android:layout_marginRight="10dp"/>
-
-    <Button style="@style/AppTheme.Button"
-        android:id="@+id/clearSelectedFromPicklist"
-        android:layout_height="60dp"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Clear selected teams from picklist"
         android:layout_marginRight="10dp"/>
 
     <RelativeLayout
@@ -66,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="Last updated: 7/1/18"/>
+            android:text="Last updated: 5/23/18"/>
     </RelativeLayout>
 
 
