@@ -1,12 +1,14 @@
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.Map;
 
 /**
  * Created by Katherine on 1/12/2018.
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CalculatedTeamData extends Object {
     public Float didThreeExchangeInputPercentage;
     public Float firstPickAbiltiy;
@@ -54,7 +56,6 @@ public class CalculatedTeamData extends Object {
     public Float lfmAvgScaleCubesBy110s;
     public Float lfmAvgScaleCubesBy120s;
     public Float lfmAvgScaleCubesBy100s;
-    public Float vaultTimeScore;
 
     public Float activeLiftClimbPercentage;
     public Float activeNoClimbLiftClimbPercentage;
