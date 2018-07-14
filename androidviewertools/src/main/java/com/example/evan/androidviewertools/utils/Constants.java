@@ -26,10 +26,13 @@ public class Constants {
     public static boolean sortByRank = false;
     public static Integer matchNumber;
     public static Map<Integer, String> picklistMap = new HashMap<>();
+    public static Map<Integer, String> rankedTeamsListByActualSeed = new HashMap<>();
     public static ArrayList<Integer> highlightedTeams = new ArrayList<>();
-    public static ArrayList<Integer> highlightedMatches = new ArrayList<>();
     public static ArrayList<Integer> onOurAllianceList = new ArrayList<>();
+    public static ArrayList<Integer> highlightedMatches = new ArrayList<>();
     public static ArrayList<Integer> onOpponentAllianceList = new ArrayList<>();
+    public static ArrayList<Integer> alreadySelectedOnPicklist = new ArrayList<>();
+    public static boolean alreadyEnteredPasswordInCurrentSession;
     public static int teamsFromPicklist;
     public static int tempTeamNumber;
     public static boolean sortByFirstPick = false;

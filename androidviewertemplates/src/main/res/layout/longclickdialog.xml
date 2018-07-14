@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_height="125dp"
+    android:background="@color/lightblue"
+    android:backgroundTint="@color/lightblue">
+
+    <TextView
+        android:id="@+id/teamNumberDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="14dp"
+        android:text="1678"/>
+
+    <FrameLayout
+        android:layout_below="@+id/teamNumberDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/highlightTextButton"
+            style="@style/AppTheme.Button"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_toLeftOf="@+id/separator"
+            android:text="UNAVAILABLE" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="10dp"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:background="@color/lightblue"
+            android:layout_centerInParent="true"
+            />
+
+
+        <Button
+            android:id="@+id/teamDetailsButton"
+            android:text="TEAM DETAILS"
+            android:gravity="center"
+            style="@style/AppTheme.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_toRightOf="@+id/separator"
+             />
+
+
+    </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>
