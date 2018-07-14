@@ -15,5 +15,5 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public CalculatedMatchData calculatedData;
     //Make sure all variables are public
 
-
+//  PUBLIC TYPE EXAMPLE_DATA_POINT
 }

@@ -9,4 +9,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class CalculatedMatchData extends Object {
     //Make sure all variables are public
 
+//  PUBLIC TYPE EXAMPLE_DATA_POINT
 }

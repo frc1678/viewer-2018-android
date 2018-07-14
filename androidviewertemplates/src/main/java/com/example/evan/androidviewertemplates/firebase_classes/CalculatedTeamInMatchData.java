@@ -12,4 +12,5 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CalculatedTeamInMatchData extends Object {
 
+    //  PUBLIC TYPE EXAMPLE_DATA_POINT
 }

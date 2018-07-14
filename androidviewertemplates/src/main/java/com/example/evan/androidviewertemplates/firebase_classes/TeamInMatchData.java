@@ -15,6 +15,5 @@ import java.util.Map;
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
 
-
-
+//  PUBLIC TYPE EXAMPLE_DATA_POINT
 }

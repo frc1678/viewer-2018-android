@@ -12,6 +12,5 @@ import java.util.Map;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
-
-
+//  PUBLIC TYPE EXAMPLE_DATA_POINT
 }
