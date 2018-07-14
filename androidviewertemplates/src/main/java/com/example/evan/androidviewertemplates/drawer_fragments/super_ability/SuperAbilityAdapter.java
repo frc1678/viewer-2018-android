@@ -13,11 +13,6 @@ public class SuperAbilityAdapter extends FragmentStatePagerAdapter {
     Context context;
     //todo
     String[] fields = {
-            "calculatedData.avgSpeed",
-            "calculatedData.avgAgility",
-            "calculatedData.avgDefense",
-            "calculatedData.totalNumGoodDecisions",
-            "calculatedData.totalNumBadDecisions"
     };
 
     public SuperAbilityAdapter(Context context, FragmentManager mgr) {
