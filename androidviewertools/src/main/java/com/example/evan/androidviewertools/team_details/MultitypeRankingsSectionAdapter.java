@@ -27,11 +27,13 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
 
     public Context context;
     private Map<Pair<Integer, Integer>, Integer> rankCache;
+    private Map<Pair<Integer, Integer>, String> valuesCache;
 
     public MultitypeRankingsSectionAdapter(Context context) {
         super(context);
         this.context = context;
         this.rankCache = new HashMap<>();
+        this.valuesCache = new HashMap<>();
         LocalBroadcastManager.getInstance(context).registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -49,7 +51,6 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
                 if (this.isUnranked(section_i, row_i)) {
                     continue;
                 }
-
                 Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
 
                 String fieldName = (String)getRowItem(section_i, row_i);
@@ -58,9 +59,25 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
                     Intent intent = new Intent();
                     fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), intent, getViewerDataPointsClass());
                 }
-
                 Integer rank = Utils.getRankOfObject(object, getObjectList(), fieldName, false);
                 this.rankCache.put(location, rank);
+            }
+        }
+    }
+    public void recacheValues() {
+        this.valuesCache.clear();
+        String[][] fields = getFieldsToDisplay();
+        for (int section_i = 0; section_i < fields.length; section_i++) {
+            for (int row_i = 0; row_i < fields[section_i].length; row_i++) {
+                String fieldName = (String) getRowItem(section_i, row_i);
+
+                if (fieldName.startsWith("VIEWER.")) {
+                    Object object = getObject();
+                    Intent intent = new Intent();
+                    Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
+                    String value = (Utils.getViewerObjectField(object, fieldName.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
+                    this.valuesCache.put(location, value);
+                }
             }
         }
     }
@@ -115,16 +132,21 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         return getKeysToTitles().get(getRowItem(section, row));
     }
 
+    //take lines 139 to 144, check if it needs to be cached, if needs to be recached, recache. If not, reference line 114 (has almost exactly what you need to do)
     @Override
     public String getValueOfRowInSection(int section, int row) {
         String fieldKey = (String)getRowItem(section, row);
         Object object = getObject();
+        Pair<Integer, Integer> location = new Pair<>(section, row);
         if (fieldKey.contains("VIEWER.")) {
-            Intent intent = new Intent();
-            try {
-                return (Utils.getViewerObjectField(object, fieldKey.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
-            } catch (NullPointerException npe) {
-                return "???";
+            if (! this.valuesCache.containsKey(location)) {
+                recacheValues();
+            }
+            String value = this.valuesCache.get(location);
+            if (value == null) {
+                return "?";
+            } else {
+                return value;
             }
         }
         if (new ArrayList<>(Arrays.asList(getPercentageFields())).contains(fieldKey)) {
