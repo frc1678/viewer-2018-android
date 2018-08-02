@@ -27,16 +27,9 @@ import java.util.List;
  */
 public class MatchDetailsTeamCellAdapter extends BaseAdapter {
     //todo
-    private String[] fields = {
-            "calculatedData.autoRunPercentage",
-            "calculatedData.climbPercentage",
-            "calculatedData.avgCubesSpilledTele",
-            "calculatedData.avgNumExchangeInputTele",//
-            "calculatedData.avgCubesPlacedInScaleTele",//
-            "calculatedData.avgAllianceSwitchCubesAuto",
-    };
+    private String[] fields = {""};
 
-    private String[] fieldsToDisplayAsPercentages = {"calculatedData.climbPercentage", "calculatedData.autoRunPercentage"};
+    private String[] fieldsToDisplayAsPercentages = {""};
     private String[] reverseRankFields = {};
     private Integer teamNumber;
 
