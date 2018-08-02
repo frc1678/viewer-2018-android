@@ -21,13 +21,9 @@ public abstract class TeamInMatchDataGraphFragment extends GraphFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Log.e("REACHED", "HERE");
         teamNumber = getArguments().getInt("team", 0);
-        //Log.e("teamNumber", Integer.toString(teamNumber));
         field = getArguments().getString("field");
-        //Log.e("field", field);
         displayAsPercentage = getArguments().getBoolean("displayAsPercentage");
-        //Log.e("displayAsPercentage", String.valueOf(displayAsPercentage));
     }
     @Override
     public void onDestroy(){
