@@ -24,7 +24,6 @@ import android.widget.Toast;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FunctionFragment;
-import com.example.evan.androidviewertemplates.drawer_fragments.OurScheduleHighlightFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -37,7 +36,6 @@ import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesF
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
-import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;

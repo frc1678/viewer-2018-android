@@ -1,6 +1,8 @@
 
 package com.example.evan.androidviewertemplates.firebase_classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
@@ -8,8 +10,8 @@ import java.util.Map;
 /**
  * Created by Teo on 1/10/2018.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
-
     public ArrayList<Boolean> pitDriveTimeOutcome;
     public ArrayList<Float> pitAutoRunTimes;
     public ArrayList<String> totalSuperNotes;
@@ -55,4 +57,5 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Float pitRobotLength;
     public String pitRobotDimensions; //Todo Delete Later
     public Float pitRobotWidth;
+
 }

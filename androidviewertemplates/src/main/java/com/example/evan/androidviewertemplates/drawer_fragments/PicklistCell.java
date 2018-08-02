@@ -12,7 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.evan.androidviewertemplates.R;
+import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Constants;
+import com.example.evan.androidviewertools.utils.Utils;
+import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -46,11 +49,21 @@ public class PicklistCell extends RelativeLayout {
         teamNumberValue = Constants.picklistMap.get(teamNumber);
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.firstpicklistcelllayout, this, true);
+        inflater.inflate(R.layout.picklistcellprototype, this, true);
 
-        TextView position = (TextView) findViewById(R.id.rankNumber);
+        TextView position = (TextView) findViewById(R.id.rankPosition);
         TextView number = (TextView) findViewById(R.id.teamNumber);
+        TextView name = (TextView) findViewById(R.id.teamName);
         number.setText(teamNumber);
         position.setText(teamPicklistPosition.toString());
+        name.setText(generateTeamNameAndSeed(teamNumber));
+    }
+
+    public String generateTeamNameAndSeed(String teamNumber) {
+        Team team = FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber);
+        String teamRank = (Utils.fieldIsNotNull(team, "calculatedData.actualSeed") ? Utils.roundDataPoint(Utils.getObjectField(team, "calculatedData.actualSeed"), 2, "???") : "???");
+        String teamName = (Utils.fieldIsNotNull(team, "name") ? Utils.roundDataPoint(Utils.getObjectField(team, "name"), 2, "???") : "???");
+        String finalString = teamName + " | Rank: " + teamRank;
+        return finalString;
     }
 }
