@@ -9,4 +9,5 @@ CalculatedMatchData extends Object {
     //Make sure all variables are public
 //  public type data_point_name;
 
+
 }

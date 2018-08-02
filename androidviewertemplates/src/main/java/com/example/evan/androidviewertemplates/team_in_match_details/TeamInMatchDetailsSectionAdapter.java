@@ -51,6 +51,7 @@ public class TeamInMatchDetailsSectionAdapter extends TeamSectionAdapter {
 
     static String[] sectionTitles = {
 
+
     };
 
     static String[] shouldDisplayAsPercentage = {};

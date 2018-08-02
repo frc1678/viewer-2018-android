@@ -28,11 +28,13 @@ public class SpecificConstants extends Constants {
 /*              ex://team_details
 //              put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
 */
+
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String>() {
             {
                //remember to specify the LFM section
+
             }
         };
         //replace all 'DEFENSE's with the correct defenses

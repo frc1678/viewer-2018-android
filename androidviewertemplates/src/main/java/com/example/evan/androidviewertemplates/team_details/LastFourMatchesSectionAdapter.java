@@ -32,6 +32,7 @@ public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
 
     static String[] rankInsteadOfGraph = {
             ""
+
     };
 
     static String[] createListOnClick = {
@@ -57,11 +58,13 @@ public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
 
     static String[] sectionTitles = {
             ""
+
     };
 
     static String[][] fieldsToDisplay = {
 
             {""},
+
     };
 
 

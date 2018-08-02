@@ -27,19 +27,18 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     //todo
     static String[][] fieldsToDisplay = {
-            {""}
     };
 
     static String[] sectionTitles = {
-            ""
+
     };
 
     static String[] shouldDisplayAsPercentage = {
-
-    };
+};
 
     static String[] displayAsUnranked = {
-
+            "matches",
+            "VIEWER.matchesUntilNextMatchForTeam",
     };
 
     static String[] shouldDisplayAsLongText = {
@@ -50,19 +49,20 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "matches",
             "lfm"
 
+
     };
 
     static String[] notClickableFields = {
             "VIEWER.matchesUntilNextMatchForTeam"
+
     };
 
     static String[] createListOnClick = {
-            "matches",
-            "lfm"
     };
 
     static String[] rankInsteadOfGraph = {
             ""
+
     };
 
 

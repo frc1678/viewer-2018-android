@@ -13,4 +13,5 @@ import java.util.Map;
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     //Make sure all data points are public
     //  public type data_point_name;
+
 }

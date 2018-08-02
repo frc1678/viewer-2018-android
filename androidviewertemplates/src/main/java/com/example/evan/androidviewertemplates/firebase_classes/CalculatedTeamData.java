@@ -10,4 +10,5 @@ import java.util.Map;
 public class CalculatedTeamData extends Object {
     //Make sure all data points are public
     //  public type data_point_name;
+
 }

@@ -11,4 +11,5 @@ import java.util.Map;
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
     //Make sure all data points are public
     //  public type data_point_name;
+
 }
