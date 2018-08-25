@@ -12,6 +12,7 @@
         android:textSize="20sp"
         android:text="Num"/>
 
+
     <ListView
         android:id="@+id/matchDetailsTeamCellTeamValues"
         android:layout_width="match_parent"

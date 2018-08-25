@@ -72,6 +72,7 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     public String getRankTextOfRowInSection(int section, int row) {
         String fieldName = (String)getRowItem(section, row);
         Object object = getObject();
+
         if (fieldName.startsWith("VIEWER.")) {
             Intent intent = new Intent();
             fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), intent, getViewerDataPointsClass());
