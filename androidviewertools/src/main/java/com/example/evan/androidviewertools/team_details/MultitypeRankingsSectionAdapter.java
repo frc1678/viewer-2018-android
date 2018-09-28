@@ -51,7 +51,6 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     @Override
     public int numberOfRows(int section) {
         if (section > -1) {
-            Log.e("NumFields", getFieldsToDisplay()[section].length + "" );
             return getFieldsToDisplay()[section].length;
         } else {
             return 0;

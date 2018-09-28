@@ -215,4 +215,8 @@ public class CalculatedTeamData extends Object {
     public Float scaleFailPercentageTele;
 
     public Integer predictedTotalNumRPs;
+    public Float avgExchangeCycleTime;
+    public Float avgScaleCycleTime;
+    public Float avgSwitchCycleTime;
+
 }
