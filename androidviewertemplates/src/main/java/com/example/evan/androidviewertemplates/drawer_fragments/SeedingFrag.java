@@ -120,7 +120,7 @@ public class SeedingFrag extends Fragment {
             Constants.seedingTeams.add(team);
         }
     }
-
+//
 
     public static Map<Integer, Integer> sortByValue(Map<Integer, Integer> teams) {
         List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(teams.entrySet());
