@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPickAbilityFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.FunctionFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.OurScheduleHighlightFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPickFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
@@ -158,7 +159,7 @@ public class MainActivity extends ViewerActivity
                 Constants.highlightTeamSchedule = false;
                 Bundle args = new Bundle();
                 args.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
-                fragment = new TeamScheduleFragment();
+                fragment = new OurScheduleHighlightFragment();
                 latestFragmentId = position;
                 fragment.setArguments(args);
                 break;
@@ -166,7 +167,7 @@ public class MainActivity extends ViewerActivity
                 Constants.highlightTeamSchedule = false;
                 Bundle args2 = new Bundle();
                 args2.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
-                fragment = new SeedingFrag();
+                fragment = new SeedingFragment();
                 latestFragmentId = position;
                 fragment.setArguments(args2);
                 break;

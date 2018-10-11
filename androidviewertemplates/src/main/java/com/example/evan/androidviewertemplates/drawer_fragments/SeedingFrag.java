@@ -102,7 +102,6 @@ public class SeedingFrag extends Fragment {
     public void sortSeedingList() {
         List<Object> teams = new ArrayList<>();
         teams.addAll(FirebaseLists.teamsList.getKeys());
-
         for (int i = 0; i < teams.size(); i++) {
             Constants.unseededTeams.add(Integer.parseInt(teams.get(i).toString()));
         }
@@ -111,10 +110,15 @@ public class SeedingFrag extends Fragment {
             Integer team = Constants.unseededTeams.get(i);
             Team teamTeam = FirebaseLists.teamsList.getFirebaseObjectByKey(team.toString());
             String teamRankString = (Utils.fieldIsNotNull(teamTeam, "calculatedData.actualSeed") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.actualSeed"), 2, "???") : "???");
-            Log.e("teamarankstring",teamRankString);
+
+            if (teamRankString.equals("???")) {
+                teamRankString = String.valueOf(Constants.unseededTeams.size()+1);
+
+            }
             map.put(Integer.parseInt(teamRankString)-1, team);
 
         }
+
         for (int i = 0; i < Constants.unseededTeams.size(); i++) {
             Integer team = map.get(i);
             Constants.seedingTeams.add(team);

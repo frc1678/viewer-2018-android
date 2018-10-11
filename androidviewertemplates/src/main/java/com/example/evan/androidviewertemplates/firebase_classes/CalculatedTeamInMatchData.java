@@ -86,7 +86,10 @@ public class CalculatedTeamInMatchData extends Object {
     public Object startingPosition;
     public String scoutName;
     public String superNotes;
-    public Float switchCycleTime;
-    public Float scaleCycleTime;
     public Float exchangeCycleTime;
+    public Float allianceSwitchCycleTimeAuto;
+    public Float allianceSwitchCycleTimeTele;
+    public Float opponentSwitchCycleTimeTele;
+    public Float scaleCycleTimeAuto;
+    public Float scaleCycleTimeTele;
 }

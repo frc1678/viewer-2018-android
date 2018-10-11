@@ -48,9 +48,9 @@ public class TeamInMatchDetailsSectionAdapter extends TeamSectionAdapter {
     static String[][] fieldsToDisplay = {
             {"teamNumber", "matchNumber"},
             {"didMakeAutoRun", "calculatedData.canScoreOppositeSwitchAuto", "numCubesFumbledAuto", "calculatedData.numAllianceSwitchSuccessAuto",
-                    "calculatedData.numScaleSuccessAuto"},
+                    "calculatedData.numScaleSuccessAuto","calculatedData.allianceSwitchCycleTimeAuto","calculatedData.scaleCycleTimeAuto"},
             {"calculatedData.totalCubesPlaced", "calculatedData.numAllianceSwitchSuccessTele", "calculatedData.numScaleSuccessTele", "calculatedData.numOpponentSwitchSuccessTele",
-                    "numExchangeInput", "numGroundIntakeTele", "numHumanPortalIntakeTele"},
+                    "numExchangeInput", "numGroundIntakeTele", "numHumanPortalIntakeTele","calculatedData.allianceSwitchCycleTimeTele","calculatedData.opponentSwitchCycleTimeTele","calculatedData.scaleCycleTimeTele","calculatedData.exchangeCycleTime"},
             {"didPark", "climb"},
             {"rankSpeed", "rankAgility", "rankDefense", "superNotes", "numGoodDecisions", "numBadDecisions"},
     };
