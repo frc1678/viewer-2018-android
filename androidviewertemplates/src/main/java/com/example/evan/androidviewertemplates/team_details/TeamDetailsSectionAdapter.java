@@ -27,6 +27,19 @@ import java.util.Map;
 public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     //todo
     static String[][] fieldsToDisplay = {
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
+            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgScaleCycleTimeAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto","calculatedData.avgAllianceSwitchCycleTimeAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
+                    "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
+            {"calculatedData.avgAllVaultTime", "calculatedData.avgTotalCubesPlaced","calculatedData.avgAllianceSwitchCycleTimeTele","calculatedData.avgScaleCycleTimeTele", "calculatedData.avgExchangeCycleTime", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
+                    "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
+                    "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
+            {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
+            {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"},
+            {"calculatedData.avgDrivingAbility"},
+            {"calculatedData.avgSpeed", "calculatedData.avgAgility", "calculatedData.avgDefense",
+                    "calculatedData.totalNumGoodDecisions", "calculatedData.totalNumBadDecisions", "totalSuperNotes"},
+            {"pitDriveTrain", "pitCanCheesecake", "pitRobotDimensions", "pitClimberType", "pitSEALsNotes",
+                    "pitAvailableWeight", "pitProgrammingLanguage", "pitRampTime", "pitCanDoPIDOnDriveTrain", "pitHasEncodersOnBothSides", "pitHasGyro"}
     };
 
     static String[] sectionTitles = {

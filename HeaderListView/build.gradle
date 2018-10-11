@@ -32,8 +32,7 @@ version '1.0'
 ext.androidVersionCode = 1
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 7

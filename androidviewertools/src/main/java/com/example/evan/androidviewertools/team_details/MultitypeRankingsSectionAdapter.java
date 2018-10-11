@@ -51,7 +51,6 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     @Override
     public int numberOfRows(int section) {
         if (section > -1) {
-            Log.e("NumFields", getFieldsToDisplay()[section].length + "" );
             return getFieldsToDisplay()[section].length;
         } else {
             return 0;
@@ -72,6 +71,7 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     public String getRankTextOfRowInSection(int section, int row) {
         String fieldName = (String)getRowItem(section, row);
         Object object = getObject();
+
         if (fieldName.startsWith("VIEWER.")) {
             Intent intent = new Intent();
             fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), intent, getViewerDataPointsClass());

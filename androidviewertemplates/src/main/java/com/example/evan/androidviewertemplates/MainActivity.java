@@ -29,6 +29,7 @@ import com.example.evan.androidviewertemplates.drawer_fragments.OverallSecondPic
 import com.example.evan.androidviewertemplates.drawer_fragments.PredictedSeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.RecentMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.ScheduleFragment;
+import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFrag;
 import com.example.evan.androidviewertemplates.drawer_fragments.SeedingFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.StarredMatchesFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.super_ability.SuperAbilityFragment;
@@ -37,7 +38,6 @@ import com.example.evan.androidviewertemplates.drawer_fragments.UpcomingMatchesF
 import com.example.evan.androidviewertemplates.firebase_classes.Match;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamTemplate;
 import com.example.evan.androidviewertemplates.firebase_classes.TeamInMatchData;
-import com.example.evan.androidviewertemplates.team_details.FirstPicklistAdapter;
 import com.example.evan.androidviewertemplates.utils.SpecificNavigationDrawerFragment;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
@@ -99,9 +99,6 @@ public class MainActivity extends ViewerActivity
         setActionBarColor();
         broadcastListener();
 
-
-/*        ProgressDialog dialog = ProgressDialog.show(MainActivity.this, "Esketit",
-                "Loading. Please wait...", true);*/
     }
 
     public void initializeDrawer() {
@@ -114,11 +111,13 @@ public class MainActivity extends ViewerActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.openDrawer(Gravity.LEFT);
+
+
     }
 
     public void setActionBarColor() {
         ActionBar actionBar = getSupportActionBar();
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423"));
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#65C423")); //65C423
         if (actionBar != null) {
             actionBar.setBackgroundDrawable(colorDrawable);
         }
@@ -129,6 +128,8 @@ public class MainActivity extends ViewerActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         // For AppCompat use getSupportFragmentManager
+        fragmentManager = getSupportFragmentManager();
+        fragment = new ScheduleFragment();
         //todo
         fragmentManager = getSupportFragmentManager();
         prefs = getSharedPreferences("prefFile1", Context.MODE_PRIVATE);
@@ -136,7 +137,7 @@ public class MainActivity extends ViewerActivity
             default:
             case 0:
                 Constants.highlightTeamSchedule = false;
-                fragment = new RecentMatchesFragment();
+                fragment = new ScheduleFragment();
                 latestFragmentId = position;
                 break;
             case 1:
@@ -146,11 +147,8 @@ public class MainActivity extends ViewerActivity
                 break;
             case 2:
                 Constants.highlightTeamSchedule = false;
-                Bundle args = new Bundle();
-                args.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
-                fragment = new TeamScheduleFragment();
+                fragment = new RecentMatchesFragment();
                 latestFragmentId = position;
-                fragment.setArguments(args);
                 break;
             case 3:
                 Constants.highlightTeamSchedule = false;
@@ -159,41 +157,42 @@ public class MainActivity extends ViewerActivity
                 break;
             case 4:
                 Constants.highlightTeamSchedule = false;
-                fragment = new ScheduleFragment();
+                Bundle args = new Bundle();
+                args.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
+                fragment = new OurScheduleHighlightFragment();
                 latestFragmentId = position;
+                fragment.setArguments(args);
                 break;
             case 5:
                 Constants.highlightTeamSchedule = false;
+                Bundle args2 = new Bundle();
+                args2.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
                 fragment = new SeedingFragment();
                 latestFragmentId = position;
+                fragment.setArguments(args2);
                 break;
             case 6:
-                Constants.highlightTeamSchedule = false;
-                fragment = new PredictedSeedingFragment();
-                latestFragmentId = position;
-                break;
-            case 7:
                 Constants.highlightTeamSchedule = false;
                 fragment = new FirstPickAbilityFragment();
                 latestFragmentId = position;
                 break;
-            case 8:
+            case 7:
                 Constants.highlightTeamSchedule = false;
                 fragment = new OverallSecondPickFragment();
                 latestFragmentId = position;
                 break;
 
-            case 9:
+            case 8:
                 Constants.highlightTeamSchedule = false;
                 fragment = new SuperAbilityFragment();
                 latestFragmentId = position;
                 break;
-            case 10:
+            case 9:
                 Constants.highlightTeamSchedule = false;
                 fragment = new FirstPicklistFragment();
                 latestFragmentId = position;
                 break;
-            case 11:
+            case 10:
                 fragment = new FunctionFragment();
                 latestFragmentId = position;
                 break;

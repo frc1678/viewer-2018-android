@@ -1,14 +1,15 @@
 package com.example.evan.androidviewertemplates.drawer_fragments;
 
-import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
-import com.example.evan.androidviewertemplates.drawer_fragments.FirstPicklistFragment;
 import com.example.evan.androidviewertemplates.drawer_fragments.PicklistCell;
+import com.example.evan.androidviewertools.utils.Constants;
+
 
 import java.util.Map;
 
@@ -21,9 +22,11 @@ public class FirstPicklistAdapter extends BaseAdapter {
     Map<Integer, String> teams;
 
     public FirstPicklistAdapter(Context context, Map<Integer, String> teams) {
-        super();
-        this.context = context;
-        this.teams = teams;
+
+            super();
+            this.context = context;
+            this.teams = teams;
+
 
     }
 
@@ -46,11 +49,15 @@ public class FirstPicklistAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         String teamNumber = teams.get(position);
         Integer teamPicklistPosition = position;
         PicklistCell cell = new PicklistCell(context, teamNumber, teamPicklistPosition);
         convertView = cell;
+        for (int i = 0; i < Constants.alreadySelectedOnPicklist.size(); i++) {
+            if (Constants.alreadySelectedOnPicklist.get(i).toString().equals(teamNumber)){
+                convertView.setBackgroundColor(Color.parseColor("#FFA4A4"));
+            }
+        }
         return convertView;
     }
 

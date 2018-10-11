@@ -178,19 +178,19 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
 //todo Add predicted RPs?
             if (blueDidAutoQuest && blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◔◕");
+             rankingPointDisplayBlue.setText("● ●");
          } if (blueDidAutoQuest && !blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◔");
+             rankingPointDisplayBlue.setText("●  ");
          } if (!blueDidAutoQuest && blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◕");
+             rankingPointDisplayBlue.setText("      ●");
          }
 
         if (redDidAutoQuest && redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◔◕");
+            rankingPointDisplayRed.setText("● ●");
         } if (redDidAutoQuest && !redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◔");
+            rankingPointDisplayRed.setText("●  ");
         } if (!redDidAutoQuest && redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◕");
+            rankingPointDisplayRed.setText("      ●");
         }
 
 
