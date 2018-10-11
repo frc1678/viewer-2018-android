@@ -92,4 +92,5 @@ public class CalculatedTeamInMatchData extends Object {
     public Float opponentSwitchCycleTimeTele;
     public Float scaleCycleTimeAuto;
     public Float scaleCycleTimeTele;
+
 }

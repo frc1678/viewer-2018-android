@@ -43,103 +43,34 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     };
 
     static String[] sectionTitles = {
-            "Matches",
-            "Auto",
-            "Teleop",
-            "Face The Boss",
-            "Status",
-            "High Level",
-            "Super Data",
-            "Pit Data"
+
     };
 
     static String[] shouldDisplayAsPercentage = {
-            "calculatedData.disabledPercentage",
-            "calculatedData.percentSuccessOppositeSwitchSideAuto",
-            "calculatedData.autoRunPercentage",
-            "calculatedData.allianceSwitchSuccessPercentageAuto",
-            "calculatedData.scaleSuccessPercentageAuto",
-            "calculatedData.allianceSwitchSuccessPercentageTele",
-            "calculatedData.scaleSuccessPercentageTele",
-            "calculatedData.assistedClimbPercentage",
-            "calculatedData.disabledPercentage",
-            "calculatedData.incapacitatedPercentage",
-            "calculatedData.baselineReachedPercentage",
-            "calculatedData.liftoffPercentage",
-            "calculatedData.soloClimbPercentage",
-            "calculatedData.assistedClimbPercentage",
-            "calculatedData.activeLiftClimbPercentage",
-            "calculatedData.activeNoClimbLiftClimbPercentage",
-            "calculatedData.activeAssistClimbPercentage"};
+};
 
     static String[] displayAsUnranked = {
             "matches",
             "VIEWER.matchesUntilNextMatchForTeam",
-            "pitSelectedImageUrl",
-            "pitNotes",
-            "pitProgrammingLanguage",
-            "pitCanCheesecake",
-            "pitAvailableWeight",
-            "pitOrganization",
-            "pitDriveTrain",
-            "superNotes",
-            "climb",
-            "totalSuperNotes",
-            "pitRampTime",
-            "pitCanDoPIDOnDriveTrain",
-            "pitHasEncodersOnBothSides",
-            "pitHasGyro"
     };
 
     static String[] shouldDisplayAsLongText = {
-            "pitNotes",
-            "superNotes",
-            "pitSEALsNotes",
-            "totalSuperNotes",
-            "pitRampTime"
+
 
     };
 
     static String[] shouldDisplayAsFurtherInformation = {
-            "matches",
-            "superNotes",
-            "totalSuperNotes",
-            "lfm"
 
     };
 
     static String[] notClickableFields = {
             "VIEWER.matchesUntilNextMatchForTeam",
-            "pitDetails",
-            "pitSelectedImageUrl",
-            "pitNotes",
-            "pitProgrammingLanguage",
-            "pitAvailableWeight",
-            "pitOrganization",
-            "pitDriveTrain",
-            "pitCanCheesecake",
-            "pitRampTime",
-            "pitCanDoPIDOnDriveTrain",
-            "pitHasEncodersOnBothSides",
-            "pitHasGyro"
     };
 
     static String[] createListOnClick = {
-            "matches",
-            "lfm"
     };
 
     static String[] rankInsteadOfGraph = {
-            "calculatedData.canScoreBothSwitchSidesAuto",
-            "calculatedData.percentSuccessOppositeSwitchSideAuto",
-            "calculatedData.avgSpeed",
-            "calculatedData.avgAgility",
-            "calculatedData.avgDefense",
-            "calculatedData.allianceSwitchSuccessPercentageAuto",
-            "calculatedData.allianceSwitchSuccessPercentageTele",
-            "calculatedData.scaleSuccessPercentageAuto",
-            "calculatedData.maxScaleCubes",
-            "calculatedData.scaleSuccessPercentageTele"
     };
 
 

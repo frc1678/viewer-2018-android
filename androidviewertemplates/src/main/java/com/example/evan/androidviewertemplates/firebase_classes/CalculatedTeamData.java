@@ -221,5 +221,4 @@ public class CalculatedTeamData extends Object {
     public Float avgScaleCycleTimeAuto;
     public Float avgScaleCycleTimeTele;
     public Float avgExchangeCycleTime;
-
 }

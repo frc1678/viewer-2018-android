@@ -178,8 +178,6 @@ public class SpecificConstants extends Constants {
                 //HighLevel
                 put("calculatedData.lfmAvgDrivingAbility", "Avg Driving Ability");
 
-
-//                put("EXAMPLE_DATA_POINT", "EXAMPLE_DATA_TITLE");
             }
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String>() {
@@ -227,6 +225,7 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmnumCubesScaleAt100s");
                 put("calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmnumCubesScaleAt110s");
                 put("calculatedData.lfmAvgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchSuccessTele");
+
 
             }
         };
