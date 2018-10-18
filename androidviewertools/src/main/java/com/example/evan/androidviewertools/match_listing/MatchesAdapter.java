@@ -182,7 +182,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
          } if (blueDidAutoQuest && !blueDidFaceBoss) {
              rankingPointDisplayBlue.setText("●  ");
          } if (!blueDidAutoQuest && blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("      ●");
+             rankingPointDisplayBlue.setText("    ●");
          }
 
         if (redDidAutoQuest && redDidFaceBoss) {
@@ -190,7 +190,7 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
         } if (redDidAutoQuest && !redDidFaceBoss) {
             rankingPointDisplayRed.setText("●  ");
         } if (!redDidAutoQuest && redDidFaceBoss) {
-            rankingPointDisplayRed.setText("      ●");
+            rankingPointDisplayRed.setText("    ●");
         }
 
 

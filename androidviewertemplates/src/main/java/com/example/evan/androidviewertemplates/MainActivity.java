@@ -156,7 +156,7 @@ public class MainActivity extends ViewerActivity
                 latestFragmentId = position;
                 break;
             case 4:
-                Constants.highlightTeamSchedule = false;
+                Constants.highlightTeamSchedule = true;
                 Bundle args = new Bundle();
                 args.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
                 fragment = new OurScheduleHighlightFragment();
@@ -167,7 +167,7 @@ public class MainActivity extends ViewerActivity
                 Constants.highlightTeamSchedule = false;
                 Bundle args2 = new Bundle();
                 args2.putInt("teamNumber", SpecificConstants.TEAM_NUMBER);
-                fragment = new SeedingFragment();
+                fragment = new SeedingFrag();
                 latestFragmentId = position;
                 fragment.setArguments(args2);
                 break;
