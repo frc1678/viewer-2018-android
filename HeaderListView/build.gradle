@@ -34,6 +34,7 @@ ext.androidVersionCode = 1
 android {
     compileSdkVersion 27
 
+
     defaultConfig {
         minSdkVersion 7
         targetSdkVersion 19

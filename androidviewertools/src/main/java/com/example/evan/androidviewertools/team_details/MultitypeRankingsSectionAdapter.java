@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +18,7 @@ import com.example.evan.androidviewertools.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,18 +26,61 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
     //this class is for teams and teaminmatchdatas
 
     public Context context;
+    private Map<Pair<Integer, Integer>, Integer> rankCache;
+    private Map<Pair<Integer, Integer>, String> valuesCache;
 
     public MultitypeRankingsSectionAdapter(Context context) {
         super(context);
         this.context = context;
+        this.rankCache = new HashMap<>();
+        this.valuesCache = new HashMap<>();
         LocalBroadcastManager.getInstance(context).registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
+                recache();
                 notifyDataSetChanged();
             }
         }, new IntentFilter(getUpdatedAction()));
     }
 
+    public void recache() {
+        this.rankCache.clear();
+        String[][] fields = getFieldsToDisplay();
+        for (int section_i = 0; section_i < fields.length; section_i++) {
+            for (int row_i = 0; row_i < fields[section_i].length; row_i++) {
+                if (this.isUnranked(section_i, row_i)) {
+                    continue;
+                }
+                Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
+
+                String fieldName = (String)getRowItem(section_i, row_i);
+                Object object = getObject();
+                if (fieldName.startsWith("VIEWER.")) {
+                    Intent intent = new Intent();
+                    fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), intent, getViewerDataPointsClass());
+                }
+                Integer rank = Utils.getRankOfObject(object, getObjectList(), fieldName, false);
+                this.rankCache.put(location, rank);
+            }
+        }
+    }
+    public void recacheValues() {
+        this.valuesCache.clear();
+        String[][] fields = getFieldsToDisplay();
+        for (int section_i = 0; section_i < fields.length; section_i++) {
+            for (int row_i = 0; row_i < fields[section_i].length; row_i++) {
+                String fieldName = (String) getRowItem(section_i, row_i);
+
+                if (fieldName.startsWith("VIEWER.")) {
+                    Object object = getObject();
+                    Intent intent = new Intent();
+                    Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
+                    String value = (Utils.getViewerObjectField(object, fieldName.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
+                    this.valuesCache.put(location, value);
+                }
+            }
+        }
+    }
 
     @Override
     public Object getRowItem(int section, int row) {
@@ -75,12 +119,19 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         if (fieldName.startsWith("VIEWER.")) {
             Intent intent = new Intent();
             fieldName = Utils.getViewerObjectFieldRank(fieldName.replaceFirst("VIEWER.", ""), intent, getViewerDataPointsClass());
+            Pair<Integer, Integer> location = new Pair<>(section, row);
+
+            if (!this.rankCache.containsKey(location)) {
+                recache();
+            }
         }
-        Integer rank = Utils.getRankOfObject(object, getObjectList(), fieldName, false);
+        Pair<Integer, Integer> location = new Pair<>(section, row);
+        Integer rank = this.rankCache.get(location);
         if (rank == null) {
             return "?";
+        } else {
+            return Integer.toString(rank + 1);
         }
-        return (++rank).toString();
     }
 
     @Override
@@ -88,21 +139,24 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         return getKeysToTitles().get(getRowItem(section, row));
     }
 
+    //take lines 139 to 144, check if it needs to be cached, if needs to be recached, recache. If not, reference line 114 (has almost exactly what you need to do)
     @Override
     public String getValueOfRowInSection(int section, int row) {
         String fieldKey = (String)getRowItem(section, row);
         Object object = getObject();
+        Pair<Integer, Integer> location = new Pair<>(section, row);
         if (fieldKey.contains("VIEWER.")) {
-            Intent intent = new Intent();
-            try {
-
-                return (Utils.getViewerObjectField(object, fieldKey.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
-            } catch (NullPointerException npe) {
-                return "???";
+            if (! this.valuesCache.containsKey(location)) {
+                recacheValues();
+            }
+            String value = this.valuesCache.get(location);
+            if (value == null) {
+                return "?";
+            } else {
+                return value;
             }
         }
         if (new ArrayList<>(Arrays.asList(getPercentageFields())).contains(fieldKey)) {
-            //Log.e(fieldKey, Utils.getObjectField(getObject(), fieldKey).toString());
             return Utils.dataPointToPercentage((Float)Utils.getObjectField(getObject(), fieldKey), 1);
         }
         return Utils.getDisplayValue(object, fieldKey);
