@@ -111,9 +111,9 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
         return getSectionTitles()[section];
     }
 
-    @Override
+/*    @Override
     public String getRankTextOfRowInSection(int section, int row) {
-        String fieldName = (String)getRowItem(section, row);
+        String fieldName = (String) getRowItem(section, row);
         Object object = getObject();
 
         if (fieldName.startsWith("VIEWER.")) {
@@ -124,8 +124,24 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
             if (!this.rankCache.containsKey(location)) {
                 recache();
             }
+
+
+            Integer rank = this.rankCache.get(location);
+            if (rank == null) {
+                return "?";
+            } else {
+                return Integer.toString(rank + 1);
+            }
         }
+    }*/
+    @Override
+    public String getRankTextOfRowInSection(int section, int row) {
         Pair<Integer, Integer> location = new Pair<>(section, row);
+
+        if (! this.rankCache.containsKey(location)) {
+            recache();
+        }
+
         Integer rank = this.rankCache.get(location);
         if (rank == null) {
             return "?";

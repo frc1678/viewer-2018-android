@@ -31,7 +31,11 @@
   </component>
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+<<<<<<< Updated upstream
 >>>>>>> origin/master
+=======
+>>>>>>> b04f274d823279e317f67f95d4ee28c888176e86
+>>>>>>> Stashed changes
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>

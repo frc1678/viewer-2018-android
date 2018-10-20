@@ -45,16 +45,11 @@ public class SeedingCell extends RelativeLayout {
         inflater.inflate(R.layout.seeding_cell, this, true);
 
         TextView team = (TextView) findViewById(R.id.team);
+        team.setTypeface(null, Typeface.BOLD);
         TextView predictedSeedTV = (TextView) findViewById(R.id.predicted_seed);
         TextView predictedRankingPointsTV = (TextView) findViewById(R.id.predicted_ranking_points);
         TextView currentRankingPointsTV = (TextView) findViewById(R.id.current_ranking_points);
         TextView rankingTextView = (TextView) findViewById(R.id.rankingTextView);
-
-        Team teamTeam = FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
-        String predictedSeed = (Utils.fieldIsNotNull(teamTeam, "calculatedData.predictedSeed") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.predictedSeed"), 2, "???") : "???");
-        String predictedRankingPoints = (Utils.fieldIsNotNull(teamTeam, "calculatedData.predictedTotalNumRPs") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.predictedTotalNumRPs"), 2, "???") : "???");
-        String currentRP = (Utils.fieldIsNotNull(teamTeam, "calculatedData.actualNumRPs") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.actualNumRPs"), 2, "???") : "???");
-        String currentSeed = (Utils.fieldIsNotNull(teamTeam, "calculatedData.actualSeed") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.actualSeed"), 2, "???") : "???");
 
         rankingTextView.setTextSize(20);
         team.setTextSize(20);
@@ -62,12 +57,27 @@ public class SeedingCell extends RelativeLayout {
         predictedRankingPointsTV.setTextSize(20);
         currentRankingPointsTV.setTextSize(20);
 
-        rankingTextView.setText(currentSeed);
-        team.setText(teamNumber.toString());
-        team.setTypeface(null, Typeface.BOLD);
-        predictedSeedTV.setText(predictedSeed);
-        predictedRankingPointsTV.setText(predictedRankingPoints);
-        currentRankingPointsTV.setText(currentRP);
+        if (teamNumber!=null){
+            Team teamTeam = FirebaseLists.teamsList.getFirebaseObjectByKey(teamNumber.toString());
+            String predictedSeed = (Utils.fieldIsNotNull(teamTeam, "calculatedData.predictedSeed") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.predictedSeed"), 2, "???") : "???");
+            String predictedRankingPoints = (Utils.fieldIsNotNull(teamTeam, "calculatedData.predictedTotalNumRPs") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.predictedTotalNumRPs"), 2, "???") : "???");
+            String currentRP = (Utils.fieldIsNotNull(teamTeam, "calculatedData.actualNumRPs") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.actualNumRPs"), 2, "???") : "???");
+            String currentSeed = (Utils.fieldIsNotNull(teamTeam, "calculatedData.actualSeed") ? Utils.roundDataPoint(Utils.getObjectField(teamTeam, "calculatedData.actualSeed"), 2, "???") : "???");
+
+
+            rankingTextView.setText(currentSeed);
+            team.setText(teamNumber.toString());
+            predictedSeedTV.setText(predictedSeed);
+            predictedRankingPointsTV.setText(predictedRankingPoints);
+            currentRankingPointsTV.setText(currentRP);
+        } else {
+            rankingTextView.setText("???");
+            team.setText("???");
+            predictedSeedTV.setText("???");
+            predictedRankingPointsTV.setText("???");
+            currentRankingPointsTV.setText("???");
+        }
+
 
     }
 

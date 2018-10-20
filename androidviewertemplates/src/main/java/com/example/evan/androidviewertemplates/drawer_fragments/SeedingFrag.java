@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.firebase_classes.Competition;
@@ -74,13 +75,18 @@ public class SeedingFrag extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                if (StarManager.starredTeams.contains(Integer.parseInt(Constants.seedingTeams.get(position).toString()))) {
-                StarManager.removeStarredTeam(Integer.parseInt(Constants.seedingTeams.get(position).toString()));
-                    initializeAdapter(); animation(view);
-                } else {
-                StarManager.addStarredTeam(Integer.parseInt(Constants.seedingTeams.get(position).toString()));
-                    initializeAdapter(); animation(view);
+                if (Constants.seedingTeams.get(position)!= null) {
+                    if (StarManager.starredTeams.contains(Integer.parseInt(Constants.seedingTeams.get(position).toString()))) {
+                        StarManager.removeStarredTeam(Integer.parseInt(Constants.seedingTeams.get(position).toString()));
+                        initializeAdapter(); animation(view);
+                    } else {
+                        StarManager.addStarredTeam(Integer.parseInt(Constants.seedingTeams.get(position).toString()));
+                        initializeAdapter(); animation(view);
 
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "This team hasn't been seeded yet!",
+                            Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -88,11 +94,17 @@ public class SeedingFrag extends Fragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Integer teamNumberClicked = Integer.parseInt(Constants.seedingTeams.get(position).toString());
-                Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
-                teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
-                teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(teamDetailsViewIntent);
+                if (Constants.seedingTeams.get(position)!=null) {
+                    Integer teamNumberClicked = Integer.parseInt(Constants.seedingTeams.get(position).toString());
+                    Intent teamDetailsViewIntent = getTeamDetailsActivityIntent();
+                    teamDetailsViewIntent.putExtra("teamNumber", teamNumberClicked);
+                    teamDetailsViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(teamDetailsViewIntent);
+                }
+                else {
+                    Toast.makeText(getActivity(), "This team hasn't been seeded!",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -124,7 +136,7 @@ public class SeedingFrag extends Fragment {
             Constants.seedingTeams.add(team);
         }
     }
-//
+
 
     public static Map<Integer, Integer> sortByValue(Map<Integer, Integer> teams) {
         List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(teams.entrySet());

@@ -75,4 +75,3 @@ public class OurScheduleHighlightFragment extends MatchesFragment {
     }
 }
 
-

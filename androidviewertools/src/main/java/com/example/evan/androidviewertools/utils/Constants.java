@@ -35,6 +35,7 @@ public class Constants {
     public static Map<Integer, String> picklistMap = new HashMap<>();
     public static Map<Integer, String> rankedTeamsListByActualSeed = new HashMap<>();
     public static ArrayList<Integer> highlightedTeams = new ArrayList<>();
+
     public static ArrayList<Integer> unseededTeams = new ArrayList<>();
     public static ArrayList<Integer> mteams = new ArrayList<>();
     public static ArrayList<Integer> seedingTeams = new ArrayList<>();

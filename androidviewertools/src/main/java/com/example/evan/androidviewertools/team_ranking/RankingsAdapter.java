@@ -10,11 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.evan.androidviewertools.firebase_classes.Team;
 import com.example.evan.androidviewertools.utils.Constants;
 import com.example.evan.androidviewertools.utils.ObjectFieldComparator;
 import com.example.evan.androidviewertools.R;
 import com.example.evan.androidviewertools.search_view.SearchableFirebaseListAdapter;
 import com.example.evan.androidviewertools.utils.Utils;
+import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -148,7 +150,10 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
 
     private String formatRank(Integer rank) {
         if (rank != null) {
-            return rank + 1 + "";
+            //return rank + 1 + "";
+            Integer totalSize = this.rankCache.size();
+            Integer newRank = totalSize - rank;
+            return newRank + "";
         } else {
             return "?";
         }
@@ -158,7 +163,6 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
         if (! this.rankCache.containsKey(value)) {
             recacheRanks();
         }
-
         Integer rank = this.rankCache.get(value);
         return formatRank(rank);
     }
@@ -166,9 +170,10 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
     public void recacheRanks() {
         this.rankCache.clear();
         List<T> vals = getOtherValuesForRanking();
-        Utils.sortListByFieldName((List<Object>)vals, rankFieldName);
+        Utils.sortListByFieldName((List<Object>) vals, rankFieldName);
         for (Integer i = 0; i < vals.size(); i++) {
             this.rankCache.put(vals.get(i), i);
+
         }
     }
 
