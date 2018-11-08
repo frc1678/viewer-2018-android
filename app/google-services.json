@@ -1,120 +1,27 @@
 {
   "project_info": {
-    "project_number": "235945070178",
-    "firebase_url": "https://scouting-2018-houston.firebaseio.com",
-    "project_id": "scouting-2018-houston",
-    "storage_bucket": "scouting-2018-houston.appspot.com"
+    "project_number": "213321699153",
+    "firebase_url": "https://scouting-chezy-2018.firebaseio.com",
+    "project_id": "scouting-chezy-2018",
+    "storage_bucket": "scouting-chezy-2018.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:235945070178:android:2829f0a89f52ae04",
-        "android_client_info": {
-          "package_name": "com.example.sam.blutoothsocketreceiver"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "235945070178-fui9idn808c8jhqkqcdob74b99ogpop0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDH1JHRRG83zhagfi9Ri8QmFl9z_4J0SPk"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:235945070178:android:303d5cec6874cc19",
+        "mobilesdk_app_id": "1:213321699153:android:303d5cec6874cc19",
         "android_client_info": {
           "package_name": "com.example.sam.codebaseintegration"
         }
       },
       "oauth_client": [
         {
-          "client_id": "235945070178-fui9idn808c8jhqkqcdob74b99ogpop0.apps.googleusercontent.com",
+          "client_id": "213321699153-8tq6k5ia409c2o9n97uc294mu65l1hco.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDH1JHRRG83zhagfi9Ri8QmFl9z_4J0SPk"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:235945070178:android:784e4c7dfc3b5d61",
-        "android_client_info": {
-          "package_name": "com.jadem.androidpitscout"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "235945070178-fui9idn808c8jhqkqcdob74b99ogpop0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDH1JHRRG83zhagfi9Ri8QmFl9z_4J0SPk"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:235945070178:android:fa565bc64c573686",
-        "android_client_info": {
-          "package_name": "sam.scoutqrgenerator"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "235945070178-fui9idn808c8jhqkqcdob74b99ogpop0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDH1JHRRG83zhagfi9Ri8QmFl9z_4J0SPk"
+          "current_key": "AIzaSyAiSfQrvQOIJL_7n_8D7fLAMCaB9NL91sQ"
         }
       ],
       "services": {

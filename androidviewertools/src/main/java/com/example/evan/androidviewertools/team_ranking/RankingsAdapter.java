@@ -148,12 +148,21 @@ public abstract class RankingsAdapter<T extends Object> extends SearchableFireba
         }
     }
 
-    private String formatRank(Integer rank) {
+/*    private String formatRank(Integer rank) {
         if (rank != null) {
             //return rank + 1 + "";
             Integer totalSize = this.rankCache.size();
             Integer newRank = totalSize - rank;
             return newRank + "";
+        } else {
+            return "?";
+        }
+    }*/
+//todo Use if the seeding is reversed instead of the code below
+
+    private String formatRank(Integer rank) {
+        if (rank != null) {
+            return rank + 1 + "";
         } else {
             return "?";
         }
