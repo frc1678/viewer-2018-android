@@ -30,9 +30,15 @@ public class Constants {
     public static boolean sortByTeamNumber = false;
     public static boolean sortByRank = false;
     public static Integer matchNumber;
+    ////////////
+    public static Integer extraValueOne;
     public static Map<Integer, String> picklistMap = new HashMap<>();
     public static Map<Integer, String> rankedTeamsListByActualSeed = new HashMap<>();
     public static ArrayList<Integer> highlightedTeams = new ArrayList<>();
+
+    public static ArrayList<Integer> unseededTeams = new ArrayList<>();
+    public static ArrayList<Integer> mteams = new ArrayList<>();
+    public static ArrayList<Integer> seedingTeams = new ArrayList<>();
     public static ArrayList<Integer> onOurAllianceList = new ArrayList<>();
     public static ArrayList<Integer> highlightedMatches = new ArrayList<>();
     public static ArrayList<Integer> onOpponentAllianceList = new ArrayList<>();
@@ -40,6 +46,7 @@ public class Constants {
     public static boolean alreadyEnteredPasswordInCurrentSession;
     public static int teamsFromPicklist;
     public static int tempTeamNumber;
+    public static int teamRankStringCounter = 1;
     public static boolean sortByFirstPick = false;
     public static boolean sortBySecondPick = false;
     public static boolean lastFourMatches = false;

@@ -6,9 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.Map;
 
-/**
- * Created by Katherine on 1/12/2018.
- */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CalculatedTeamInMatchData extends Object {
     public ArrayList<Boolean> alliancePlatformIntakeAuto;
@@ -89,4 +87,10 @@ public class CalculatedTeamInMatchData extends Object {
     public Object startingPosition;
     public String scoutName;
     public String superNotes;
+    public Float exchangeCycleTime;
+    public Float allianceSwitchCycleTimeAuto;
+    public Float allianceSwitchCycleTimeTele;
+    public Float opponentSwitchCycleTimeTele;
+    public Float scaleCycleTimeAuto;
+    public Float scaleCycleTimeTele;
 }

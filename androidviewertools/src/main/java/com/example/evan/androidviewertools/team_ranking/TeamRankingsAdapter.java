@@ -75,5 +75,6 @@ public abstract class TeamRankingsAdapter extends RankingsAdapter<Team> {
         return new ArrayList<Team>(FirebaseLists.teamsList.getValues());
     }
 
+
     public abstract Intent getTeamDetailsActivityIntent();
 }

@@ -1,6 +1,7 @@
 package com.example.evan.androidviewertemplates.utils;
 
 import com.example.evan.androidviewertools.utils.Constants;
+import com.google.firebase.database.ChildEventListener;
 
 /**
  * Created by Teo on 2/4/2018.
@@ -8,7 +9,9 @@ import com.example.evan.androidviewertools.utils.Constants;
 
 public class Util {
 
-    public static void setAllSortConstantsFalse(){
+
+
+        public static void setAllSortConstantsFalse(){
         Constants.sortByTeamNumber = false;
         Constants.sortByRank = false;
         Constants.sortByFirstPick = false;

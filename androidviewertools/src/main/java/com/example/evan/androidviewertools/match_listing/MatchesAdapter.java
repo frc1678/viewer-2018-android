@@ -114,39 +114,39 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
                 //todo Add
 
                 //Only on Highlight:
-                    if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
-                        //if (onOurAllianceList(team) && !onOpponentAllianceList(team)) {
-                            //teamTextView.setBackgroundColor(Color.parseColor("#a4ff7a"));
-                        //} if (onOpponentAllianceList(team) && !onOurAllianceList(team)){
-                            teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
-                        //} if (onOpponentAllianceList (team) && onOurAllianceList(team)) {
-                        //    teamTextView.setBackgroundColor(Color.parseColor("#7df2c5"));
-                        //}
-                        Log.e("OpponentList",Constants.onOpponentAllianceList.toString());
-                        Log.e("OurList",Constants.onOurAllianceList.toString());
+            if (onHighlightedTeams(team) && !onStarredMatches(team) && !onTeamPicklist(team)) {
+                //if (onOurAllianceList(team) && !onOpponentAllianceList(team)) {
+                //    teamTextView.setBackgroundColor(Color.parseColor("#a4ff7a"));
+                //} if (onOpponentAllianceList(team) && !onOurAllianceList(team)){
+                    teamTextView.setBackgroundColor(Color.parseColor("#b8d4fc"));
+                //} if (onOpponentAllianceList (team) && onOurAllianceList(team)) {
+                //    teamTextView.setBackgroundColor(Color.parseColor("#7df2c5"));
+                //}
+                Log.e("OpponentList",Constants.onOpponentAllianceList.toString());
+                Log.e("OurList",Constants.onOurAllianceList.toString());
 
                 //Only on Starred:
-                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#e2f442"));
+            } else if (onStarredMatches(team) && !onHighlightedTeams(team) && !onTeamPicklist(team)){
+                teamTextView.setBackgroundColor(Color.parseColor("#e2f442"));
                 //Only on Picklist:
-                    } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#f98181"));
+            } else if (!onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                teamTextView.setBackgroundColor(Color.parseColor("#f98181"));
                 //On ALL:
-                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
-                        teamTextView.setBackgroundColor(Color.parseColor("#e572e1"));
+            } else if (onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)) {
+                teamTextView.setBackgroundColor(Color.parseColor("#e572e1"));
                 //On Highlight && Starred
-                    } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
+            } else if (onStarredMatches(team) && onHighlightedTeams(team) && !onTeamPicklist(team)){
+                teamTextView.setBackgroundColor(Color.parseColor("#808000"));
                 //Only Starred && Picklist:
-                    } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#f4a142"));
+            } else if (onStarredMatches(team) && !onHighlightedTeams(team) && onTeamPicklist(team)){
+                teamTextView.setBackgroundColor(Color.parseColor("#f4a142"));
                 //On Picklist && Highlight:
-                    } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
-                        teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
-                    }else {
-                        teamTextView.setBackgroundColor(Color.TRANSPARENT);
-                    }
-                }
+            } else if (!onStarredMatches(team) && onHighlightedTeams(team) && onTeamPicklist(team)){
+                teamTextView.setBackgroundColor(Color.parseColor("#fcb8e7"));
+            }else {
+                teamTextView.setBackgroundColor(Color.TRANSPARENT);
+            }
+        }
 
 
 
@@ -178,19 +178,19 @@ public abstract class MatchesAdapter extends SearchableFirebaseListAdapter<Match
 
 //todo Add predicted RPs?
             if (blueDidAutoQuest && blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◔◕");
+             rankingPointDisplayBlue.setText("● ●");
          } if (blueDidAutoQuest && !blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◔");
+             rankingPointDisplayBlue.setText("●  ");
          } if (!blueDidAutoQuest && blueDidFaceBoss) {
-             rankingPointDisplayBlue.setText("◕");
+             rankingPointDisplayBlue.setText("    ●");
          }
 
         if (redDidAutoQuest && redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◔◕");
+            rankingPointDisplayRed.setText("● ●");
         } if (redDidAutoQuest && !redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◔");
+            rankingPointDisplayRed.setText("●  ");
         } if (!redDidAutoQuest && redDidFaceBoss) {
-            rankingPointDisplayRed.setText("◕");
+            rankingPointDisplayRed.setText("    ●");
         }
 
 
