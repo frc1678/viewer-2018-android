@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,5 +58,4 @@ public class TeamTemplate extends com.example.evan.androidviewertools.firebase_c
     public Float pitRobotLength;
     public String pitRobotDimensions; //Todo Delete Later
     public Float pitRobotWidth;
-
 }

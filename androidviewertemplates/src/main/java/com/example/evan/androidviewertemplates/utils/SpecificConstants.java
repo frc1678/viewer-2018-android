@@ -30,8 +30,6 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgCubesPlacedInScaleAuto", "Avg Cubes in Scale Auto");
                 put("calculatedData.avgScaleCycleTimeAuto", "Avg Scale Cycle Time Auto");
                 put("calculatedData.avgAllianceSwitchCubesAuto", "Avg Cubes in Switch Auto");
-                put("calculatedData.allianceSwitchSuccessPercentageAuto", "Switch Success % Auto");
-                put("calculatedData.scaleSuccessPercentageAuto", "Scale Success % Auto");
                 put("calculatedData.avgAllianceSwitchCubesAuto", "Avg Cubes In Alliance Switch Auto");
                 put("calculatedData.avgAllianceSwitchCycleTimeAuto", "Avg Cycle Time in Alliance Switch Auto");
                 put("calculatedData.percentSuccessOppositeSwitchSideAuto", "Opp. Switch Side Success %");
@@ -48,9 +46,6 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.avgAllianceSwitchCycleTimeTele", "Avg Cycle Time in Alliance Switch Tele");
                 put("calculatedData.avgNumExchangeInputTele", "Avg Cubes in Exchange Tele");
                 put("calculatedData.avgNumGroundPortalIntakeTele", "Avg Ground Portal Intake Tele");
-                put("calculatedData.avgNumHumanPortalIntakeTele", "Avg Human Portal Intake Tele");
-                put("calculatedData.allianceSwitchSuccessPercentageTele", "Switch Success % Tele");
-                put("calculatedData.scaleSuccessPercentageTele", "Scale Success % Tele");
                 put("calculatedData.maxScaleCubes", "Max Scale Cubes");
                 put("calculatedData.avgScaleCubesBy100s", "Avg Scale Cubes by 100s");
                 put("calculatedData.avgScaleCubesBy110s", "Avg Scale Cubes by 110s");
@@ -93,24 +88,20 @@ public class SpecificConstants extends Constants {
                 put("totalSuperNotes", "Super Notes");
 
                 //PitData
-                put("pitDriveTrain", "Drive Train");
-                put("pitCanCheesecake", "Can Use Cheesecake");
+                put("pitDriveTrain","Drive Train");
                 put("pitClimberType", "Type of Climb");
                 put("pitSEALsNotes", "SEAL Notes");
                 put("pitAvailableWeight", "Available Weight");
                 put("pitProgrammingLanguage", "Programming Language");
-                put("pitRampTime", "Ramp Time");
-                put("pitDriveTimeOutcome", "Drive Time Outcome");
                 put("pitHasCamera", "Has a Camera");
-                put("pitRobotDimensions", "Robot Dimensions");
                 put("pitCanDoPIDOnDriveTrain", "Can Do PID On Drive Train");
                 put("pitHasEncodersOnBothSides", "Has Encoders On Both Sides");
                 put("pitHasGyro", "Has Gyro");
 
                 //TeamInMatchDetailsAdapter
                 //Auto
-                put("didMakeAutoRun", "Did Make Auto Run");
-                put("numCubesFumbledAuto", "Number Cubes Fumbled Auto");
+                put("didCrossAutoLine", "Did Make Auto Run");
+                put("numCubesDroppedAuto", "Number Cubes Fumbled Auto");
                 put("calculatedData.numAllianceSwitchSuccessAuto", "Num. Alliance Switch Cubes Auto");
                 put("calculatedData.allianceSwitchCycleTimeAuto", "Switch Cycle Time for Alliance Auto");
                 put("calculatedData.numScaleSuccessAuto", "Num. Auto Scale Success");
@@ -120,16 +111,14 @@ public class SpecificConstants extends Constants {
                 put("calculatedData.canScoreOppositeSwitchAuto", "Can score on opp. alliance switch side");
 
                 //Tele
-                put("calculatedData.numAllianceSwitchSuccessTele", "Num. Alli. Switch Success Tele");
+                put("calculatedData.numAllianceSwitchTele", "Num. Alli. Switch Success Tele");
                 put("calculatedData.allianceSwitchCycleTimeTele", "Switch Cycle Time for Alliance Tele");
-                put("calculatedData.numOpponentSwitchSuccessTele", "Num. Opp. Switch Success Tele");
+                put("calculatedData.numOpponentSwitchTele", "Num. Opp. Switch Success Tele");
                 put("calculatedData.opponentSwitchCycleTimeTele", "Switch Cycle Time for OP Tele");
                 put("calculatedData.numScaleSuccessTele", "Scale Success Tele");
                 put("calculatedData.scaleCycleTimeTele","Scale Cycle Time Tele");
                 put("numExchangeInput", "Num Cubes Placed in Exchange Tele");
                 put("calculatedData.exchangeCycleTime","Exchange Cycle Time");
-                put("numGroundIntakeTele", "Num Ground Intake Tele");
-                put("numHumanPortalIntakeTele", "Num Human Portal Intake Tele");
                 put("calculatedData.totalCubesPlaced", "Total Cubes Placed");
 
                 //FaceTheBoss
@@ -184,23 +173,21 @@ public class SpecificConstants extends Constants {
         };
         Map<String, String> initialDatasToGraphMap = new HashMap<String, String>() {
             {
-                put("calculatedData.avgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchSuccessTele");
+                put("calculatedData.avgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchTele");
                 put("calculatedData.avgAllVaultTime", "calculatedData.avgVaultTime");
                 put("calculatedData.avgCubesSpilledTele", "numSpilledCubesTele");
                 put("calculatedData.avgCubesPlacedInScaleAuto", "calculatedData.numScaleSuccessAuto");
                 put("calculatedData.avgAllianceSwitchCubesAuto", "calculatedData.numAllianceSwitchSuccessAuto");
                 put("calculatedData.avgNumCubesFumbledTele", "numCubesFumbledTele");
                 put("calculatedData.avgCubesPlacedInScaleTele", "calculatedData.numScaleSuccessTele");
-                put("calculatedData.avgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchSuccessTele");
+                put("calculatedData.avgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchTele");
                 put("calculatedData.avgNumExchangeInputTele", "numExchangeInput");
-                put("calculatedData.avgNumGroundIntakeTele", "numGroundIntakeTele");
                 put("calculatedData.avgNumGroundPortalIntakeTele", "numGroundPortalIntakeTele");
-                put("calculatedData.avgNumHumanPortalIntakeTele", "numHumanPortalIntakeTele");
                 put("calculatedData.climb", "calculatedData.climbTime");
                 put("calculatedData.avgClimbTime", "calculatedData.climbTime");
                 put("calculatedData.avgNumGoodDecisions", "numGoodDecisions");
                 put("calculatedData.avgNumBadDecisions", "numBadDecisions");
-                put("calculatedData.autoRunPercentage", "didMakeAutoRun");
+                put("calculatedData.autoRunPercentage", "didCrossAutoLine");
                 put("calculatedData.avgScaleCubesBy100s", "calculatedData.numCubesScaleAt100s");
                 put("calculatedData.avgScaleCubesBy110s", "calculatedData.numCubesScaleAt110s");
                 put("calculatedData.avgTotalCubesPlaced", "calculatedData.totalCubesPlaced");
@@ -215,22 +202,21 @@ public class SpecificConstants extends Constants {
 
                 //LFM Graphing:
                 put("calculatedData.lfmAvgNumExchangeInputTele", "calculatedData.numExchangeInputTele");
-                put("calculatedData.lfmAutoRunPercentage","didMakeAutoRun");
+                put("calculatedData.lfmAutoRunPercentage","didCrossAutoLine");
                 put("calculatedData.lfmAvgTotalCubesPlaced", "calculatedData.totalCubesPlaced");
                 put("calculatedData.lfmAvgClimbTime", "calculatedData.climbtime");
                 put("calculatedData.lfmAvgNumCubesFumbledTele", "calculatedData.numCubesFumbledTele");
                 put("calculatedData.lfmAvgCubesPlacedInScaleTele", "calculatedData.numScaleSuccessTele");
-                put("calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchSuccessTele");
+                put("calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.numAllianceSwitchTele");
                 put("calculatedData.lfmAvgClimbTime", "calculatedData.climbTime");
                 put("calculatedData.lfmIncapacitatedPercentage", "calculatedData.didGetIncapacitated");
                 put("calculatedData.lfmDisabledPercentage", "calculatedData.didGetDisabled");
                 put("calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmnumCubesScaleAt100s");
                 put("calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmnumCubesScaleAt110s");
-                put("calculatedData.lfmAvgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchSuccessTele");
+                put("calculatedData.lfmAvgOpponentSwitchCubesTele", "calculatedData.numOpponentSwitchTele");
 
             }
         };
-        //replace all 'DEFENSE's with the correct defenses
         KEYS_TO_TITLES = initialKeysToTitlesMap;
         DATA_TO_GRAPH = initialDatasToGraphMap;
     }

@@ -15,7 +15,6 @@ import com.example.evan.androidviewertemplates.R;
 import com.example.evan.androidviewertemplates.team_in_match_details.TeamInMatchDetailsActivity;
 import com.example.evan.androidviewertemplates.utils.SpecificConstants;
 import com.example.evan.androidviewertools.ViewerActivity;
-import com.example.evan.androidviewertools.graphing.TeamInMatchDataGraphFragment;
 
 public class RankingsActivity extends ViewerActivity {
     private boolean isShowingGraph;
@@ -64,7 +63,7 @@ public class RankingsActivity extends ViewerActivity {
         return new Intent(this, MainActivity.class);
     }
 
-    public static class graphingFrag extends TeamInMatchDataGraphFragment {
+    public static class graphingFrag extends com.example.evan.androidviewertools.graphing.TeamInMatchDataGraphFragment {
         @Override
         public Intent getTeamInMatchDetailsIntent() {
             return new Intent(context, TeamInMatchDetailsActivity.class);
