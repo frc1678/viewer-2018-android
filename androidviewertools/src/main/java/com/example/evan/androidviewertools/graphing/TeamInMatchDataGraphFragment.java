@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.evan.androidviewertools.firebase_classes.TeamInMatchData;
+import com.example.evan.androidviewertools.graphing.GraphFragment;
 import com.example.evan.androidviewertools.utils.Utils;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;

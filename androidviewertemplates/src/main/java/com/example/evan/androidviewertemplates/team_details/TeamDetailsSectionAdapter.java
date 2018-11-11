@@ -29,17 +29,16 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     static String[][] fieldsToDisplay = {
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
             {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgScaleCycleTimeAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto","calculatedData.avgAllianceSwitchCycleTimeAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
-                    "calculatedData.autoRunPercentage", "calculatedData.allianceSwitchSuccessPercentageAuto", "calculatedData.scaleSuccessPercentageAuto", "calculatedData.avgAllianceSwitchCubesAuto"},
+                    "calculatedData.autoRunPercentage", "calculatedData.avgAllianceSwitchCubesAuto"},
             {"calculatedData.avgAllVaultTime", "calculatedData.avgTotalCubesPlaced","calculatedData.avgAllianceSwitchCycleTimeTele","calculatedData.avgScaleCycleTimeTele", "calculatedData.avgExchangeCycleTime", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
-                    "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele",
-                    "calculatedData.avgNumHumanPortalIntakeTele", "calculatedData.allianceSwitchSuccessPercentageTele", "calculatedData.scaleSuccessPercentageTele"},
+                    "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele"},
             {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
             {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"},
             {"calculatedData.avgDrivingAbility"},
             {"calculatedData.avgSpeed", "calculatedData.avgAgility", "calculatedData.avgDefense",
                     "calculatedData.totalNumGoodDecisions", "calculatedData.totalNumBadDecisions", "totalSuperNotes"},
-            {"pitDriveTrain", "pitCanCheesecake", "pitRobotDimensions", "pitClimberType", "pitSEALsNotes",
-                    "pitAvailableWeight", "pitProgrammingLanguage", "pitRampTime", "pitCanDoPIDOnDriveTrain", "pitHasEncodersOnBothSides", "pitHasGyro"}
+            {"pitDriveTrain", "pitClimberType", "pitSEALsNotes",
+                    "pitAvailableWeight", "pitProgrammingLanguage", "pitCanDoPIDOnDriveTrain", "pitHasEncodersOnBothSides", "pitHasGyro"}
     };
 
     static String[] sectionTitles = {
@@ -57,10 +56,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "calculatedData.disabledPercentage",
             "calculatedData.percentSuccessOppositeSwitchSideAuto",
             "calculatedData.autoRunPercentage",
-            "calculatedData.allianceSwitchSuccessPercentageAuto",
-            "calculatedData.scaleSuccessPercentageAuto",
-            "calculatedData.allianceSwitchSuccessPercentageTele",
-            "calculatedData.scaleSuccessPercentageTele",
             "calculatedData.assistedClimbPercentage",
             "calculatedData.disabledPercentage",
             "calculatedData.incapacitatedPercentage",
@@ -78,14 +73,12 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "pitSelectedImageUrl",
             "pitNotes",
             "pitProgrammingLanguage",
-            "pitCanCheesecake",
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
             "superNotes",
             "climb",
             "totalSuperNotes",
-            "pitRampTime",
             "pitCanDoPIDOnDriveTrain",
             "pitHasEncodersOnBothSides",
             "pitHasGyro"
@@ -96,7 +89,7 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "superNotes",
             "pitSEALsNotes",
             "totalSuperNotes",
-            "pitRampTime"
+
 
     };
 
@@ -117,8 +110,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "pitAvailableWeight",
             "pitOrganization",
             "pitDriveTrain",
-            "pitCanCheesecake",
-            "pitRampTime",
             "pitCanDoPIDOnDriveTrain",
             "pitHasEncodersOnBothSides",
             "pitHasGyro"
@@ -135,11 +126,7 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "calculatedData.avgSpeed",
             "calculatedData.avgAgility",
             "calculatedData.avgDefense",
-            "calculatedData.allianceSwitchSuccessPercentageAuto",
-            "calculatedData.allianceSwitchSuccessPercentageTele",
-            "calculatedData.scaleSuccessPercentageAuto",
             "calculatedData.maxScaleCubes",
-            "calculatedData.scaleSuccessPercentageTele"
     };
 
 
