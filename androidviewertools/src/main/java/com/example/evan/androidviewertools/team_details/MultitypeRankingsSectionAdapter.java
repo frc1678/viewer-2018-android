@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,7 +76,7 @@ public abstract class MultitypeRankingsSectionAdapter extends RankingsSectionAda
                     Object object = getObject();
                     Intent intent = new Intent();
                     Pair<Integer, Integer> location = new Pair<>(section_i, row_i);
-                    String value = (Utils.getViewerObjectField(object, fieldName.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass())).toString();
+                    String value = String.valueOf(Utils.getViewerObjectField(object, fieldName.replaceAll("VIEWER.", ""), intent, getViewerDataPointsClass()));
                     this.valuesCache.put(location, value);
                 }
             }
