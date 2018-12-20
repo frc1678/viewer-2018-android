@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class CalculatedTeamInMatchData extends Object {
     public Float allianceSwitchCycleTimeTele;
     public Float allianceSwitchCycleTimeAuto;
@@ -48,5 +46,33 @@ public class CalculatedTeamInMatchData extends Object {
     public Integer totalNumScaleFoul;
     public Integer numSpilledCubesAuto;
     public Integer numSpilledCubesTele;
+    public Integer rankAgility;
+    public Integer rankDefense;
+    public Integer rankSpeed;
+    public Object startingPosition;
+    public String scoutName;
+    public String superNotes;
+    public Float exchangeCycleTime;
+    public Float allianceSwitchCycleTimeAuto;
+    public Float allianceSwitchCycleTimeTele;
+    public Float opponentSwitchCycleTimeTele;
+    public Float scaleCycleTimeAuto;
+    public Float scaleCycleTimeTele;
+    public Integer numCubesDroppedTele;
+    public Integer numScaleTele;
+    public Integer numAllianceSwitchAuto;
+    public Integer totalNumScaleFoul;
+    public Integer numZoneTwoIntakeAuto;
+    public Integer numZoneThreeIntakeAuto;
+    public Integer numZoneTwoIntakeTele;
+    public Integer numCubesDroppedAuto;
+    public Integer numAllianceSwitchTele;
+    public Integer numZoneOneIntakeTele;
+    public Integer numZoneThreeIntakeTele;
+    public Integer numScaleAuto;
+    public Integer numZoneOneIntakeAuto;
+    public Integer numZoneFourIntakeAuto;
+    public Integer numOpponentSwitchTele;
+    public Integer numZoneFourIntakeTele;
 
 }

@@ -13,23 +13,33 @@ import java.util.Map;
 /**
  * Created by evan on 6/18/16.
  */
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
 
     public Integer rankSpeed;
-    public Integer rankDefense;
-    public Integer rankAgility;
-    public Integer numGoodDecisions;
-    public Integer numBadDecisions;
+
+    public Object startingPosition; //todo Change V
+
+
+    // blue
+    public Boolean switchIsOpposite;
+
+    public ArrayList<Map<String, Object>> opponentSwitchAttemptTele;
+    public ArrayList<Map<String, Object>> scaleAttemptAuto;
+    public ArrayList<Map<String, Object>> scaleAttemptTele;
+    public Integer numGoodDecision;
+    public Integer numBadDecision;
+    public Integer numSpeed;
+    public Integer numAgility;
+    public Integer numDefense;
     public String color;
+    public ArrayList<ArrayList<Object>> timeline;
     public Boolean didCrossAutoLine;
     public Integer position;
-    public List<String> scoutName;
     public Integer startedWithCube;
-    public List<List<String>> timeline;
+
+
 
 
 }

@@ -14,10 +14,7 @@ import java.util.Map;
 /**
  * Created by Teo on 1/11/18.
  */
-
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class Match extends com.example.evan.androidviewertools.firebase_classes.Match {
     public CalculatedMatchData calculatedData;
 
@@ -39,8 +36,8 @@ public class Match extends com.example.evan.androidviewertools.firebase_classes.
     public Map<String, String> scale;
 //.
 
-    public Integer foulPointsGainedRed;
-    public Integer foulPointsGainedBlue;
+    public Integer foulsPointsGainedred;
+    public Integer foulsPointsGainedblue;
 
 
 }
