@@ -19,17 +19,6 @@ import java.util.Map;
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
 
-    public Integer rankSpeed;
-    public Integer rankDefense;
-    public Integer rankAgility;
-    public Integer numGoodDecisions;
-    public Integer numBadDecisions;
-    public String color;
-    public Boolean didCrossAutoLine;
-    public Integer position;
-    public List<String> scoutName;
-    public Integer startedWithCube;
-    public List<List<String>> timeline;
 
 
 }
