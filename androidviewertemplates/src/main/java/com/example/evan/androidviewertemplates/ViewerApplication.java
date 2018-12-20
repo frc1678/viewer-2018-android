@@ -17,6 +17,7 @@ import com.example.evan.androidviewertools.services.PhotoSync;
 import com.example.evan.androidviewertools.services.StarManager;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseList;
 import com.example.evan.androidviewertools.utils.firebase.FirebaseLists;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.instabug.library.Instabug;
 import com.instabug.library.invocation.InstabugInvocationEvent;
 
@@ -24,6 +25,9 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -102,7 +106,6 @@ public class ViewerApplication extends ViewerApplicationTemplate {
             Writer result = new StringWriter();
             PrintWriter printWriter = new PrintWriter(result);
             e.printStackTrace(printWriter);
-            String stacktrace = result.toString();
             printWriter.close();
             Log.e("UI thread", "CRASHED!");
             originalUncaughtExceptionHandler.uncaughtException(thread, e);

@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 
+
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class CalculatedTeamInMatchData extends Object {
     public Float allianceSwitchCycleTimeTele;
     public Float allianceSwitchCycleTimeAuto;
