@@ -13,7 +13,9 @@ import java.util.Map;
 /**
  * Created by evan on 6/18/16.
  */
+/*
 @JsonIgnoreProperties(ignoreUnknown = true)
+*/
 public class TeamInMatchData extends com.example.evan.androidviewertools.firebase_classes.TeamInMatchData {
     public CalculatedTeamInMatchData calculatedData;
 

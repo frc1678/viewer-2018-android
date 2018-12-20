@@ -11,7 +11,9 @@ import java.util.Map;
 /**
  * Created by Teo on 1/10/2018.
  */
+/*
 @JsonIgnoreProperties(ignoreUnknown = true)
+*/
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
     public ArrayList<Boolean> pitDriveTimeOutcome;
     public ArrayList<Float> pitAutoRunTimes;
