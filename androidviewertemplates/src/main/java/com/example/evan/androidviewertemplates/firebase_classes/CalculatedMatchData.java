@@ -10,9 +10,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 /**
  * Created by Teo on 1/11/2018.
  */
-/*
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-*/
+
 public class CalculatedMatchData extends Object {
     //Make sure all variables are public
     public Float predictedBlueScore;
