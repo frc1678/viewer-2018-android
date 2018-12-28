@@ -26,71 +26,43 @@ import java.util.Map;
  */
 public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     //todo
-    static String[][] fieldsToDisplay = {
-            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
-            {"calculatedData.avgCubesPlacedInScaleAuto","calculatedData.avgScaleCycleTimeAuto", "calculatedData.canScoreBothSwitchSidesAuto", "calculatedData.avgAllianceSwitchCubesAuto","calculatedData.avgAllianceSwitchCycleTimeAuto", "calculatedData.percentSuccessOppositeSwitchSideAuto",
-                    "calculatedData.autoRunPercentage", "calculatedData.avgAllianceSwitchCubesAuto"},
-            {"calculatedData.avgAllVaultTime", "calculatedData.avgTotalCubesPlaced","calculatedData.avgAllianceSwitchCycleTimeTele","calculatedData.avgScaleCycleTimeTele", "calculatedData.avgExchangeCycleTime", "calculatedData.avgCubesSpilledTele", "calculatedData.avgScaleCubesBy100s", "calculatedData.avgScaleCubesBy110s", "calculatedData.maxScaleCubes", "calculatedData.avgNumCubesFumbledTele", "calculatedData.avgCubesPlacedInScaleTele", "calculatedData.avgOpponentSwitchCubesTele",
-                    "calculatedData.avgAllianceSwitchCubesTele", "calculatedData.avgNumExchangeInputTele", "calculatedData.avgNumGroundPortalIntakeTele"},
-            {"calculatedData.soloClimbPercentage", "calculatedData.assistedClimbPercentage", "calculatedData.activeLiftClimbPercentage", "calculatedData.activeNoClimbLiftClimbPercentage", "calculatedData.activeAssistClimbPercentage", "calculatedData.avgClimbTime"},
-            {"calculatedData.incapacitatedPercentage", "calculatedData.disabledPercentage"},
-            {"calculatedData.avgDrivingAbility"},
-            {"calculatedData.avgSpeed", "calculatedData.avgAgility", "calculatedData.avgDefense",
-                    "calculatedData.totalNumGoodDecisions", "calculatedData.totalNumBadDecisions", "totalSuperNotes"},
-            {"pitDriveTrain", "pitClimberType", "pitSEALsNotes",
-                    "pitAvailableWeight", "pitProgrammingLanguage", "pitCanDoPIDOnDriveTrain", "pitHasEncodersOnBothSides", "pitHasGyro"}
-    };
 
     static String[] sectionTitles = {
+            //May need to change depending on game
             "Matches",
             "Auto",
             "Teleop",
-            "Face The Boss",
             "Status",
             "High Level",
             "Super Data",
             "Pit Data"
     };
 
+    static String[][] fieldsToDisplay = {
+            //Each {}, below correlates to its sectionTitles above
+            {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+    };
+
     static String[] shouldDisplayAsPercentage = {
-            "calculatedData.disabledPercentage",
-            "calculatedData.percentSuccessOppositeSwitchSideAuto",
-            "calculatedData.autoRunPercentage",
-            "calculatedData.assistedClimbPercentage",
-            "calculatedData.disabledPercentage",
-            "calculatedData.incapacitatedPercentage",
-            "calculatedData.baselineReachedPercentage",
-            "calculatedData.liftoffPercentage",
-            "calculatedData.soloClimbPercentage",
-            "calculatedData.assistedClimbPercentage",
-            "calculatedData.activeLiftClimbPercentage",
-            "calculatedData.activeNoClimbLiftClimbPercentage",
-            "calculatedData.activeAssistClimbPercentage"};
+};
 
     static String[] displayAsUnranked = {
             "matches",
             "VIEWER.matchesUntilNextMatchForTeam",
-            "pitSelectedImageUrl",
-            "pitNotes",
-            "pitProgrammingLanguage",
-            "pitAvailableWeight",
-            "pitOrganization",
-            "pitDriveTrain",
-            "superNotes",
-            "climb",
-            "totalSuperNotes",
-            "pitCanDoPIDOnDriveTrain",
-            "pitHasEncodersOnBothSides",
-            "pitHasGyro"
     };
 
     static String[] shouldDisplayAsLongText = {
+            //These variables should always be displayed as long text. These variables are non year specific variables
             "pitNotes",
             "superNotes",
             "pitSEALsNotes",
             "totalSuperNotes",
-
-
     };
 
     static String[] shouldDisplayAsFurtherInformation = {
@@ -103,16 +75,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
 
     static String[] notClickableFields = {
             "VIEWER.matchesUntilNextMatchForTeam",
-            "pitDetails",
-            "pitSelectedImageUrl",
-            "pitNotes",
-            "pitProgrammingLanguage",
-            "pitAvailableWeight",
-            "pitOrganization",
-            "pitDriveTrain",
-            "pitCanDoPIDOnDriveTrain",
-            "pitHasEncodersOnBothSides",
-            "pitHasGyro"
     };
 
     static String[] createListOnClick = {
@@ -121,12 +83,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     };
 
     static String[] rankInsteadOfGraph = {
-            "calculatedData.canScoreBothSwitchSidesAuto",
-            "calculatedData.percentSuccessOppositeSwitchSideAuto",
-            "calculatedData.avgSpeed",
-            "calculatedData.avgAgility",
-            "calculatedData.avgDefense",
-            "calculatedData.maxScaleCubes",
     };
 
 
