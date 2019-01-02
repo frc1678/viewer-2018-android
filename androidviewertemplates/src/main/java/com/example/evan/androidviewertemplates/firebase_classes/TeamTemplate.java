@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by Teo on 1/10/2018.
  */
-@JsonIgnoreProperties(ignoreUnknown = false)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TeamTemplate extends com.example.evan.androidviewertools.firebase_classes.Team {
 public CalculatedTeamData calculatedData;
     //Make sure that all variables are public

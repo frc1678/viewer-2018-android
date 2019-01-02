@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Created by Teo on 1/11/18.
  */
-@JsonIgnoreProperties(ignoreUnknown = false)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Match extends com.example.evan.androidviewertools.firebase_classes.Match {
     public CalculatedMatchData calculatedData;
     //Make sure all variables are public

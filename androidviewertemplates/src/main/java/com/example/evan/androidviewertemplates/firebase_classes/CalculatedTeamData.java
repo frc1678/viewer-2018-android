@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by Katherine on 1/12/2018.
  */
-@JsonIgnoreProperties(ignoreUnknown = false)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CalculatedTeamData extends Object {
     //make sure that all variables are public
 }

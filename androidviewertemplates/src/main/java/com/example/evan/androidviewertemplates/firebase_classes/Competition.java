@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by sam on 1/16/17.
  */
-@JsonIgnoreProperties(ignoreUnknown = false)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Competition extends Object {
     public String code;
     public List<Team> teams;
