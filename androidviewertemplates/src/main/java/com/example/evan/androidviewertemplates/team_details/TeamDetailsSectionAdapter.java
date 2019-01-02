@@ -32,8 +32,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             "Matches",
             "Auto",
             "Teleop",
-            "Status",
-            "High Level",
             "Super Data",
             "Pit Data"
     };
@@ -41,8 +39,6 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
     static String[][] fieldsToDisplay = {
             //Each {}, below correlates to its sectionTitles above
             {"matches", "VIEWER.matchesUntilNextMatchForTeam", "lfm"},
-            {},
-            {},
             {},
             {},
             {},
@@ -61,14 +57,11 @@ public class TeamDetailsSectionAdapter extends TeamSectionAdapter {
             //These variables should always be displayed as long text. These variables are non year specific variables
             "pitNotes",
             "superNotes",
-            "pitSEALsNotes",
-            "totalSuperNotes",
     };
 
     static String[] shouldDisplayAsFurtherInformation = {
             "matches",
             "superNotes",
-            "totalSuperNotes",
             "lfm"
 
     };

@@ -59,16 +59,10 @@ public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
             //May need to change depending on game
             "Auto",
             "Teleop",
-            "Face The Boss",
-            "Status",
-            "High Level"
     };
 
     static String[][] fieldsToDisplay = {
             //Each {}, below correlates to its sectionTitles above
-            {},
-            {},
-            {},
             {},
             {},
     };
