@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 
-/*
-@JsonIgnoreProperties(ignoreUnknown = true)
-*/
+@JsonIgnoreProperties(ignoreUnknown = false)
+
 public class CalculatedTeamInMatchData extends Object {
 
 }

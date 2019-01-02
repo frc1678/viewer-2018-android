@@ -11,12 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
-/**
- * Created by Teo on 1/11/18.
- */
-
-
-//@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = false)
 
 public class Match extends com.example.evan.androidviewertools.firebase_classes.Match {
     public CalculatedMatchData calculatedData;
