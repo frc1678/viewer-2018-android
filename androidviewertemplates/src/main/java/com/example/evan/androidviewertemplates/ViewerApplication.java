@@ -119,4 +119,18 @@ public class ViewerApplication extends ViewerApplicationTemplate {
         }
 
     }
+/*    public class POJO {
+        private Map<String, List<Match>> unknownSubCategories;
+
+        @JsonAnySetter
+        public void setMap(String key, List<Match> value) {
+            if (unknownSubCategories == null) {
+                unknownSubCategories = new LinkedHashMap<>();
+            }
+            unknownSubCategories.put(key, value);
+            Log.e("unkonwnrnen",unknownSubCategories.toString());
+            Log.e("33334d","rear");
+
+        }
+    }*/
 }
