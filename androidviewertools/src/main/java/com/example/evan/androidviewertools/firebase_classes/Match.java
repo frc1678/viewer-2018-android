@@ -4,6 +4,7 @@ import java.util.List;
 
 
 public class Match {
+	public Integer matchNumber;
 	public Integer number;
 	public List<Integer> redAllianceTeamNumbers;
 	public List<Integer> blueAllianceTeamNumbers;

@@ -31,8 +31,7 @@ public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
     }
 
     static String[] rankInsteadOfGraph = {
-            "calculatedData.lfmMaxExchangeCubes",
-            "calculatedData.lfmMaxScaleCubes"
+
     };
 
     static String[] createListOnClick = {
@@ -53,25 +52,19 @@ public class LastFourMatchesSectionAdapter extends TeamSectionAdapter {
     };
 
     static String[] shouldDisplayAsPercentage = {
-            "lfmAutoRunPercentage",
-            "lfmSoloClimbPercentage"
+
     };
 
     static String[] sectionTitles = {
+            //May need to change depending on game
             "Auto",
             "Teleop",
-            "Face The Boss",
-            "Status",
-            "High Level"
     };
 
     static String[][] fieldsToDisplay = {
-
-            {"calculatedData.lfmAvgClimbTime", "calculatedData.lfmAutoRunPercentage"},
-            {"calculatedData.lfmAvgTotalCubesPlaced", "calculatedData.lfmMaxExchangeCubes", "calculatedData.lfmAvgScaleCubesBy100s", "calculatedData.lfmAvgScaleCubesBy110s", "calculatedData.lfmMaxScaleCubes", "calculatedData.lfmAvgNumCubesFumbledTele", "calculatedData.lfmAvgCubesPlacedInScaleTele", "calculatedData.lfmAvgAllianceSwitchCubesTele", "calculatedData.lfmAvgOpponentSwitchCubesTele", "calculatedData.lfmAvgNumExchangeInputTele"},
-            {"calculatedData.lfmSoloClimbPercentage", "calculatedData.lfmAssistedClimbPercentage", "calculatedData.lfmActiveLiftClimbPercentage", "calculatedData.lfmActiveNoClimbLiftClimbPercentage", "calculatedData.lfmActiveAssistClimbPercentage", "calculatedData.lfmAvgClimbTime"},
-            {"calculatedData.lfmIncapacitatedPercentage", "calculatedData.lfmDisabledPercentage"},
-            {"calculatedData.lfmAvgDrivingAbility"},
+            //Each {}, below correlates to its sectionTitles above
+            {},
+            {},
     };
 
 
